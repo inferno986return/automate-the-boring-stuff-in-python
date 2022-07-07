@@ -1,7 +1,7 @@
 @font-face
 {
-	font-family: "ArialUnicodeMS";
-	src: url(../fonts/ARIALUNI.ttf);
+	font-family: "NotoSans";
+	src: url(../fonts/NotoSans-Regular.ttf);
 	font-style: normal;
 	font-weight: normal;
 }
@@ -908,8 +908,8 @@ div.image21
 }
 .ent
 {
-	font-family: "ArialUnicodeMS";
-	src: url(../fonts/ARIALUNI.ttf);
+	font-family: "NotoSans";
+	src: url(../fonts/NotoSans-Regular.ttf);
 }
 img
 {
