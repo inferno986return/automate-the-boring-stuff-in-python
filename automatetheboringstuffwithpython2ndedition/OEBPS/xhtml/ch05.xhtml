@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xml:lang="en-us" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:ns="http://www.w3.org/2001/10/synthesis">
+<head>
+<title>Automate the Boring Stuff with Python: Practical Programming for Total Beginners, 2nd Edition</title>
+<link rel="stylesheet" type="text/css" href="../styles/9781593279936.css"/>
+</head>
+<body>
+<h2 class="h2" id="ch05"><span epub:type="pagebreak" id="page_111"/><strong><span class="big">5</span><br/>DICTIONARIES AND STRUCTURING DATA</strong></h2>
+<div class="image1"><img src="../images/05fig00.jpg" alt="Image"/></div>
+<p class="noindent">In this chapter, I will cover the dictionary data type, which provides a flexible way to access and organize data. Then, combining dictionaries with your knowledge of lists from the previous chapter, you&#8217;ll learn how to create a data structure to model a tic-tac-toe board.</p>
+<h3 class="h3" id="ch05lev1sec1"><strong>The Dictionary Data Type</strong></h3>
+<p class="noindent">Like a list, a <em>dictionary</em> is a mutable collection of many values. But unlike indexes for lists, indexes for dictionaries can use many different data types, not just integers. Indexes for dictionaries are called <em>keys</em>, and a key with its associated value is called a <em>key-value pair</em>.</p>
+<p class="indent">In code, a dictionary is typed with braces, <span class="literal">{}</span>. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">myCat = {'size': 'fat', 'color': 'gray', 'disposition': 'loud'}</span></p>
+<p class="indent"><span epub:type="pagebreak" id="page_112"/>This assigns a dictionary to the <span class="literal">myCat</span> variable. This dictionary&#8217;s keys are <span class="literal">'size'</span>, <span class="literal">'color'</span>, and <span class="literal">'disposition'</span>. The values for these keys are <span class="literal">'fat'</span>, <span class="literal">'gray'</span>, and <span class="literal">'loud'</span>, respectively. You can access these values through their keys:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">myCat['size']</span><br/>
+'fat'<br/>
+&gt;&gt;&gt; <span class="codestrong1">'My cat has ' + myCat['color'] + ' fur.'</span><br/>
+'My cat has gray fur.'</p>
+<p class="indent">Dictionaries can still use integer values as keys, just like lists use integers for indexes, but they do not have to start at <span class="literal">0</span> and can be any number.</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = {12345: 'Luggage Combination', 42: 'The Answer'}</span></p>
+<h4 class="h4" id="ch05lev2sec1"><strong><em>Dictionaries vs. Lists</em></strong></h4>
+<p class="noindent">Unlike lists, items in dictionaries are unordered. The first item in a list named <span class="literal">spam</span> would be <span class="literal">spam[0]</span>. But there is no &#8220;first&#8221; item in a dictionary. While the order of items matters for determining whether two lists are the same, it does not matter in what order the key-value pairs are typed in a dictionary. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cats', 'dogs', 'moose']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">bacon = ['dogs', 'moose', 'cats']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam == bacon</span><br/>
+False<br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs = {'name': 'Zophie', 'species': 'cat', 'age': '8'}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">ham = {'species': 'cat', 'age': '8', 'name': 'Zophie'}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs == ham</span><br/>
+True</p>
+<p class="indent">Because dictionaries are not ordered, they can&#8217;t be sliced like lists.</p>
+<p class="indent">Trying to access a key that does not exist in a dictionary will result in a <span class="literal">KeyError</span> error message, much like a list&#8217;s &#8220;out-of-range&#8221; <span class="literal">IndexError</span> error message. Enter the following into the interactive shell, and notice the error message that shows up because there is no <span class="literal">'color'</span> key:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = {'name': 'Zophie', 'age': 7}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam['color']</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;spam['color']<br/>
+KeyError: 'color'</p>
+<p class="indent"><span epub:type="pagebreak" id="page_113"/>Though dictionaries are not ordered, the fact that you can have arbitrary values for the keys allows you to organize your data in powerful ways. Say you wanted your program to store data about your friends&#8217; birthdays. You can use a dictionary with the names as keys and the birthdays as values. Open a new file editor window and enter the following code. Save it as <em>birthdays.py</em>.</p>
+<p class="programs"><span class="ent">&#x278A;</span> birthdays = {'Alice': 'Apr 1', 'Bob': 'Dec 12', 'Carol': 'Mar 4'}<br/><br/>
+&#160;&#160;&#160;while True:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Enter a name: (blank to quit)')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;name = input()<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;if name == '':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;break<br/><br/>
+&#160;&#160;&#160;&#160;<span class="ent">&#x278B;</span> if name in birthdays:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ent">&#x278C;</span> print(birthdays[name] + ' is the birthday of ' + name)<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;else:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('I do not have birthday information for ' + name)<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('What is their birthday?')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;bday = input()<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ent">&#x278D;</span> birthdays[name] = bday<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Birthday database updated.')</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/bdaydb">https://autbor.com/bdaydb</a></em>. You create an initial dictionary and store it in <span class="literal">birthdays</span> <span class="ent">&#x278A;</span>. You can see if the entered name exists as a key in the dictionary with the <span class="literal">in</span> keyword <span class="ent">&#x278B;</span>, just as you did for lists. If the name is in the dictionary, you access the associated value using square brackets <span class="ent">&#x278C;</span>; if not, you can add it using the same square bracket syntax combined with the assignment operator <span class="ent">&#x278D;</span>.</p>
+<p class="indent">When you run this program, it will look like this:</p>
+<p class="programs">Enter a name: (blank to quit)<br/>
+<span class="codestrong1">Alice</span><br/>
+Apr 1 is the birthday of Alice<br/>
+Enter a name: (blank to quit)<br/>
+<span class="codestrong1">Eve</span><br/>
+I do not have birthday information for Eve<br/>
+What is their birthday?<br/>
+<span class="codestrong1">Dec 5</span><br/>
+Birthday database updated.<br/>
+Enter a name: (blank to quit)<br/>
+<span class="codestrong1">Eve</span><br/>
+Dec 5 is the birthday of Eve<br/>
+Enter a name: (blank to quit)</p>
+<p class="indent">Of course, all the data you enter in this program is forgotten when the program terminates. You&#8217;ll learn how to save data to files on the hard drive in <a href="ch09.xhtml#ch09">Chapter 9</a>.</p>
+<div class="sidebar">
+<p class="sidebart"><strong>ORDERED DICTIONARIES IN PYTHON 3.7</strong></p>
+<p class="spara">While they&#8217;re still not ordered and have no &#8220;first&#8221; key-value pair, dictionaries in Python 3.7 and later will remember the insertion order of their key-value pairs if you create a sequence value from them. For example, notice the order of items in the lists made from the <span class="literal">eggs</span> and <span class="literal">ham</span> dictionaries matches the order in which they were entered:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">eggs = {'name': 'Zophie', 'species': 'cat', 'age': '8'}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">list(eggs)</span><br/>
+['name', 'species', 'age']<br/>
+&gt;&gt;&gt; <span class="codestrong1">ham = {'species': 'cat', 'age': '8', 'name': 'Zophie'}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">list(ham)</span><br/>
+['species', 'age', 'name']</p>
+<p class="sparai">The dictionaries are still unordered, as you can&#8217;t access items in them using integer indexes like <span class="literal">eggs[0]</span> or <span class="literal">ham[2]</span>. You shouldn&#8217;t rely on this behavior, as dictionaries in older versions of Python don&#8217;t remember the insertion order of key-value pairs. For example, notice how the list doesn&#8217;t match the insertion order of the dictionary&#8217;s key-value pairs when I run this code in Python 3.5:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = {}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam['first key'] = 'value'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam['second key'] = 'value'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam['third key'] = 'value'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">list(spam)</span><br/>
+['first key', 'third key', 'second key']</p>
+</div>
+<h4 class="h4" id="ch05lev2sec2"><span epub:type="pagebreak" id="page_114"/><strong><em>The keys(), values(), and items() Methods</em></strong></h4>
+<p class="noindent">There are three dictionary methods that will return list-like values of the dictionary&#8217;s keys, values, or both keys and values: <span class="literal">keys()</span>, <span class="literal">values()</span>, and <span class="literal">items()</span>. The values returned by these methods are not true lists: they cannot be modified and do not have an <span class="literal">append()</span> method. But these data types (<span class="literal">dict_keys</span>, <span class="literal">dict_values</span>, and <span class="literal">dict_items</span>, respectively) <em>can</em> be used in <span class="literal">for</span> loops. To see how these methods work, enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = {'color': 'red', 'age': 42}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">for v in spam.values():</span><br/>
+...&#160;&#160;&#160;&#160;&#160;<span class="codestrong1">print(v)</span><br/>
+<br/>
+red<br/>
+42</p>
+<p class="indent"><span epub:type="pagebreak" id="page_115"/>Here, a <span class="literal">for</span> loop iterates over each of the values in the <span class="literal">spam</span> dictionary. A <span class="literal">for</span> loop can also iterate over the keys or both keys and values:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">for k in spam.keys():</span><br/>
+...&#160;&#160;&#160;&#160;&#160;<span class="codestrong1">print(k)</span><br/>
+<br/>
+color<br/>
+age<br/>
+&gt;&gt;&gt; <span class="codestrong1">for i in spam.items():</span><br/>
+...&#160;&#160;&#160;&#160;&#160;<span class="codestrong1">print(i)</span><br/>
+<br/>
+('color', 'red')<br/>
+('age', 42)</p>
+<p class="indent">When you use the <span class="literal">keys()</span>, <span class="literal">values()</span>, and <span class="literal">items()</span> methods, a <span class="literal">for</span> loop can iterate over the keys, values, or key-value pairs in a dictionary, respectively. Notice that the values in the <span class="literal">dict_items</span> value returned by the <span class="literal">items()</span> method are tuples of the key and value.</p>
+<p class="indent">If you want a true list from one of these methods, pass its list-like return value to the <span class="literal">list()</span> function. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = {'color': 'red', 'age': 42}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.keys()</span><br/>
+dict_keys(['color', 'age'])<br/>
+&gt;&gt;&gt; <span class="codestrong1">list(spam.keys())</span><br/>
+['color', 'age']</p>
+<p class="indent">The <span class="literal">list(spam.keys())</span> line takes the <span class="literal">dict_keys</span> value returned from <span class="literal">keys()</span> and passes it to <span class="literal">list()</span>, which then returns a list value of <span class="literal">['color', 'age']</span>.</p>
+<p class="indent">You can also use the multiple assignment trick in a <span class="literal">for</span> loop to assign the key and value to separate variables. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = {'color': 'red', 'age': 42}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">for k, v in spam.items():</span><br/>
+<span class="codestrong1">...&#160;&#160;&#160;&#160;&#160;print('Key: ' + k + ' Value: ' + str(v))</span><br/>
+<br/>
+Key: age Value: 42<br/>
+Key: color Value: red</p>
+<h4 class="h4" id="ch05lev2sec3"><strong><em>Checking Whether a Key or Value Exists in a Dictionary</em></strong></h4>
+<p class="noindent">Recall from the previous chapter that the <span class="literal">in</span> and <span class="literal">not in</span> operators can check whether a value exists in a list. You can also use these operators to see whether a certain key or value exists in a dictionary. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = {'name': 'Zophie', 'age': 7}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">'name' in spam.keys()</span><br/>
+True<br/>
+<span epub:type="pagebreak" id="page_116"/>&gt;&gt;&gt; <span class="codestrong1">'Zophie' in spam.values()</span><br/>
+True<br/>
+&gt;&gt;&gt; <span class="codestrong1">'color' in spam.keys()</span><br/>
+False<br/>
+&gt;&gt;&gt; <span class="codestrong1">'color' not in spam.keys()</span><br/>
+True<br/>
+&gt;&gt;&gt; <span class="codestrong1">'color' in spam</span><br/>
+False</p>
+<p class="indent">In the previous example, notice that <span class="literal">'color' in spam</span> is essentially a shorter version of writing <span class="literal">'color' in spam.keys()</span>. This is always the case: if you ever want to check whether a value is (or isn&#8217;t) a key in the dictionary, you can simply use the <span class="literal">in</span> (or <span class="literal">not in</span>) keyword with the dictionary value itself.</p>
+<h4 class="h4" id="ch05lev2sec4"><strong><em>The get() Method</em></strong></h4>
+<p class="noindent">It&#8217;s tedious to check whether a key exists in a dictionary before accessing that key&#8217;s value. Fortunately, dictionaries have a <span class="literal">get()</span> method that takes two arguments: the key of the value to retrieve and a fallback value to return if that key does not exist.</p>
+<p class="indent">Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">picnicItems = {'apples': 5, 'cups': 2}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">'I am bringing ' + str(picnicItems.get('cups', 0)) + ' cups.'</span><br/>
+'I am bringing 2 cups.'<br/>
+&gt;&gt;&gt; <span class="codestrong1">'I am bringing ' + str(picnicItems.get('eggs', 0)) + ' eggs.'</span><br/>
+'I am bringing 0 eggs.'</p>
+<p class="indent">Because there is no <span class="literal">'eggs'</span> key in the <span class="literal">picnicItems</span> dictionary, the default value <span class="literal">0</span> is returned by the <span class="literal">get()</span> method. Without using <span class="literal">get()</span>, the code would have caused an error message, such as in the following example:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">picnicItems = {'apples': 5, 'cups': 2}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">'I am bringing ' + str(picnicItems['eggs']) + ' eggs.'</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#34&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;'I am bringing ' + str(picnicItems['eggs']) + ' eggs.'<br/>
+KeyError: 'eggs'</p>
+<h4 class="h4" id="ch05lev2sec5"><strong><em>The setdefault() Method</em></strong></h4>
+<p class="noindent">You&#8217;ll often have to set a value in a dictionary for a certain key only if that key does not already have a value. The code looks something like this:</p>
+<p class="programs">spam = {'name': 'Pooka', 'age': 5}<br/>
+if 'color' not in spam:<br/>
+&#160;&#160;&#160;&#160;spam['color'] = 'black'</p>
+<p class="indent"><span epub:type="pagebreak" id="page_117"/>The <span class="literal">setdefault()</span> method offers a way to do this in one line of code. The first argument passed to the method is the key to check for, and the second argument is the value to set at that key if the key does not exist. If the key does exist, the <span class="literal">setdefault()</span> method returns the key&#8217;s value. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = {'name': 'Pooka', 'age': 5}</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.setdefault('color', 'black')</span><br/>
+'black'<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+{'color': 'black', 'age': 5, 'name': 'Pooka'}<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.setdefault('color', 'white')</span><br/>
+'black'<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+{'color': 'black', 'age': 5, 'name': 'Pooka'}</p>
+<p class="indent">The first time <span class="literal">setdefault()</span> is called, the dictionary in <span class="literal">spam</span> changes to <span class="literal">{'color': 'black', 'age': 5, 'name': 'Pooka'}</span>. The method returns the value <span class="literal">'black'</span> because this is now the value set for the key <span class="literal">'color'</span>. When <span class="literal">spam.setdefault('color', 'white')</span> is called next, the value for that key is <em>not</em> changed to <span class="literal">'white'</span>, because <span class="literal">spam</span> already has a key named <span class="literal">'color'</span>.</p>
+<p class="indent">The <span class="literal">setdefault()</span> method is a nice shortcut to ensure that a key exists. Here is a short program that counts the number of occurrences of each letter in a string. Open the file editor window and enter the following code, saving it as <em>characterCount.py</em>:</p>
+<p class="programs">message = 'It was a bright cold day in April, and the clocks were striking<br/>
+thirteen.'<br/>
+count = {}<br/><br/>
+for character in message:<br/>
+<span class="ent">&#x278A;</span> count.setdefault(character, 0)<br/>
+<span class="ent">&#x278B;</span> count[character] = count[character] + 1<br/><br/>
+print(count)&#160;&#160;&#160;&#160;</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/setdefault">https://autbor.com/setdefault</a></em>. The program loops over each character in the <span class="literal">message</span> variable&#8217;s string, counting how often each character appears. The <span class="literal">setdefault()</span> method call <span class="ent">&#x278A;</span> ensures that the key is in the <span class="literal">count</span> dictionary (with a default value of <span class="literal">0</span>) so the program doesn&#8217;t throw a <span class="literal">KeyError</span> error when <span class="literal">count[character] = count[character] + 1</span> is executed <span class="ent">&#x278B;</span>. When you run this program, the output will look like this:</p>
+<p class="programs">{' ': 13, ',': 1, '.': 1, 'A': 1, 'I': 1, 'a': 4, 'c': 3, 'b': 1, 'e': 5, 'd': 3, 'g': 2,<br/>
+'i': 6, 'h': 3, 'k': 2, 'l': 3, 'o': 2, 'n': 4, 'p': 1, 's': 3, 'r': 5, 't': 6, 'w': 2, 'y': 1}</p>
+<p class="indent"><span epub:type="pagebreak" id="page_118"/>From the output, you can see that the lowercase letter <em>c</em> appears 3 times, the space character appears 13 times, and the uppercase letter <em>A</em> appears 1 time. This program will work no matter what string is inside the <span class="literal">message</span> variable, even if the string is millions of characters long!</p>
+<h3 class="h3" id="ch05lev1sec2"><strong>Pretty Printing</strong></h3>
+<p class="noindent">If you import the <span class="literal">pprint</span> module into your programs, you&#8217;ll have access to the <span class="literal">pprint()</span> and <span class="literal">pformat()</span> functions that will &#8220;pretty print&#8221; a dictionary&#8217;s values. This is helpful when you want a cleaner display of the items in a dictionary than what <span class="literal">print()</span> provides. Modify the previous <em>characterCount.py</em> program and save it as <em>prettyCharacterCount.py</em>.</p>
+<p class="programs"><span class="codestrong1">import pprint</span><br/>
+message = 'It was a bright cold day in April, and the clocks were striking<br/>
+thirteen.'<br/>
+count = {}<br/><br/>
+for character in message:<br/>
+&#160;&#160;&#160;&#160;count.setdefault(character, 0)<br/>
+&#160;&#160;&#160;&#160;count[character] = count[character] + 1<br/><br/>
+<span class="codestrong1">pprint.pprint</span>(count)</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/pprint/">https://autbor.com/pprint/</a></em>. This time, when the program is run, the output looks much cleaner, with the keys sorted.</p>
+<p class="programs">{' ': 13,<br/>
+&#160;',': 1,<br/>
+&#160;'.': 1,<br/>
+&#160;'A': 1,<br/>
+&#160;'I': 1,<br/>
+&#160;<span class="codeitalic1">--snip--</span><br/>
+&#160;'t': 6,<br/>
+&#160;'w': 2,<br/>
+&#160;'y': 1}</p>
+<p class="indent">The <span class="literal">pprint.pprint()</span> function is especially helpful when the dictionary itself contains nested lists or dictionaries.</p>
+<p class="indent">If you want to obtain the prettified text as a string value instead of displaying it on the screen, call <span class="literal">pprint.pformat()</span> instead. These two lines are equivalent to each other:</p>
+<p class="programs">pprint.pprint(someDictionaryValue)<br/>
+print(pprint.pformat(someDictionaryValue))</p>
+<h3 class="h3" id="ch05lev1sec3"><span epub:type="pagebreak" id="page_119"/><strong>Using Data Structures to Model Real-World Things</strong></h3>
+<p class="noindent">Even before the internet, it was possible to play a game of chess with someone on the other side of the world. Each player would set up a chessboard at their home and then take turns mailing a postcard to each other describing each move. To do this, the players needed a way to unambiguously describe the state of the board and their moves.</p>
+<p class="indent">In <em>algebraic chess notation</em>, the spaces on the chessboard are identified by a number and letter coordinate, as in <a href="ch05.xhtml#ch05fig01">Figure 5-1</a>.</p>
+<div class="image"><a id="ch05fig01"/><img src="../images/05fig01.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 5-1: The coordinates of a chessboard in algebraic chess notation</em></p>
+<p class="indent">The chess pieces are identified by letters: <em>K</em> for king, <em>Q</em> for queen, <em>R</em> for rook, <em>B</em> for bishop, and <em>N</em> for knight. Describing a move uses the letter of the piece and the coordinates of its destination. A pair of these moves describes what happens in a single turn (with white going first); for instance, the notation <em>2. Nf3 Nc6</em> indicates that white moved a knight to f3 and black moved a knight to c6 on the second turn of the game.</p>
+<p class="indent">There&#8217;s a bit more to algebraic notation than this, but the point is that you can unambiguously describe a game of chess without needing to be in front of a chessboard. Your opponent can even be on the other side of the world! In fact, you don&#8217;t even need a physical chess set if you have a good memory: you can just read the mailed chess moves and update boards you have in your imagination.</p>
+<p class="indent">Computers have good memories. A program on a modern computer can easily store billions of strings like <span class="literal">'2. Nf3 Nc6'</span>. This is how computers can play chess without having a physical chessboard. They model data to represent a chessboard, and you can write code to work with this model.</p>
+<p class="indent">This is where lists and dictionaries can come in. For example, the dictionary <span class="literal">{'1h': 'bking', '6c': 'wqueen', '2g': 'bbishop', '5h': 'bqueen', '3e': 'wking'}</span> could represent the chess board in <a href="ch05.xhtml#ch05fig02">Figure 5-2</a>.</p>
+<div class="image"><span epub:type="pagebreak" id="page_120"/><a id="ch05fig02"/><img src="../images/05fig02.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 5-2: A chess board modeled by the dictionary</em> '1h': 'bking', '6c': 'wqueen', '2g': 'bbishop', '5h': 'bqueen', '3e': 'wking'}</p>
+<p class="indent">But for another example, you&#8217;ll use a game that&#8217;s a little simpler than chess: tic-tac-toe.</p>
+<h4 class="h4" id="ch05lev2sec6"><strong><em>A Tic-Tac-Toe Board</em></strong></h4>
+<p class="noindent">A tic-tac-toe board looks like a large hash symbol (#) with nine slots that can each contain an <em>X</em>, an <em>O</em>, or a blank. To represent the board with a dictionary, you can assign each slot a string-value key, as shown in <a href="ch05.xhtml#ch05fig03">Figure 5-3</a>.</p>
+<div class="image"><a id="ch05fig03"/><img src="../images/05fig03.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 5-3: The slots of a tic-tac-toe board with their corresponding keys</em></p>
+<p class="indent">You can use string values to represent what&#8217;s in each slot on the board: <span class="literal">'X'</span>, <span class="literal">'O'</span>, or <span class="literal">' '</span> (a space). Thus, you&#8217;ll need to store nine strings. You can use a dictionary of values for this. The string value with the key <span class="literal">'top-R'</span> can represent the top-right corner, the string value with the key <span class="literal">'low-L'</span> can represent the bottom-left corner, the string value with the key <span class="literal">'mid-M'</span> can represent the middle, and so on.</p>
+<p class="indent"><span epub:type="pagebreak" id="page_121"/>This dictionary is a data structure that represents a tic-tac-toe board. Store this board-as-a-dictionary in a variable named <span class="literal">theBoard</span>. Open a new file editor window, and enter the following source code, saving it as <em>ticTacToe.py</em>:</p>
+<p class="programs">theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ',<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ',<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'low-L': ' ', 'low-M': ' ', 'low-R': ' '}</p>
+<p class="indent">The data structure stored in the <span class="literal">theBoard</span> variable represents the tic-tac-toe board in <a href="ch05.xhtml#ch05fig04">Figure 5-4</a>.</p>
+<div class="image"><a id="ch05fig04"/><img src="../images/05fig04.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 5-4: An empty tic-tac-toe board</em></p>
+<p class="indent">Since the value for every key in <span class="literal">theBoard</span> is a single-space string, this dictionary represents a completely clear board. If player X went first and chose the middle space, you could represent that board with this dictionary:</p>
+<p class="programs">theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ',<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'mid-L': ' ', 'mid-M': 'X', 'mid-R': ' ',<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'low-L': ' ', 'low-M': ' ', 'low-R': ' '}</p>
+<p class="indent">The data structure in <span class="literal">theBoard</span> now represents the tic-tac-toe board in <a href="ch05.xhtml#ch05fig05">Figure 5-5</a>.</p>
+<div class="image"><a id="ch05fig05"/><img src="../images/05fig05.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 5-5: The first move</em></p>
+<p class="indent"><span epub:type="pagebreak" id="page_122"/>A board where player O has won by placing <em>O</em>s across the top might look like this:</p>
+<p class="programs">theBoard = {'top-L': 'O', 'top-M': 'O', 'top-R': 'O',<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'mid-L': 'X', 'mid-M': 'X', 'mid-R': ' ',<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'low-L': ' ', 'low-M': ' ', 'low-R': 'X'}</p>
+<p class="indent">The data structure in <span class="literal">theBoard</span> now represents the tic-tac-toe board in <a href="ch05.xhtml#ch05fig06">Figure 5-6</a>.</p>
+<div class="image"><a id="ch05fig06"/><img src="../images/05fig06.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 5-6: Player O wins.</em></p>
+<p class="indent">Of course, the player sees only what is printed to the screen, not the contents of variables. Let&#8217;s create a function to print the board dictionary onto the screen. Make the following addition to <em>ticTacToe.py</em> (new code is in bold):</p>
+<p class="programs">theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ',<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ',<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'low-L': ' ', 'low-M': ' ', 'low-R': ' '}<br/>
+<span class="codestrong1">def printBoard(board):</span><br/>
+<span class="codestrong1">&#160;&#160;&#160;&#160;print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'])</span><br/>
+<span class="codestrong1">&#160;&#160;&#160;&#160;print('-+-+-')</span><br/>
+<span class="codestrong1">&#160;&#160;&#160;&#160;print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])</span><br/>
+<span class="codestrong1">&#160;&#160;&#160;&#160;print('-+-+-')</span><br/>
+<span class="codestrong1">&#160;&#160;&#160;&#160;print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])</span><br/>
+<span class="codestrong1">printBoard(theBoard)</span></p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/tictactoe1/">https://autbor.com/tictactoe1/</a></em>. When you run this program, <span class="literal">printBoard()</span> will print out a blank tic-tac-toe board.</p>
+<p class="programs">&#160;| |<br/>
+-+-+-<br/>
+&#160;| |<br/>
+-+-+-<br/>
+&#160;| |</p>
+<p class="indent"><span epub:type="pagebreak" id="page_123"/>The <span class="literal">printBoard()</span> function can handle any tic-tac-toe data structure you pass it. Try changing the code to the following:</p>
+<p class="programs">theBoard = <span class="codestrong1">{'top-L': 'O', 'top-M': 'O', 'top-R': 'O', 'mid-L': 'X', 'mid-M':</span><br/>
+<span class="codestrong1">'X', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': 'X'}</span><br/><br/>
+def printBoard(board):<br/>
+&#160;&#160;&#160;&#160;print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'])<br/>
+&#160;&#160;&#160;&#160;print('-+-+-')<br/>
+&#160;&#160;&#160;&#160;print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])<br/>
+&#160;&#160;&#160;&#160;print('-+-+-')<br/>
+&#160;&#160;&#160;&#160;print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])<br/>
+printBoard(theBoard)</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/tictactoe2/">https://autbor.com/tictactoe2/</a></em>. Now when you run this program, the new board will be printed to the screen.</p>
+<p class="programs">O|O|O<br/>
+-+-+-<br/>
+X|X|&#160;&#160;<br/>
+-+-+-<br/>
+&#160;| |X</p>
+<p class="indent">Because you created a data structure to represent a tic-tac-toe board and wrote code in <span class="literal">printBoard()</span> to interpret that data structure, you now have a program that &#8220;models&#8221; the tic-tac-toe board. You could have organized your data structure differently (for example, using keys like <span class="literal">'TOP-LEFT'</span> instead of <span class="literal">'top-L'</span>), but as long as the code works with your data structures, you will have a correctly working program.</p>
+<p class="indent">For example, the <span class="literal">printBoard()</span> function expects the tic-tac-toe data structure to be a dictionary with keys for all nine slots. If the dictionary you passed was missing, say, the <span class="literal">'mid-L'</span> key, your program would no longer work.</p>
+<p class="programs">O|O|O<br/>
+-+-+-<br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "ticTacToe.py", line 10, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;printBoard(theBoard)<br/>
+&#160;&#160;File "ticTacToe.py", line 6, in printBoard<br/>
+&#160;&#160;&#160;&#160;print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])<br/>
+KeyError: 'mid-L'</p>
+<p class="indent">Now let&#8217;s add code that allows the players to enter their moves. Modify the <em>ticTacToe.py</em> program to look like this:</p>
+<p class="programs">theBoard = <span class="codestrong1">{'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M':</span><br/>
+<span class="codestrong1">' ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}</span><br/><br/>
+def printBoard(board):<br/>
+&#160;&#160;&#160;&#160;print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'])<br/>
+&#160;&#160;&#160;&#160;print('-+-+-')<br/>
+<span epub:type="pagebreak" id="page_124"/>&#160;&#160;&#160;&#160;print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])<br/>
+&#160;&#160;&#160;&#160;print('-+-+-')<br/>
+&#160;&#160;&#160;&#160;print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])<br/>
+<span class="codestrong1">turn = 'X'</span><br/>
+<span class="codestrong1">for i in range(9):</span><br/>
+&#160;&#160;<span class="ent">&#x278A;</span> <span class="codestrong1">printBoard(theBoard)</span><br/>
+&#160;&#160;&#160;&#160;&#160;<span class="codestrong1">print('Turn for ' + turn + '. Move on which space?')</span><br/>
+&#160;&#160;<span class="ent">&#x278B;</span> <span class="codestrong1">move = input()</span><br/>
+&#160;&#160;<span class="ent">&#x278C;</span> <span class="codestrong1">theBoard[move] = turn</span><br/>
+&#160;&#160;<span class="ent">&#x278D;</span> <span class="codestrong1">if turn == 'X':</span><br/>
+&#160;<span class="codestrong1">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;turn = 'O'</span><br/>
+&#160;<span class="codestrong1">&#160;&#160;&#160;&#160;else:</span><br/>
+&#160;<span class="codestrong1">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;turn = 'X'</span><br/>
+&#160;printBoard(theBoard)</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/tictactoe3/">https://autbor.com/tictactoe3/</a></em>. The new code prints out the board at the start of each new turn <span class="ent">&#x278A;</span>, gets the active player&#8217;s move <span class="ent">&#x278B;</span>, updates the game board accordingly <span class="ent">&#x278C;</span>, and then swaps the active player <span class="ent">&#x278D;</span> before moving on to the next turn.</p>
+<p class="indent">When you run this program, it will look something like this:</p>
+<p class="programs">&#160;| |<br/>
+-+-+-<br/>
+&#160;| |<br/>
+-+-+-<br/>
+&#160;| |<br/>
+Turn for X. Move on which space?<br/>
+<span class="codestrong1">mid-M</span><br/>
+&#160;| |<br/>
+-+-+-<br/>
+&#160;|X|&#160;&#160;<br/>
+-+-+-<br/>
+&#160;| |<br/><br/>
+<span class="codeitalic1">--snip--</span><br/><br/>
+O|O|X<br/>
+-+-+-<br/>
+X|X|O<br/>
+-+-+-<br/>
+O| |X<br/>
+Turn for X. Move on which space?<br/>
+<span class="codestrong1">low-M</span><br/>
+O|O|X<br/>
+-+-+-<br/>
+X|X|O<br/>
+-+-+-<br/>
+O|X|X</p>
+<p class="indent">This isn&#8217;t a complete tic-tac-toe game&#8212;for instance, it doesn&#8217;t ever check whether a player has won&#8212;but it&#8217;s enough to see how data structures can be used in programs.</p>
+<div class="note">
+<p class="notet"><span epub:type="pagebreak" id="page_125"/><strong><span class="notes">NOTE</span></strong></p>
+<p class="notep"><em>If you are curious, the source code for a complete tic-tac-toe program is described in the resources available from</em> <a href="https://nostarch.com/automatestuff2/">https://nostarch.com/automatestuff2/</a>.</p>
+</div>
+<h4 class="h4" id="ch05lev2sec7"><strong><em>Nested Dictionaries and Lists</em></strong></h4>
+<p class="noindent">Modeling a tic-tac-toe board was fairly simple: the board needed only a single dictionary value with nine key-value pairs. As you model more complicated things, you may find you need dictionaries and lists that contain other dictionaries and lists. Lists are useful to contain an ordered series of values, and dictionaries are useful for associating keys with values. For example, here&#8217;s a program that uses a dictionary that contains other dictionaries of what items guests are bringing to a picnic. The <span class="literal">totalBrought()</span> function can read this data structure and calculate the total number of an item being brought by all the guests.</p>
+<p class="programs">allGuests = {'Alice': {'apples': 5, 'pretzels': 12},<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'Bob': {'ham sandwiches': 3, 'apples': 2},<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'Carol': {'cups': 3, 'apple pies': 1}}<br/>
+<br/>
+def totalBrought(guests, item):<br/>
+&#160;&#160;&#160;&#160;numBrought = 0<br/>
+&#160;&#160;<span class="ent">&#x278A;</span> for k, v in guests.items():<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;<span class="ent">&#x278B;</span> numBrought = numBrought + v.get(item, 0)<br/>
+&#160;&#160;&#160;&#160;&#160;return numBrought<br/><br/>
+print('Number of things being brought:')<br/>
+print(' - Apples&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;' + str(totalBrought(allGuests, 'apples')))<br/>
+print(' - Cups&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;' + str(totalBrought(allGuests, 'cups')))<br/>
+print(' - Cakes&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;' + str(totalBrought(allGuests, 'cakes')))<br/>
+print(' - Ham Sandwiches ' + str(totalBrought(allGuests, 'ham sandwiches')))<br/>
+print(' - Apple Pies&#160;&#160;&#160;&#160;&#160;' + str(totalBrought(allGuests, 'apple pies')))</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/guestpicnic/">https://autbor.com/guestpicnic/</a></em>. Inside the <span class="literal">totalBrought()</span> function, the <span class="literal">for</span> loop iterates over the key-value pairs in <span class="literal">guests</span> <span class="ent">&#x278A;</span>. Inside the loop, the string of the guest&#8217;s name is assigned to <span class="literal">k</span>, and the dictionary of picnic items they&#8217;re bringing is assigned to <span class="literal">v</span>. If the item parameter exists as a key in this dictionary, its value (the quantity) is added to <span class="literal">numBrought</span> <span class="ent">&#x278B;</span>. If it does not exist as a key, the <span class="literal">get()</span> method returns <span class="literal">0</span> to be added to <span class="literal">numBrought</span>.</p>
+<p class="indent">The output of this program looks like this:</p>
+<p class="programs">&#160;Number of things being brought:<br/>
+&#160;- Apples 7<br/>
+&#160;- Cups 3<br/>
+&#160;- Cakes 0<br/>
+&#160;- Ham Sandwiches 3<br/>
+&#160;- Apple Pies 1</p>
+<p class="indent">This may seem like such a simple thing to model that you wouldn&#8217;t need to bother with writing a program to do it. But realize that this same <span class="literal">totalBrought()</span> function could easily handle a dictionary that contains <span epub:type="pagebreak" id="page_126"/>thousands of guests, each bringing <em>thousands</em> of different picnic items. Then having this information in a data structure along with the <span class="literal">totalBrought()</span> function would save you a lot of time!</p>
+<p class="indent">You can model things with data structures in whatever way you like, as long as the rest of the code in your program can work with the data model correctly. When you first begin programming, don&#8217;t worry so much about the &#8220;right&#8221; way to model data. As you gain more experience, you may come up with more efficient models, but the important thing is that the data model works for your program&#8217;s needs.</p>
+<h3 class="h3" id="ch05lev1sec4"><strong>Summary</strong></h3>
+<p class="noindent">You learned all about dictionaries in this chapter. Lists and dictionaries are values that can contain multiple values, including other lists and dictionaries. Dictionaries are useful because you can map one item (the key) to another (the value), as opposed to lists, which simply contain a series of values in order. Values inside a dictionary are accessed using square brackets just as with lists. Instead of an integer index, dictionaries can have keys of a variety of data types: integers, floats, strings, or tuples. By organizing a program&#8217;s values into data structures, you can create representations of real-world objects. You saw an example of this with a tic-tac-toe board.</p>
+<h3 class="h3" id="ch05lev1sec5"><strong>Practice Questions</strong></h3>
+<p class="question"><a id="ch05que1" href="app03.xhtml#ch05ans1">1</a>. What does the code for an empty dictionary look like?</p>
+<p class="question"><a id="ch05que2" href="app03.xhtml#ch05ans2">2</a>. What does a dictionary value with a key <span class="literal">'foo'</span> and a value <span class="literal">42</span> look like?</p>
+<p class="question"><a id="ch05que3" href="app03.xhtml#ch05ans3">3</a>. What is the main difference between a dictionary and a list?</p>
+<p class="question"><a id="ch05que4" href="app03.xhtml#ch05ans4">4</a>. What happens if you try to access <span class="literal">spam['foo']</span> if <span class="literal">spam</span> is <span class="literal">{'bar': 100}</span>?</p>
+<p class="question"><a id="ch05que5" href="app03.xhtml#ch05ans5">5</a>. If a dictionary is stored in <span class="literal">spam</span>, what is the difference between the expressions <span class="literal">'cat' in spam</span> and <span class="literal">'cat' in spam.keys()</span>?</p>
+<p class="question"><a id="ch05que6" href="app03.xhtml#ch05ans6">6</a>. If a dictionary is stored in <span class="literal">spam</span>, what is the difference between the expressions <span class="literal">'cat' in spam</span> and <span class="literal">'cat' in spam.values()</span>?</p>
+<p class="question"><a id="ch05que7" href="app03.xhtml#ch05ans7">7</a>. What is a shortcut for the following code?</p>
+<p class="programs1">if 'color' not in spam:<br/>
+&#160;&#160;&#160;&#160;spam['color'] = 'black'</p>
+<p class="question"><a id="ch05que8" href="app03.xhtml#ch05ans8">8</a>. What module and function can be used to &#8220;pretty print&#8221; dictionary values?</p>
+<h3 class="h3" id="ch05lev1sec6"><span epub:type="pagebreak" id="page_127"/><strong>Practice Projects</strong></h3>
+<p class="noindent">For practice, write programs to do the following tasks.</p>
+<h4 class="h4" id="ch05lev2sec8"><strong><em>Chess Dictionary Validator</em></strong></h4>
+<p class="noindent">In this chapter, we used the dictionary value <span class="literal">{'1h': 'bking', '6c': 'wqueen', '2g': 'bbishop', '5h': 'bqueen', '3e': 'wking'}</span> to represent a chess board. Write a function named <span class="literal">isValidChessBoard()</span> that takes a dictionary argument and returns <span class="literal">True</span> or <span class="literal">False</span> depending on if the board is valid.</p>
+<p class="indent">A valid board will have exactly one black king and exactly one white king. Each player can only have at most 16 pieces, at most 8 pawns, and all pieces must be on a valid space from <span class="literal">'1a'</span> to <span class="literal">'8h';</span> that is, a piece can&#8217;t be on space <span class="literal">'9z'</span>. The piece names begin with either a <span class="literal">'w'</span> or <span class="literal">'b'</span> to represent white or black, followed by <span class="literal">'pawn'</span>, <span class="literal">'knight'</span>, <span class="literal">'bishop'</span>, <span class="literal">'rook'</span>, <span class="literal">'queen'</span>, or <span class="literal">'king'</span>. This function should detect when a bug has resulted in an improper chess board.</p>
+<h4 class="h4" id="ch05lev2sec9"><strong><em>Fantasy Game Inventory</em></strong></h4>
+<p class="noindent">You are creating a fantasy video game. The data structure to model the player&#8217;s inventory will be a dictionary where the keys are string values describing the item in the inventory and the value is an integer value detailing how many of that item the player has. For example, the dictionary value <span class="literal">{'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}</span> means the player has 1 rope, 6 torches, 42 gold coins, and so on.</p>
+<p class="indent">Write a function named <span class="literal">displayInventory()</span> that would take any possible &#8220;inventory&#8221; and display it like the following:</p>
+<p class="programs">Inventory:<br/>
+12 arrow<br/>
+42 gold coin<br/>
+1 rope<br/>
+6 torch<br/>
+1 dagger<br/>
+Total number of items: 62</p>
+<p class="indent">Hint: You can use a <span class="literal">for</span> loop to loop through all the keys in a dictionary.</p>
+<p class="programs"># inventory.py<br/>
+stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}<br/><br/>
+def displayInventory(inventory):<br/>
+&#160;&#160;&#160;&#160;print("Inventory:")<br/>
+&#160;&#160;&#160;&#160;item_total = 0<br/>
+&#160;&#160;&#160;&#160;for k, v in inventory.items():<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# FILL THIS PART IN<br/>
+&#160;&#160;&#160;&#160;print("Total number of items: " + str(item_total))<br/><br/>
+displayInventory(stuff)</p>
+<h4 class="h4" id="ch05lev2sec10"><span epub:type="pagebreak" id="page_128"/><strong><em>List to Dictionary Function for Fantasy Game Inventory</em></strong></h4>
+<p class="noindent">Imagine that a vanquished dragon&#8217;s loot is represented as a list of strings like this:</p>
+<p class="programs">dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']</p>
+<p class="indent">Write a function named <span class="literal">addToInventory(inventory, addedItems)</span>, where the <span class="literal">inventory</span> parameter is a dictionary representing the player&#8217;s inventory (like in the previous project) and the <span class="literal">addedItems</span> parameter is a list like <span class="literal">dragonLoot</span>. The <span class="literal">addToInventory()</span> function should return a dictionary that represents the updated inventory. Note that the <span class="literal">addedItems</span> list can contain multiples of the same item. Your code could look something like this:</p>
+<p class="programs">def addToInventory(inventory, addedItems):<br/>
+&#160;&#160;&#160;&#160;# your code goes here<br/><br/>
+inv = {'gold coin': 42, 'rope': 1}<br/>
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']<br/>
+inv = addToInventory(inv, dragonLoot)<br/>
+displayInventory(inv)</p>
+<p class="indent">The previous program (with your <span class="literal">displayInventory()</span> function from the previous project) would output the following:</p>
+<p class="programs">Inventory:<br/>
+45 gold coin<br/>
+1 rope<br/>
+1 ruby<br/>
+1 dagger<br/><br/>
+Total number of items: 48</p>
+</body>
+</html>

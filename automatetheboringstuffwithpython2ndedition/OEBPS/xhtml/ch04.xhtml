@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xml:lang="en-us" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:ns="http://www.w3.org/2001/10/synthesis">
+<head>
+<title>Automate the Boring Stuff with Python: Practical Programming for Total Beginners, 2nd Edition</title>
+<link rel="stylesheet" type="text/css" href="../styles/9781593279936.css"/>
+</head>
+<body>
+<h2 class="h2" id="ch04"><span epub:type="pagebreak" id="page_77"/><strong><span class="big">4</span><br/>LISTS</strong></h2>
+<div class="image1"><img src="../images/04fig00.jpg" alt="Image"/></div>
+<p class="noindent">One more topic you&#8217;ll need to understand before you can begin writing programs in earnest is the list data type and its cousin, the tuple. Lists and tuples can contain multiple values, which makes writing programs that handle large amounts of data easier. And since lists themselves can contain other lists, you can use them to arrange data into hierarchical structures.</p>
+<p class="indent">In this chapter, I&#8217;ll discuss the basics of lists. I&#8217;ll also teach you about methods, which are functions that are tied to values of a certain data type. Then I&#8217;ll briefly cover the sequence data types (lists, tuples, and strings) and show how they compare with each other. In the next chapter, I&#8217;ll introduce you to the dictionary data type.</p>
+<h3 class="h3" id="ch04lev1sec1"><span epub:type="pagebreak" id="page_78"/><strong>The List Data Type</strong></h3>
+<p class="noindent">A <em>list</em> is a value that contains multiple values in an ordered sequence. The term <em>list value</em> refers to the list itself (which is a value that can be stored in a variable or passed to a function like any other value), not the values inside the list value. A list value looks like this: <span class="literal">['cat', 'bat', 'rat', 'elephant']</span>. Just as string values are typed with quote characters to mark where the string begins and ends, a list begins with an opening square bracket and ends with a closing square bracket, <span class="literal">[]</span>. Values inside the list are also called <em>items</em>. Items are separated with commas (that is, they are <em>comma-delimited</em>). For example, enter the following into the interactive shell:</p>
+<p class="programs">&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">[1, 2, 3]</span><br/>
+&#160;&#160;&#160;[1, 2, 3]<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">['cat', 'bat', 'rat', 'elephant']</span><br/>
+&#160;&#160;&#160;['cat', 'bat', 'rat', 'elephant']<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">['hello', 3.1415, True, None, 42]</span><br/>
+&#160;&#160;&#160;['hello', 3.1415, True, None, 42]<br/>
+<span class="ent">&#x278A;</span> &gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+&#160;&#160;&#160;['cat', 'bat', 'rat', 'elephant']</p>
+<p class="indent">The <span class="literal">spam</span> variable <span class="ent">&#x278A;</span> is still assigned only one value: the list value. But the list value itself contains other values. The value <span class="literal">[]</span> is an empty list that contains no values, similar to <span class="literal">''</span>, the empty string.</p>
+<h4 class="h4" id="ch04lev2sec1"><strong><em>Getting Individual Values in a List with Indexes</em></strong></h4>
+<p class="noindent">Say you have the list <span class="literal">['cat', 'bat', 'rat', 'elephant']</span> stored in a variable named <span class="literal">spam</span>. The Python code <span class="literal">spam[0]</span> would evaluate to <span class="literal">'cat'</span>, and <span class="literal">spam[1]</span> would evaluate to <span class="literal">'bat'</span>, and so on. The integer inside the square brackets that follows the list is called an <em>index</em>. The first value in the list is at index <span class="literal">0</span>, the second value is at index <span class="literal">1</span>, the third value is at index <span class="literal">2</span>, and so on. <a href="ch04.xhtml#ch04fig01">Figure 4-1</a> shows a list value assigned to <span class="literal">spam</span>, along with what the index expressions would evaluate to. Note that because the first index is <span class="literal">0</span>, the last index is one less than the size of the list; a list of four items has <span class="literal">3</span> as its last index.</p>
+<div class="image"><a id="ch04fig01"/><img src="../images/04fig01.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 4-1: A list value stored in the variable <span class="literal">spam</span>, showing which value each index refers to</em></p>
+<p class="indent">For example, enter the following expressions into the interactive shell. Start by assigning a list to the variable <span class="literal">spam</span>.</p>
+<p class="programs">&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">spam[0]</span><br/>
+&#160;&#160;&#160;'cat'<br/>
+&#160;<span epub:type="pagebreak" id="page_79"/>&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">spam[1]</span><br/>
+&#160;&#160;&#160;'bat'<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">spam[2]</span><br/>
+&#160;&#160;&#160;'rat'<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">spam[3]</span><br/>
+&#160;&#160;&#160;'elephant'<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">['cat', 'bat', 'rat', 'elephant'][3]</span><br/>
+&#160;&#160;&#160;'elephant'<br/>
+<span class="ent">&#x278A;</span> &gt;&gt;&gt; <span class="codestrong1">'Hello, ' + spam[0]</span><br/>
+<span class="ent">&#x278B;</span> 'Hello, cat'<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">'The ' + spam[1] + ' ate the ' + spam[0] + '.'</span><br/>
+&#160;&#160;&#160;'The bat ate the cat.'</p>
+<p class="indent">Notice that the expression <span class="literal">'Hello, ' + spam[0]</span> <span class="ent">&#x278A;</span> evaluates to <span class="literal">'Hello, ' + 'cat'</span> because <span class="literal">spam[0]</span> evaluates to the string <span class="literal">'cat'</span>. This expression in turn evaluates to the string value <span class="literal">'Hello, cat'</span> <span class="ent">&#x278B;</span>.</p>
+<p class="indent">Python will give you an <span class="literal">IndexError</span> error message if you use an index that exceeds the number of values in your list value.</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[10000]</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#9&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;spam[10000]<br/>
+IndexError: list index out of range</p>
+<p class="indent">Indexes can be only integer values, not floats. The following example will cause a <span class="literal">TypeError</span> error:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[1]</span><br/>
+'bat'<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[1.0]</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#13&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;spam[1.0]<br/>
+TypeError: list indices must be integers or slices, not float<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[int(1.0)]</span><br/>
+'bat'</p>
+<p class="indent">Lists can also contain other list values. The values in these lists of lists can be accessed using multiple indexes, like so:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = [['cat', 'bat'], [10, 20, 30, 40, 50]]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[0]</span><br/>
+['cat', 'bat']<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[0][1]</span><br/>
+'bat'<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[1][4]</span><br/>
+50</p>
+<p class="indent"><span epub:type="pagebreak" id="page_80"/>The first index dictates which list value to use, and the second indicates the value within the list value. For example, <span class="literal">spam[0][1]</span> prints <span class="literal">'bat'</span>, the second value in the first list. If you only use one index, the program will print the full list value at that index.</p>
+<h4 class="h4" id="ch04lev2sec2"><strong><em>Negative Indexes</em></strong></h4>
+<p class="noindent">While indexes start at <span class="literal">0</span> and go up, you can also use negative integers for the index. The integer value <span class="literal">-1</span> refers to the last index in a list, the value <span class="literal">-2</span> refers to the second-to-last index in a list, and so on. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[-1]</span><br/>
+'elephant'<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[-3]</span><br/>
+'bat'<br/>
+&gt;&gt;&gt; <span class="codestrong1">'The ' + spam[-1] + ' is afraid of the ' + spam[-3] + '.'</span><br/>
+'The elephant is afraid of the bat.'</p>
+<h4 class="h4" id="ch04lev2sec3"><strong><em>Getting a List from Another List with Slices</em></strong></h4>
+<p class="noindent">Just as an index can get a single value from a list, a <em>slice</em> can get several values from a list, in the form of a new list. A slice is typed between square brackets, like an index, but it has two integers separated by a colon. Notice the difference between indexes and slices.</p>
+<ul>
+<li class="noindent"><span class="literal">spam[2]</span> is a list with an index (one integer).</li>
+<li class="noindent"><span class="literal">spam[1:4]</span> is a list with a slice (two integers).</li>
+</ul>
+<p class="indent">In a slice, the first integer is the index where the slice starts. The second integer is the index where the slice ends. A slice goes up to, but will not include, the value at the second index. A slice evaluates to a new list value. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[0:4]</span><br/>
+['cat', 'bat', 'rat', 'elephant']<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[1:3]</span><br/>
+['bat', 'rat']<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[0:-1]</span><br/>
+['cat', 'bat', 'rat']</p>
+<p class="indent">As a shortcut, you can leave out one or both of the indexes on either side of the colon in the slice. Leaving out the first index is the same as using <span class="literal">0</span>, or the beginning of the list. Leaving out the second index is the same as using the length of the list, which will slice to the end of the list. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[:2]</span><br/>
+<span epub:type="pagebreak" id="page_81"/>['cat', 'bat']<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[1:]</span><br/>
+['bat', 'rat', 'elephant']<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[:]</span><br/>
+['cat', 'bat', 'rat', 'elephant']</p>
+<h4 class="h4" id="ch04lev2sec4"><strong><em>Getting a List&#8217;s Length with the len() Function</em></strong></h4>
+<p class="noindent">The <span class="literal">len()</span> function will return the number of values that are in a list value passed to it, just like it can count the number of characters in a string value. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'dog', 'moose']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">len(spam)</span><br/>
+3</p>
+<h4 class="h4" id="ch04lev2sec5"><strong><em>Changing Values in a List with Indexes</em></strong></h4>
+<p class="noindent">Normally, a variable name goes on the left side of an assignment statement, like <span class="literal">spam = 42</span>. However, you can also use an index of a list to change the value at that index. For example, <span class="literal">spam[1] = 'aardvark'</span> means &#8220;Assign the value at index <span class="literal">1</span> in the list <span class="literal">spam</span> to the string <span class="literal">'aardvark'</span>.&#8221; Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[1] = 'aardvark'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['cat', 'aardvark', 'rat', 'elephant']<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[2] = spam[1]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['cat', 'aardvark', 'aardvark', 'elephant']<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam[-1] = 12345</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['cat', 'aardvark', 'aardvark', 12345]</p>
+<h4 class="h4" id="ch04lev2sec6"><strong><em>List Concatenation and List Replication</em></strong></h4>
+<p class="noindent">Lists can be concatenated and replicated just like strings. The <span class="literal">+</span> operator combines two lists to create a new list value and the <span class="literal">*</span> operator can be used with a list and an integer value to replicate the list. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">[1, 2, 3] + ['A', 'B', 'C']</span><br/>
+[1, 2, 3, 'A', 'B', 'C']<br/>
+&gt;&gt;&gt; <span class="codestrong1">['X', 'Y', 'Z'] * 3</span><br/>
+['X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z']<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam = [1, 2, 3]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam = spam + ['A', 'B', 'C']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+[1, 2, 3, 'A', 'B', 'C']</p>
+<h4 class="h4" id="ch04lev2sec7"><span epub:type="pagebreak" id="page_82"/><strong><em>Removing Values from Lists with del Statements</em></strong></h4>
+<p class="noindent">The <span class="literal">del</span> statement will delete values at an index in a list. All of the values in the list after the deleted value will be moved up one index. For example, enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">del spam[2]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['cat', 'bat', 'elephant']<br/>
+&gt;&gt;&gt; <span class="codestrong1">del spam[2]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['cat', 'bat']</p>
+<p class="indent">The <span class="literal">del</span> statement can also be used on a simple variable to delete it, as if it were an &#8220;unassignment&#8221; statement. If you try to use the variable after deleting it, you will get a <span class="literal">NameError</span> error because the variable no longer exists. In practice, you almost never need to delete simple variables. The <span class="literal">del</span> statement is mostly used to delete values from lists.</p>
+<h3 class="h3" id="ch04lev1sec2"><strong>Working with Lists</strong></h3>
+<p class="noindent">When you first begin writing programs, it&#8217;s tempting to create many individual variables to store a group of similar values. For example, if I wanted to store the names of my cats, I might be tempted to write code like this:</p>
+<p class="programs">catName1 = 'Zophie'<br/>
+catName2 = 'Pooka'<br/>
+catName3 = 'Simon'<br/>
+catName4 = 'Lady Macbeth'<br/>
+catName5 = 'Fat-tail'<br/>
+catName6 = 'Miss Cleo'</p>
+<p class="indent">It turns out that this is a bad way to write code. (Also, I don&#8217;t actually own this many cats, I swear.) For one thing, if the number of cats changes, your program will never be able to store more cats than you have variables. These types of programs also have a lot of duplicate or nearly identical code in them. Consider how much duplicate code is in the following program, which you should enter into the file editor and save as <em>allMyCats1.py</em>:</p>
+<p class="programs">print('Enter the name of cat 1:')<br/>
+catName1 = input()<br/>
+print('Enter the name of cat 2:')<br/>
+catName2 = input()<br/>
+print('Enter the name of cat 3:')<br/>
+catName3 = input()<br/>
+print('Enter the name of cat 4:')<br/>
+catName4 = input()<br/>
+print('Enter the name of cat 5:')<br/>
+catName5 = input()<br/>
+print('Enter the name of cat 6:')<br/>
+<span epub:type="pagebreak" id="page_83"/>catName6 = input()<br/>
+print('The cat names are:')<br/>
+print(catName1 + ' ' + catName2 + ' ' + catName3 + ' ' + catName4 + ' ' +<br/>
+catName5 + ' ' + catName6)</p>
+<p class="indent">Instead of using multiple, repetitive variables, you can use a single variable that contains a list value. For example, here&#8217;s a new and improved version of the <em>allMyCats1.py</em> program. This new version uses a single list and can store any number of cats that the user types in. In a new file editor window, enter the following source code and save it as <em>allMyCats2.py</em>:</p>
+<p class="programs">catNames = []<br/>
+while True:<br/>
+&#160;&#160;&#160;&#160;print('Enter the name of cat ' + str(len(catNames) + 1) + <br/>
+&#160;&#160;&#160;&#160;&#160;&#160;' (Or enter nothing to stop.):')<br/>
+&#160;&#160;&#160;&#160;name = input()<br/>
+&#160;&#160;&#160;&#160;if name == '':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;break<br/>
+&#160;&#160;&#160;&#160;catNames = catNames + [name]&#160;&#160;# list concatenation<br/>
+print('The cat names are:')<br/>
+for name in catNames:<br/>
+&#160;&#160;&#160;&#160;print('&#160;&#160;' + name)</p>
+<p class="indent">When you run this program, the output will look something like this:</p>
+<p class="programs">Enter the name of cat 1 (Or enter nothing to stop.):<br/>
+<span class="codestrong1">Zophie</span><br/>
+Enter the name of cat 2 (Or enter nothing to stop.):<br/>
+<span class="codestrong1">Pooka</span><br/>
+Enter the name of cat 3 (Or enter nothing to stop.):<br/>
+<span class="codestrong1">Simon</span><br/>
+Enter the name of cat 4 (Or enter nothing to stop.):<br/>
+<span class="codestrong1">Lady Macbeth</span><br/>
+Enter the name of cat 5 (Or enter nothing to stop.):<br/>
+<span class="codestrong1">Fat-tail</span><br/>
+Enter the name of cat 6 (Or enter nothing to stop.):<br/>
+<span class="codestrong1">Miss Cleo</span><br/>
+Enter the name of cat 7 (Or enter nothing to stop.):<br/><br/>
+The cat names are:<br/>
+&#160;&#160;Zophie<br/>
+&#160;&#160;Pooka<br/>
+&#160;&#160;Simon<br/>
+&#160;&#160;Lady Macbeth<br/>
+&#160;&#160;Fat-tail<br/>
+&#160;&#160;Miss Cleo</p>
+<p class="indent">You can view the execution of these programs at <em><a href="https://autbor.com/allmycats1/">https://autbor.com/allmycats1/</a></em> and <em><a href="https://autbor.com/allmycats2/">https://autbor.com/allmycats2/</a></em>. The benefit of using a list is that your data is now in a structure, so your program is much more flexible in processing the data than it would be with several repetitive variables.</p>
+<h4 class="h4" id="ch04lev2sec8"><span epub:type="pagebreak" id="page_84"/><strong><em>Using for Loops with Lists</em></strong></h4>
+<p class="noindent">In <a href="ch02.xhtml#ch02">Chapter 2</a>, you learned about using <span class="literal">for</span> loops to execute a block of code a certain number of times. Technically, a <span class="literal">for</span> loop repeats the code block once for each item in a list value. For example, if you ran this code:</p>
+<p class="programs">for i in range(4):<br/>
+&#160;&#160;&#160;&#160;print(i)</p>
+<p class="noindent">the output of this program would be as follows:</p>
+<p class="programs">0<br/>
+1<br/>
+2<br/>
+3</p>
+<p class="indent">This is because the return value from <span class="literal">range(4)</span> is a sequence value that Python considers similar to <span class="literal">[0, 1, 2, 3]</span>. (Sequences are described in &#8220;<a href="ch04.xhtml#ch04lev1sec6">Sequence Data Types</a>&#8221; on <a href="ch04.xhtml#page_93">page 93</a>.) The following program has the same output as the previous one:</p>
+<p class="programs">for i in [0, 1, 2, 3]:<br/>
+&#160;&#160;&#160;&#160;print(i)</p>
+<p class="indent">The previous <span class="literal">for</span> loop actually loops through its clause with the variable <span class="literal">i</span> set to a successive value in the <span class="literal">[0, 1, 2, 3]</span> list in each iteration.</p>
+<p class="indent">A common Python technique is to use <span class="literal">range(len(</span><span class="codeitalic">someList</span><span class="literal">))</span> with a <span class="literal">for</span> loop to iterate over the indexes of a list. For example, enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">supplies = ['pens', 'staplers', 'flamethrowers', 'binders']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">for i in range(len(supplies)):</span><br/>
+...&#160;&#160;&#160;&#160;&#160;<span class="codestrong1">print('Index ' + str(i) + ' in supplies is: ' + supplies[i])</span><br/><br/>
+Index 0 in supplies is: pens<br/>
+Index 1 in supplies is: staplers<br/>
+Index 2 in supplies is: flamethrowers<br/>
+Index 3 in supplies is: binders</p>
+<p class="indent">Using <span class="literal">range(len(supplies))</span> in the previously shown <span class="literal">for</span> loop is handy because the code in the loop can access the index (as the variable <span class="literal">i</span>) and the value at that index (as <span class="literal">supplies[i]</span>). Best of all, <span class="literal">range(len(supplies))</span> will iterate through all the indexes of <span class="literal">supplies</span>, no matter how many items it contains.</p>
+<h4 class="h4" id="ch04lev2sec9"><strong><em>The in and not in Operators</em></strong></h4>
+<p class="noindent">You can determine whether a value is or isn&#8217;t in a list with the <span class="literal">in</span> and <span class="literal">not in</span> operators. Like other operators, <span class="literal">in</span> and <span class="literal">not in</span> are used in expressions and connect two values: a value to look for in a list and the list where it may be <span epub:type="pagebreak" id="page_85"/>found. These expressions will evaluate to a Boolean value. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">'howdy' in ['hello', 'hi', 'howdy', 'heyas']</span><br/>
+True<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam = ['hello', 'hi', 'howdy', 'heyas']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">'cat' in spam</span><br/>
+False<br/>
+&gt;&gt;&gt; <span class="codestrong1">'howdy' not in spam</span><br/>
+False<br/>
+&gt;&gt;&gt; <span class="codestrong1">'cat' not in spam</span><br/>
+True</p>
+<p class="indent">For example, the following program lets the user type in a pet name and then checks to see whether the name is in a list of pets. Open a new file editor window, enter the following code, and save it as <em>myPets.py</em>:</p>
+<p class="programs">myPets = ['Zophie', 'Pooka', 'Fat-tail']<br/>
+print('Enter a pet name:')<br/>
+name = input()<br/>
+if name not in myPets:<br/>
+&#160;&#160;&#160;&#160;print('I do not have a pet named ' + name)<br/>
+else:<br/>
+&#160;&#160;&#160;&#160;print(name + ' is my pet.')</p>
+<p class="indent">The output may look something like this:</p>
+<p class="programs">Enter a pet name:<br/>
+<span class="codestrong1">Footfoot</span><br/>
+I do not have a pet named Footfoot</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/mypets/">https://autbor.com/mypets/</a></em>.</p>
+<h4 class="h4" id="ch04lev2sec10"><strong><em>The Multiple Assignment Trick</em></strong></h4>
+<p class="noindent">The <em>multiple assignment trick</em> (technically called <em>tuple unpacking</em>) is a shortcut that lets you assign multiple variables with the values in a list in one line of code. So instead of doing this:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">cat = ['fat', 'gray', 'loud']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">size = cat[0]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">color = cat[1]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">disposition = cat[2]</span></p>
+<p class="noindent">you could type this line of code:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">cat = ['fat', 'gray', 'loud']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">size, color, disposition = cat</span></p>
+<p class="indent"><span epub:type="pagebreak" id="page_86"/>The number of variables and the length of the list must be exactly equal, or Python will give you a <span class="literal">ValueError</span>:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">cat = ['fat', 'gray', 'loud']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">size, color, disposition, name = cat</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#84&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;size, color, disposition, name = cat<br/>
+ValueError: not enough values to unpack (expected 4, got 3)</p>
+<h4 class="h4" id="ch04lev2sec11"><strong><em>Using the enumerate() Function with Lists</em></strong></h4>
+<p class="noindent">Instead of using the <span class="literal">range(len(</span><span class="codeitalic">someList</span><span class="literal">))</span> technique with a <span class="literal">for</span> loop to obtain the integer index of the items in the list, you can call the <span class="literal">enumerate()</span> function instead. On each iteration of the loop, <span class="literal">enumerate()</span> will return two values: the index of the item in the list, and the item in the list itself. For example, this code is equivalent to the code in the &#8220;<a href="ch04.xhtml#ch04lev2sec8">Using for Loops with Lists</a>&#8221; on <a href="ch04.xhtml#page_84">page 84</a>:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">supplies = ['pens', 'staplers', 'flamethrowers', 'binders']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">for index, item in enumerate(supplies):</span><br/>
+...&#160;&#160;&#160;&#160;&#160;<span class="codestrong1">print('Index ' + str(index) + ' in supplies is: ' + item)</span><br/><br/>
+Index 0 in supplies is: pens<br/>
+Index 1 in supplies is: staplers<br/>
+Index 2 in supplies is: flamethrowers<br/>
+Index 3 in supplies is: binders</p>
+<p class="indent">The <span class="literal">enumerate()</span> function is useful if you need both the item and the item&#8217;s index in the loop&#8217;s block.</p>
+<h4 class="h4" id="ch04lev2sec12"><strong><em>Using the random.choice() and random.shuffle() Functions with Lists</em></strong></h4>
+<p class="noindent">The <span class="literal">random</span> module has a couple functions that accept lists for arguments. The <span class="literal">random.choice()</span> function will return a randomly selected item from the list. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">import random</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">pets = ['Dog', 'Cat', 'Moose']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">random.choice(pets)</span><br/>
+'Dog'<br/>
+&gt;&gt;&gt; <span class="codestrong1">random.choice(pets)</span><br/>
+'Cat'<br/>
+&gt;&gt;&gt; <span class="codestrong1">random.choice(pets)</span><br/>
+'Cat'</p>
+<p class="indent">You can consider <span class="literal">random.choice(someList)</span> to be a shorter form of <span class="literal">someList[random.randint(0, len(someList) &#8211; 1]</span>.</p>
+<p class="indent"><span epub:type="pagebreak" id="page_87"/>The <span class="literal">random.shuffle()</span> function will reorder the items in a list. This function modifies the list in place, rather than returning a new list. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">import random</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">people = ['Alice', 'Bob', 'Carol', 'David']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">random.shuffle(people)</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">people</span><br/>
+['Carol', 'David', 'Alice', 'Bob']<br/>
+&gt;&gt;&gt; <span class="codestrong1">random.shuffle(people)</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">people</span><br/>
+['Alice', 'David', 'Bob', 'Carol']</p>
+<h3 class="h3" id="ch04lev1sec3"><strong>Augmented Assignment Operators</strong></h3>
+<p class="noindent">When assigning a value to a variable, you will frequently use the variable itself. For example, after assigning <span class="literal">42</span> to the variable <span class="literal">spam</span>, you would increase the value in <span class="literal">spam</span> by <span class="literal">1</span> with the following code:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = 42</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam = spam + 1</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+43</p>
+<p class="indent">As a shortcut, you can use the augmented assignment operator <span class="literal">+=</span> to do the same thing:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = 42</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam += 1</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+43</p>
+<p class="indent">There are augmented assignment operators for the <span class="literal">+</span>, <span class="literal">-</span>, <span class="literal">*</span>, <span class="literal">/</span>, and <span class="literal">%</span> operators, described in <a href="ch04.xhtml#ch04tab01">Table 4-1</a>.</p>
+<p class="tabcap" id="ch04tab01"><strong>Table 4-1:</strong> The Augmented Assignment Operators</p>
+<table class="topbot-d">
+<colgroup>
+<col style="width:50%"/>
+<col style="width:50%"/>
+</colgroup>
+<thead>
+<tr>
+<td style="vertical-align: top;" class="table-h"><p class="tab_th"><strong>Augmented assignment statement</strong></p></td>
+<td style="vertical-align: top;" class="table-h"><p class="tab_th"><strong>Equivalent assignment statement</strong></p></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">spam += 1</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">spam = spam + 1</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-v"><p class="taba"><span class="literal">spam -= 1</span></p></td>
+<td style="vertical-align: top;" class="table-v"><p class="taba"><span class="literal">spam = spam - 1</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">spam *= 1</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">spam = spam * 1</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-v"><p class="taba"><span class="literal">spam /= 1</span></p></td>
+<td style="vertical-align: top;" class="table-v"><p class="taba"><span class="literal">spam = spam / 1</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-ba"><p class="taba"><span class="literal">spam %= 1</span></p></td>
+<td style="vertical-align: top;" class="table-ba"><p class="taba"><span class="literal">spam = spam % 1</span></p></td>
+</tr>
+</tbody>
+</table>
+<p class="indent"><span epub:type="pagebreak" id="page_88"/>The <span class="literal">+=</span> operator can also do string and list concatenation, and the <span class="literal">*=</span> operator can do string and list replication. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = 'Hello,'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam += ' world!'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+'Hello world!'<br/>
+&gt;&gt;&gt; <span class="codestrong1">bacon = ['Zophie']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">bacon *= 3</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">bacon</span><br/>
+['Zophie', 'Zophie', 'Zophie']</p>
+<h3 class="h3" id="ch04lev1sec4"><strong>Methods</strong></h3>
+<p class="noindent">A <em>method</em> is the same thing as a function, except it is &#8220;called on&#8221; a value. For example, if a list value were stored in <span class="literal">spam</span>, you would call the <span class="literal">index()</span> list method (which I&#8217;ll explain shortly) on that list like so: <span class="literal">spam.index('hello')</span>. The method part comes after the value, separated by a period.</p>
+<p class="indent">Each data type has its own set of methods. The list data type, for example, has several useful methods for finding, adding, removing, and otherwise manipulating values in a list.</p>
+<h4 class="h4" id="ch04lev2sec13"><strong><em>Finding a Value in a List with the index() Method</em></strong></h4>
+<p class="noindent">List values have an <span class="literal">index()</span> method that can be passed a value, and if that value exists in the list, the index of the value is returned. If the value isn&#8217;t in the list, then Python produces a <span class="literal">ValueError</span> error. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['hello', 'hi', 'howdy', 'heyas']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.index('hello')</span><br/>
+0<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.index('heyas')</span><br/>
+3<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.index('howdy howdy howdy')</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#31&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;spam.index('howdy howdy howdy')<br/>
+ValueError: 'howdy howdy howdy' is not in list</p>
+<p class="indent">When there are duplicates of the value in the list, the index of its first appearance is returned. Enter the following into the interactive shell, and notice that <span class="literal">index()</span> returns <span class="literal">1</span>, not <span class="literal">3</span>:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['Zophie', 'Pooka', 'Fat-tail', 'Pooka']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.index('Pooka')</span><br/>
+1</p>
+<h4 class="h4" id="ch04lev2sec14"><span epub:type="pagebreak" id="page_89"/><strong><em>Adding Values to Lists with the append() and insert() Methods</em></strong></h4>
+<p class="noindent">To add new values to a list, use the <span class="literal">append()</span> and <span class="literal">insert()</span> methods. Enter the following into the interactive shell to call the <span class="literal">append()</span> method on a list value stored in the variable <span class="literal">spam</span>:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'dog', 'bat']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.append('moose')</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['cat', 'dog', 'bat', 'moose']</p>
+<p class="indent">The previous <span class="literal">append()</span> method call adds the argument to the end of the list. The <span class="literal">insert()</span> method can insert a value at any index in the list. The first argument to <span class="literal">insert()</span> is the index for the new value, and the second argument is the new value to be inserted. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'dog', 'bat']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.insert(1, 'chicken'</span>)<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['cat', 'chicken', 'dog', 'bat']</p>
+<p class="indent">Notice that the code is <span class="literal">spam.append('moose')</span> and <span class="literal">spam.insert(1, 'chicken')</span>, not <span class="literal">spam = spam.append('moose')</span> and <span class="literal">spam = spam.insert(1, 'chicken')</span>. Neither <span class="literal">append()</span> nor <span class="literal">insert()</span> gives the new value of <span class="literal">spam</span> as its return value. (In fact, the return value of <span class="literal">append()</span> and <span class="literal">insert()</span> is <span class="literal">None</span>, so you definitely wouldn&#8217;t want to store this as the new variable value.) Rather, the list is modified <em>in place</em>. Modifying a list in place is covered in more detail later in &#8220;<a href="ch04.xhtml#ch04lev2sec18">Mutable and Immutable Data Types</a>&#8221; on <a href="ch04.xhtml#page_94">page 94</a>.</p>
+<p class="indent">Methods belong to a single data type. The <span class="literal">append()</span> and <span class="literal">insert()</span> methods are list methods and can be called only on list values, not on other values such as strings or integers. Enter the following into the interactive shell, and note the <span class="literal">AttributeError</span> error messages that show up:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">eggs = 'hello'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs.append('world')</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#19&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;eggs.append('world')<br/>
+AttributeError: 'str' object has no attribute 'append'<br/>
+&gt;&gt;&gt; <span class="codestrong1">bacon = 42</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">bacon.insert(1, 'world')</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#22&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;bacon.insert(1, 'world')<br/>
+AttributeError: 'int' object has no attribute 'insert'</p>
+<h4 class="h4" id="ch04lev2sec15"><span epub:type="pagebreak" id="page_90"/><strong><em>Removing Values from Lists with the remove() Method</em></strong></h4>
+<p class="noindent">The <span class="literal">remove()</span> method is passed the value to be removed from the list it is called on. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.remove('bat')</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['cat', 'rat', 'elephant']</p>
+<p class="indent">Attempting to delete a value that does not exist in the list will result in a <span class="literal">ValueError</span> error. For example, enter the following into the interactive shell and notice the error that is displayed:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'elephant']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.remove('chicken')</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#11&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;spam.remove('chicken')<br/>
+ValueError: list.remove(x): x not in list</p>
+<p class="indent">If the value appears multiple times in the list, only the first instance of the value will be removed. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'bat', 'rat', 'cat', 'hat', 'cat']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.remove('cat')</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['bat', 'rat', 'cat', 'hat', 'cat']</p>
+<p class="indent">The <span class="literal">del</span> statement is good to use when you know the index of the value you want to remove from the list. The <span class="literal">remove()</span> method is useful when you know the value you want to remove from the list.</p>
+<h4 class="h4" id="ch04lev2sec16"><strong><em>Sorting the Values in a List with the sort() Method</em></strong></h4>
+<p class="noindent">Lists of number values or lists of strings can be sorted with the <span class="literal">sort()</span> method. For example, enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = [2, 5, 3.14, 1, -7]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.sort()</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+[-7, 1, 2, 3.14, 5]<br/>
+&gt;&gt;&gt; <span class="codestrong1">spam = ['ants', 'cats', 'dogs', 'badgers', 'elephants']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.sort()</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['ants', 'badgers', 'cats', 'dogs', 'elephants']</p>
+<p class="indent"><span epub:type="pagebreak" id="page_91"/>You can also pass <span class="literal">True</span> for the <span class="literal">reverse</span> keyword argument to have <span class="literal">sort()</span> sort the values in reverse order. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam.sort(reverse=True)</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['elephants', 'dogs', 'cats', 'badgers', 'ants']</p>
+<p class="indent">There are three things you should note about the <span class="literal">sort()</span> method. First, the <span class="literal">sort()</span> method sorts the list in place; don&#8217;t try to capture the return value by writing code like <span class="literal">spam = spam.sort()</span>.</p>
+<p class="indent">Second, you cannot sort lists that have both number values <em>and</em> string values in them, since Python doesn&#8217;t know how to compare these values. Enter the following into the interactive shell and notice the <span class="literal">TypeError</span> error:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = [1, 3, 2, 4, 'Alice', 'Bob']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.sort()</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#70&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;spam.sort()<br/>
+TypeError: '&lt;' not supported between instances of 'str' and 'int'</p>
+<p class="indent">Third, <span class="literal">sort()</span> uses &#8220;ASCIIbetical order&#8221; rather than actual alphabetical order for sorting strings. This means uppercase letters come before lowercase letters. Therefore, the lowercase <em>a</em> is sorted so that it comes <em>after</em> the uppercase <em>Z</em>. For an example, enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['Alice', 'ants', 'Bob', 'badgers', 'Carol', 'cats']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.sort()</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['Alice', 'Bob', 'Carol', 'ants', 'badgers', 'cats']</p>
+<p class="indent">If you need to sort the values in regular alphabetical order, pass <span class="literal">str.lower</span> for the <span class="literal">key</span> keyword argument in the <span class="literal">sort()</span> method call.</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['a', 'z', 'A', 'Z']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.sort(key=str.lower)</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['a', 'A', 'z', 'Z']</p>
+<p class="indent">This causes the <span class="literal">sort()</span> function to treat all the items in the list as if they were lowercase without actually changing the values in the list.</p>
+<h4 class="h4" id="ch04lev2sec17"><strong><em>Reversing the Values in a List with the reverse() Method</em></strong></h4>
+<p class="noindent">If you need to quickly reverse the order of the items in a list, you can call the <span class="literal">reverse()</span> list method. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = ['cat', 'dog', 'moose']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam.reverse()</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['moose', 'dog', 'cat']</p>
+<div class="sidebar">
+<p class="sidebart"><strong>EXCEPTIONS TO INDENTATION RULES IN PYTHON</strong></p>
+<p class="spara">In most cases, the amount of indentation for a line of code tells Python what block it is in. There are some exceptions to this rule, however. For example, lists can actually span several lines in the source code file. The indentation of these lines does not matter; Python knows that the list is not finished until it sees the ending square bracket. For example, you can have code that looks like this:</p>
+<p class="programs">spam = ['apples',<br/>
+&#160;&#160;&#160;&#160;'oranges',<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'bananas',<br/>
+'cats']<br/>
+print(spam)</p>
+<p class="sparai">Of course, practically speaking, most people use Python&#8217;s behavior to make their lists look pretty and readable, like the messages list in the Magic 8 Ball program.</p>
+<p class="sparai">You can also split up a single instruction across multiple lines using the <span class="literal">\</span> <em>line continuation character</em> at the end. Think of <span class="literal">\</span> as saying, &#8220;This instruction continues on the next line.&#8221; The indentation on the line after a <span class="literal">\</span> line continuation is not significant. For example, the following is valid Python code:</p>
+<p class="programs">print('Four score and seven ' + \<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;'years ago...')</p>
+<p class="sparai">These tricks are useful when you want to rearrange long lines of Python code to be a bit more readable.</p>
+</div>
+<p class="indent"><span epub:type="pagebreak" id="page_92"/>Like the <span class="literal">sort()</span> list method, <span class="literal">reverse()</span> doesn&#8217;t return a list. This is why you write <span class="literal">spam.reverse()</span>, instead of <span class="literal">spam = spam.reverse()</span>.</p>
+<h3 class="h3" id="ch04lev1sec5"><strong>Example Program: Magic 8 Ball with a List</strong></h3>
+<p class="noindent">Using lists, you can write a much more elegant version of the previous chapter&#8217;s Magic 8 Ball program. Instead of several lines of nearly identical <span class="literal">elif</span> statements, you can create a single list that the code works with. Open a new file editor window and enter the following code. Save it as <em>magic8Ball2.py</em>.</p>
+<p class="programs">import random<br/><br/>
+messages = ['It is certain',<br/>
+&#160;&#160;&#160;&#160;'It is decidedly so',<br/>
+&#160;&#160;&#160;&#160;'Yes definitely',<br/>
+&#160;&#160;&#160;&#160;'Reply hazy try again',<br/>
+&#160;&#160;&#160;&#160;'Ask again later',<br/>
+&#160;&#160;&#160;&#160;'Concentrate and ask again',<br/>
+&#160;&#160;&#160;&#160;'My reply is no',<br/>
+<span epub:type="pagebreak" id="page_93"/>&#160;&#160;&#160;&#160;'Outlook not so good',<br/>
+&#160;&#160;&#160;&#160;'Very doubtful']<br/><br/>
+print(messages[random.randint(0, len(messages) - 1)])</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/magic8ball2/">https://autbor.com/magic8ball2/</a></em>.</p>
+<p class="indent">When you run this program, you&#8217;ll see that it works the same as the previous <em>magic8Ball.py</em> program.</p>
+<p class="indent">Notice the expression you use as the index for <span class="literal">messages</span>: <span class="literal">random.randint (0, len(messages) - 1)</span>. This produces a random number to use for the index, regardless of the size of <span class="literal">messages</span>. That is, you&#8217;ll get a random number between <span class="literal">0</span> and the value of <span class="literal">len(messages) - 1</span>. The benefit of this approach is that you can easily add and remove strings to the <span class="literal">messages</span> list without changing other lines of code. If you later update your code, there will be fewer lines you have to change and fewer chances for you to introduce bugs.</p>
+<h3 class="h3" id="ch04lev1sec6"><strong>Sequence Data Types</strong></h3>
+<p class="noindent">Lists aren&#8217;t the only data types that represent ordered sequences of values. For example, strings and lists are actually similar if you consider a string to be a &#8220;list&#8221; of single text characters. The Python sequence data types include lists, strings, range objects returned by <span class="literal">range()</span>, and tuples (explained in the &#8220;<a href="ch04.xhtml#ch04lev2sec19">The Tuple Data Type</a>&#8221; on <a href="ch04.xhtml#page_96">page 96</a>). Many of the things you can do with lists can also be done with strings and other values of sequence types: indexing; slicing; and using them with <span class="literal">for</span> loops, with <span class="literal">len()</span>, and with the <span class="literal">in</span> and <span class="literal">not in</span> operators. To see this, enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">name = 'Zophie'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">name[0]</span><br/>
+'Z'<br/>
+&gt;&gt;&gt; <span class="codestrong1">name[-2]</span><br/>
+'i'<br/>
+&gt;&gt;&gt; <span class="codestrong1">name[0:4]</span><br/>
+'Zoph'<br/>
+&gt;&gt;&gt; <span class="codestrong1">'Zo' in name</span><br/>
+True<br/>
+&gt;&gt;&gt; <span class="codestrong1">'z' in name</span><br/>
+False<br/>
+&gt;&gt;&gt; <span class="codestrong1">'p' not in name</span><br/>
+False<br/>
+&gt;&gt;&gt; <span class="codestrong1">for i in name:</span><br/>
+...&#160;&#160;&#160;&#160;&#160;<span class="codestrong1">print('* * * ' + i + ' * * *')</span><br/>
+<br/>
+* * * Z * * *<br/>
+* * * o * * *<br/>
+* * * p * * *<br/>
+* * * h * * *<br/>
+* * * i * * *<br/>
+* * * e * * *</p>
+<h4 class="h4" id="ch04lev2sec18"><span epub:type="pagebreak" id="page_94"/><strong><em>Mutable and Immutable Data Types</em></strong></h4>
+<p class="noindent">But lists and strings are different in an important way. A list value is a <em>mutable</em> data type: it can have values added, removed, or changed. However, a string is <em>immutable</em>: it cannot be changed. Trying to reassign a single character in a string results in a <span class="literal">TypeError</span> error, as you can see by entering the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">name = 'Zophie a cat'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">name[7] = 'the'</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#50&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;name[7] = 'the'<br/>
+TypeError: 'str' object does not support item assignment</p>
+<p class="indent">The proper way to &#8220;mutate&#8221; a string is to use slicing and concatenation to build a <em>new</em> string by copying from parts of the old string. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">name = 'Zophie a cat'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">newName = name[0:7] + 'the' + name[8:12]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">name</span><br/>
+'Zophie a cat'<br/>
+&gt;&gt;&gt; <span class="codestrong1">newName</span><br/>
+'Zophie the cat'</p>
+<p class="indent">We used <span class="literal">[0:7]</span> and <span class="literal">[8:12]</span> to refer to the characters that we don&#8217;t wish to replace. Notice that the original <span class="literal">'Zophie a cat'</span> string is not modified, because strings are immutable.</p>
+<p class="indent">Although a list value <em>is</em> mutable, the second line in the following code does not modify the list <span class="literal">eggs</span>:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">eggs = [1, 2, 3]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs = [4, 5, 6]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs</span><br/>
+[4, 5, 6]</p>
+<p class="indent">The list value in <span class="literal">eggs</span> isn&#8217;t being changed here; rather, an entirely new and different list value (<span class="literal">[4, 5, 6]</span>) is overwriting the old list value (<span class="literal">[1, 2, 3]</span>). This is depicted in <a href="ch04.xhtml#ch04fig02">Figure 4-2</a>.</p>
+<p class="indent">If you wanted to actually modify the original list in <span class="literal">eggs</span> to contain <span class="literal">[4, 5, 6]</span>, you would have to do something like this:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">eggs = [1, 2, 3]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">del eggs[2]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">del eggs[1]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">del eggs[0]</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs.append(4)</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs.append(5)</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs.append(6)</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs</span><br/>
+[4, 5, 6]</p>
+<div class="image"><span epub:type="pagebreak" id="page_95"/><a id="ch04fig02"/><img src="../images/04fig02.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 4-2: When <span class="literal">eggs = [4, 5, 6]</span> is executed, the contents of <span class="literal">eggs</span> are replaced with a new list value.</em></p>
+<p class="indent">In the first example, the list value that <span class="literal">eggs</span> ends up with is the same list value it started with. It&#8217;s just that this list has been changed, rather than overwritten. <a href="ch04.xhtml#ch04fig03">Figure 4-3</a> depicts the seven changes made by the first seven lines in the previous interactive shell example.</p>
+<div class="image"><a id="ch04fig03"/><img src="../images/04fig03.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 4-3: The <span class="literal">del</span> statement and the <span class="literal">append()</span> method modify the same list value in place.</em></p>
+<p class="indent">Changing a value of a mutable data type (like what the <span class="literal">del</span> statement and <span class="literal">append()</span> method do in the previous example) changes the value in place, since the variable&#8217;s value is not replaced with a new list value.</p>
+<p class="indent">Mutable versus immutable types may seem like a meaningless distinction, but &#8220;<a href="ch04.xhtml#ch04lev2sec22">Passing References</a>&#8221; on <a href="ch04.xhtml#page_100">page 100</a> will explain the different behavior when calling functions with mutable arguments versus immutable arguments. But first, let&#8217;s find out about the tuple data type, which is an immutable form of the list data type.</p>
+<h4 class="h4" id="ch04lev2sec19"><span epub:type="pagebreak" id="page_96"/><strong><em>The Tuple Data Type</em></strong></h4>
+<p class="noindent">The <em>tuple</em> data type is almost identical to the list data type, except in two ways. First, tuples are typed with parentheses, <span class="literal">(</span> and <span class="literal">)</span>, instead of square brackets, <span class="literal">[</span> and <span class="literal">]</span>. For example, enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">eggs = ('hello', 42, 0.5)</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs[0]</span><br/>
+'hello'<br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs[1:3]</span><br/>
+(42, 0.5)<br/>
+&gt;&gt;&gt; <span class="codestrong1">len(eggs)</span><br/>
+3</p>
+<p class="indent">But the main way that tuples are different from lists is that tuples, like strings, are immutable. Tuples cannot have their values modified, appended, or removed. Enter the following into the interactive shell, and look at the <span class="literal">TypeError</span> error message:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">eggs = ('hello', 42, 0.5)</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs[1] = 99</span><br/>
+Traceback (most recent call last):<br/>
+&#160;&#160;File "&lt;pyshell#5&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;eggs[1] = 99<br/>
+TypeError: 'tuple' object does not support item assignment</p>
+<p class="indent">If you have only one value in your tuple, you can indicate this by placing a trailing comma after the value inside the parentheses. Otherwise, Python will think you&#8217;ve just typed a value inside regular parentheses. The comma is what lets Python know this is a tuple value. (Unlike some other programming languages, it&#8217;s fine to have a trailing comma after the last item in a list or tuple in Python.) Enter the following <span class="literal">type()</span> function calls into the interactive shell to see the distinction:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">type(('hello',))</span><br/>
+&lt;class 'tuple'&gt;<br/>
+&gt;&gt;&gt; <span class="codestrong1">type(('hello'))</span><br/>
+&lt;class 'str'&gt;</p>
+<p class="indent">You can use tuples to convey to anyone reading your code that you don&#8217;t intend for that sequence of values to change. If you need an ordered sequence of values that never changes, use a tuple. A second benefit of using tuples instead of lists is that, because they are immutable and their contents don&#8217;t change, Python can implement some optimizations that make code using tuples slightly faster than code using lists.</p>
+<h4 class="h4" id="ch04lev2sec20"><span epub:type="pagebreak" id="page_97"/><strong><em>Converting Types with the list() and tuple() Functions</em></strong></h4>
+<p class="noindent">Just like how <span class="literal">str(42)</span> will return <span class="literal">'42'</span>, the string representation of the integer <span class="literal">42</span>, the functions <span class="literal">list()</span> and <span class="literal">tuple()</span> will return list and tuple versions of the values passed to them. Enter the following into the interactive shell, and notice that the return value is of a different data type than the value passed:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">tuple(['cat', 'dog', 5])</span><br/>
+('cat', 'dog', 5)<br/>
+&gt;&gt;&gt; <span class="codestrong1">list(('cat', 'dog', 5))</span><br/>
+['cat', 'dog', 5]<br/>
+&gt;&gt;&gt; <span class="codestrong1">list('hello')</span><br/>
+['h', 'e', 'l', 'l', 'o']</p>
+<p class="indent">Converting a tuple to a list is handy if you need a mutable version of a tuple value.</p>
+<h3 class="h3" id="ch04lev1sec7"><strong>References</strong></h3>
+<p class="noindent">As you&#8217;ve seen, variables &#8220;store&#8221; strings and integer values. However, this explanation is a simplification of what Python is actually doing. Technically, variables are storing references to the computer memory locations where the values are stored. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">spam = 42</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">cheese = spam</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam = 100</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+100<br/>
+&gt;&gt;&gt; <span class="codestrong1">cheese</span><br/>
+42</p>
+<p class="indent">When you assign <span class="literal">42</span> to the <span class="literal">spam</span> variable, you are actually creating the <span class="literal">42</span> value in the computer&#8217;s memory and storing a <em>reference</em> to it in the spam variable. When you copy the value in <span class="literal">spam</span> and assign it to the variable <span class="literal">cheese</span>, you are actually copying the reference. Both the <span class="literal">spam</span> and <span class="literal">cheese</span> variables refer to the <span class="literal">42</span> value in the computer&#8217;s memory. When you later change the value in <span class="literal">spam</span> to <span class="literal">100</span>, you&#8217;re creating a new <span class="literal">100</span> value and storing a reference to it in <span class="literal">spam</span>. This doesn&#8217;t affect the value in <span class="literal">cheese</span>. Integers are <em>immutable</em> values that don&#8217;t change; changing the <em>spam</em> variable is actually making it refer to a completely different value in memory.</p>
+<p class="indent">But lists don&#8217;t work this way, because list values can change; that is, lists are <em>mutable</em>. Here is some code that will make this distinction easier to understand. Enter this into the interactive shell:</p>
+<p class="programs"><span class="ent">&#x278A;</span> &gt;&gt;&gt; <span class="codestrong1">spam = [0, 1, 2, 3, 4, 5]</span><br/>
+<span class="ent">&#x278B;</span> &gt;&gt;&gt; <span class="codestrong1">cheese = spam</span> # The reference is being copied, not the list.<br/>
+<span class="ent">&#x278C;</span> &gt;&gt;&gt; <span class="codestrong1">cheese[1] = 'Hello!'</span> # This changes the list value.<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+&#160;&#160;&#160;<span epub:type="pagebreak" id="page_98"/>[0, 'Hello!', 2, 3, 4, 5]<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">cheese</span> # The cheese variable refers to the same list.<br/>
+&#160;&#160;&#160;[0, 'Hello!', 2, 3, 4, 5]</p>
+<p class="indent">This might look odd to you. The code touched only the <span class="literal">cheese</span> list, but it seems that both the <span class="literal">cheese</span> and <span class="literal">spam</span> lists have changed.</p>
+<p class="indent">When you create the list <span class="ent">&#x278A;</span>, you assign a reference to it in the <span class="literal">spam</span> variable. But the next line <span class="ent">&#x278B;</span> copies only the list reference in <span class="literal">spam</span> to <span class="literal">cheese</span>, not the list value itself. This means the values stored in <span class="literal">spam</span> and <span class="literal">cheese</span> now both refer to the same list. There is only one underlying list because the list itself was never actually copied. So when you modify the first element of <span class="literal">cheese</span> <span class="ent">&#x278C;</span>, you are modifying the same list that <span class="literal">spam</span> refers to.</p>
+<p class="indent">Remember that variables are like boxes that contain values. The previous figures in this chapter show that lists in boxes aren&#8217;t exactly accurate, because list variables don&#8217;t actually contain lists&#8212;they contain <em>references</em> to lists. (These references will have ID numbers that Python uses internally, but you can ignore them.) Using boxes as a metaphor for variables, <a href="ch04.xhtml#ch04fig04">Figure 4-4</a> shows what happens when a list is assigned to the <span class="literal">spam</span> variable.</p>
+<div class="image"><a id="ch04fig04"/><img src="../images/04fig04.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 4-4: <span class="literal">spam = [0, 1, 2, 3, 4, 5]</span> stores a reference to a list, not the actual list.</em></p>
+<p class="indent">Then, in <a href="ch04.xhtml#ch04fig05">Figure 4-5</a>, the reference in <span class="literal">spam</span> is copied to <span class="literal">cheese</span>. Only a new reference was created and stored in <span class="literal">cheese</span>, not a new list. Note how both references refer to the same list.</p>
+<div class="image"><a id="ch04fig05"/><img src="../images/04fig05.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 4-5: <span class="literal">spam = cheese</span> copies the reference, not the list.</em></p>
+<p class="indent"><span epub:type="pagebreak" id="page_99"/>When you alter the list that <span class="literal">cheese</span> refers to, the list that <span class="literal">spam</span> refers to is also changed, because both <span class="literal">cheese</span> and <span class="literal">spam</span> refer to the same list. You can see this in <a href="ch04.xhtml#ch04fig06">Figure 4-6</a>.</p>
+<div class="image"><a id="ch04fig06"/><img src="../images/04fig06.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 4-6: <span class="literal">cheese[1] = 'Hello!'</span> modifies the list that both variables refer to.</em></p>
+<p class="indent">Although Python variables technically contain references to values, people often casually say that the variable contains the value.</p>
+<h4 class="h4" id="ch04lev2sec21"><strong><em>Identity and the id() Function</em></strong></h4>
+<p class="noindent">You may be wondering why the weird behavior with mutable lists in the previous section doesn&#8217;t happen with immutable values like integers or strings. We can use Python&#8217;s <span class="literal">id()</span> function to understand this. All values in Python have a unique identity that can be obtained with the <span class="literal">id()</span> function. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">id('Howdy')</span> # The returned number will be different on your machine.<br/>
+44491136</p>
+<p class="indent">When Python runs <span class="literal">id('Howdy')</span>, it creates the <span class="literal">'Howdy'</span> string in the computer&#8217;s memory. The numeric memory address where the string is stored is returned by the <span class="literal">id()</span> function. Python picks this address based on which memory bytes happen to be free on your computer at the time, so it&#8217;ll be different each time you run this code.</p>
+<p class="indent">Like all strings, <span class="literal">'Howdy'</span> is immutable and cannot be changed. If you &#8220;change&#8221; the string in a variable, a new string object is being made at a different place in memory, and the variable refers to this new string. For example, enter the following into the interactive shell and see how the identity of the string referred to by <span class="literal">bacon</span> changes:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">bacon = 'Hello'</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">id(bacon)</span><br/>
+44491136<br/>
+&gt;&gt;&gt; <span class="codestrong1">bacon += ' world!'</span> # A new string is made from 'Hello' and ' world!'. <br/>
+&gt;&gt;&gt; <span class="codestrong1">id(bacon)</span> # bacon now refers to a completely different string.<br/>
+44609712</p>
+<p class="indent"><span epub:type="pagebreak" id="page_100"/>However, lists can be modified because they are mutable objects. The <span class="literal">append()</span> method doesn&#8217;t create a new list object; it changes the existing list object. We call this &#8220;modifying the object <em>in-place.</em>&#8221;</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">eggs = ['cat', 'dog']</span> # This creates a new list.<br/>
+&gt;&gt;&gt; <span class="codestrong1">id(eggs)</span><br/>
+35152584<br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs.append('moose')</span> # append() modifies the list "in place".<br/>
+&gt;&gt;&gt; <span class="codestrong1">id(eggs)</span> # eggs still refers to the same list as before.<br/>
+35152584<br/>
+&gt;&gt;&gt; <span class="codestrong1">eggs = ['bat', 'rat', 'cow']</span> # This creates a new list, which has a new<br/>
+identity.<br/>
+&gt;&gt;&gt; <span class="codestrong1">id(eggs)</span> # eggs now refers to a completely different list.<br/>
+44409800</p>
+<p class="indent">If two variables refer to the same list (like <span class="literal">spam</span> and <span class="literal">cheese</span> in the previous section) and the list value itself changes, both variables are affected because they both refer to the same list. The <span class="literal">append()</span>, <span class="literal">extend()</span>, <span class="literal">remove()</span>, <span class="literal">sort()</span>, <span class="literal">reverse()</span>, and other list methods modify their lists in place.</p>
+<p class="indent">Python&#8217;s <em>automatic garbage collector</em> deletes any values not being referred to by any variables to free up memory. You don&#8217;t need to worry about how the garbage collector works, which is a good thing: manual memory management in other programming languages is a common source of bugs.</p>
+<h4 class="h4" id="ch04lev2sec22"><strong><em>Passing References</em></strong></h4>
+<p class="noindent">References are particularly important for understanding how arguments get passed to functions. When a function is called, the values of the arguments are copied to the parameter variables. For lists (and dictionaries, which I&#8217;ll describe in the next chapter), this means a copy of the reference is used for the parameter. To see the consequences of this, open a new file editor window, enter the following code, and save it as <em>passingReference.py</em>:</p>
+<p class="programs">def eggs(someParameter):<br/>
+&#160;&#160;&#160;&#160;someParameter.append('Hello')<br/><br/>
+spam = [1, 2, 3]<br/>
+eggs(spam)<br/>
+print(spam)</p>
+<p class="indent">Notice that when <span class="literal">eggs()</span> is called, a return value is not used to assign a new value to <span class="literal">spam</span>. Instead, it modifies the list in place, directly. When run, this program produces the following output:</p>
+<p class="programs">[1, 2, 3, 'Hello']</p>
+<p class="indent">Even though <span class="literal">spam</span> and <span class="literal">someParameter</span> contain separate references, they both refer to the same list. This is why the <span class="literal">append('Hello')</span> method call inside the function affects the list even after the function call has returned.</p>
+<p class="indent"><span epub:type="pagebreak" id="page_101"/>Keep this behavior in mind: forgetting that Python handles list and dictionary variables this way can lead to confusing bugs.</p>
+<h4 class="h4" id="ch04lev2sec23"><strong><em>The copy Module&#8217;s copy() and deepcopy() Functions</em></strong></h4>
+<p class="noindent">Although passing around references is often the handiest way to deal with lists and dictionaries, if the function modifies the list or dictionary that is passed, you may not want these changes in the original list or dictionary value. For this, Python provides a module named <span class="literal">copy</span> that provides both the <span class="literal">copy()</span> and <span class="literal">deepcopy()</span> functions. The first of these, <span class="literal">copy.copy()</span>, can be used to make a duplicate copy of a mutable value like a list or dictionary, not just a copy of a reference. Enter the following into the interactive shell:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">import copy</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam = ['A', 'B', 'C', 'D']</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">id(spam)</span><br/>
+44684232<br/>
+&gt;&gt;&gt; <span class="codestrong1">cheese = copy.copy(spam)</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">id(cheese)</span> # cheese is a different list with different identity.<br/>
+44685832<br/>
+&gt;&gt;&gt; <span class="codestrong1">cheese[1] = 42</span><br/>
+&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+['A', 'B', 'C', 'D']<br/>
+&gt;&gt;&gt; <span class="codestrong1">cheese</span><br/>
+['A', 42, 'C', 'D']</p>
+<p class="indent">Now the <span class="literal">spam</span> and <span class="literal">cheese</span> variables refer to separate lists, which is why only the list in <span class="literal">cheese</span> is modified when you assign <span class="literal">42</span> at index <span class="literal">1</span>. As you can see in <a href="ch04.xhtml#ch04fig07">Figure 4-7</a>, the reference ID numbers are no longer the same for both variables because the variables refer to independent lists.</p>
+<div class="image"><a id="ch04fig07"/><img src="../images/04fig07.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 4-7: <span class="literal">cheese = copy.copy(spam)</span> creates a second list that can be modified independently of the first.</em></p>
+<p class="indent">If the list you need to copy contains lists, then use the <span class="literal">copy.deepcopy()</span> function instead of <span class="literal">copy.copy()</span>. The <span class="literal">deepcopy()</span> function will copy these inner lists as well.</p>
+<h3 class="h3" id="ch04lev1sec8"><span epub:type="pagebreak" id="page_102"/><strong>A Short Program: Conway&#8217;s Game of Life</strong></h3>
+<p class="noindent">Conway&#8217;s Game of Life is an example of <em>cellular automata</em>: a set of rules governing the behavior of a field made up of discrete cells. In practice, it creates a pretty animation to look at. You can draw out each step on graph paper, using the squares as cells. A filled-in square will be &#8220;alive&#8221; and an empty square will be &#8220;dead.&#8221; If a living square has two or three living neighbors, it continues to live on the next step. If a dead square has exactly three living neighbors, it comes alive on the next step. Every other square dies or remains dead on the next step. You can see an example of the progression of steps in <a href="ch04.xhtml#ch04fig08">Figure 4-8</a>.</p>
+<div class="image"><a id="ch04fig08"/><img src="../images/04fig08.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 4-8: Four steps in a Conway&#8217;s Game of Life simulation</em></p>
+<p class="indent">Even though the rules are simple, there are many surprising behaviors that emerge. Patterns in Conway&#8217;s Game of Life can move, self-replicate, or even mimic CPUs. But at the foundation of all of this complex, advanced behavior is a rather simple program.</p>
+<p class="indent">We can use a list of lists to represent the two-dimensional field. The inner list represents each column of squares and stores a <span class="literal">'#'</span> hash string for living squares and a <span class="literal">' '</span> space string for dead squares. Type the following source code into the file editor, and save the file as <em>conway.py</em>. It&#8217;s fine if you don&#8217;t quite understand how all of the code works; just enter it and follow along with comments and explanations provided here as close as you can:</p>
+<p class="programs"># Conway's Game of Life<br/>
+import random, time, copy<br/>
+WIDTH = 60<br/>
+HEIGHT = 20<br/><br/>
+# Create a list of list for the cells:<br/>
+nextCells = []<br/>
+for x in range(WIDTH):<br/>
+&#160;&#160;&#160;&#160;column = [] # Create a new column.<br/>
+&#160;&#160;&#160;&#160;for y in range(HEIGHT):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if random.randint(0, 1) == 0:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;column.append('#') # Add a living cell.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;else:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;column.append(' ') # Add a dead cell.<br/>
+&#160;&#160;&#160;&#160;nextCells.append(column) # nextCells is a list of column lists.<br/><br/>
+while True: # Main program loop.<br/>
+&#160;&#160;&#160;&#160;print('\n\n\n\n\n') # Separate each step with newlines.<br/>
+&#160;&#160;&#160;&#160;currentCells = copy.deepcopy(nextCells)<br/><br/>
+<span epub:type="pagebreak" id="page_103"/>&#160;&#160;&#160;&#160;# Print currentCells on the screen:<br/>
+&#160;&#160;&#160;&#160;for y in range(HEIGHT):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;for x in range(WIDTH):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print(currentCells[x][y], end='') # Print the # or space.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print() # Print a newline at the end of the row.<br/><br/>
+&#160;&#160;&#160;&#160;# Calculate the next step's cells based on current step's cells:<br/>
+&#160;&#160;&#160;&#160;for x in range(WIDTH):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;for y in range(HEIGHT):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Get neighboring coordinates:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# `% WIDTH` ensures leftCoord is always between 0 and WIDTH - 1<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;leftCoord&#160;&#160;= (x - 1) % WIDTH<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;rightCoord = (x + 1) % WIDTH<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;aboveCoord = (y - 1) % HEIGHT<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;belowCoord = (y + 1) % HEIGHT<br/><br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Count number of living neighbors:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors = 0<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[leftCoord][aboveCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Top-left neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[x][aboveCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Top neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[rightCoord][aboveCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Top-right neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[leftCoord][y] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Left neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[rightCoord][y] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Right neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[leftCoord][belowCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Bottom-left neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[x][belowCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Bottom neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[rightCoord][belowCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Bottom-right neighbor is alive.<br/><br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Set cell based on Conway's Game of Life rules:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[x][y] == '#' and (numNeighbors == 2 or<br/>
+numNeighbors == 3):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Living cells with 2 or 3 neighbors stay alive:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nextCells[x][y] = '#'<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;elif currentCells[x][y] == ' ' and numNeighbors == 3:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Dead cells with 3 neighbors become alive:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nextCells[x][y] = '#'<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;else:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Everything else dies or stays dead:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nextCells[x][y] = ' '<br/>
+&#160;&#160;&#160;&#160;time.sleep(1) # Add a 1-second pause to reduce flickering.</p>
+<p class="indent">Let&#8217;s look at this code line by line, starting at the top.</p>
+<p class="programs"># Conway's Game of Life<br/>
+import random, time, copy<br/>
+WIDTH = 60<br/>
+HEIGHT = 20</p>
+<p class="indent"><span epub:type="pagebreak" id="page_104"/>First we import modules that contain functions we&#8217;ll need, namely the <span class="literal">random.randint()</span>, <span class="literal">time.sleep()</span>, and <span class="literal">copy.deepcopy()</span> functions.</p>
+<p class="programs"># Create a list of list for the cells:<br/>
+nextCells = []<br/>
+for x in range(WIDTH):<br/>
+&#160;&#160;&#160;&#160;column = [] # Create a new column.<br/>
+&#160;&#160;&#160;&#160;for y in range(HEIGHT):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if random.randint(0, 1) == 0:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;column.append('#') # Add a living cell.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;else:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;column.append(' ') # Add a dead cell.<br/>
+&#160;&#160;&#160;&#160;nextCells.append(column) # nextCells is a list of column lists.</p>
+<p class="indent">The very first step of our cellular automata will be completely random. We need to create a list of lists data structure to store the <span class="literal">'#'</span> and <span class="literal">' '</span> strings that represent a living or dead cell, and their place in the list of lists reflects their position on the screen. The inner lists each represent a column of cells. The <span class="literal">random.randint(0, 1)</span> call gives an even 50/50 chance between the cell starting off alive or dead.</p>
+<p class="indent">We put this list of lists in a variable called <span class="literal">nextCells</span>, because the first step in our main program loop will be to copy <span class="literal">nextCells</span> into <span class="literal">currentCells</span>. For our list of lists data structure, the x-coordinates start at 0 on the left and increase going right, while the y-coordinates start at 0 at the top and increase going down. So <span class="literal">nextCells[0][0]</span> will represent the cell at the top left of the screen, while <span class="literal">nextCells[1][0]</span> represents the cell to the right of that cell and <span class="literal">nextCells[0][1]</span> represents the cell beneath it.</p>
+<p class="programs">while True: # Main program loop.<br/>
+&#160;&#160;&#160;&#160;print('\n\n\n\n\n') # Separate each step with newlines.<br/>
+&#160;&#160;&#160;&#160;currentCells = copy.deepcopy(nextCells)</p>
+<p class="indent">Each iteration of our main program loop will be a single step of our cellular automata. On each step, we&#8217;ll copy <span class="literal">nextCells</span> to <span class="literal">currentCells</span>, print <span class="literal">currentCells</span> on the screen, and then use the cells in <span class="literal">currentCells</span> to calculate the cells in <span class="literal">nextCells</span>.</p>
+<p class="programs">&#160;&#160;&#160;&#160;# Print currentCells on the screen:<br/>
+&#160;&#160;&#160;&#160;for y in range(HEIGHT):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;for x in range(WIDTH):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print(currentCells[x][y], end='') # Print the # or space.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print() # Print a newline at the end of the row.</p>
+<p class="indent">These nested <span class="literal">for</span> loops ensure that we print a full row of cells to the screen, followed by a newline character at the end of the row. We repeat this for each row in <span class="literal">nextCells</span>.</p>
+<p class="programs">&#160;&#160;&#160;&#160;# Calculate the next step's cells based on current step's cells:<br/>
+&#160;&#160;&#160;&#160;for x in range(WIDTH):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;for y in range(HEIGHT):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Get neighboring coordinates:<br/>
+<span epub:type="pagebreak" id="page_105"/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# `% WIDTH` ensures leftCoord is always between 0 and WIDTH - 1<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;leftCoord&#160;&#160;= (x - 1) % WIDTH<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;rightCoord = (x + 1) % WIDTH<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;aboveCoord = (y - 1) % HEIGHT<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;belowCoord = (y + 1) % HEIGHT</p>
+<p class="indent">Next, we need to use two nested <span class="literal">for</span> loops to calculate each cell for the next step. The living or dead state of the cell depends on the neighbors, so let&#8217;s first calculate the index of the cells to the left, right, above, and below the current x- and y-coordinates.</p>
+<p class="indent">The <span class="literal">%</span> mod operator performs a &#8220;wraparound.&#8221; The left neighbor of a cell in the leftmost column <span class="literal">0</span> would be <span class="literal">0 - 1</span> or <span class="literal">-1</span>. To wrap this around to the rightmost column&#8217;s index, <span class="literal">59</span>, we calculate <span class="literal">(0 - 1) % WIDTH</span>. Since <span class="literal">WIDTH</span> is <span class="literal">60</span>, this expression evaluates to <span class="literal">59</span>. This mod-wraparound technique works for the right, above, and below neighbors as well.</p>
+<p class="programs">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Count number of living neighbors:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors = 0<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[leftCoord][aboveCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Top-left neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[x][aboveCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Top neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[rightCoord][aboveCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Top-right neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[leftCoord][y] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Left neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[rightCoord][y] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Right neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[leftCoord][belowCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Bottom-left neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[x][belowCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Bottom neighbor is alive.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[rightCoord][belowCoord] == '#':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numNeighbors += 1 # Bottom-right neighbor is alive.</p>
+<p class="indent">To decide if the cell at <span class="literal">nextCells[x][y]</span> should be living or dead, we need to count the number of living neighbors <span class="literal">currentCells[x][y]</span> has. This series of <span class="literal">if</span> statements checks each of the eight neighbors of this cell, and adds <span class="literal">1</span> to <span class="literal">numNeighbors</span> for each living one.</p>
+<p class="programs">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Set cell based on Conway's Game of Life rules:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if currentCells[x][y] == '#' and (numNeighbors == 2 or<br/>
+numNeighbors == 3):<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Living cells with 2 or 3 neighbors stay alive:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nextCells[x][y] = '#'<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;elif currentCells[x][y] == ' ' and numNeighbors == 3:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Dead cells with 3 neighbors become alive:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nextCells[x][y] = '#'<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;else:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Everything else dies or stays dead:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;nextCells[x][y] = ' '<br/>
+&#160;&#160;&#160;&#160;time.sleep(1) # Add a 1-second pause to reduce flickering.</p>
+<p class="indent"><span epub:type="pagebreak" id="page_106"/>Now that we know the number of living neighbors for the cell at <span class="literal">currentCells[x][y]</span>, we can set <span class="literal">nextCells[x][y]</span> to either <span class="literal">'#'</span> or <span class="literal">' '</span>. After we loop over every possible x- and y-coordinate, the program takes a 1-second pause by calling <span class="literal">time.sleep(1)</span>. Then the program execution goes back to the start of the main program loop to continue with the next step.</p>
+<p class="indent">Several patterns have been discovered with names such as &#8220;glider,&#8221; &#8220;propeller,&#8221; or &#8220;heavyweight spaceship.&#8221; The glider pattern, pictured in <a href="ch04.xhtml#ch04fig08">Figure 4-8</a>, results in a pattern that &#8220;moves&#8221; diagonally every four steps. You can create a single glider by replacing this line in our <em>conway.py</em> program:</p>
+<p class="programs">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if random.randint(0, 1) == 0:</p>
+<p class="noindent">with this line:</p>
+<p class="programs">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if (x, y) in ((1, 0), (2, 1), (0, 2), (1, 2), (2, 2)):</p>
+<p class="indent">You can find out more about the intriguing devices made using Conway&#8217;s Game of Life by searching the web. And you can find other short, text-based Python programs like this one at <em><a href="https://github.com/asweigart/pythonstdiogames">https://github.com/asweigart/pythonstdiogames</a></em>.</p>
+<h3 class="h3" id="ch04lev1sec9"><strong>Summary</strong></h3>
+<p class="noindent">Lists are useful data types since they allow you to write code that works on a modifiable number of values in a single variable. Later in this book, you will see programs using lists to do things that would be difficult or impossible to do without them.</p>
+<p class="indent">Lists are a sequence data type that is mutable, meaning that their contents can change. Tuples and strings, though also sequence data types, are immutable and cannot be changed. A variable that contains a tuple or string value can be overwritten with a new tuple or string value, but this is not the same thing as modifying the existing value in place&#8212;like, say, the <span class="literal">append()</span> or <span class="literal">remove()</span> methods do on lists.</p>
+<p class="indent">Variables do not store list values directly; they store <em>references</em> to lists. This is an important distinction when you are copying variables or passing lists as arguments in function calls. Because the value that is being copied is the list reference, be aware that any changes you make to the list might impact another variable in your program. You can use <span class="literal">copy()</span> or <span class="literal">deepcopy()</span> if you want to make changes to a list in one variable without modifying the original list.</p>
+<h3 class="h3" id="ch04lev1sec10"><strong>Practice Questions</strong></h3>
+<p class="question"><a id="ch04que1" href="app03.xhtml#ch04ans1">1</a>. What is <span class="literal">[]</span>?</p>
+<p class="question"><a id="ch04que2" href="app03.xhtml#ch04ans2">2</a>. How would you assign the value <span class="literal">'hello'</span> as the third value in a list stored in a variable named <span class="literal">spam</span>? (Assume <span class="literal">spam</span> contains <span class="literal">[2, 4, 6, 8, 10]</span>.)</p>
+<p class="question-in"><span epub:type="pagebreak" id="page_107"/>For the following three questions, let&#8217;s say <span class="literal">spam</span> contains the list <span class="literal">['a', 'b', 'c', 'd']</span>.</p>
+<p class="question"><a id="ch04que3" href="app03.xhtml#ch04ans3">3</a>. What does <span class="literal">spam[int(int('3' * 2) // 11)]</span> evaluate to?</p>
+<p class="question"><a id="ch04que4" href="app03.xhtml#ch04ans4">4</a>. What does <span class="literal">spam[-1]</span> evaluate to?</p>
+<p class="question"><a id="ch04que5" href="app03.xhtml#ch04ans5">5</a>. What does <span class="literal">spam[:2]</span> evaluate to?</p>
+<p class="question-in">For the following three questions, let&#8217;s say <span class="literal">bacon</span> contains the list <span class="literal">[3.14, 'cat', 11, 'cat', True]</span>.</p>
+<p class="question"><a id="ch04que6" href="app03.xhtml#ch04ans6">6</a>. What does <span class="literal">bacon.index('cat')</span> evaluate to?</p>
+<p class="question"><a id="ch04que7" href="app03.xhtml#ch04ans7">7</a>. What does <span class="literal">bacon.append(99)</span> make the list value in <span class="literal">bacon</span> look like?</p>
+<p class="question"><a id="ch04que8" href="app03.xhtml#ch04ans8">8</a>. What does <span class="literal">bacon.remove('cat')</span> make the list value in <span class="literal">bacon</span> look like?</p>
+<p class="question"><a id="ch04que9" href="app03.xhtml#ch04ans9">9</a>. What are the operators for list concatenation and list replication?</p>
+<p class="question1"><a id="ch04que10" href="app03.xhtml#ch04ans10">10</a>. What is the difference between the <span class="literal">append()</span> and <span class="literal">insert()</span> list methods?</p>
+<p class="question1"><a id="ch04que11" href="app03.xhtml#ch04ans11">11</a>. What are two ways to remove values from a list?</p>
+<p class="question1"><a id="ch04que12" href="app03.xhtml#ch04ans12">12</a>. Name a few ways that list values are similar to string values.</p>
+<p class="question1"><a id="ch04que13" href="app03.xhtml#ch04ans13">13</a>. What is the difference between lists and tuples?</p>
+<p class="question1"><a id="ch04que14" href="app03.xhtml#ch04ans14">14</a>. How do you type the tuple value that has just the integer value <span class="literal">42</span> in it?</p>
+<p class="question1"><a id="ch04que15" href="app03.xhtml#ch04ans15">15</a>. How can you get the tuple form of a list value? How can you get the list form of a tuple value?</p>
+<p class="question1"><a id="ch04que16" href="app03.xhtml#ch04ans16">16</a>. Variables that &#8220;contain&#8221; list values don&#8217;t actually contain lists directly. What do they contain instead?</p>
+<p class="question1"><a id="ch04que17" href="app03.xhtml#ch04ans17">17</a>. What is the difference between <span class="literal">copy.copy()</span> and <span class="literal">copy.deepcopy()</span>?</p>
+<h3 class="h3" id="ch04lev1sec11"><strong>Practice Projects</strong></h3>
+<p class="noindent">For practice, write programs to do the following tasks.</p>
+<h4 class="h4" id="ch04lev2sec24"><strong><em>Comma Code</em></strong></h4>
+<p class="noindent">Say you have a list value like this:</p>
+<p class="programs">spam = ['apples', 'bananas', 'tofu', 'cats']</p>
+<p class="indent">Write a function that takes a list value as an argument and returns a string with all the items separated by a comma and a space, with <em>and</em> inserted before the last item. For example, passing the previous <span class="literal">spam</span> list to the function would return <span class="literal">'apples, bananas, tofu, and cats'</span>. But your function should be able to work with any list value passed to it. Be sure to test the case where an empty list <span class="literal">[]</span> is passed to your function.</p>
+<h4 class="h4" id="ch04lev2sec25"><strong><em>Coin Flip Streaks</em></strong></h4>
+<p class="noindent">For this exercise, we&#8217;ll try doing an experiment. If you flip a coin 100 times and write down an &#8220;H&#8221; for each heads and &#8220;T&#8221; for each tails, you&#8217;ll create a list that looks like &#8220;T T T T H H H H T T.&#8221; If you ask a human to make <span epub:type="pagebreak" id="page_108"/>up 100 random coin flips, you&#8217;ll probably end up with alternating head-tail results like &#8220;H T H T H H T H T T,&#8221; which looks random (to humans), but isn&#8217;t mathematically random. A human will almost never write down a streak of six heads or six tails in a row, even though it is highly likely to happen in truly random coin flips. Humans are predictably bad at being random.</p>
+<p class="indent">Write a program to find out how often a streak of six heads or a streak of six tails comes up in a randomly generated list of heads and tails. Your program breaks up the experiment into two parts: the first part generates a list of randomly selected <span class="literal">'heads'</span> and <span class="literal">'tails'</span> values, and the second part checks if there is a streak in it. Put all of this code in a loop that repeats the experiment 10,000 times so we can find out what percentage of the coin flips contains a streak of six heads or tails in a row. As a hint, the function call <span class="literal">random.randint(0, 1)</span> will return a <span class="literal">0</span> value 50% of the time and a <span class="literal">1</span> value the other 50% of the time.</p>
+<p class="indent">You can start with the following template:</p>
+<p class="programs">import random<br/>
+numberOfStreaks = 0<br/>
+for experimentNumber in range(10000):<br/>
+&#160;&#160;&#160;&#160;# Code that creates a list of 100 'heads' or 'tails' values.<br/><br/>
+&#160;&#160;&#160;&#160;# Code that checks if there is a streak of 6 heads or tails in a row.<br/>
+print('Chance of streak: %s%%' % (numberOfStreaks / 100))</p>
+<p class="indent">Of course, this is only an estimate, but 10,000 is a decent sample size. Some knowledge of mathematics could give you the exact answer and save you the trouble of writing a program, but programmers are notoriously bad at math.</p>
+<h4 class="h4" id="ch04lev2sec26"><strong><em>Character Picture Grid</em></strong></h4>
+<p class="noindent">Say you have a list of lists where each value in the inner lists is a one-character string, like this:</p>
+<p class="programs">grid = [['.', '.', '.', '.', '.', '.'],<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;['.', 'O', 'O', '.', '.', '.'],<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;['O', 'O', 'O', 'O', '.', '.'],<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;['O', 'O', 'O', 'O', 'O', '.'],<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;['.', 'O', 'O', 'O', 'O', 'O'],<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;['O', 'O', 'O', 'O', 'O', '.'],<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;['O', 'O', 'O', 'O', '.', '.'],<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;['.', 'O', 'O', '.', '.', '.'],<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;['.', '.', '.', '.', '.', '.']]</p>
+<p class="indent">Think of <span class="literal">grid[x][y]</span> as being the character at the x- and y-coordinates of a &#8220;picture&#8221; drawn with text characters. The <span class="literal">(0, 0)</span> origin is in the upper-left corner, the x-coordinates increase going right, and the y-coordinates increase going down.</p>
+<p class="indent"><span epub:type="pagebreak" id="page_109"/>Copy the previous grid value, and write code that uses it to print the image.</p>
+<p class="programs">..OO.OO..<br/>
+.OOOOOOO.<br/>
+.OOOOOOO.<br/>
+..OOOOO..<br/>
+...OOO...<br/>
+....O....</p>
+<p class="indent">Hint: You will need to use a loop in a loop in order to print <span class="literal">grid[0][0]</span>, then <span class="literal">grid[1][0]</span>, then <span class="literal">grid[2][0]</span>, and so on, up to <span class="literal">grid[8][0]</span>. This will finish the first row, so then print a newline. Then your program should print <span class="literal">grid[0][1]</span>, then <span class="literal">grid[1][1]</span>, then <span class="literal">grid[2][1]</span>, and so on. The last thing your program will print is <span class="literal">grid[8][5]</span>.</p>
+<p class="indent">Also, remember to pass the <span class="literal">end</span> keyword argument to <span class="literal">print()</span> if you don&#8217;t want a newline printed automatically after each <span class="literal">print()</span> call.<span epub:type="pagebreak" id="page_110"/></p>
+</body>
+</html>
