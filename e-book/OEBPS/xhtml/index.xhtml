@@ -1,0 +1,1513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xml:lang="en-us" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:ns="http://www.w3.org/2001/10/synthesis">
+<head>
+<title>Automate the Boring Stuff with Python: Practical Programming for Total Beginners, 2nd Edition</title>
+<link rel="stylesheet" type="text/css" href="../styles/9781593279936.css"/>
+</head>
+<body>
+<h2 class="h2c" id="index"><span epub:type="pagebreak" id="page_531"/>INDEX</h2>
+<h3 class="h3"><strong>Symbols</strong></h3>
+<p class="indexmain"><span class="literal">=</span> (assignment) operator, <a href="ch01.xhtml#page_9">9</a></p>
+<p class="indexmain"><span class="literal">+=</span> (augmented addition assignment) operator, <a href="ch04.xhtml#page_87">87</a></p>
+<p class="indexmain"><span class="literal">/=</span> (augmented division assignment) operator, <a href="ch04.xhtml#page_87">87</a></p>
+<p class="indexmain"><span class="literal">%=</span> (augmented modulus assignment) operator, <a href="ch04.xhtml#page_87">87</a></p>
+<p class="indexmain"><span class="literal">*=</span> (augmented multiplication assignment) operator, <a href="ch04.xhtml#page_87">87</a></p>
+<p class="indexmain"><span class="literal">-=</span> (augmented subtraction assignment) operator, <a href="ch04.xhtml#page_87">87</a></p>
+<p class="indexmain"><span class="literal">\</span> (backslash)</p>
+<p class="indexsub">escape character, <a href="ch06.xhtml#page_130">130</a>&#8211;<a href="ch06.xhtml#page_131">131</a></p>
+<p class="indexsub">line continuation character, <a href="ch04.xhtml#page_92">92</a></p>
+<p class="indexmain"><span class="literal">{}</span> (braces)</p>
+<p class="indexsub">in dictionaries, <a href="ch05.xhtml#page_111">111</a></p>
+<p class="indexsub">greedy vs. nongreedy matching, <a href="ch07.xhtml#page_171">171</a>, <a href="ch07.xhtml#page_176">176</a></p>
+<p class="indexsub">matching specific repetitions with, <a href="ch07.xhtml#page_170">170</a>&#8211;<a href="ch07.xhtml#page_171">171</a></p>
+<p class="indexmain"><span class="literal">^</span> (caret symbol)</p>
+<p class="indexsub">matching beginning of string, <a href="ch07.xhtml#page_174">174</a></p>
+<p class="indexsub">negative character classes, <a href="ch07.xhtml#page_174">174</a></p>
+<p class="indexmain"><span class="literal">:</span> (colon), <a href="ch02.xhtml#page_29">29</a>, <a href="ch02.xhtml#page_30">30</a>, <a href="ch02.xhtml#page_35">35</a>, <a href="ch02.xhtml#page_44">44</a>, <a href="ch04.xhtml#page_80">80</a></p>
+<p class="indexmain"><span class="literal">$</span> (dollar sign), <a href="ch07.xhtml#page_174">174</a>&#8211;<a href="ch07.xhtml#page_175">175</a></p>
+<p class="indexmain"><span class="literal">.</span> (dot character), <a href="ch09.xhtml#page_206">206</a>&#8211;<a href="ch09.xhtml#page_207">207</a></p>
+<p class="indexmain"><span class="literal">.*</span> (dot-star character), <a href="ch07.xhtml#page_175">175</a></p>
+<p class="indexmain"><span class="literal">"</span> (double quotes), <a href="ch06.xhtml#page_130">130</a></p>
+<p class="indexmain"><span class="literal">==</span> (equal to) operator, <a href="ch02.xhtml#page_23">23</a>, <a href="ch02.xhtml#page_24">24</a></p>
+<p class="indexmain"><span class="literal">**</span> (exponent) operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">/</span> (forward slash), <a href="ch09.xhtml#page_202">202</a>&#8211;<a href="ch09.xhtml#page_203">203</a></p>
+<p class="indexsub">division operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">&gt;</span> (greater than) operator, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain"><span class="literal">&gt;=</span> (greater than or equal to) operator, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain"><span class="literal">#</span> (hash character), <a href="ch01.xhtml#page_13">13</a>, <a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexmain"><span class="literal">//</span> (integer division/floored quotient) operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">&lt;</span> (less than) operator, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain"><span class="literal">&lt;=</span> (less than or equal to) operator, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain"><span class="literal">%</span> (modulus/remainder) operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">*</span> (multiplication) operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">!=</span> (not equal to) operator, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain"><span class="literal">()</span> (parentheses), <a href="ch01.xhtml#page_5">5</a>, <a href="ch01.xhtml#page_14">14</a>, <a href="ch03.xhtml#page_59">59</a>, <a href="ch04.xhtml#page_96">96</a>, <a href="ch07.xhtml#page_166">166</a></p>
+<p class="indexmain"><span class="literal">|</span> (pipe character), <a href="ch07.xhtml#page_168">168</a></p>
+<p class="indexmain"><span class="literal">+</span> (plus sign)</p>
+<p class="indexsub">addition operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexsub">concatenation operator, <a href="ch01.xhtml#page_7">7</a>, <a href="ch04.xhtml#page_81">81</a></p>
+<p class="indexmain"><span class="literal">?</span> (question mark), <a href="ch07.xhtml#page_168">168</a>&#8211;<a href="ch07.xhtml#page_169">169</a></p>
+<p class="indexmain"><span class="literal">'</span> (single quote), <a href="ch01.xhtml#page_7">7</a>, <a href="ch06.xhtml#page_130">130</a></p>
+<p class="indexmain"><span class="literal">[]</span> (square brackets), <a href="ch04.xhtml#page_78">78</a></p>
+<p class="indexmain"><span class="literal">*</span> (star character), <a href="ch07.xhtml#page_169">169</a></p>
+<p class="indexmain"><span class="literal">-</span> (subtraction operator), <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">'''</span> (triple quotes), <a href="ch06.xhtml#page_131">131</a>, <a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexmain"><span class="literal">_</span> (underscore), <a href="ch01.xhtml#page_11">11</a>, <a href="ch07.xhtml#page_173">173</a></p>
+<h3 class="h3"><strong>A</strong></h3>
+<p class="indexmain">absolute path, <a href="ch09.xhtml#page_206">206</a>, <a href="ch09.xhtml#page_209">209</a></p>
+<p class="indexmain"><span class="literal">abspath()</span> function (<span class="literal">os.path</span> module), <a href="ch09.xhtml#page_209">209</a></p>
+<p class="indexmain"><span class="literal">activate()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexmain">active sheet, <a href="ch13.xhtml#page_302">302</a>, <a href="ch13.xhtml#page_304">304</a></p>
+<p class="indexmain"><span class="literal">add_break()</span>method (Docx), <a href="ch15.xhtml#page_366">366</a></p>
+<p class="indexmain"><span class="literal">add_heading()</span> method (Docx), <a href="ch15.xhtml#page_366">366</a></p>
+<p class="indexmain"><span class="literal">add_paragraph()</span> method (Docx), <a href="ch15.xhtml#page_364">364</a>, <a href="ch15.xhtml#page_365">365</a></p>
+<p class="indexmain"><span class="literal">add_picture()</span> method (Docx), <a href="ch15.xhtml#page_367">367</a></p>
+<p class="indexmain"><span class="literal">add_run()</span> method (Docx), <a href="ch15.xhtml#page_365">365</a></p>
+<p class="indexmain">Adding a Logo project, <a href="ch19.xhtml#page_460">460</a>&#8211;<a href="ch19.xhtml#page_465">465</a></p>
+<p class="indexmain">Adding Bullets to Wiki Markup project, <a href="ch06.xhtml#page_147">147</a>&#8211;<a href="ch06.xhtml#page_149">149</a></p>
+<p class="indexmain">addition operator (<span class="literal">+</span>), <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">addPage()</span> method (PyPDF2), <a href="ch15.xhtml#page_351">351</a>&#8211;<a href="ch15.xhtml#page_352">352</a></p>
+<p class="indexmain">algebraic chess notation, <a href="ch05.xhtml#page_119">119</a></p>
+<p class="indexmain">alpha transparency, <a href="ch19.xhtml#page_448">448</a></p>
+<p class="indexmain"><span class="literal">and</span> binary operator, <a href="ch02.xhtml#page_25">25</a></p>
+<p class="indexmain">API (application programming interface), <a href="ch16.xhtml#page_381">381</a>, <a href="ch16.xhtml#page_383">383</a></p>
+<p class="indexmain"><span class="literal">append()</span> list method, <a href="ch05.xhtml#page_114">114</a>, <a href="ch04.xhtml#page_89">89</a></p>
+<p class="indexmain">arguments</p>
+<p class="indexsub">function, <a href="ch01.xhtml#page_13">13</a>, <a href="ch03.xhtml#page_58">58</a>, <a href="ch03.xhtml#page_59">59</a></p>
+<p class="indexsub">keyword, <a href="ch03.xhtml#page_62">62</a></p>
+<p class="indexmain"><span class="literal">argv</span> variable (<span class="literal">sys</span> module), <a href="ch06.xhtml#page_145">145</a></p>
+<p class="indexmain">ASCIIbetical order, <a href="ch04.xhtml#page_91">91</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_532"/>assertions, <a href="ch11.xhtml#page_253">253</a>&#8211;<a href="ch11.xhtml#page_254">254</a>, <a href="app02.xhtml#page_513">513</a></p>
+<p class="indexmain">assignment (<span class="literal">=</span>) operator, <a href="ch01.xhtml#page_9">9</a></p>
+<p class="indexmain">assignment statement, <a href="ch01.xhtml#page_9">9</a>, <a href="ch04.xhtml#page_81">81</a></p>
+<p class="indexmain">asterisk, <a href="ch07.xhtml#page_169">169</a></p>
+<p class="indexmain">attributes, <a href="ch02.xhtml#page_48">48</a>, <a href="ch12.xhtml#page_275">275</a></p>
+<p class="indexmain">augmented assignment operators, <a href="ch04.xhtml#page_87">87</a></p>
+<p class="indexmain">Automatic Form Filler project, <a href="ch20.xhtml#page_495">495</a>&#8211;<a href="ch20.xhtml#page_501">501</a></p>
+<h3 class="h3"><strong>B</strong></h3>
+<p class="indexmain">Backing Up a Folder project, <a href="ch10.xhtml#page_243">243</a>&#8211;<a href="ch10.xhtml#page_246">246</a></p>
+<p class="indexmain"><span class="literal">back()</span> method (Selenium), <a href="ch12.xhtml#page_297">297</a></p>
+<p class="indexmain">backslash (<span class="literal">\</span>), <a href="ch04.xhtml#page_92">92</a>, <a href="ch06.xhtml#page_131">131</a>&#8211;<a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexmain"><span class="literal">BarChart()</span> function (OpenPyXL), <a href="ch09.xhtml#page_211">211</a>&#8211;<a href="ch09.xhtml#page_212">212</a></p>
+<p class="indexmain"><span class="literal">basename()</span> function (<span class="literal">os.path</span> module), <a href="ch09.xhtml#page_211">211</a>&#8211;<a href="ch09.xhtml#page_212">212</a></p>
+<p class="indexmain"><span class="literal">basicConfig()</span> function (<span class="literal">logging</span> module), <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexmain">Beautiful Soup, <a href="ch12.xhtml#page_279">279</a>. See also <span class="literal">bs4</span> module</p>
+<p class="indexmain">binary files, <a href="ch15.xhtml#page_347">347</a>, <a href="ch09.xhtml#page_215">215</a></p>
+<p class="indexmain">binary operators</p>
+<p class="indexsub"><span class="literal">and</span>, <a href="ch02.xhtml#page_25">25</a></p>
+<p class="indexsub">and comparison operators, <a href="ch02.xhtml#page_26">26</a>&#8211;<a href="ch02.xhtml#page_27">27</a></p>
+<p class="indexsub"><span class="literal">not</span>, <a href="ch02.xhtml#page_26">26</a></p>
+<p class="indexsub"><span class="literal">or</span>, <a href="ch02.xhtml#page_26">26</a></p>
+<p class="indexmain">bitwise <span class="literal">or</span> operator, <a href="ch07.xhtml#page_179">179</a></p>
+<p class="indexmain">blocking execution, <a href="ch17.xhtml#page_392">392</a></p>
+<p class="indexmain">blocks of code, <a href="ch02.xhtml#page_27">27</a></p>
+<p class="indexmain">Boolean data type, <a href="ch02.xhtml#page_22">22</a>, <a href="ch04.xhtml#page_85">85</a></p>
+<p class="indexsub">binary operators, <a href="ch02.xhtml#page_25">25</a>&#8211;<a href="ch02.xhtml#page_26">26</a></p>
+<p class="indexsub">&#8220;truthy&#8221; and &#8220;falsey&#8221; values, <a href="ch02.xhtml#page_43">43</a></p>
+<p class="indexsub">using binary and comparison operators, <a href="ch02.xhtml#page_26">26</a>&#8211;<a href="ch02.xhtml#page_27">27</a></p>
+<p class="indexmain">box tuple, <a href="ch19.xhtml#page_450">450</a></p>
+<p class="indexmain">braces(<span class="literal">{}</span>)</p>
+<p class="indexsub">in dictionaries, <a href="ch05.xhtml#page_111">111</a></p>
+<p class="indexsub">greedy vs. nongreedy matching, <a href="ch07.xhtml#page_171">171</a>, <a href="ch07.xhtml#page_176">176</a></p>
+<p class="indexsub">matching specific repetitions with, <a href="ch07.xhtml#page_170">170</a>&#8211;<a href="ch07.xhtml#page_171">171</a></p>
+<p class="indexmain"><span class="literal">break</span> statement</p>
+<p class="indexsub">overview, <a href="ch02.xhtml#page_39">39</a></p>
+<p class="indexsub">using in <span class="literal">for</span> loop, <a href="ch02.xhtml#page_44">44</a></p>
+<p class="indexmain">browser, opening using <span class="literal">webbrowser</span> module, <a href="ch12.xhtml#page_268">268</a></p>
+<p class="indexmain"><span class="literal">bs4</span> module</p>
+<p class="indexsub">creating object from HTML, <a href="ch12.xhtml#page_280">280</a></p>
+<p class="indexsub">finding element with <span class="literal">select()</span> method, <a href="ch12.xhtml#page_280">280</a></p>
+<p class="indexsub">getting attribute, <a href="ch12.xhtml#page_282">282</a></p>
+<p class="indexsub">overview, <a href="ch12.xhtml#page_279">279</a></p>
+<p class="indexmain">built-in functions, <a href="ch02.xhtml#page_47">47</a></p>
+<h3 class="h3"><strong>C</strong></h3>
+<p class="indexmain">calling functions, <a href="ch01.xhtml#page_13">13</a></p>
+<p class="indexmain">call stack, <a href="ch03.xhtml#page_63">63</a>&#8211;<a href="ch03.xhtml#page_65">65</a></p>
+<p class="indexmain">camelcase, <a href="ch01.xhtml#page_11">11</a></p>
+<p class="indexmain">caret symbol (<span class="literal">^</span>)</p>
+<p class="indexsub">matching beginning of string, <a href="ch07.xhtml#page_174">174</a></p>
+<p class="indexsub">negative character classes, <a href="ch07.xhtml#page_174">174</a></p>
+<p class="indexmain">Cascading Style Sheets (CSS), <a href="ch12.xhtml#page_279">279</a></p>
+<p class="indexmain">case sensitivity, <a href="ch01.xhtml#page_11">11</a>, <a href="ch06.xhtml#page_135">135</a>, <a href="ch07.xhtml#page_177">177</a></p>
+<p class="indexmain"><span class="literal">Cell</span> data type (OpenPyXL), <a href="ch13.xhtml#page_304">304</a></p>
+<p class="indexmain">cells, in Excel spreadsheets, <a href="ch13.xhtml#page_302">302</a></p>
+<p class="indexsub">accessing, <a href="ch13.xhtml#page_304">304</a></p>
+<p class="indexsub">writing values to, <a href="ch13.xhtml#page_314">314</a></p>
+<p class="indexmain"><span class="literal">center()</span> string method, <a href="ch06.xhtml#page_140">140</a>&#8211;<a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexmain">chaining method calls, <a href="ch19.xhtml#page_457">457</a></p>
+<p class="indexmain">character classes, <a href="ch07.xhtml#page_172">172</a></p>
+<p class="indexsub">creating, <a href="ch07.xhtml#page_173">173</a></p>
+<p class="indexsub">negative, <a href="ch07.xhtml#page_174">174</a></p>
+<p class="indexsub">shorthand, <a href="ch07.xhtml#page_172">172</a></p>
+<p class="indexmain">character styles, <a href="ch15.xhtml#page_361">361</a></p>
+<p class="indexmain"><span class="literal">Chart</span> objects, <a href="ch13.xhtml#page_324">324</a></p>
+<p class="indexmain"><span class="literal">chdir()</span> function (<span class="literal">os</span> module), <a href="ch19.xhtml#page_451">451</a>, <a href="ch09.xhtml#page_205">205</a></p>
+<p class="indexmain">chess, <a href="ch05.xhtml#page_119">119</a></p>
+<p class="indexmain">Chrome, developer tools in, <a href="ch12.xhtml#page_276">276</a></p>
+<p class="indexmain"><span class="literal">clear()</span> method</p>
+<p class="indexsub">OpenPyXL, <a href="ch14.xhtml#page_342">342</a></p>
+<p class="indexsub">Selenium, <a href="ch12.xhtml#page_294">294</a></p>
+<p class="indexmain"><span class="literal">click()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexmain">clicking the mouse, <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexmain"><span class="literal">click()</span> method (Selenium), <a href="ch12.xhtml#page_295">295</a></p>
+<p class="indexmain">clipboard, copying and pasting, <a href="ch06.xhtml#page_143">143</a>&#8211;<a href="ch06.xhtml#page_144">144</a></p>
+<p class="indexmain"><span class="literal">close()</span> <span class="literal">File</span> method, <a href="ch09.xhtml#page_216">216</a></p>
+<p class="indexmain"><span class="literal">Cm()</span> method (OpenPyXL), <a href="ch15.xhtml#page_367">367</a></p>
+<p class="indexmain">colon (<span class="literal">:</span>), <a href="ch02.xhtml#page_29">29</a>, <a href="ch02.xhtml#page_30">30</a>, <a href="ch02.xhtml#page_35">35</a>, <a href="ch02.xhtml#page_44">44</a>, <a href="ch04.xhtml#page_80">80</a></p>
+<p class="indexmain">color values, RGBA, <a href="ch19.xhtml#page_448">448</a>&#8211;<a href="ch19.xhtml#page_449">449</a></p>
+<p class="indexmain"><span class="literal">column_index_from_string()</span> function (OpenPyXL), <a href="ch13.xhtml#page_306">306</a></p>
+<p class="indexmain">columns, in Excel spreadsheets</p>
+<p class="indexsub">setting height and width of, <a href="ch13.xhtml#page_321">321</a></p>
+<p class="indexsub">slicing <span class="literal">Worksheet</span> objects to get <span class="literal">Cell</span> objects, <a href="ch13.xhtml#page_306">306</a></p>
+<p class="indexmain">Combining Select Pages from Many PDFs project, <a href="ch15.xhtml#page_355">355</a>&#8211;<a href="ch15.xhtml#page_358">358</a></p>
+<p class="indexmain">comma-delimited items, <a href="ch04.xhtml#page_78">78</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_533"/>command line arguments, <a href="ch06.xhtml#page_145">145</a>, <a href="ch12.xhtml#page_269">269</a>, <a href="ch16.xhtml#page_384">384</a>, <a href="ch17.xhtml#page_408">408</a></p>
+<p class="indexmain">comma-separated values (CSV). <em>See</em> CSV (comma-separated values)</p>
+<p class="indexmain">comments</p>
+<p class="indexsub">multiline, <a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexsub">overview, <a href="ch01.xhtml#page_13">13</a></p>
+<p class="indexmain">comparison operators, <a href="ch02.xhtml#page_23">23</a>&#8211;<a href="ch02.xhtml#page_25">25</a></p>
+<p class="indexsub">equal to (<span class="literal">==</span>), <a href="ch02.xhtml#page_23">23</a>, <a href="ch02.xhtml#page_24">24</a></p>
+<p class="indexsub">greater than (<span class="literal">&gt;</span>), <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexsub">greater than or equal to (<span class="literal">&gt;=</span>), <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexsub">less than (<span class="literal">&lt;</span>), <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexsub">less than or equal to (<span class="literal">&lt;=</span>), <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexsub">not equal to (<span class="literal">!=</span>), <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain"><span class="literal">compile()</span> function (<span class="literal">re</span> module), <a href="ch07.xhtml#page_165">165</a></p>
+<p class="indexmain">compressed files</p>
+<p class="indexsub">creating ZIP files, <a href="ch10.xhtml#page_239">239</a></p>
+<p class="indexsub">extracting ZIP files, <a href="ch10.xhtml#page_238">238</a>&#8211;<a href="ch10.xhtml#page_239">239</a></p>
+<p class="indexsub">overview, <a href="ch10.xhtml#page_237">237</a></p>
+<p class="indexsub">reading ZIP files, <a href="ch10.xhtml#page_238">238</a></p>
+<p class="indexmain">computer screen</p>
+<p class="indexsub">coordinates of, <a href="ch19.xhtml#page_448">448</a>, <a href="ch20.xhtml#page_476">476</a></p>
+<p class="indexsub">resolution of, <a href="ch20.xhtml#page_476">476</a></p>
+<p class="indexmain">concatenation operator (<span class="literal">+</span>)</p>
+<p class="indexsub">lists, <a href="ch04.xhtml#page_81">81</a></p>
+<p class="indexsub">strings, <a href="ch01.xhtml#page_7">7</a></p>
+<p class="indexmain">concurrency issues, <a href="ch17.xhtml#page_403">403</a></p>
+<p class="indexmain">conditions, <a href="ch02.xhtml#page_27">27</a></p>
+<p class="indexmain"><span class="literal">continue</span> statement</p>
+<p class="indexsub">overview, <a href="ch02.xhtml#page_40">40</a></p>
+<p class="indexsub">using in <span class="literal">for</span> loop, <a href="ch02.xhtml#page_44">44</a></p>
+<p class="indexmain"><span class="literal">convertAddress()</span> function (EZSheets), <a href="ch14.xhtml#page_338">338</a></p>
+<p class="indexmain">Conway&#8217;s Game of Life project, <a href="ch04.xhtml#page_102">102</a>&#8211;<a href="ch04.xhtml#page_106">106</a></p>
+<p class="indexmain">Coordinated Universal Time (UTC), <a href="ch17.xhtml#page_390">390</a></p>
+<p class="indexmain">coordinates</p>
+<p class="indexsub">of computer screen, <a href="ch19.xhtml#page_448">448</a>, <a href="ch20.xhtml#page_476">476</a></p>
+<p class="indexsub">of an image, <a href="ch19.xhtml#page_449">449</a>&#8211;<a href="ch19.xhtml#page_450">450</a></p>
+<p class="indexmain"><span class="literal">copy()</span> function</p>
+<p class="indexsub"><span class="literal">copy</span> module, <a href="ch04.xhtml#page_101">101</a></p>
+<p class="indexsub">Pyperclip, <a href="ch06.xhtml#page_143">143</a>&#8211;<a href="ch06.xhtml#page_144">144</a></p>
+<p class="indexmain"><span class="literal">copy()</span> method (Pillow), <a href="ch19.xhtml#page_454">454</a></p>
+<p class="indexmain"><span class="literal">copy</span> module</p>
+<p class="indexsub"><span class="literal">copy()</span> function, <a href="ch04.xhtml#page_101">101</a></p>
+<p class="indexsub"><span class="literal">deepcopy()</span> function, <a href="ch04.xhtml#page_101">101</a></p>
+<p class="indexmain"><span class="literal">copyTo()</span> function (EZSheets), <a href="ch14.xhtml#page_343">343</a></p>
+<p class="indexmain"><span class="literal">copytree()</span> function (<span class="literal">shutil</span> module), <a href="ch10.xhtml#page_232">232</a></p>
+<p class="indexmain"><span class="literal">countdown()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_493">493</a></p>
+<p class="indexmain">Countdown project, <a href="ch17.xhtml#page_410">410</a></p>
+<p class="indexmain"><span class="literal">cProfile</span> module, <a href="ch17.xhtml#page_391">391</a></p>
+<p class="indexmain">crashes, programs, <a href="ch01.xhtml#page_4">4</a></p>
+<p class="indexmain"><span class="literal">create()</span> method (Twilio), <a href="ch18.xhtml#page_439">439</a>, <a href="ch18.xhtml#page_440">440</a></p>
+<p class="indexmain"><span class="literal">createSheet()</span> function (EZSheets), <a href="ch14.xhtml#page_342">342</a></p>
+<p class="indexmain"><span class="literal">create_sheet()</span> method (OpenPyXL), <a href="ch13.xhtml#page_314">314</a></p>
+<p class="indexmain"><span class="literal">createSpreadsheet()</span> function (EZSheets), <a href="ch14.xhtml#page_336">336</a></p>
+<p class="indexmain"><span class="literal">critical()</span> function (<span class="literal">logging</span> module), <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexmain">CRITICAL logging level, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexmain">cron, <a href="ch17.xhtml#page_408">408</a></p>
+<p class="indexmain"><span class="literal">crop()</span> method (Pillow), <a href="ch19.xhtml#page_453">453</a></p>
+<p class="indexmain">CSS (Cascading Style Sheets), <a href="ch12.xhtml#page_279">279</a></p>
+<p class="indexmain">CSV (comma-separated values)</p>
+<p class="indexsub">defined, <a href="ch16.xhtml#page_371">371</a></p>
+<p class="indexsub">delimiter for, <a href="ch16.xhtml#page_375">375</a></p>
+<p class="indexsub">format overview, <a href="ch16.xhtml#page_371">371</a></p>
+<p class="indexsub">line terminator for, <a href="ch16.xhtml#page_375">375</a></p>
+<p class="indexsub">module, <a href="ch16.xhtml#page_372">372</a></p>
+<p class="indexsub"><span class="literal">reader</span> objects, <a href="ch16.xhtml#page_373">373</a></p>
+<p class="indexsub">reading data in loop, <a href="ch16.xhtml#page_374">374</a></p>
+<p class="indexsub"><span class="literal">writer</span> objects, <a href="ch16.xhtml#page_374">374</a></p>
+<p class="indexmain">current working directory, <a href="ch09.xhtml#page_205">205</a></p>
+<p class="indexmain"><span class="literal">cwd()</span> method (<span class="literal">pathlib</span> module), <a href="ch09.xhtml#page_205">205</a></p>
+<h3 class="h3"><strong>D</strong></h3>
+<p class="indexmain"><span class="literal">\D</span> character class, <a href="ch07.xhtml#page_173">173</a></p>
+<p class="indexmain"><span class="literal">\d</span> character class, <a href="ch07.xhtml#page_165">165</a>, <a href="ch07.xhtml#page_173">173</a></p>
+<p class="indexmain">data types</p>
+<p class="indexsub">Booleans, <a href="ch02.xhtml#page_22">22</a></p>
+<p class="indexsub">defined, <a href="ch01.xhtml#page_7">7</a></p>
+<p class="indexsub">dictionaries, <a href="ch05.xhtml#page_111">111</a></p>
+<p class="indexsub">floating-point numbers, <a href="ch01.xhtml#page_7">7</a></p>
+<p class="indexsub">integers, <a href="ch01.xhtml#page_7">7</a></p>
+<p class="indexsub">lists, <a href="ch04.xhtml#page_78">78</a></p>
+<p class="indexsub">mutable vs. immutable, <a href="ch04.xhtml#page_94">94</a>&#8211;<a href="ch04.xhtml#page_95">95</a></p>
+<p class="indexsub"><span class="literal">None</span> value, <a href="ch03.xhtml#page_61">61</a></p>
+<p class="indexsub">strings, <a href="ch01.xhtml#page_7">7</a></p>
+<p class="indexsub">tuples, <a href="ch04.xhtml#page_96">96</a></p>
+<p class="indexmain">date arithmetic, <a href="ch17.xhtml#page_397">397</a></p>
+<p class="indexmain"><span class="literal">datetime</span> module</p>
+<p class="indexsub"><span class="literal">datetime()</span> function, <a href="ch17.xhtml#page_395">395</a>, <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexsub"><span class="literal">datetime</span> objects, <a href="ch13.xhtml#page_305">305</a>, <a href="ch17.xhtml#page_395">395</a>, <a href="ch17.xhtml#page_398">398</a>, <a href="ch17.xhtml#page_399">399</a></p>
+<p class="indexsub"><span class="literal">fromtimestamp()</span> function, <a href="ch17.xhtml#page_395">395</a>, <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexsub"><span class="literal">now()</span> function, <a href="ch17.xhtml#page_395">395</a></p>
+<p class="indexsub"><span class="literal">timedelta()</span> function, <a href="ch17.xhtml#page_396">396</a>, <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexsub"><span class="literal">total_seconds()</span> method, <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexmain"><span class="literal">debug()</span> function (<span class="literal">logging</span> module), <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexmain">DEBUG logging level, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_534"/>debugging</p>
+<p class="indexsub">assertions, <a href="ch11.xhtml#page_253">253</a>&#8211;<a href="ch11.xhtml#page_254">254</a></p>
+<p class="indexsub">defined, <a href="ch11.xhtml#page_249">249</a></p>
+<p class="indexsub">getting traceback as string, <a href="ch11.xhtml#page_251">251</a>&#8211;<a href="ch11.xhtml#page_252">252</a></p>
+<p class="indexsub">logging, <a href="ch11.xhtml#page_255">255</a></p>
+<p class="indexsub">in Mu, <a href="ch11.xhtml#page_260">260</a>&#8211;<a href="ch11.xhtml#page_264">264</a></p>
+<p class="indexsub">raising exceptions, <a href="ch11.xhtml#page_250">250</a></p>
+<p class="indexmain">decimal numbers. <em>See</em> floating-point numbers</p>
+<p class="indexmain"><span class="literal">decode()</span> method (<span class="literal">imaplib</span> module), <a href="ch15.xhtml#page_350">350</a></p>
+<p class="indexmain"><span class="literal">decrypt()</span> function (PyPDF2), <a href="ch15.xhtml#page_350">350</a></p>
+<p class="indexmain">deduplicate, <a href="ch03.xhtml#page_58">58</a></p>
+<p class="indexmain"><span class="literal">deepcopy()</span> function (<span class="literal">copy</span> module), <a href="ch04.xhtml#page_101">101</a></p>
+<p class="indexmain"><span class="literal">def</span> statement, <a href="ch03.xhtml#page_58">58</a></p>
+<p class="indexmain"><span class="literal">delete_messages()</span> method (<span class="literal">imaplib</span> module), <a href="ch18.xhtml#page_432">432</a>, <a href="ch18.xhtml#page_433">433</a></p>
+<p class="indexmain">deleting files/folders</p>
+<p class="indexsub">permanently, <a href="ch10.xhtml#page_234">234</a></p>
+<p class="indexsub">using <span class="literal">send2trash</span> module, <a href="ch10.xhtml#page_235">235</a></p>
+<p class="indexmain">delimiter, <a href="ch04.xhtml#page_78">78</a>, <a href="ch16.xhtml#page_375">375</a></p>
+<p class="indexmain"><span class="literal">del</span> statement, <a href="ch04.xhtml#page_82">82</a>, <a href="ch04.xhtml#page_90">90</a></p>
+<p class="indexmain">dictionaries</p>
+<p class="indexsub"><span class="literal">get()</span> method, <a href="ch05.xhtml#page_116">116</a></p>
+<p class="indexsub"><span class="literal">items()</span> method, <a href="ch05.xhtml#page_114">114</a></p>
+<p class="indexsub"><span class="literal">keys()</span> method, <a href="ch05.xhtml#page_114">114</a></p>
+<p class="indexsub">lists vs., <a href="ch05.xhtml#page_112">112</a></p>
+<p class="indexsub">nesting, <a href="ch05.xhtml#page_125">125</a></p>
+<p class="indexsub">overview, <a href="ch05.xhtml#page_111">111</a>&#8211;<a href="ch05.xhtml#page_112">112</a></p>
+<p class="indexsub"><span class="literal">setdefault()</span> method, <a href="ch05.xhtml#page_116">116</a></p>
+<p class="indexsub"><span class="literal">values()</span> method, <a href="ch05.xhtml#page_114">114</a></p>
+<p class="indexmain">directories. <em>See</em> folders</p>
+<p class="indexmain"><span class="literal">dirname()</span> function (<span class="literal">os.path</span> module), <a href="ch09.xhtml#page_211">211</a></p>
+<p class="indexmain"><span class="literal">disable()</span> function (<span class="literal">logging</span> module), <a href="ch09.xhtml#page_211">211</a></p>
+<p class="indexmain">division (<span class="literal">/</span>) operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">Document</span> objects (Docx), <a href="ch15.xhtml#page_358">358</a></p>
+<p class="indexmain">Docx module</p>
+<p class="indexsub"><span class="literal">add_break()</span> method, <a href="ch15.xhtml#page_366">366</a></p>
+<p class="indexsub"><span class="literal">add_heading()</span> method, <a href="ch15.xhtml#page_366">366</a></p>
+<p class="indexsub"><span class="literal">add_paragraph()</span> method, <a href="ch15.xhtml#page_364">364</a>, <a href="ch15.xhtml#page_365">365</a></p>
+<p class="indexsub"><span class="literal">add_picture()</span> method, <a href="ch15.xhtml#page_367">367</a></p>
+<p class="indexsub"><span class="literal">add_run()</span> method, <a href="ch15.xhtml#page_365">365</a></p>
+<p class="indexsub"><span class="literal">Document</span> objects, <a href="ch15.xhtml#page_358">358</a></p>
+<p class="indexsub"><span class="literal">Font()</span> function, <a href="ch13.xhtml#page_318">318</a></p>
+<p class="indexsub">installing, <a href="ch15.xhtml#page_358">358</a></p>
+<p class="indexsub"><span class="literal">LineChart()</span> function, <a href="ch13.xhtml#page_325">325</a></p>
+<p class="indexsub"><span class="literal">Paragraph</span> objects, <a href="ch15.xhtml#page_349">349</a></p>
+<p class="indexmain">dollar sign (<span class="literal">$</span>), <a href="ch07.xhtml#page_174">174</a>&#8211;<a href="ch07.xhtml#page_175">175</a></p>
+<p class="indexmain">dot character (<span class="literal">.</span>), <a href="ch09.xhtml#page_206">206</a>&#8211;<a href="ch09.xhtml#page_207">207</a></p>
+<p class="indexmain">dot-dot (<span class="literal">..</span>) folder, <a href="ch09.xhtml#page_206">206</a>&#8211;<a href="ch09.xhtml#page_207">207</a></p>
+<p class="indexmain">dot (<span class="literal">.</span>) folder, <a href="ch09.xhtml#page_206">206</a>&#8211;<a href="ch09.xhtml#page_207">207</a></p>
+<p class="indexmain">dot-star character (<span class="literal">.*</span>), <a href="ch07.xhtml#page_175">175</a></p>
+<p class="indexmain"><span class="literal">doubleClick()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexmain">double quotes ("), <a href="ch06.xhtml#page_130">130</a></p>
+<p class="indexmain"><span class="literal">downloadAsExcel()</span> method (EZSheets), <a href="ch14.xhtml#page_335">335</a></p>
+<p class="indexmain"><span class="literal">downloadAsHTML()</span> method (EZSheets), <a href="ch14.xhtml#page_335">335</a></p>
+<p class="indexmain"><span class="literal">downloadAsODS()</span> method (EZSheets), <a href="ch14.xhtml#page_335">335</a></p>
+<p class="indexmain"><span class="literal">downloadAsPDF()</span> method (EZSheets), <a href="ch14.xhtml#page_335">335</a></p>
+<p class="indexmain"><span class="literal">downloadAsTSV()</span> method (EZSheets), <a href="ch14.xhtml#page_335">335</a></p>
+<p class="indexmain">downloading</p>
+<p class="indexsub">files from web, <a href="ch12.xhtml#page_273">273</a></p>
+<p class="indexsub">web pages, <a href="ch12.xhtml#page_271">271</a>&#8211;<a href="ch12.xhtml#page_273">273</a></p>
+<p class="indexmain">Downloading XKCD Comics project, <a href="ch12.xhtml#page_286">286</a>&#8211;<a href="ch12.xhtml#page_291">291</a></p>
+<p class="indexmain"><span class="literal">drag()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_479">479</a></p>
+<p class="indexmain">dragging the mouse, <a href="ch20.xhtml#page_479">479</a></p>
+<p class="indexmain"><span class="literal">dragTo()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_479">479</a></p>
+<p class="indexmain"><span class="literal">Draw()</span> function (Pillow), <a href="ch19.xhtml#page_465">465</a>, <a href="ch19.xhtml#page_469">469</a></p>
+<p class="indexmain">drawing on images</p>
+<p class="indexsub">ellipses, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsub">lines, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsub">points, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsub">polygons, <a href="ch19.xhtml#page_467">467</a></p>
+<p class="indexsub">rectangles, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsub">text, <a href="ch19.xhtml#page_468">468</a>&#8211;<a href="ch19.xhtml#page_469">469</a></p>
+<p class="indexmain"><span class="literal">dumps()</span> function (<span class="literal">json</span> module), <a href="ch16.xhtml#page_383">383</a></p>
+<h3 class="h3"><strong>E</strong></h3>
+<p class="indexmain"><span class="literal">ehlo()</span> method (<span class="literal">smtplib</span> module), <a href="ch18.xhtml#page_421">421</a>, <a href="ch18.xhtml#page_422">422</a></p>
+<p class="indexmain">elements, HTML, <a href="ch12.xhtml#page_278">278</a></p>
+<p class="indexmain"><span class="literal">elif</span> statement, <a href="ch02.xhtml#page_30">30</a></p>
+<p class="indexmain"><span class="literal">ellipse()</span> method (Pillow), <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexmain"><span class="literal">else</span> statements, <a href="ch02.xhtml#page_29">29</a>, <a href="ch02.xhtml#page_51">51</a></p>
+<p class="indexmain">emails</p>
+<p class="indexsub">deleting, <a href="ch18.xhtml#page_424">424</a></p>
+<p class="indexsub">disconnecting from server, <a href="ch18.xhtml#page_433">433</a></p>
+<p class="indexsub">fetching, <a href="ch18.xhtml#page_424">424</a></p>
+<p class="indexsub">IMAP, <a href="ch18.xhtml#page_424">424</a></p>
+<p class="indexsub">marking message as read, <a href="ch18.xhtml#page_430">430</a></p>
+<p class="indexsub">searching, <a href="ch18.xhtml#page_426">426</a></p>
+<p class="indexsub">sending, <a href="ch18.xhtml#page_423">423</a></p>
+<p class="indexsub">SMTP, <a href="ch18.xhtml#page_420">420</a></p>
+<p class="indexmain">encodings, Unicode, <a href="ch12.xhtml#page_273">273</a></p>
+<p class="indexmain"><span class="literal">encrypt()</span> function (PyPDF2), <a href="ch15.xhtml#page_350">350</a></p>
+<p class="indexmain"><span class="literal">endswith()</span> string method, <a href="ch06.xhtml#page_138">138</a></p>
+<p class="indexmain"><span class="literal">enumerate()</span> function, <a href="ch04.xhtml#page_86">86</a></p>
+<p class="indexmain">epoch timestamp, <a href="ch17.xhtml#page_390">390</a>, <a href="ch17.xhtml#page_399">399</a></p>
+<p class="indexmain">equal to (<span class="literal">==</span>) operator, <a href="ch02.xhtml#page_23">23</a>, <a href="ch02.xhtml#page_24">24</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_535"/><span class="literal">error()</span> function (<span class="literal">logging</span> module), <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexmain">ERROR logging level, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexmain">errors</p>
+<p class="indexsub">crashes and, <a href="ch01.xhtml#page_4">4</a></p>
+<p class="indexsub">help for, <a href="intro.xhtml#page_xxxiv">xxxiv</a></p>
+<p class="indexmain">escape characters, <a href="ch06.xhtml#page_130">130</a>&#8211;<a href="ch06.xhtml#page_131">131</a></p>
+<p class="indexmain">evaluatation, <a href="ch01.xhtml#page_4">4</a>, <a href="ch03.xhtml#page_60">60</a></p>
+<p class="indexmain">Excel spreadsheets</p>
+<p class="indexsub">application support, <a href="ch13.xhtml#page_301">301</a></p>
+<p class="indexsub">charts in, <a href="ch13.xhtml#page_324">324</a></p>
+<p class="indexsub">column width, <a href="ch13.xhtml#page_321">321</a></p>
+<p class="indexsub">converting between column letters and numbers, <a href="ch13.xhtml#page_306">306</a></p>
+<p class="indexsub">creating documents, <a href="ch13.xhtml#page_313">313</a></p>
+<p class="indexsub">creating worksheets, <a href="ch13.xhtml#page_314">314</a></p>
+<p class="indexsub">deleting worksheets, <a href="ch13.xhtml#page_314">314</a></p>
+<p class="indexsub">font styles, <a href="ch13.xhtml#page_318">318</a></p>
+<p class="indexsub">formulas in, <a href="ch13.xhtml#page_319">319</a></p>
+<p class="indexsub">freezing panes, <a href="ch13.xhtml#page_322">322</a>&#8211;<a href="ch13.xhtml#page_323">323</a></p>
+<p class="indexsub">getting cell values, <a href="ch13.xhtml#page_304">304</a></p>
+<p class="indexsub">getting rows and columns, <a href="ch13.xhtml#page_306">306</a></p>
+<p class="indexsub">getting worksheet names, <a href="ch13.xhtml#page_304">304</a></p>
+<p class="indexsub">merging and unmerging cells, <a href="ch13.xhtml#page_322">322</a></p>
+<p class="indexsub">opening documents, <a href="ch13.xhtml#page_303">303</a></p>
+<p class="indexsub">OpenPyXL, <a href="ch13.xhtml#page_302">302</a></p>
+<p class="indexsub">overview, <a href="ch13.xhtml#page_301">301</a></p>
+<p class="indexsub">reading files, <a href="ch13.xhtml#page_302">302</a></p>
+<p class="indexsub">row height, <a href="ch13.xhtml#page_321">321</a></p>
+<p class="indexsub">saving workbooks, <a href="ch13.xhtml#page_313">313</a></p>
+<p class="indexsub">updating, <a href="ch13.xhtml#page_315">315</a></p>
+<p class="indexsub">workbooks vs., <a href="ch13.xhtml#page_302">302</a></p>
+<p class="indexsub">writing values to cells, <a href="ch13.xhtml#page_314">314</a></p>
+<p class="indexmain"><span class="literal">Exceptio</span>n objects, <a href="ch11.xhtml#page_251">251</a></p>
+<p class="indexmain">exceptions</p>
+<p class="indexsub">assertions and, <a href="ch11.xhtml#page_253">253</a>&#8211;<a href="ch11.xhtml#page_254">254</a></p>
+<p class="indexsub">getting traceback as string, <a href="ch11.xhtml#page_251">251</a>&#8211;<a href="ch11.xhtml#page_253">253</a></p>
+<p class="indexsub">handling, <a href="ch03.xhtml#page_71">71</a></p>
+<p class="indexsub">raising, <a href="ch11.xhtml#page_250">250</a>&#8211;<a href="ch11.xhtml#page_251">251</a></p>
+<p class="indexmain"><span class="literal">except</span> statement, <a href="ch03.xhtml#page_71">71</a>&#8211;<a href="ch03.xhtml#page_72">72</a></p>
+<p class="indexmain">execution</p>
+<p class="indexsub">defined, <a href="ch02.xhtml#page_28">28</a></p>
+<p class="indexsub">pausing until specific time, <a href="ch17.xhtml#page_397">397</a></p>
+<p class="indexsub">terminating, <a href="ch02.xhtml#page_49">49</a></p>
+<p class="indexmain"><span class="literal">exists()</span> function (<span class="literal">os.path</span> module), <a href="ch09.xhtml#page_214">214</a>, <a href="ch09.xhtml#page_215">215</a></p>
+<p class="indexmain">exit codes, <a href="ch17.xhtml#page_407">407</a></p>
+<p class="indexmain"><span class="literal">exit()</span> function (<span class="literal">sys</span> module), <a href="ch17.xhtml#page_402">402</a></p>
+<p class="indexmain">exponent (<span class="literal">**</span>) operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain">expressions, <a href="ch01.xhtml#page_4">4</a></p>
+<p class="indexmain"><span class="literal">expunge()</span> method (<span class="literal">imaplib</span> module), <a href="ch18.xhtml#page_432">432</a></p>
+<p class="indexmain">extension, file, <a href="ch09.xhtml#page_201">201</a></p>
+<p class="indexmain"><span class="literal">extractText()</span> method (PyPDF2), <a href="ch15.xhtml#page_349">349</a></p>
+<p class="indexmain">EZGmail, <a href="ch18.xhtml#page_416">416</a>&#8211;<a href="ch18.xhtml#page_420">420</a></p>
+<p class="indexmain"><span class="literal">ezgmail</span> module</p>
+<p class="indexsub"><span class="literal">init()</span> function, <a href="ch18.xhtml#page_416">416</a></p>
+<p class="indexsub"><span class="literal">recent()</span> function, <a href="ch18.xhtml#page_419">419</a></p>
+<p class="indexsub"><span class="literal">search()</span> function, <a href="ch18.xhtml#page_419">419</a></p>
+<p class="indexsub"><span class="literal">send()</span> function, <a href="ch18.xhtml#page_417">417</a></p>
+<p class="indexsub"><span class="literal">summary()</span> function, <a href="ch18.xhtml#page_418">418</a></p>
+<p class="indexsub"><span class="literal">unread()</span> function, <a href="ch18.xhtml#page_418">418</a></p>
+<p class="indexmain">EZSheets</p>
+<p class="indexsub">credentials and token files, <a href="ch14.xhtml#page_330">330</a></p>
+<p class="indexsub">installing, <a href="ch14.xhtml#page_330">330</a></p>
+<p class="indexsub">quotas, <a href="ch14.xhtml#page_343">343</a></p>
+<p class="indexsub">revoking credentials, <a href="ch14.xhtml#page_332">332</a></p>
+<p class="indexsub"><span class="literal">Sheet</span> objects, <a href="ch14.xhtml#page_336">336</a>&#8211;<a href="ch14.xhtml#page_337">337</a></p>
+<p class="indexsub"><span class="literal">Spreadsheet</span> objects, <a href="ch14.xhtml#page_332">332</a>&#8211;<a href="ch14.xhtml#page_336">336</a></p>
+<p class="indexmain"><span class="literal">ezsheets</span> module</p>
+<p class="indexsub"><span class="literal">convertAddress()</span> function, <a href="ch14.xhtml#page_338">338</a></p>
+<p class="indexsub"><span class="literal">copyTo()</span> function, <a href="ch14.xhtml#page_343">343</a></p>
+<p class="indexsub"><span class="literal">createSheet()</span> function, <a href="ch14.xhtml#page_342">342</a></p>
+<p class="indexsub"><span class="literal">createSpreadsheet()</span> function, <a href="ch14.xhtml#page_336">336</a></p>
+<p class="indexsub"><span class="literal">downloadAsExcel()</span> method, <a href="ch14.xhtml#page_335">335</a></p>
+<p class="indexsub"><span class="literal">downloadAsHTML()</span> method, <a href="ch14.xhtml#page_335">335</a></p>
+<p class="indexsub"><span class="literal">downloadAsODS()</span> method, <a href="ch14.xhtml#page_335">335</a></p>
+<p class="indexsub"><span class="literal">downloadAsPDF()</span> method, <a href="ch14.xhtml#page_335">335</a></p>
+<p class="indexsub"><span class="literal">downloadAsTSV()</span> method, <a href="ch14.xhtml#page_335">335</a></p>
+<p class="indexsub"><span class="literal">getColumn()</span> method, <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexsub"><span class="literal">getColumnLetterOf()</span> function, <a href="ch14.xhtml#page_338">338</a></p>
+<p class="indexsub"><span class="literal">getColumnNumberOf()</span> function, <a href="ch14.xhtml#page_338">338</a></p>
+<p class="indexsub"><span class="literal">getColumns()</span> method, <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexsub"><span class="literal">getRow()</span> method, <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexsub"><span class="literal">getRows()</span> method, <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexsub"><span class="literal">listSpreadsheets()</span> function, <a href="ch14.xhtml#page_336">336</a></p>
+<p class="indexsub"><span class="literal">Spreadsheet()</span> function, <a href="ch14.xhtml#page_332">332</a></p>
+<p class="indexsub"><span class="literal">updateColumn()</span> function, <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexsub"><span class="literal">updateColumns()</span> function, <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexsub"><span class="literal">updateRow()</span> function, <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexsub"><span class="literal">updateRows()</span> function, <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexsub"><span class="literal">upload()</span> function, <a href="ch14.xhtml#page_339">339</a></p>
+<h3 class="h3"><strong>F</strong></h3>
+<p class="indexmain"><span class="literal">factory()</span> function (Pyzmail), <a href="ch18.xhtml#page_425">425</a></p>
+<p class="indexmain"><span class="literal">FailSafeException</span> exceptions, <a href="ch20.xhtml#page_475">475</a></p>
+<p class="indexmain"><span class="literal">False</span> Boolean value, <a href="ch02.xhtml#page_22">22</a></p>
+<p class="indexmain">&#8220;falsey&#8221; values, <a href="ch02.xhtml#page_43">43</a></p>
+<p class="indexmain">Fetching Current Weather project, <a href="ch16.xhtml#page_383">383</a>&#8211;<a href="ch16.xhtml#page_387">387</a></p>
+<p class="indexmain"><span class="literal">fetch()</span> method (<span class="literal">imaplib</span> module), <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_430">430</a></p>
+<p class="indexmain">file editor, <a href="ch01.xhtml#page_11">11</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_536"/>file management</p>
+<p class="indexsub">absolute vs. relative paths, <a href="ch09.xhtml#page_206">206</a>, <a href="ch09.xhtml#page_209">209</a></p>
+<p class="indexsub">backslash vs. forward slash, <a href="ch09.xhtml#page_202">202</a>&#8211;<a href="ch09.xhtml#page_203">203</a></p>
+<p class="indexsub">compressed files, <a href="ch10.xhtml#page_237">237</a></p>
+<p class="indexsub">creating directories, <a href="ch09.xhtml#page_207">207</a></p>
+<p class="indexsub">current working directory, <a href="ch09.xhtml#page_205">205</a></p>
+<p class="indexsub">opening files, <a href="ch09.xhtml#page_217">217</a></p>
+<p class="indexsub">overview, <a href="ch09.xhtml#page_201">201</a></p>
+<p class="indexsub">paths, <a href="ch09.xhtml#page_201">201</a>&#8211;<a href="ch09.xhtml#page_202">202</a></p>
+<p class="indexsub">plaintext vs. binary files, <a href="ch09.xhtml#page_216">216</a></p>
+<p class="indexsub">reading files, <a href="ch09.xhtml#page_217">217</a></p>
+<p class="indexsub">renaming files, <a href="ch10.xhtml#page_233">233</a>, <a href="ch10.xhtml#page_240">240</a>&#8211;<a href="ch10.xhtml#page_243">243</a></p>
+<p class="indexsub"><span class="literal">send2trash</span> module, <a href="ch10.xhtml#page_235">235</a></p>
+<p class="indexsub"><span class="literal">shelve</span> module, <a href="ch09.xhtml#page_219">219</a></p>
+<p class="indexsub"><span class="literal">shutil</span> module, <a href="ch10.xhtml#page_232">232</a></p>
+<p class="indexsub">walking directory trees, <a href="ch10.xhtml#page_236">236</a></p>
+<p class="indexsub">writing files, <a href="ch09.xhtml#page_218">218</a></p>
+<p class="indexmain">filename, <a href="ch09.xhtml#page_201">201</a></p>
+<p class="indexmain"><span class="literal">File</span> objects, <a href="ch09.xhtml#page_217">217</a></p>
+<p class="indexmain"><span class="literal">findall()</span> method (<span class="literal">re</span> module), <a href="ch07.xhtml#page_171">171</a></p>
+<p class="indexmain"><span class="literal">find_element_by_*()</span> methods (Selenium), <a href="ch10.xhtml#page_239">239</a></p>
+<p class="indexmain"><span class="literal">find_elements_by_*()</span> methods (Selenium), <a href="ch10.xhtml#page_239">239</a></p>
+<p class="indexmain">Firefox, developer tools in, <a href="ch12.xhtml#page_277">277</a></p>
+<p class="indexmain"><span class="literal">Firefox()</span> function (Selenium), <a href="ch12.xhtml#page_292">292</a></p>
+<p class="indexmain">floating point numbers</p>
+<p class="indexsub"><span class="literal">float()</span> function, <a href="ch01.xhtml#page_15">15</a></p>
+<p class="indexsub">integer equivalence, <a href="ch01.xhtml#page_17">17</a></p>
+<p class="indexsub">overview, <a href="ch01.xhtml#page_7">7</a></p>
+<p class="indexsub">rounding, <a href="ch01.xhtml#page_17">17</a></p>
+<p class="indexmain">flow control</p>
+<p class="indexsub">blocks of code, <a href="ch02.xhtml#page_27">27</a></p>
+<p class="indexsub"><span class="literal">break</span> statements, <a href="ch02.xhtml#page_39">39</a></p>
+<p class="indexsub">conditions, <a href="ch02.xhtml#page_27">27</a></p>
+<p class="indexsub"><span class="literal">continue</span> statements, <a href="ch02.xhtml#page_40">40</a></p>
+<p class="indexsub"><span class="literal">elif</span> statements, <a href="ch02.xhtml#page_30">30</a></p>
+<p class="indexsub"><span class="literal">else</span> statements, <a href="ch02.xhtml#page_29">29</a>, <a href="ch02.xhtml#page_51">51</a></p>
+<p class="indexsub"><span class="literal">for</span> loops, <a href="ch02.xhtml#page_44">44</a>, <a href="ch02.xhtml#page_46">46</a>, <a href="ch02.xhtml#page_51">51</a>, <a href="ch04.xhtml#page_84">84</a>, <a href="ch05.xhtml#page_114">114</a></p>
+<p class="indexsub"><span class="literal">if</span> statements, <a href="ch02.xhtml#page_28">28</a>, <a href="ch02.xhtml#page_51">51</a></p>
+<p class="indexsub">overview, <a href="ch02.xhtml#page_27">27</a></p>
+<p class="indexsub"><span class="literal">while</span> loops, <a href="ch02.xhtml#page_35">35</a>, <a href="ch02.xhtml#page_46">46</a></p>
+<p class="indexmain">folders, <a href="ch09.xhtml#page_205">205</a></p>
+<p class="indexsub">absolute paths in, <a href="ch09.xhtml#page_206">206</a>, <a href="ch09.xhtml#page_209">209</a></p>
+<p class="indexsub">absolute vs. relative paths, <a href="ch09.xhtml#page_206">206</a>, <a href="ch09.xhtml#page_209">209</a></p>
+<p class="indexsub">backslash vs. forward slash, <a href="ch09.xhtml#page_202">202</a>&#8211;<a href="ch09.xhtml#page_203">203</a></p>
+<p class="indexsub">copying, <a href="ch10.xhtml#page_232">232</a></p>
+<p class="indexsub">creating, <a href="ch09.xhtml#page_207">207</a>, <a href="ch09.xhtml#page_208">208</a></p>
+<p class="indexsub">current working directory, <a href="ch09.xhtml#page_205">205</a></p>
+<p class="indexsub">defined, <a href="ch09.xhtml#page_202">202</a></p>
+<p class="indexsub">deleting permanently, <a href="ch10.xhtml#page_234">234</a></p>
+<p class="indexsub">deleting using <span class="literal">send2trash</span> module, <a href="ch10.xhtml#page_235">235</a></p>
+<p class="indexsub">file sizes, <a href="ch09.xhtml#page_212">212</a></p>
+<p class="indexsub">folder contents, <a href="ch09.xhtml#page_212">212</a></p>
+<p class="indexsub">moving, <a href="ch10.xhtml#page_233">233</a></p>
+<p class="indexsub">path validity, <a href="ch09.xhtml#page_214">214</a></p>
+<p class="indexsub">root, <a href="ch09.xhtml#page_202">202</a>, <a href="ch09.xhtml#page_206">206</a></p>
+<p class="indexsub">renaming, <a href="ch10.xhtml#page_233">233</a></p>
+<p class="indexsub">walking, <a href="ch10.xhtml#page_236">236</a></p>
+<p class="indexmain"><span class="literal">font</span> data type, <a href="ch13.xhtml#page_318">318</a></p>
+<p class="indexmain"><span class="literal">Font()</span> function (Docx), <a href="ch13.xhtml#page_318">318</a></p>
+<p class="indexmain">font styles, in Excel spreadsheets, <a href="ch13.xhtml#page_318">318</a></p>
+<p class="indexmain">form filler project, <a href="ch20.xhtml#page_495">495</a></p>
+<p class="indexmain">Formulas (Excel), <a href="ch13.xhtml#page_319">319</a></p>
+<p class="indexmain"><span class="literal">for</span> statements, <a href="ch02.xhtml#page_44">44</a>, <a href="ch02.xhtml#page_46">46</a>, <a href="ch02.xhtml#page_51">51</a>, <a href="ch04.xhtml#page_84">84</a>, <a href="ch05.xhtml#page_114">114</a></p>
+<p class="indexmain">forward slash (<span class="literal">/</span>), <a href="ch09.xhtml#page_202">202</a>&#8211;<a href="ch09.xhtml#page_203">203</a></p>
+<p class="indexsub">division operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain">freeze panes in Excel spreadsheets, <a href="ch13.xhtml#page_323">323</a></p>
+<p class="indexmain"><span class="literal">fromtimestamp()</span> function (<span class="literal">datetime</span> module), <a href="ch17.xhtml#page_395">395</a>, <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexmain">functions. <em>See also names of individual functions</em></p>
+<p class="indexsub">arguments, <a href="ch03.xhtml#page_59">59</a></p>
+<p class="indexsub">as &#8220;black box&#8221;, <a href="ch03.xhtml#page_70">70</a></p>
+<p class="indexsub">built-in, <a href="ch02.xhtml#page_47">47</a></p>
+<p class="indexsub"><span class="literal">def</span> statements, <a href="ch03.xhtml#page_59">59</a></p>
+<p class="indexsub">exception handling, <a href="ch03.xhtml#page_71">71</a></p>
+<p class="indexsub">keyword arguments, <a href="ch03.xhtml#page_62">62</a></p>
+<p class="indexsub"><span class="literal">None</span> value and, <a href="ch03.xhtml#page_61">61</a></p>
+<p class="indexsub">overview, <a href="ch03.xhtml#page_59">59</a></p>
+<p class="indexsub">parameters, <a href="ch03.xhtml#page_59">59</a></p>
+<p class="indexsub">return values, <a href="ch03.xhtml#page_60">60</a></p>
+<h3 class="h3"><strong>G</strong></h3>
+<p class="indexmain">Gauss, Carl Friedrich, <a href="ch02.xhtml#page_45">45</a></p>
+<p class="indexmain">Generating Random Quizzes project, <a href="ch09.xhtml#page_221">221</a>&#8211;<a href="ch09.xhtml#page_226">226</a></p>
+<p class="indexmain"><span class="literal">getActiveWindow()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_487">487</a></p>
+<p class="indexmain"><span class="literal">get_addresses()</span> method (Pyzmail), <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_431">431</a></p>
+<p class="indexmain"><span class="literal">getAllWindows()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_487">487</a></p>
+<p class="indexmain"><span class="literal">getColumnLetterOf()</span> function (EZSheets), <a href="ch14.xhtml#page_338">338</a></p>
+<p class="indexmain"><span class="literal">getColumn()</span> method (EZSheets), <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexmain"><span class="literal">getColumnNumberOf()</span> function (EZSheets), <a href="ch14.xhtml#page_338">338</a></p>
+<p class="indexmain"><span class="literal">getColumns()</span> method (EZSheets), <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexmain"><span class="literal">getcwd()</span> function (<span class="literal">os</span> module), <a href="ch09.xhtml#page_205">205</a></p>
+<p class="indexmain"><span class="literal">get()</span> dictionary method, <a href="ch05.xhtml#page_116">116</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_537"/><span class="literal">get()</span> function (<span class="literal">requests</span> module), <a href="ch12.xhtml#page_271">271</a></p>
+<p class="indexmain"><span class="literal">getPage()</span> method (PyPDF2), <a href="ch15.xhtml#page_349">349</a></p>
+<p class="indexmain"><span class="literal">get_payload()</span> method (Pyzmail), <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_432">432</a></p>
+<p class="indexmain"><span class="literal">getpixel()</span> function (Pillow), <a href="ch19.xhtml#page_459">459</a></p>
+<p class="indexmain"><span class="literal">getRow()</span> method (EZSheets), <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexmain"><span class="literal">getRows()</span> method (EZSheets), <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexmain"><span class="literal">get_sheet_by_name()</span> method (OpenPyXL), <a href="ch13.xhtml#page_304">304</a></p>
+<p class="indexmain"><span class="literal">get_sheet_names()</span> method (OpenPyXL), <a href="ch13.xhtml#page_304">304</a></p>
+<p class="indexmain"><span class="literal">getsize()</span> function (<span class="literal">os.path</span> module), <a href="ch09.xhtml#page_212">212</a></p>
+<p class="indexmain"><span class="literal">get_subject()</span> method (Pyzmail), <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_431">431</a></p>
+<p class="indexmain"><span class="literal">getWindowsAt()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_487">487</a></p>
+<p class="indexmain"><span class="literal">getWindowsWithTitle()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_487">487</a></p>
+<p class="indexmain">GIF format, <a href="ch19.xhtml#page_451">451</a></p>
+<p class="indexmain">global scope, <a href="ch03.xhtml#page_65">65</a>, <a href="ch03.xhtml#page_66">66</a></p>
+<p class="indexmain"><span class="literal">global</span> statement, <a href="ch03.xhtml#page_68">68</a></p>
+<p class="indexmain">global variable, <a href="ch03.xhtml#page_65">65</a>, <a href="ch03.xhtml#page_67">67</a>, <a href="ch03.xhtml#page_68">68</a></p>
+<p class="indexmain">Gmail, <a href="ch18.xhtml#page_416">416</a></p>
+<p class="indexmain">Google Maps, <a href="ch12.xhtml#page_268">268</a></p>
+<p class="indexmain">graphical user interface (GUI). <em>See</em> GUI (graphical user interface)</p>
+<p class="indexmain">greater than (<span class="literal">&gt;</span>) operator, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain">greater than or equal to (<span class="literal">&gt;=</span>) operator, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain">greedy matching, <a href="ch07.xhtml#page_171">171</a>, <a href="ch07.xhtml#page_176">176</a></p>
+<p class="indexmain"><span class="literal">group()</span> method (<span class="literal">re</span> module), <a href="ch07.xhtml#page_166">166</a></p>
+<p class="indexmain">groups, regex, <a href="ch07.xhtml#page_166">166</a></p>
+<p class="indexmain">Guess the Number program, <a href="ch02.xhtml#page_49">49</a>&#8211;<a href="ch02.xhtml#page_51">51</a></p>
+<p class="indexmain">GUI (graphical user interface)</p>
+<p class="indexsub">controlling the keyboard</p>
+<p class="indexsubsub">hotkey combinations, <a href="ch20.xhtml#page_492">492</a></p>
+<p class="indexsubsub">key names, <a href="ch20.xhtml#page_490">490</a></p>
+<p class="indexsubsub">pressing and releasing, <a href="ch20.xhtml#page_491">491</a></p>
+<p class="indexsubsub">sending string from keyboard, <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexsub">controlling the mouse</p>
+<p class="indexsubsub">clicking the mouse, <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexsubsub">dragging the mouse, <a href="ch20.xhtml#page_479">479</a>&#8211;<a href="ch20.xhtml#page_480">480</a></p>
+<p class="indexsubsub">moving the mouse, <a href="ch20.xhtml#page_477">477</a></p>
+<p class="indexsubsub">scrolling the mouse, <a href="ch20.xhtml#page_480">480</a>&#8211;<a href="ch20.xhtml#page_481">481</a></p>
+<p class="indexsub">determining mouse position, <a href="ch20.xhtml#page_477">477</a>&#8211;<a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexsub">image recognition, <a href="ch20.xhtml#page_484">484</a></p>
+<p class="indexsub">installing PyAutoGUI module, <a href="ch20.xhtml#page_474">474</a></p>
+<p class="indexsub">overview, <a href="ch20.xhtml#page_473">473</a></p>
+<p class="indexsub">screenshots, <a href="ch20.xhtml#page_482">482</a></p>
+<p class="indexsub">stopping program, <a href="ch20.xhtml#page_475">475</a></p>
+<h3 class="h3"><strong>H</strong></h3>
+<p class="indexmain">hash character (<span class="literal">#</span>), <a href="ch01.xhtml#page_13">13</a>, <a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexmain">headings, Word document, <a href="ch15.xhtml#page_366">366</a></p>
+<p class="indexmain">help, with programming</p>
+<p class="indexsub">asking on forums, <a href="intro.xhtml#page_xxxiii">xxxiii</a>&#8211;<a href="intro.xhtml#page_xxxix">xxxix</a></p>
+<p class="indexsub">online, <a href="intro.xhtml#page_xxxvi">xxxvi</a>&#8211;<a href="intro.xhtml#page_xxxviii">xxxviii</a></p>
+<p class="indexmain">hotkey combinations, <a href="ch20.xhtml#page_492">492</a></p>
+<p class="indexmain"><span class="literal">hotkey()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_492">492</a></p>
+<p class="indexmain">How to Keep an Idiot Busy for Hours project, <a href="ch08.xhtml#page_194">194</a>&#8211;<a href="ch08.xhtml#page_195">195</a></p>
+<p class="indexmain">HTML (Hypertext Markup Language)</p>
+<p class="indexsub">attributes, <a href="ch12.xhtml#page_275">275</a></p>
+<p class="indexsub">browser developer tools and, <a href="ch12.xhtml#page_278">278</a></p>
+<p class="indexsub">finding elements, <a href="ch12.xhtml#page_280">280</a></p>
+<p class="indexsub">learning resources, <a href="ch12.xhtml#page_274">274</a></p>
+<p class="indexsub">overview, <a href="ch12.xhtml#page_274">274</a></p>
+<p class="indexsub">viewing page source, <a href="ch12.xhtml#page_275">275</a>&#8211;<a href="ch12.xhtml#page_276">276</a></p>
+<h3 class="h3"><strong>I</strong></h3>
+<p class="indexmain">IDLE (integrated development and learning environment), <a href="intro.xhtml#page_xxxv">xxxv</a></p>
+<p class="indexmain"><span class="literal">if</span> statements, <a href="ch02.xhtml#page_28">28</a>, <a href="ch02.xhtml#page_51">51</a></p>
+<p class="indexmain">images</p>
+<p class="indexsub">adding logo to, <a href="ch19.xhtml#page_460">460</a>&#8211;<a href="ch19.xhtml#page_465">465</a></p>
+<p class="indexsub">box tuples, <a href="ch19.xhtml#page_450">450</a></p>
+<p class="indexsub">color values in, <a href="ch19.xhtml#page_448">448</a>&#8211;<a href="ch19.xhtml#page_449">449</a></p>
+<p class="indexsub">coordinates in, <a href="ch19.xhtml#page_449">449</a>&#8211;<a href="ch19.xhtml#page_450">450</a></p>
+<p class="indexsub">copying and pasting in, <a href="ch19.xhtml#page_454">454</a></p>
+<p class="indexsub">cropping, <a href="ch19.xhtml#page_453">453</a></p>
+<p class="indexsub">drawing on</p>
+<p class="indexsubsub">ellipses, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsubsub">lines, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsubsub">points, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsubsub">polygons, <a href="ch19.xhtml#page_467">467</a></p>
+<p class="indexsubsub">rectangles, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsubsub">text, <a href="ch19.xhtml#page_468">468</a>&#8211;<a href="ch19.xhtml#page_469">469</a></p>
+<p class="indexsub">flipping, <a href="ch19.xhtml#page_457">457</a>&#8211;<a href="ch19.xhtml#page_459">459</a></p>
+<p class="indexsub">opening with Pillow, <a href="ch19.xhtml#page_450">450</a></p>
+<p class="indexsub">pixel manipulation, <a href="ch19.xhtml#page_459">459</a></p>
+<p class="indexsub">recognition of, <a href="ch20.xhtml#page_484">484</a></p>
+<p class="indexsub">resizing, <a href="ch19.xhtml#page_456">456</a></p>
+<p class="indexsub">RGBA color values, <a href="ch19.xhtml#page_448">448</a>&#8211;<a href="ch19.xhtml#page_449">449</a></p>
+<p class="indexsub">rotating, <a href="ch19.xhtml#page_457">457</a>&#8211;<a href="ch19.xhtml#page_459">459</a></p>
+<p class="indexsub">transparent pixels, <a href="ch19.xhtml#page_465">465</a></p>
+<p class="indexmain">IMAP (Internet Message Access Protocol)</p>
+<p class="indexsub">defined, <a href="ch18.xhtml#page_424">424</a></p>
+<p class="indexsub">deleting messages, <a href="ch18.xhtml#page_432">432</a></p>
+<p class="indexsub">disconnecting from server, <a href="ch18.xhtml#page_433">433</a></p>
+<p class="indexsub"><span epub:type="pagebreak" id="page_538"/>fetching messages, <a href="ch18.xhtml#page_430">430</a></p>
+<p class="indexsub">folders, <a href="ch18.xhtml#page_426">426</a></p>
+<p class="indexsub">logging into server, <a href="ch18.xhtml#page_426">426</a></p>
+<p class="indexsub">searching messages, <a href="ch18.xhtml#page_426">426</a></p>
+<p class="indexmain"><span class="literal">IMAPClient()</span> function (<span class="literal">imaplib</span> module), <a href="ch18.xhtml#page_424">424</a>, <a href="ch18.xhtml#page_426">426</a></p>
+<p class="indexmain">IMAPClient module, <a href="ch18.xhtml#page_424">424</a></p>
+<p class="indexmain"><span class="literal">imaplib</span> module</p>
+<p class="indexsub"><span class="literal">decode()</span> method, <a href="ch15.xhtml#page_350">350</a></p>
+<p class="indexsub"><span class="literal">delete_messages()</span> method, <a href="ch18.xhtml#page_432">432</a>, <a href="ch18.xhtml#page_433">433</a></p>
+<p class="indexsub"><span class="literal">expunge()</span> method, <a href="ch18.xhtml#page_432">432</a></p>
+<p class="indexsub"><span class="literal">fetch()</span> method, <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_430">430</a></p>
+<p class="indexsub"><span class="literal">IMAPClient()</span> function, <a href="ch18.xhtml#page_424">424</a>, <a href="ch18.xhtml#page_426">426</a></p>
+<p class="indexsub"><span class="literal">list_folders()</span> method, <a href="ch18.xhtml#page_426">426</a></p>
+<p class="indexsub"><span class="literal">login()</span> method, <a href="ch18.xhtml#page_424">424</a>, <a href="ch18.xhtml#page_426">426</a></p>
+<p class="indexsub"><span class="literal">logout()</span> method, <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_433">433</a></p>
+<p class="indexsub"><span class="literal">search()</span> method, <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_427">427</a>, <a href="ch18.xhtml#page_429">429</a></p>
+<p class="indexsub"><span class="literal">select_folder()</span> method, <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_427">427</a>, <a href="ch18.xhtml#page_430">430</a></p>
+<p class="indexmain">immutable data types, <a href="ch04.xhtml#page_94">94</a></p>
+<p class="indexmain">importing modules, <a href="ch02.xhtml#page_47">47</a></p>
+<p class="indexmain"><span class="literal">import</span> statement, <a href="ch02.xhtml#page_47">47</a></p>
+<p class="indexmain"><span class="literal">Inches()</span> method (OpenPyXL), <a href="ch15.xhtml#page_367">367</a></p>
+<p class="indexmain">indentation, <a href="ch02.xhtml#page_27">27</a></p>
+<p class="indexmain"><span class="literal">IndexError</span> exception, <a href="ch04.xhtml#page_79">79</a>, <a href="ch05.xhtml#page_112">112</a></p>
+<p class="indexmain">indexes, <a href="ch04.xhtml#page_78">78</a>&#8211;<a href="ch04.xhtml#page_79">79</a>, <a href="ch04.xhtml#page_80">80</a>, <a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexsub">for dictionaries. <em>See</em> keys</p>
+<p class="indexsub">for lists, <a href="ch04.xhtml#page_78">78</a></p>
+<p class="indexsub">for strings, <a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexsub">negative, <a href="ch04.xhtml#page_80">80</a></p>
+<p class="indexmain"><span class="literal">index()</span> method, <a href="ch04.xhtml#page_88">88</a></p>
+<p class="indexmain">infinite loop, <a href="ch02.xhtml#page_39">39</a></p>
+<p class="indexmain"><span class="literal">info()</span> function (<span class="literal">logging</span> module), <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexmain">INFO logging level, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexmain"><span class="literal">init()</span> function (EZGmail), <a href="ch18.xhtml#page_416">416</a></p>
+<p class="indexmain"><span class="literal">in</span> operator, <a href="ch05.xhtml#page_116">116</a>, <a href="ch04.xhtml#page_84">84</a>, <a href="ch04.xhtml#page_93">93</a>, <a href="ch06.xhtml#page_133">133</a></p>
+<p class="indexmain">in place modification, <a href="ch04.xhtml#page_89">89</a></p>
+<p class="indexmain"><span class="literal">inputBool()</span> function (PyInputPlus), <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain"><span class="literal">inputChoice()</span> function (PyInputPlus), <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain"><span class="literal">inputCustom()</span> function (PyInputPlus), <a href="ch08.xhtml#page_193">193</a></p>
+<p class="indexmain"><span class="literal">inputDatetime()</span> function (PyInputPlus), <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain"><span class="literal">inputEmail()</span> function (PyInputPlus), <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain"><span class="literal">inputFilepath()</span> function (PyInputPlus), <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain"><span class="literal">inputFloat()</span> function (PyInputPlus), <a href="ch08.xhtml#page_190">190</a></p>
+<p class="indexmain"><span class="literal">input()</span> function, <a href="ch01.xhtml#page_14">14</a></p>
+<p class="indexmain"><span class="literal">inputInt()</span> function (PyInputPlus), <a href="ch08.xhtml#page_190">190</a></p>
+<p class="indexmain"><span class="literal">inputMenu()</span> function (PyInputPlus), <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain"><span class="literal">inputNum()</span> function (PyInputPlus), <a href="ch08.xhtml#page_189">189</a>, <a href="ch08.xhtml#page_190">190</a></p>
+<p class="indexmain"><span class="literal">inputPassword()</span> function (PyInputPlus), <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain"><span class="literal">inputStr()</span> function (PyInputPlus), <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain">input validation, <a href="ch06.xhtml#page_137">137</a>, <a href="ch08.xhtml#page_187">187</a></p>
+<p class="indexmain"><span class="literal">inputYesNo()</span> function (PyInputPlus), <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain"><span class="literal">insert()</span> list method, <a href="ch04.xhtml#page_89">89</a></p>
+<p class="indexmain">integer division/floored quotient (<span class="literal">//</span>) operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain">integers</p>
+<p class="indexsub">floating-point equivalence, <a href="ch01.xhtml#page_17">17</a></p>
+<p class="indexsub"><span class="literal">int()</span> function, <a href="ch01.xhtml#page_15">15</a></p>
+<p class="indexsub">overview, <a href="ch01.xhtml#page_7">7</a></p>
+<p class="indexmain">interactive development environment (IDLE), <a href="intro.xhtml#page_xxxv">xxxv</a></p>
+<p class="indexmain">interactive shell, <a href="intro.xhtml#page_xxxv">xxxv</a>&#8211;<a href="intro.xhtml#page_xxxvi">xxxvi</a>, <a href="ch01.xhtml#page_3">3</a></p>
+<p class="indexmain">Internet Explorer, developer tools in, <a href="ch12.xhtml#page_276">276</a></p>
+<p class="indexmain">Internet Message Access Protocol (IMAP). <em>See</em> IMAP (Internet Message Access Protocol)</p>
+<p class="indexmain"><span class="literal">int()</span> function, <a href="ch01.xhtml#page_15">15</a></p>
+<p class="indexmain"><span class="literal">isabs()</span> function (<span class="literal">os.path</span> module), <a href="ch09.xhtml#page_209">209</a></p>
+<p class="indexmain"><span class="literal">isalnum()</span> string method, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexmain"><span class="literal">isalpha()</span> string method, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexmain"><span class="literal">isdecimal()</span> string method, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexmain"><span class="literal">isdir()</span> function (<span class="literal">os.path</span> module), <a href="ch09.xhtml#page_215">215</a></p>
+<p class="indexmain"><span class="literal">isEncrypted()</span> method (PyPDF2), <a href="ch15.xhtml#page_350">350</a></p>
+<p class="indexmain"><span class="literal">isfile()</span> function (<span class="literal">os.path</span> module), <a href="ch09.xhtml#page_215">215</a>, <a href="ch09.xhtml#page_214">214</a></p>
+<p class="indexmain"><span class="literal">islower()</span> string method, <a href="ch06.xhtml#page_135">135</a></p>
+<p class="indexmain"><span class="literal">isspace()</span> string method, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexmain"><span class="literal">istitle()</span> string method, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexmain"><span class="literal">isupper()</span> string method, <a href="ch06.xhtml#page_135">135</a>&#8211;<a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexmain"><span class="literal">items()</span> dictionary method, <a href="ch05.xhtml#page_114">114</a></p>
+<p class="indexmain">iteration, <a href="ch02.xhtml#page_37">37</a></p>
+<p class="indexmain"><span class="literal">iter_content()</span> method (Requests), <a href="ch12.xhtml#page_273">273</a>&#8211;<a href="ch12.xhtml#page_274">274</a></p>
+<h3 class="h3"><strong>J</strong></h3>
+<p class="indexmain"><span class="literal">join()</span> function (<span class="literal">os.path</span> module), <a href="ch09.xhtml#page_202">202</a></p>
+<p class="indexmain"><span class="literal">join()</span> method (<span class="literal">threading</span> module), <a href="ch17.xhtml#page_405">405</a></p>
+<p class="indexmain"><span class="literal">join()</span> string method, <a href="ch06.xhtml#page_138">138</a></p>
+<p class="indexmain">JPEG format, <a href="ch19.xhtml#page_451">451</a></p>
+<p class="indexmain">JSON (JavaScript Object Notation), <a href="ch16.xhtml#page_371">371</a>, <a href="ch16.xhtml#page_381">381</a></p>
+<p class="indexmain"><span class="literal">json</span> module</p>
+<p class="indexsub"><span class="literal">dumps()</span> function, <a href="ch16.xhtml#page_383">383</a></p>
+<p class="indexsub"><span class="literal">loads()</span> function, <a href="ch16.xhtml#page_382">382</a>, <a href="ch16.xhtml#page_385">385</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_539"/>justifying text, <a href="ch06.xhtml#page_140">140</a>&#8211;<a href="ch06.xhtml#page_141">141</a></p>
+<p class="indexmain">&#8220;Just Text Me&#8221; Module project, <a href="ch18.xhtml#page_441">441</a>&#8211;<a href="ch18.xhtml#page_442">442</a></p>
+<h3 class="h3"><strong>K</strong></h3>
+<p class="indexmain">keyboard</p>
+<p class="indexsub">hotkey combinations, <a href="ch20.xhtml#page_492">492</a></p>
+<p class="indexsub">key names, <a href="ch20.xhtml#page_490">490</a></p>
+<p class="indexsub">pressing and releasing, <a href="ch20.xhtml#page_491">491</a></p>
+<p class="indexsub">sending string from keyboard, <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexmain"><span class="literal">KeyboardInterrupt</span> exception, <a href="ch02.xhtml#page_41">41</a></p>
+<p class="indexmain"><span class="literal">keyDown()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_491">491</a></p>
+<p class="indexmain">keys, dictionary, <a href="ch05.xhtml#page_111">111</a></p>
+<p class="indexmain"><span class="literal">keys()</span> dictionary method, <a href="ch05.xhtml#page_114">114</a></p>
+<p class="indexmain"><span class="literal">keyUp()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_491">491</a></p>
+<p class="indexmain">key-value pair, <a href="ch05.xhtml#page_111">111</a></p>
+<p class="indexmain">keyword arguments, <a href="ch03.xhtml#page_62">62</a>, <a href="ch04.xhtml#page_91">91</a></p>
+<h3 class="h3"><strong>L</strong></h3>
+<p class="indexmain">launchd, <a href="ch17.xhtml#page_408">408</a></p>
+<p class="indexmain">launching programs</p>
+<p class="indexsub">opening files with default applications, <a href="ch17.xhtml#page_409">409</a></p>
+<p class="indexsub">opening websites, <a href="ch12.xhtml#page_268">268</a></p>
+<p class="indexsub">overview, <a href="ch17.xhtml#page_406">406</a></p>
+<p class="indexsub">passing command line arguments, <a href="ch06.xhtml#page_145">145</a>, <a href="ch12.xhtml#page_269">269</a>, <a href="ch16.xhtml#page_384">384</a>, <a href="ch17.xhtml#page_408">408</a></p>
+<p class="indexsub">running Python scripts, <a href="ch06.xhtml#page_144">144</a></p>
+<p class="indexsub">scheduling, <a href="ch17.xhtml#page_408">408</a></p>
+<p class="indexmain">lazy matching. <em>See</em> non-greedy matching</p>
+<p class="indexmain"><span class="literal">len()</span> function, <a href="ch01.xhtml#page_14">14</a>, <a href="ch04.xhtml#page_81">81</a>, <a href="ch04.xhtml#page_84">84</a>, <a href="ch04.xhtml#page_86">86</a></p>
+<p class="indexmain">less than (<span class="literal">&lt;</span>) operator, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain">less than or equal to (<span class="literal">&lt;=</span>) operator, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain">LibreOffice, <a href="ch13.xhtml#page_302">302</a>, <a href="ch15.xhtml#page_358">358</a></p>
+<p class="indexmain">line breaks, Word documents, <a href="ch15.xhtml#page_366">366</a></p>
+<p class="indexmain"><span class="literal">LineChart()</span> function (Docx), <a href="ch13.xhtml#page_325">325</a></p>
+<p class="indexmain">line continuation character, <a href="ch04.xhtml#page_92">92</a></p>
+<p class="indexmain"><span class="literal">line()</span> method (Pillow), <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexmain">line terminator, <a href="ch16.xhtml#page_375">375</a></p>
+<p class="indexmain">linked styles, Word documents, <a href="ch15.xhtml#page_361">361</a></p>
+<p class="indexmain">Linux</p>
+<p class="indexsub">backslash vs. forward slash, <a href="ch09.xhtml#page_202">202</a>&#8211;<a href="ch09.xhtml#page_203">203</a></p>
+<p class="indexsub">cron, <a href="ch17.xhtml#page_402">402</a></p>
+<p class="indexsub">installing Python, <a href="toc.xhtml#page_xxi">xxi</a></p>
+<p class="indexsub">installing third-party modules, <a href="app01.xhtml#page_507">507</a>&#8211;<a href="app01.xhtml#page_510">510</a></p>
+<p class="indexsub">starting IDLE, <a href="intro.xhtml#page_xxxiii">xxxiii</a></p>
+<p class="indexsub">starting Mu, <a href="intro.xhtml#page_xxxii">xxxii</a></p>
+<p class="indexmain"><span class="literal">listdir()</span> function (<span class="literal">os</span> module), <a href="ch09.xhtml#page_212">212</a></p>
+<p class="indexmain"><span class="literal">list_folders()</span> method (<span class="literal">imaplib</span> module), <a href="ch18.xhtml#page_426">426</a></p>
+<p class="indexmain"><span class="literal">list()</span> function, <a href="ch04.xhtml#page_97">97</a>, <a href="ch05.xhtml#page_115">115</a>, <a href="ch16.xhtml#page_373">373</a></p>
+<p class="indexmain">list-like, <a href="ch04.xhtml#page_93">93</a>, <a href="ch05.xhtml#page_114">114</a>, <a href="ch09.xhtml#page_220">220</a></p>
+<p class="indexmain">lists</p>
+<p class="indexsub"><span class="literal">append()</span> method, <a href="ch04.xhtml#page_89">89</a></p>
+<p class="indexsub">changing values using index, <a href="ch04.xhtml#page_81">81</a></p>
+<p class="indexsub">concatenation, <a href="ch04.xhtml#page_81">81</a></p>
+<p class="indexsub">dictionaries vs., <a href="ch05.xhtml#page_112">112</a></p>
+<p class="indexsub">finding number of values using <span class="literal">len()</span>, <a href="ch04.xhtml#page_81">81</a></p>
+<p class="indexsub"><span class="literal">index()</span> method, <a href="ch04.xhtml#page_88">88</a></p>
+<p class="indexsub"><span class="literal">insert()</span> method, <a href="ch04.xhtml#page_89">89</a></p>
+<p class="indexsub">multiple assignment trick, <a href="ch04.xhtml#page_85">85</a></p>
+<p class="indexsub">mutable vs. immutable data types, <a href="ch04.xhtml#page_94">94</a>&#8211;<a href="ch04.xhtml#page_95">95</a></p>
+<p class="indexsub">negative indexes, <a href="ch04.xhtml#page_80">80</a></p>
+<p class="indexsub">nesting, <a href="ch05.xhtml#page_125">125</a></p>
+<p class="indexsub">overview, <a href="ch04.xhtml#page_78">78</a></p>
+<p class="indexsub"><span class="literal">remove()</span> method, <a href="ch04.xhtml#page_90">90</a></p>
+<p class="indexsub">replication, <a href="ch04.xhtml#page_81">81</a></p>
+<p class="indexsub"><span class="literal">sort()</span> method, <a href="ch04.xhtml#page_90">90</a></p>
+<p class="indexsub">using with <span class="literal">for</span> loops, <a href="ch04.xhtml#page_84">84</a></p>
+<p class="indexmain"><span class="literal">listSpreadsheets()</span> function (EZSheets), <a href="ch14.xhtml#page_336">336</a></p>
+<p class="indexmain"><span class="literal">ljust()</span> string method, <a href="ch06.xhtml#page_140">140</a>&#8211;<a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexmain"><span class="literal">loads()</span> function (<span class="literal">json</span> module), <a href="ch16.xhtml#page_382">382</a>, <a href="ch16.xhtml#page_385">385</a></p>
+<p class="indexmain"><span class="literal">load_workbook()</span> function (OpenPyXL), <a href="ch13.xhtml#page_303">303</a></p>
+<p class="indexmain">local scope, <a href="ch03.xhtml#page_65">65</a>, <a href="ch03.xhtml#page_67">67</a></p>
+<p class="indexmain">local variable, <a href="ch03.xhtml#page_65">65</a>, <a href="ch03.xhtml#page_66">66</a></p>
+<p class="indexmain"><span class="literal">locateAllOnScreen()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_484">484</a></p>
+<p class="indexmain"><span class="literal">locateOnScreen()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_484">484</a></p>
+<p class="indexmain">logging levels</p>
+<p class="indexsub">CRITICAL, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexsub">DEBUG, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexsub">ERROR, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexsub">INFO, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexsub">WARNING, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexmain"><span class="literal">logging</span> module</p>
+<p class="indexsub"><span class="literal">basicConfig()</span> function, <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexsub"><span class="literal">critical()</span> function, <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexsub"><span class="literal">debug()</span> function, <a href="ch11.xhtml#page_256">256</a>, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexsub"><span class="literal">disable()</span> function, <a href="ch09.xhtml#page_211">211</a></p>
+<p class="indexsub"><span class="literal">error()</span> function, <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexsub"><span class="literal">info()</span> function, <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexsub"><span class="literal">warning()</span> function, <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexmain"><span class="literal">login()</span> method</p>
+<p class="indexsubsub"><span class="literal">imaplib</span> module, <a href="ch18.xhtml#page_424">424</a>, <a href="ch18.xhtml#page_426">426</a></p>
+<p class="indexsubsub"><span class="literal">smtplib</span> module, <a href="ch18.xhtml#page_421">421</a>, <a href="ch18.xhtml#page_423">423</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_540"/><span class="literal">logout()</span> method (<span class="literal">imaplib</span> module), <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_433">433</a></p>
+<p class="indexmain">loops, <a href="ch02.xhtml#page_35">35</a></p>
+<p class="indexmain"><span class="literal">lower()</span> string method, <a href="ch06.xhtml#page_135">135</a>&#8211;<a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexmain"><span class="literal">lstrip()</span> string method, <a href="ch06.xhtml#page_142">142</a></p>
+<h3 class="h3"><strong>M</strong></h3>
+<p class="indexmain">macOS</p>
+<p class="indexsub">backslash vs. forward slash, <a href="ch09.xhtml#page_202">202</a>&#8211;<a href="ch09.xhtml#page_203">203</a></p>
+<p class="indexsub">installing Python, <a href="intro.xhtml#page_xxxiii">xxxiii</a>, <a href="intro.xhtml#page_xxxiv">xxxiv</a></p>
+<p class="indexsub">installing third-party modules, <a href="app01.xhtml#page_507">507</a>&#8211;<a href="app01.xhtml#page_510">510</a></p>
+<p class="indexsub">launchd, <a href="ch17.xhtml#page_408">408</a></p>
+<p class="indexsub">opening files with default applications, <a href="ch17.xhtml#page_409">409</a></p>
+<p class="indexsub"><span class="literal">open</span> program, <a href="ch17.xhtml#page_410">410</a></p>
+<p class="indexsub">pip tool on, <a href="app01.xhtml#page_507">507</a>&#8211;<a href="app01.xhtml#page_508">508</a></p>
+<p class="indexsub">running Python programs, <a href="app02.xhtml#page_514">514</a></p>
+<p class="indexsub">starting IDLE, <a href="intro.xhtml#page_xxxv">xxxv</a></p>
+<p class="indexsub">starting Mu, <a href="intro.xhtml#page_xxxv">xxxv</a></p>
+<p class="indexsub">terminal window, <a href="app02.xhtml#page_511">511</a>&#8211;<a href="app02.xhtml#page_512">512</a></p>
+<p class="indexmain">Magic <a href="ch01.xhtml#page_8">8</a> Ball example program, <a href="ch04.xhtml#page_92">92</a></p>
+<p class="indexmain"><span class="literal">makedirs()</span> function (<span class="literal">os</span> module), <a href="ch09.xhtml#page_207">207</a></p>
+<p class="indexmain"><em>mapIt.py</em> with the webbrowser Module project, <a href="ch12.xhtml#page_268">268</a>&#8211;<a href="ch12.xhtml#page_270">270</a></p>
+<p class="indexmain">matching</p>
+<p class="indexsub">greedy, <a href="ch07.xhtml#page_171">171</a>, <a href="ch07.xhtml#page_176">176</a></p>
+<p class="indexsub">non-greedy, <a href="ch07.xhtml#page_171">171</a>, <a href="ch07.xhtml#page_176">176</a></p>
+<p class="indexmain">math operators, <a href="ch01.xhtml#page_4">4</a></p>
+<p class="indexsub">addition (<span class="literal">+</span>), <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexsub">division (<span class="literal">/</span>), <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexsub">exponent (<span class="literal">**</span>), <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexsub">integer division/floored quotient (<span class="literal">//</span>), <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexsub">modulus/remainder (<span class="literal">%</span>), <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexsub">multiplication (<span class="literal">*</span>), <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexsub">order of operations, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">maximize()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexmain"><span class="literal">merge_cells()</span> method (OpenPyXL), <a href="ch13.xhtml#page_322">322</a></p>
+<p class="indexmain">methods. <em>See also names of individual methods</em></p>
+<p class="indexsub">chaining calls, <a href="ch19.xhtml#page_457">457</a></p>
+<p class="indexsub">defined, <a href="ch04.xhtml#page_88">88</a></p>
+<p class="indexsub">dictionary, <a href="ch05.xhtml#page_114">114</a>&#8211;<a href="ch05.xhtml#page_117">117</a></p>
+<p class="indexsub">list, <a href="ch04.xhtml#page_88">88</a>&#8211;<a href="ch04.xhtml#page_92">92</a></p>
+<p class="indexsub">string, <a href="ch06.xhtml#page_134">134</a>&#8211;<a href="ch06.xhtml#page_143">143</a></p>
+<p class="indexmain">Microsoft Windows. <em>See</em> Windows (operating system)</p>
+<p class="indexmain"><span class="literal">middleClick()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexmain"><span class="literal">minimize()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexmain"><span class="literal">mkdir()</span> method (<span class="literal">pathlib</span> module), <a href="ch09.xhtml#page_208">208</a></p>
+<p class="indexmain">modules. <em>See also names of individual modules</em></p>
+<p class="indexsub">importing, <a href="ch02.xhtml#page_47">47</a></p>
+<p class="indexsub">third-party, installing, <a href="app01.xhtml#page_507">507</a>&#8211;<a href="app01.xhtml#page_510">510</a></p>
+<p class="indexmain">modulus/remainder (<span class="literal">%</span>) operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain">Monty Python, <a href="intro.xhtml#page_xxx">xxx</a>, <a href="ch01.xhtml#page_10">10</a></p>
+<p class="indexmain">mouse</p>
+<p class="indexsub">clicking, <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexsub">determining position, <a href="ch20.xhtml#page_477">477</a>&#8211;<a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexsub">dragging, <a href="ch20.xhtml#page_479">479</a>&#8211;<a href="ch20.xhtml#page_480">480</a></p>
+<p class="indexsub">moving, <a href="ch20.xhtml#page_477">477</a></p>
+<p class="indexsub">scrolling, <a href="ch20.xhtml#page_480">480</a>&#8211;<a href="ch20.xhtml#page_481">481</a></p>
+<p class="indexmain"><span class="literal">mouseDown()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexmain"><span class="literal">mouseUp()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexmain"><span class="literal">move()</span> function</p>
+<p class="indexsub">PyAutoGUI, <a href="ch20.xhtml#page_477">477</a></p>
+<p class="indexsub"><span class="literal">shutil</span> module, <a href="ch10.xhtml#page_233">233</a></p>
+<p class="indexmain"><span class="literal">moveTo()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_477">477</a></p>
+<p class="indexmain">moving files/folders, <a href="ch10.xhtml#page_233">233</a></p>
+<p class="indexmain">multi-clipboard</p>
+<p class="indexsub">Multi-Clipboard Automatic Messages project, <a href="ch06.xhtml#page_144">144</a>&#8211;<a href="ch06.xhtml#page_146">146</a></p>
+<p class="indexsub">Updatable Multi-Clipboard, <a href="ch09.xhtml#page_226">226</a>&#8211;<a href="ch09.xhtml#page_228">228</a></p>
+<p class="indexmain">multiline comments, <a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexmain">multiline strings, <a href="ch06.xhtml#page_131">131</a>&#8211;<a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexmain">multiple assignment trick, <a href="ch04.xhtml#page_85">85</a></p>
+<p class="indexmain">multiplication operator (<span class="literal">*</span>), <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain">Multiplication Quiz project, <a href="ch08.xhtml#page_196">196</a>&#8211;<a href="ch08.xhtml#page_197">197</a></p>
+<p class="indexmain">Multithreaded XKCD Downloader project, <a href="ch17.xhtml#page_403">403</a>&#8211;<a href="ch17.xhtml#page_406">406</a></p>
+<p class="indexmain">multithreading</p>
+<p class="indexsub">concurrency issues, <a href="ch17.xhtml#page_403">403</a></p>
+<p class="indexsub"><span class="literal">join()</span> method, <a href="ch17.xhtml#page_405">405</a></p>
+<p class="indexsub">overview, <a href="ch17.xhtml#page_401">401</a></p>
+<p class="indexsub">passing arguments to threads, <a href="ch17.xhtml#page_402">402</a></p>
+<p class="indexsub"><span class="literal">start()</span> method, <a href="ch17.xhtml#page_401">401</a></p>
+<p class="indexsub"><span class="literal">Thread()</span> function, <a href="ch17.xhtml#page_401">401</a></p>
+<p class="indexmain">mutable data types, <a href="ch04.xhtml#page_94">94</a></p>
+<h3 class="h3"><strong>N</strong></h3>
+<p class="indexmain"><span class="literal">NameError</span> exception, <a href="ch01.xhtml#page_14">14</a></p>
+<p class="indexmain"><span class="literal">namelist()</span> method (<span class="literal">zipfile</span> module), <a href="ch10.xhtml#page_238">238</a></p>
+<p class="indexmain">negative character classes, <a href="ch07.xhtml#page_174">174</a></p>
+<p class="indexmain">negative indexes, <a href="ch04.xhtml#page_80">80</a></p>
+<p class="indexmain">nested dictionaries and lists, <a href="ch05.xhtml#page_118">118</a>, <a href="ch05.xhtml#page_125">125</a></p>
+<p class="indexmain">nested <span class="literal">for</span> loops, <a href="ch15.xhtml#page_357">357</a>, <a href="ch19.xhtml#page_456">456</a></p>
+<p class="indexmain"><span class="literal">new()</span> method (<span class="literal">Image</span> module), <a href="ch19.xhtml#page_452">452</a></p>
+<p class="indexmain"><span class="literal">None</span> value, <a href="ch03.xhtml#page_61">61</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_541"/>non-greedy matching, <a href="ch07.xhtml#page_171">171</a>, <a href="ch07.xhtml#page_176">176</a></p>
+<p class="indexmain"><span class="literal">not</span>binary operator, <a href="ch02.xhtml#page_26">26</a></p>
+<p class="indexmain"><span class="literal">not in</span> operator, <a href="ch05.xhtml#page_116">116</a>, <a href="ch04.xhtml#page_84">84</a>, <a href="ch04.xhtml#page_93">93</a>, <a href="ch06.xhtml#page_133">133</a></p>
+<p class="indexmain"><span class="literal">now()</span> function (<span class="literal">datetime</span> module), <a href="ch17.xhtml#page_395">395</a></p>
+<h3 class="h3"><strong>O</strong></h3>
+<p class="indexmain"><span class="literal">open()</span> function, <a href="ch09.xhtml#page_216">216</a>, <a href="ch09.xhtml#page_217">217</a>, <a href="ch09.xhtml#page_218">218</a>, <a href="ch09.xhtml#page_224">224</a>, <a href="ch16.xhtml#page_373">373</a>, <a href="ch16.xhtml#page_374">374</a></p>
+<p class="indexsub"><span class="literal">webbrowser</span> module, <a href="ch12.xhtml#page_268">268</a></p>
+<p class="indexmain"><span class="literal">open()</span> method (Pillow), <a href="ch19.xhtml#page_450">450</a>, <a href="ch19.xhtml#page_451">451</a>, <a href="ch19.xhtml#page_456">456</a>, <a href="ch19.xhtml#page_457">457</a></p>
+<p class="indexmain">OpenOffice, <a href="ch13.xhtml#page_302">302</a></p>
+<p class="indexmain"><span class="literal">open</span> program, <a href="ch17.xhtml#page_410">410</a></p>
+<p class="indexmain">OpenPyXL, <a href="ch13.xhtml#page_302">302</a></p>
+<p class="indexmain"><span class="literal">openpyxl</span> module</p>
+<p class="indexsub"><span class="literal">BarChart()</span> function, <a href="ch09.xhtml#page_211">211</a>&#8211;<a href="ch09.xhtml#page_212">212</a></p>
+<p class="indexsub"><span class="literal">clear()</span> method, <a href="ch14.xhtml#page_342">342</a></p>
+<p class="indexsub"><span class="literal">Cm()</span> method, <a href="ch15.xhtml#page_367">367</a></p>
+<p class="indexsub"><span class="literal">column_index_from_string()</span> function, <a href="ch13.xhtml#page_306">306</a></p>
+<p class="indexsub"><span class="literal">create_sheet()</span> method, <a href="ch13.xhtml#page_314">314</a></p>
+<p class="indexsub"><span class="literal">get_sheet_by_name()</span> method, <a href="ch13.xhtml#page_304">304</a></p>
+<p class="indexsub"><span class="literal">get_sheet_names()</span> method, <a href="ch13.xhtml#page_304">304</a></p>
+<p class="indexsub"><span class="literal">Inches()</span> method, <a href="ch15.xhtml#page_367">367</a></p>
+<p class="indexsub"><span class="literal">load_workbook()</span> function, <a href="ch13.xhtml#page_303">303</a></p>
+<p class="indexsub"><span class="literal">merge_cells()</span> method, <a href="ch13.xhtml#page_322">322</a></p>
+<p class="indexsub"><span class="literal">Reference()</span> function, <a href="ch13.xhtml#page_324">324</a></p>
+<p class="indexsub"><span class="literal">remove_sheet()</span> method, <a href="ch13.xhtml#page_314">314</a></p>
+<p class="indexsub"><span class="literal">unmerge_cells()</span> method, <a href="ch13.xhtml#page_322">322</a></p>
+<p class="indexmain">operators. <em>See also names of individual operators</em></p>
+<p class="indexsub">augmented assignment, <a href="ch04.xhtml#page_87">87</a></p>
+<p class="indexsub">binary, <a href="ch02.xhtml#page_25">25</a></p>
+<p class="indexsub">Boolean, <a href="ch02.xhtml#page_25">25</a></p>
+<p class="indexsub">comparison, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexsub">defined, <a href="ch01.xhtml#page_4">4</a></p>
+<p class="indexsub">math, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexsub">unary, <a href="ch02.xhtml#page_26">26</a></p>
+<p class="indexmain"><span class="literal">or</span> binary operator, <a href="ch02.xhtml#page_25">25</a></p>
+<p class="indexmain">order of operations, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain">origin coordinate, <a href="ch19.xhtml#page_449">449</a></p>
+<p class="indexmain"><span class="literal">os</span> module</p>
+<p class="indexsub"><span class="literal">chdir()</span> function, <a href="ch19.xhtml#page_451">451</a>, <a href="ch09.xhtml#page_205">205</a></p>
+<p class="indexsub"><span class="literal">getcwd()</span> function, <a href="ch09.xhtml#page_205">205</a></p>
+<p class="indexsub"><span class="literal">listdir()</span> function, <a href="ch09.xhtml#page_212">212</a></p>
+<p class="indexsub"><span class="literal">makedirs()</span> function, <a href="ch09.xhtml#page_207">207</a></p>
+<p class="indexsub"><span class="literal">walk()</span> function, <a href="ch10.xhtml#page_236">236</a></p>
+<p class="indexsub"><span class="literal">rmdir()</span> function, <a href="ch10.xhtml#page_234">234</a></p>
+<p class="indexsub"><span class="literal">unlink()</span> function, <a href="ch10.xhtml#page_234">234</a></p>
+<p class="indexmain"><span class="literal">os.path</span> module</p>
+<p class="indexsub"><span class="literal">abspath()</span> function, <a href="ch09.xhtml#page_209">209</a></p>
+<p class="indexsub"><span class="literal">basename()</span> function, <a href="ch09.xhtml#page_211">211</a>&#8211;<a href="ch09.xhtml#page_212">212</a></p>
+<p class="indexsub"><span class="literal">dirname()</span> function, <a href="ch09.xhtml#page_211">211</a></p>
+<p class="indexsub"><span class="literal">exists()</span> function, <a href="ch09.xhtml#page_214">214</a>, <a href="ch09.xhtml#page_215">215</a></p>
+<p class="indexsub"><span class="literal">isabs()</span> function, <a href="ch09.xhtml#page_209">209</a></p>
+<p class="indexsub"><span class="literal">isdir()</span> function, <a href="ch09.xhtml#page_215">215</a></p>
+<p class="indexsub"><span class="literal">isfile()</span> function, <a href="ch09.xhtml#page_215">215</a>, <a href="ch09.xhtml#page_214">214</a></p>
+<p class="indexsub"><span class="literal">join()</span> function, <a href="ch09.xhtml#page_202">202</a></p>
+<p class="indexsub"><span class="literal">split()</span> function, <a href="ch09.xhtml#page_211">211</a></p>
+<h3 class="h3"><strong>P</strong></h3>
+<p class="indexmain"><span class="literal">Page</span> data type (PyPDF2), <a href="ch15.xhtml#page_349">349</a></p>
+<p class="indexmain"><span class="literal">Paragraph</span> objects (Docx), <a href="ch15.xhtml#page_349">349</a></p>
+<p class="indexmain">paragraph styles, <a href="ch15.xhtml#page_361">361</a></p>
+<p class="indexmain">parameters, functions, <a href="ch03.xhtml#page_59">59</a></p>
+<p class="indexmain">parentheses (<span class="literal">()</span>), <a href="ch01.xhtml#page_5">5</a>, <a href="ch01.xhtml#page_14">14</a>, <a href="ch03.xhtml#page_59">59</a>, <a href="ch04.xhtml#page_96">96</a>, <a href="ch07.xhtml#page_166">166</a></p>
+<p class="indexmain">parsing, <a href="ch12.xhtml#page_279">279</a></p>
+<p class="indexmain"><span class="literal">partition()</span> string method, <a href="ch06.xhtml#page_140">140</a></p>
+<p class="indexmain">passing arguments, <a href="ch03.xhtml#page_59">59</a></p>
+<p class="indexmain"><span class="literal">paste()</span> function (Pyperclip), <a href="ch06.xhtml#page_143">143</a>, <a href="ch06.xhtml#page_144">144</a></p>
+<p class="indexmain"><span class="literal">paste()</span> method (Pillow), <a href="ch19.xhtml#page_454">454</a></p>
+<p class="indexmain"><span class="literal">pathlib</span> module</p>
+<p class="indexsub"><span class="literal">cwd()</span> method, <a href="ch09.xhtml#page_205">205</a></p>
+<p class="indexsub"><span class="literal">mkdir()</span> method, <a href="ch09.xhtml#page_208">208</a></p>
+<p class="indexmain">paths</p>
+<p class="indexsub">absolute vs. relative, <a href="ch09.xhtml#page_206">206</a></p>
+<p class="indexsub">backslash vs. forward slash, <a href="ch09.xhtml#page_202">202</a>&#8211;<a href="ch09.xhtml#page_203">203</a></p>
+<p class="indexsub">current working directory, <a href="ch09.xhtml#page_205">205</a></p>
+<p class="indexsub">overview, <a href="ch09.xhtml#page_201">201</a></p>
+<p class="indexmain"><span class="literal">PAUSE</span> variable (PyAutoGUI), <a href="ch20.xhtml#page_498">498</a></p>
+<p class="indexmain"><span class="literal">PdfFileReader</span> data type, <a href="ch15.xhtml#page_348">348</a></p>
+<p class="indexmain">PDF (Portable Document Format) files</p>
+<p class="indexsub">adding pages to, <a href="ch15.xhtml#page_355">355</a></p>
+<p class="indexsub">Combining Select Page from Many PDFs Project, <a href="ch15.xhtml#page_355">355</a>&#8211;<a href="ch15.xhtml#page_358">358</a></p>
+<p class="indexsub">copying pages in, <a href="ch15.xhtml#page_351">351</a></p>
+<p class="indexsub">creating, <a href="ch15.xhtml#page_350">350</a></p>
+<p class="indexsub">decrypting, <a href="ch15.xhtml#page_349">349</a></p>
+<p class="indexsub">encrypting, <a href="ch15.xhtml#page_354">354</a></p>
+<p class="indexsub">extracting text from, <a href="ch15.xhtml#page_348">348</a></p>
+<p class="indexsub">format overview, <a href="ch15.xhtml#page_347">347</a>, <a href="ch15.xhtml#page_348">348</a></p>
+<p class="indexsub">overlaying pages, <a href="ch15.xhtml#page_353">353</a></p>
+<p class="indexsub">rotating pages, <a href="ch15.xhtml#page_352">352</a></p>
+<p class="indexmain"><span class="literal">PdfFileWriter</span> data type, <a href="ch15.xhtml#page_350">350</a></p>
+<p class="indexmain"><span class="literal">pformat()</span> function (<span class="literal">pprint</span> module), <a href="ch05.xhtml#page_118">118</a>, <a href="ch13.xhtml#page_311">311</a>, <a href="ch09.xhtml#page_220">220</a></p>
+<p class="indexmain">Phone Number and Email Address Extractor project, <a href="ch07.xhtml#page_179">179</a>&#8211;<a href="ch07.xhtml#page_184">184</a></p>
+<p class="indexmain">Pig Latin project, <a href="ch06.xhtml#page_149">149</a>&#8211;<a href="ch06.xhtml#page_152">152</a></p>
+<p class="indexmain">Pillow</p>
+<p class="indexsub">copying and pasting in images, <a href="ch19.xhtml#page_454">454</a></p>
+<p class="indexsub">cropping images, <a href="ch19.xhtml#page_453">453</a></p>
+<p class="indexsub"><span epub:type="pagebreak" id="page_542"/>drawing on images</p>
+<p class="indexsubsub">ellipses, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsubsub">lines, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsubsub">points, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsubsub">polygons, <a href="ch19.xhtml#page_467">467</a></p>
+<p class="indexsubsub">rectangles, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsubsub">text, <a href="ch19.xhtml#page_468">468</a>&#8211;<a href="ch19.xhtml#page_469">469</a></p>
+<p class="indexsub">flipping images, <a href="ch19.xhtml#page_457">457</a>&#8211;<a href="ch19.xhtml#page_459">459</a></p>
+<p class="indexsub">module, <a href="ch19.xhtml#page_450">450</a></p>
+<p class="indexsub">opening images, <a href="ch19.xhtml#page_450">450</a></p>
+<p class="indexsub">pixel manipulation, <a href="ch19.xhtml#page_459">459</a></p>
+<p class="indexsub">resizing images, <a href="ch19.xhtml#page_456">456</a></p>
+<p class="indexsub">RGBA color values, <a href="ch19.xhtml#page_448">448</a>&#8211;<a href="ch19.xhtml#page_449">449</a></p>
+<p class="indexsub">rotating images, <a href="ch19.xhtml#page_457">457</a>&#8211;<a href="ch19.xhtml#page_459">459</a></p>
+<p class="indexsub">transparent pixels, <a href="ch19.xhtml#page_465">465</a></p>
+<p class="indexmain"><span class="literal">pillow</span> module</p>
+<p class="indexsub"><span class="literal">copy()</span> method, <a href="ch19.xhtml#page_454">454</a></p>
+<p class="indexsub"><span class="literal">crop()</span> method, <a href="ch19.xhtml#page_453">453</a></p>
+<p class="indexsub"><span class="literal">Draw()</span> function, <a href="ch19.xhtml#page_465">465</a>, <a href="ch19.xhtml#page_469">469</a></p>
+<p class="indexsub"><span class="literal">ellipse()</span> method, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsub"><span class="literal">getpixel()</span> function, <a href="ch19.xhtml#page_459">459</a></p>
+<p class="indexsub"><span class="literal">line()</span> method, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsub"><span class="literal">open()</span> method, <a href="ch19.xhtml#page_450">450</a>, <a href="ch19.xhtml#page_451">451</a>, <a href="ch19.xhtml#page_456">456</a>, <a href="ch19.xhtml#page_457">457</a></p>
+<p class="indexsub"><span class="literal">paste()</span> method, <a href="ch19.xhtml#page_454">454</a></p>
+<p class="indexsub"><span class="literal">point()</span> method, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsub"><span class="literal">polygon()</span> method, <a href="ch19.xhtml#page_467">467</a></p>
+<p class="indexsub"><span class="literal">putpixel()</span> function, <a href="ch19.xhtml#page_459">459</a></p>
+<p class="indexsub"><span class="literal">rectangle()</span> method, <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexsub"><span class="literal">resize()</span> method, <a href="ch19.xhtml#page_456">456</a>&#8211;<a href="ch19.xhtml#page_457">457</a></p>
+<p class="indexsub"><span class="literal">rotate()</span> method <a href="ch19.xhtml#page_457">457</a>, <a href="ch19.xhtml#page_458">458</a></p>
+<p class="indexsub"><span class="literal">text()</span> method, <a href="ch19.xhtml#page_468">468</a>, <a href="ch19.xhtml#page_469">469</a></p>
+<p class="indexsub"><span class="literal">textsize()</span> method, <a href="ch19.xhtml#page_468">468</a></p>
+<p class="indexsub"><span class="literal">transpose()</span> method, <a href="ch19.xhtml#page_458">458</a></p>
+<p class="indexsub"><span class="literal">truetype()</span> function, <a href="ch19.xhtml#page_468">468</a></p>
+<p class="indexmain">pipe (<span class="literal">|</span>) character, <a href="ch07.xhtml#page_168">168</a></p>
+<p class="indexmain">pip tool, <a href="app01.xhtml#page_507">507</a>&#8211;<a href="app01.xhtml#page_508">508</a></p>
+<p class="indexmain">pixel, <a href="ch19.xhtml#page_448">448</a></p>
+<p class="indexmain"><span class="literal">pixelMatchesColor()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_483">483</a></p>
+<p class="indexmain">plaintext files, <a href="ch09.xhtml#page_215">215</a></p>
+<p class="indexmain">plus character (<span class="literal">+</span>), <a href="ch07.xhtml#page_170">170</a></p>
+<p class="indexmain">PNG format, <a href="ch19.xhtml#page_451">451</a></p>
+<p class="indexmain">point, <a href="ch13.xhtml#page_321">321</a></p>
+<p class="indexmain"><span class="literal">point()</span> method (Pillow), <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexmain"><span class="literal">poll()</span> method (<span class="literal">threading</span> module), <a href="ch17.xhtml#page_407">407</a></p>
+<p class="indexmain"><span class="literal">polygon()</span> method (Pillow), <a href="ch19.xhtml#page_467">467</a></p>
+<p class="indexmain"><span class="literal">Popen()</span> function (<span class="literal">subprocess</span> module), <a href="ch17.xhtml#page_406">406</a>, <a href="ch17.xhtml#page_407">407</a>, <a href="ch17.xhtml#page_409">409</a></p>
+<p class="indexmain">Portable Document Format (PDF) files. <em>See</em> PDF (Portable Document Format) files</p>
+<p class="indexmain"><span class="literal">position()</span> function (PyAutoGUI), <a href="ch19.xhtml#page_467">467</a></p>
+<p class="indexmain"><span class="literal">pprint</span> module</p>
+<p class="indexsub"><span class="literal">pformat()</span> function, <a href="ch05.xhtml#page_118">118</a>, <a href="ch13.xhtml#page_311">311</a>, <a href="ch09.xhtml#page_220">220</a></p>
+<p class="indexsub"><span class="literal">pprint()</span> function, <a href="ch05.xhtml#page_118">118</a>, <a href="ch09.xhtml#page_220">220</a>, <a href="ch16.xhtml#page_381">381</a></p>
+<p class="indexmain">precedence, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">press()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_491">491</a></p>
+<p class="indexmain"><span class="literal">print()</span> function, <a href="ch01.xhtml#page_13">13</a>, <a href="ch03.xhtml#page_62">62</a></p>
+<p class="indexmain">processes</p>
+<p class="indexsub">defined, <a href="ch17.xhtml#page_406">406</a></p>
+<p class="indexsub">opening files with default applications, <a href="ch17.xhtml#page_409">409</a></p>
+<p class="indexsub">passing command line arguments to, <a href="ch17.xhtml#page_408">408</a></p>
+<p class="indexsub"><span class="literal">Popen()</span> function (<span class="literal">subprocess</span> module), <a href="ch17.xhtml#page_406">406</a>, <a href="ch17.xhtml#page_407">407</a>, <a href="ch17.xhtml#page_409">409</a></p>
+<p class="indexmain">profiling code, <a href="ch17.xhtml#page_390">390</a></p>
+<p class="indexmain">program execution, <a href="ch02.xhtml#page_28">28</a></p>
+<p class="indexmain">projects</p>
+<p class="indexsub">Adding a Logo, <a href="ch19.xhtml#page_460">460</a>&#8211;<a href="ch19.xhtml#page_465">465</a></p>
+<p class="indexsub">Adding Bullets to Wiki Markup, <a href="ch06.xhtml#page_147">147</a>&#8211;<a href="ch06.xhtml#page_149">149</a></p>
+<p class="indexsub">Automatic Form Filler, <a href="ch20.xhtml#page_495">495</a>&#8211;<a href="ch20.xhtml#page_501">501</a></p>
+<p class="indexsub">Backing Up a Folder, <a href="ch10.xhtml#page_243">243</a>&#8211;<a href="ch10.xhtml#page_246">246</a></p>
+<p class="indexsub">Combining Select Pages from Many PDFs, <a href="ch15.xhtml#page_355">355</a>&#8211;<a href="ch15.xhtml#page_358">358</a></p>
+<p class="indexsub">Conway&#8217;s Game of Life, <a href="ch04.xhtml#page_102">102</a>&#8211;<a href="ch04.xhtml#page_106">106</a></p>
+<p class="indexsub">Downloading XKCD Comics, <a href="ch12.xhtml#page_286">286</a>&#8211;<a href="ch12.xhtml#page_291">291</a></p>
+<p class="indexsub">Fetching Current Weather, <a href="ch16.xhtml#page_383">383</a>&#8211;<a href="ch16.xhtml#page_387">387</a></p>
+<p class="indexsub">Generating Random Quizzes, <a href="ch09.xhtml#page_221">221</a>&#8211;<a href="ch09.xhtml#page_226">226</a></p>
+<p class="indexsub">Guess the Number, <a href="ch02.xhtml#page_49">49</a>&#8211;<a href="ch02.xhtml#page_51">51</a></p>
+<p class="indexsub">How to Keep an Idiot Busy for Hours, <a href="ch08.xhtml#page_194">194</a>&#8211;<a href="ch08.xhtml#page_195">195</a></p>
+<p class="indexsub">&#8220;Just Text Me&#8221; Module, <a href="ch18.xhtml#page_441">441</a>&#8211;<a href="ch18.xhtml#page_442">442</a></p>
+<p class="indexsub"><em>mapIt.py</em> with the webbrowser Module, <a href="ch12.xhtml#page_268">268</a>&#8211;<a href="ch12.xhtml#page_270">270</a></p>
+<p class="indexsub">Multi-Clipboard Automatic Messages, <a href="ch06.xhtml#page_144">144</a>&#8211;<a href="ch06.xhtml#page_146">146</a></p>
+<p class="indexsub">Multiplication Quiz, <a href="ch08.xhtml#page_196">196</a>&#8211;<a href="ch08.xhtml#page_197">197</a></p>
+<p class="indexsub">Multithreaded XKCD Downloader, <a href="ch17.xhtml#page_403">403</a>&#8211;<a href="ch17.xhtml#page_406">406</a></p>
+<p class="indexsub">Phone Number and Email Address Extractor, <a href="ch07.xhtml#page_179">179</a>&#8211;<a href="ch07.xhtml#page_184">184</a></p>
+<p class="indexsub">Pig Latin, <a href="ch06.xhtml#page_149">149</a>&#8211;<a href="ch06.xhtml#page_152">152</a></p>
+<p class="indexsub">Reading Data from a Spreadsheet, <a href="ch13.xhtml#page_308">308</a>&#8211;<a href="ch13.xhtml#page_313">313</a></p>
+<p class="indexsub">Removing the Header from CSV Files, <a href="ch16.xhtml#page_378">378</a>&#8211;<a href="ch16.xhtml#page_381">381</a></p>
+<p class="indexsub">Renaming Files, <a href="ch10.xhtml#page_240">240</a>&#8211;<a href="ch10.xhtml#page_243">243</a></p>
+<p class="indexsub">Rock, Paper, Scissors, <a href="ch02.xhtml#page_51">51</a>&#8211;<a href="ch02.xhtml#page_55">55</a></p>
+<p class="indexsub"><span epub:type="pagebreak" id="page_543"/>Sending Member Dues Reminder Emails, <a href="ch18.xhtml#page_433">433</a>&#8211;<a href="ch18.xhtml#page_437">437</a></p>
+<p class="indexsub">Simple Countdown Program, <a href="ch17.xhtml#page_410">410</a>&#8211;<a href="ch17.xhtml#page_412">412</a></p>
+<p class="indexsub">Super Stopwatch, <a href="ch17.xhtml#page_392">392</a>&#8211;<a href="ch17.xhtml#page_394">394</a></p>
+<p class="indexsub">Updatable Multi-Clipboard, <a href="ch09.xhtml#page_226">226</a>&#8211;<a href="ch09.xhtml#page_228">228</a></p>
+<p class="indexsub">Updating a Spreadsheet, <a href="ch13.xhtml#page_315">315</a>&#8211;<a href="ch13.xhtml#page_317">317</a></p>
+<p class="indexsub">Zigzag, <a href="ch03.xhtml#page_72">72</a>&#8211;<a href="ch03.xhtml#page_74">74</a></p>
+<p class="indexmain"><span class="literal">putpixel()</span> function (Pillow), <a href="ch19.xhtml#page_459">459</a></p>
+<p class="indexmain">PyAutoGUI</p>
+<p class="indexsub"><span class="literal">FailSafeException</span> exceptions, <a href="ch20.xhtml#page_475">475</a></p>
+<p class="indexsub">functions, <a href="ch20.xhtml#page_493">493</a>&#8211;<a href="ch20.xhtml#page_494">494</a></p>
+<p class="indexsub">overview, <a href="ch20.xhtml#page_474">474</a></p>
+<p class="indexmain"><span class="literal">pyautogui</span> module</p>
+<p class="indexsub"><span class="literal">activate()</span> function, <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexsub"><span class="literal">click()</span> function, <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexsub"><span class="literal">countdown()</span> function, <a href="ch20.xhtml#page_493">493</a></p>
+<p class="indexsub"><span class="literal">doubleClick()</span> function, <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexsub"><span class="literal">drag()</span> function, <a href="ch20.xhtml#page_479">479</a></p>
+<p class="indexsub"><span class="literal">dragTo()</span> function, <a href="ch20.xhtml#page_479">479</a></p>
+<p class="indexsub"><span class="literal">getActiveWindow()</span> function, <a href="ch20.xhtml#page_487">487</a></p>
+<p class="indexsub"><span class="literal">getAllWindows()</span> function, <a href="ch20.xhtml#page_487">487</a></p>
+<p class="indexsub"><span class="literal">getWindowsAt()</span> function, <a href="ch20.xhtml#page_487">487</a></p>
+<p class="indexsub"><span class="literal">getWindowsWithTitle()</span> function, <a href="ch20.xhtml#page_487">487</a></p>
+<p class="indexsub"><span class="literal">hotkey()</span> function, <a href="ch20.xhtml#page_492">492</a></p>
+<p class="indexsub"><span class="literal">keyDown()</span> function, <a href="ch20.xhtml#page_491">491</a>&#8211;<a href="ch20.xhtml#page_492">492</a></p>
+<p class="indexsub"><span class="literal">keyUp()</span> function, <a href="ch20.xhtml#page_491">491</a>&#8211;<a href="ch20.xhtml#page_492">492</a></p>
+<p class="indexsub"><span class="literal">locateAllOnScreen()</span> function, <a href="ch20.xhtml#page_484">484</a></p>
+<p class="indexsub"><span class="literal">locateOnScreen()</span> function, <a href="ch20.xhtml#page_484">484</a></p>
+<p class="indexsub"><span class="literal">maximize()</span> function, <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexsub"><span class="literal">middleClick()</span> function, <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexsub"><span class="literal">minimize()</span> function, <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexsub"><span class="literal">mouseDown()</span> function, <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexsub"><span class="literal">mouseUp()</span> function, <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexsub"><span class="literal">move()</span> function, <a href="ch20.xhtml#page_477">477</a></p>
+<p class="indexsub"><span class="literal">moveTo()</span> function, <a href="ch20.xhtml#page_477">477</a></p>
+<p class="indexsub"><span class="literal">pixelMatchesColor()</span> function, <a href="ch20.xhtml#page_483">483</a></p>
+<p class="indexsub"><span class="literal">position()</span> function, <a href="ch20.xhtml#page_477">477</a></p>
+<p class="indexsub"><span class="literal">press()</span> function, <a href="ch20.xhtml#page_491">491</a></p>
+<p class="indexsub"><span class="literal">restore()</span> function, <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexsub"><span class="literal">rightClick()</span> function, <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexsub"><span class="literal">screenshot()</span> function, <a href="ch20.xhtml#page_482">482</a></p>
+<p class="indexsub"><span class="literal">scroll()</span> function, <a href="ch20.xhtml#page_480">480</a></p>
+<p class="indexsub"><span class="literal">size()</span> function, <a href="ch20.xhtml#page_476">476</a></p>
+<p class="indexsub"><span class="literal">write()</span> function, <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexmain">PyInputPlus, <a href="ch08.xhtml#page_188">188</a></p>
+<p class="indexmain"><span class="literal">pyinputplus</span> module</p>
+<p class="indexsub"><span class="literal">inputBool()</span> function, <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexsub"><span class="literal">inputChoice()</span> function, <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexsub"><span class="literal">inputCustom()</span> function, <a href="ch08.xhtml#page_193">193</a></p>
+<p class="indexsub"><span class="literal">inputDatetime()</span> function, <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexsub"><span class="literal">inputEmail()</span> function, <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexsub"><span class="literal">inputFilepath()</span> function, <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexsub"><span class="literal">inputFloat()</span> function, <a href="ch08.xhtml#page_190">190</a></p>
+<p class="indexsub"><span class="literal">inputInt()</span> function, <a href="ch08.xhtml#page_190">190</a></p>
+<p class="indexsub"><span class="literal">inputMenu()</span> function, <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexsub"><span class="literal">inputNum()</span> function, <a href="ch08.xhtml#page_189">189</a>, <a href="ch08.xhtml#page_190">190</a></p>
+<p class="indexsub"><span class="literal">inputPassword()</span> function, <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexsub"><span class="literal">inputStr()</span> function, <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexsub"><span class="literal">inputYesNo()</span> function, <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain">PyPDF2, <a href="ch15.xhtml#page_348">348</a></p>
+<p class="indexmain"><span class="literal">pypdf2</span> module</p>
+<p class="indexsub"><span class="literal">addPage()</span> method, <a href="ch15.xhtml#page_351">351</a>&#8211;<a href="ch15.xhtml#page_352">352</a></p>
+<p class="indexsub"><span class="literal">decrypt()</span> function, <a href="ch15.xhtml#page_350">350</a></p>
+<p class="indexsub"><span class="literal">encrypt()</span> function, <a href="ch15.xhtml#page_350">350</a></p>
+<p class="indexsub"><span class="literal">extractText()</span> method, <a href="ch15.xhtml#page_349">349</a></p>
+<p class="indexsub"><span class="literal">getPage()</span> method, <a href="ch15.xhtml#page_349">349</a></p>
+<p class="indexsub"><span class="literal">isEncrypted()</span> method, <a href="ch15.xhtml#page_350">350</a></p>
+<p class="indexsub"><span class="literal">rotateClockwise()</span> method, <a href="ch19.xhtml#page_457">457</a>, <a href="ch19.xhtml#page_458">458</a></p>
+<p class="indexsub"><span class="literal">rotateCounterClockwise()</span> method, <a href="ch19.xhtml#page_457">457</a>, <a href="ch19.xhtml#page_458">458</a></p>
+<p class="indexmain">Pyperclip, <a href="ch06.xhtml#page_143">143</a></p>
+<p class="indexmain"><span class="literal">pyperclip</span> module</p>
+<p class="indexsub"><span class="literal">copy()</span> function, <a href="ch06.xhtml#page_143">143</a></p>
+<p class="indexsub"><span class="literal">paste()</span> function, <a href="ch06.xhtml#page_143">143</a></p>
+<p class="indexmain">Python</p>
+<p class="indexsub">downloading, <a href="intro.xhtml#page_xxxiii">xxxiii</a>&#8211;<a href="intro.xhtml#page_xxxiv">xxxiv</a></p>
+<p class="indexsub">help, <a href="intro.xhtml#page_xxxvi">xxxvi</a>&#8211;<a href="intro.xhtml#page_xxxix">xxxix</a></p>
+<p class="indexsub">installing, <a href="intro.xhtml#page_xxxiv">xxxiv</a></p>
+<p class="indexsub">interactive shell, <a href="intro.xhtml#page_xxxv">xxxv</a>&#8211;<a href="intro.xhtml#page_xxxvi">xxxvi</a></p>
+<p class="indexsub">interpreter, <a href="intro.xhtml#page_xxxiv">xxxiv</a></p>
+<p class="indexsub">overview, <a href="intro.xhtml#page_xxx">xxx</a></p>
+<p class="indexsub">starting IDLE, <a href="intro.xhtml#page_xxxv">xxxv</a></p>
+<p class="indexsub">starting Mu, <a href="intro.xhtml#page_xxxiv">xxxiv</a>&#8211;<a href="intro.xhtml#page_xxxv">xxxv</a></p>
+<p class="indexmain"><span class="literal">python-docx</span> module, <a href="ch15.xhtml#page_358">358</a></p>
+<p class="indexmain">Pyzmail, <a href="ch18.xhtml#page_424">424</a></p>
+<p class="indexmain"><span class="literal">pyzmail</span> module</p>
+<p class="indexsub"><span class="literal">get_addresses()</span> method, <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_431">431</a></p>
+<p class="indexsub"><span class="literal">get_payload()</span> method, <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_432">432</a></p>
+<p class="indexsub"><span class="literal">get_subject()</span> method, <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_431">431</a></p>
+<p class="indexsub"><span class="literal">factory()</span> function, <a href="ch18.xhtml#page_425">425</a></p>
+<h3 class="h3"><strong>Q</strong></h3>
+<p class="indexmain">question mark (<span class="literal">?</span>), <a href="ch07.xhtml#page_168">168</a>&#8211;<a href="ch07.xhtml#page_169">169</a></p>
+<p class="indexmain"><span class="literal">quit()</span> method (<span class="literal">smtplib</span> module), <a href="ch18.xhtml#page_421">421</a>, <a href="ch18.xhtml#page_424">424</a></p>
+<h3 class="h3"><strong>R</strong></h3>
+<p class="indexmain"><span class="literal">raise_for_status()</span> method (<span class="literal">requests</span> module), <a href="ch12.xhtml#page_272">272</a></p>
+<p class="indexmain"><span class="literal">raise</span> statement, <a href="ch11.xhtml#page_250">250</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_544"/><span class="literal">random</span> module</p>
+<p class="indexsub"><span class="literal">randint()</span> function, <a href="ch02.xhtml#page_50">50</a>, <a href="ch03.xhtml#page_60">60</a></p>
+<p class="indexsub"><span class="literal">sample()</span> function, <a href="ch09.xhtml#page_224">224</a></p>
+<p class="indexsub"><span class="literal">shuffle()</span> function, <a href="ch09.xhtml#page_224">224</a></p>
+<p class="indexmain"><span class="literal">range()</span> function, <a href="ch02.xhtml#page_44">44</a>, <a href="ch02.xhtml#page_46">46</a>, <a href="ch04.xhtml#page_84">84</a>, <a href="ch04.xhtml#page_86">86</a></p>
+<p class="indexmain">raw strings, <a href="ch06.xhtml#page_131">131</a></p>
+<p class="indexmain"><span class="literal">read()</span> method, <a href="ch09.xhtml#page_216">216</a>, <a href="ch09.xhtml#page_217">217</a>, <a href="ch16.xhtml#page_373">373</a></p>
+<p class="indexmain"><span class="literal">reader()</span> method (<span class="literal">csv</span> module), <a href="ch16.xhtml#page_373">373</a>, <a href="ch16.xhtml#page_379">379</a></p>
+<p class="indexmain">Reading Data from a Spreadsheet project, <a href="ch13.xhtml#page_308">308</a>&#8211;<a href="ch13.xhtml#page_313">313</a></p>
+<p class="indexmain"><span class="literal">readlines()</span> method, <a href="ch09.xhtml#page_218">218</a>, <a href="ch16.xhtml#page_373">373</a></p>
+<p class="indexmain"><span class="literal">recent()</span> function (EZGmail), <a href="ch18.xhtml#page_419">419</a></p>
+<p class="indexmain"><span class="literal">rectangle()</span> method (Pillow), <a href="ch19.xhtml#page_466">466</a></p>
+<p class="indexmain">Reddit, <a href="intro.xhtml#page_xxxviii">xxxviii</a>, <a href="ch16.xhtml#page_381">381</a></p>
+<p class="indexmain"><span class="literal">Reference()</span> function (OpenPyXL), <a href="ch13.xhtml#page_324">324</a></p>
+<p class="indexmain">references, <a href="ch04.xhtml#page_100">100</a></p>
+<p class="indexmain"><span class="literal">refresh()</span> method (Selenium), <a href="ch12.xhtml#page_297">297</a></p>
+<p class="indexmain">regular expressions</p>
+<p class="indexsub">beginning of string matches, <a href="ch07.xhtml#page_174">174</a></p>
+<p class="indexsub">case sensitivity, <a href="ch07.xhtml#page_177">177</a></p>
+<p class="indexsub">character classes, <a href="ch07.xhtml#page_172">172</a></p>
+<p class="indexsub">defined, <a href="ch07.xhtml#page_161">161</a></p>
+<p class="indexsub">dot-star character (<span class="literal">.*</span>), <a href="ch07.xhtml#page_175">175</a></p>
+<p class="indexsub">end of string matches, <a href="ch07.xhtml#page_174">174</a></p>
+<p class="indexsub">extracting phone numbers and email addresses, <a href="ch07.xhtml#page_179">179</a>&#8211;<a href="ch07.xhtml#page_184">184</a></p>
+<p class="indexsub"><span class="literal">findall()</span> method, <a href="ch07.xhtml#page_171">171</a></p>
+<p class="indexsub">finding patterns without, <a href="ch07.xhtml#page_162">162</a></p>
+<p class="indexsub">greedy matching, <a href="ch07.xhtml#page_171">171</a>, <a href="ch07.xhtml#page_176">176</a></p>
+<p class="indexsub"><span class="literal">group()</span> method, <a href="ch07.xhtml#page_165">165</a></p>
+<p class="indexsub">groups, <a href="ch07.xhtml#page_165">165</a></p>
+<p class="indexsub">HTML and, <a href="ch12.xhtml#page_277">277</a></p>
+<p class="indexsub">matching specific repetitions, <a href="ch07.xhtml#page_170">170</a>&#8211;<a href="ch07.xhtml#page_171">171</a></p>
+<p class="indexsub">multiple argument for <span class="literal">compile()</span> function, <a href="ch07.xhtml#page_165">165</a></p>
+<p class="indexsub">non-greedy matching, <a href="ch07.xhtml#page_171">171</a>, <a href="ch07.xhtml#page_176">176</a></p>
+<p class="indexsub">one or more matches, <a href="ch07.xhtml#page_170">170</a></p>
+<p class="indexsub">optional matching, <a href="ch07.xhtml#page_168">168</a></p>
+<p class="indexsub">spreading over multiple lines, <a href="ch07.xhtml#page_178">178</a></p>
+<p class="indexsub">substituting strings using, <a href="ch07.xhtml#page_178">178</a></p>
+<p class="indexsub">symbols, <a href="ch07.xhtml#page_177">177</a></p>
+<p class="indexsub">using parentheses, <a href="ch07.xhtml#page_166">166</a></p>
+<p class="indexsub">using pipe characters, <a href="ch07.xhtml#page_168">168</a></p>
+<p class="indexsub">verbose mode, <a href="ch07.xhtml#page_178">178</a></p>
+<p class="indexsub">wildcard character, <a href="ch07.xhtml#page_175">175</a></p>
+<p class="indexsub">zero or more matches, <a href="ch07.xhtml#page_169">169</a></p>
+<p class="indexmain">relational operators, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexmain">relative path, <a href="ch09.xhtml#page_206">206</a>, <a href="ch09.xhtml#page_209">209</a></p>
+<p class="indexmain"><span class="literal">relpath()</span> function, <a href="ch09.xhtml#page_209">209</a></p>
+<p class="indexmain">remainder/modulus (<span class="literal">%</span>) operator, <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain"><span class="literal">re</span> module</p>
+<p class="indexsub"><span class="literal">compile()</span> function, <a href="ch07.xhtml#page_165">165</a></p>
+<p class="indexsub"><span class="literal">findall()</span> method, <a href="ch07.xhtml#page_171">171</a></p>
+<p class="indexsub"><span class="literal">group()</span> method, <a href="ch07.xhtml#page_166">166</a></p>
+<p class="indexsub"><span class="literal">search()</span> method, <a href="ch07.xhtml#page_165">165</a></p>
+<p class="indexsub"><span class="literal">sub()</span> method, <a href="ch07.xhtml#page_178">178</a></p>
+<p class="indexmain"><span class="literal">remove()</span> method, <a href="ch04.xhtml#page_90">90</a></p>
+<p class="indexmain"><span class="literal">remove_sheet()</span> method (OpenPyXL), <a href="ch13.xhtml#page_314">314</a></p>
+<p class="indexmain">Removing the Header from CSV Files project, <a href="ch16.xhtml#page_378">378</a>&#8211;<a href="ch16.xhtml#page_381">381</a></p>
+<p class="indexmain">renaming files/folders, <a href="ch10.xhtml#page_233">233</a>, <a href="ch10.xhtml#page_240">240</a>&#8211;<a href="ch10.xhtml#page_243">243</a></p>
+<p class="indexmain">replication</p>
+<p class="indexsub">of lists, <a href="ch04.xhtml#page_81">81</a></p>
+<p class="indexsub">string, <a href="ch01.xhtml#page_8">8</a></p>
+<p class="indexmain"><span class="literal">requests</span> module</p>
+<p class="indexsub"><span class="literal">get()</span> function, <a href="ch12.xhtml#page_271">271</a></p>
+<p class="indexsub"><span class="literal">raise_for_status()</span> method, <a href="ch12.xhtml#page_272">272</a></p>
+<p class="indexmain"><span class="literal">resize()</span> method (Pillow), <a href="ch19.xhtml#page_456">456</a>&#8211;<a href="ch19.xhtml#page_457">457</a></p>
+<p class="indexmain">resolution of computer screen, <a href="ch20.xhtml#page_476">476</a></p>
+<p class="indexmain"><span class="literal">Response</span> objects (Requests), <a href="ch12.xhtml#page_271">271</a></p>
+<p class="indexmain"><span class="literal">restore()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexmain"><span class="literal">return</span> statement, <a href="ch03.xhtml#page_60">60</a>, <a href="ch03.xhtml#page_62">62</a></p>
+<p class="indexmain">return values, function, <a href="ch03.xhtml#page_60">60</a></p>
+<p class="indexmain"><span class="literal">reverse</span> keyword argument, <a href="ch04.xhtml#page_91">91</a></p>
+<p class="indexmain">RGBA color values, <a href="ch19.xhtml#page_448">448</a>&#8211;<a href="ch19.xhtml#page_449">449</a></p>
+<p class="indexmain"><span class="literal">rightClick()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_478">478</a></p>
+<p class="indexmain"><span class="literal">rjust()</span> method, <a href="ch06.xhtml#page_140">140</a>&#8211;<a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexmain"><span class="literal">rmdir()</span> function (<span class="literal">os</span> module), <a href="ch10.xhtml#page_234">234</a></p>
+<p class="indexmain"><span class="literal">rmtree()</span> function (<span class="literal">shutil</span> module), <a href="ch10.xhtml#page_234">234</a></p>
+<p class="indexmain">rock, paper, scissors, <a href="ch02.xhtml#page_51">51</a>&#8211;<a href="ch02.xhtml#page_55">55</a></p>
+<p class="indexmain"><span class="literal">rotateClockwise()</span> method (PyPDF2) <a href="ch19.xhtml#page_457">457</a>, <a href="ch19.xhtml#page_458">458</a></p>
+<p class="indexmain"><span class="literal">rotateCounterClockwise()</span> method (PyPDF2) <a href="ch19.xhtml#page_457">457</a>, <a href="ch19.xhtml#page_458">458</a></p>
+<p class="indexmain"><span class="literal">rotate()</span> method (Pillow) <a href="ch19.xhtml#page_457">457</a>, <a href="ch19.xhtml#page_458">458</a></p>
+<p class="indexmain">rotating images, <a href="ch20.xhtml#page_475">475</a>&#8211;<a href="ch20.xhtml#page_479">479</a></p>
+<p class="indexmain">rounding numbers, <a href="ch01.xhtml#page_17">17</a></p>
+<p class="indexmain">rows, in Excel spreadsheets, <a href="ch13.xhtml#page_321">321</a></p>
+<p class="indexmain"><span class="literal">rstrip()</span> string method, <a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexmain"><span class="literal">Run</span> objects, <a href="ch15.xhtml#page_362">362</a></p>
+<h3 class="h3"><strong>S</strong></h3>
+<p class="indexmain"><span class="literal">\S</span> character class, <a href="ch07.xhtml#page_173">173</a></p>
+<p class="indexmain"><span class="literal">\s</span> character class, <a href="ch07.xhtml#page_173">173</a></p>
+<p class="indexmain"><span class="literal">%s</span> directive, <a href="ch06.xhtml#page_134">134</a></p>
+<p class="indexmain">Safari, developer tools in, <a href="ch12.xhtml#page_277">277</a></p>
+<p class="indexmain"><span class="literal">sample()</span> function (<span class="literal">random</span> module), <a href="ch09.xhtml#page_224">224</a></p>
+<p class="indexmain"><span class="literal">save()</span>method</p>
+<p class="indexsub">document, <a href="ch15.xhtml#page_364">364</a>, <a href="ch15.xhtml#page_365">365</a></p>
+<p class="indexsub">workbook, <a href="ch13.xhtml#page_313">313</a>, <a href="ch13.xhtml#page_314">314</a></p>
+<p class="indexmain"><span epub:type="pagebreak" id="page_545"/>scopes, <a href="ch03.xhtml#page_65">65</a></p>
+<p class="indexmain"><span class="literal">screenshot()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_482">482</a></p>
+<p class="indexmain">screenshots</p>
+<p class="indexsub">analyzing, <a href="ch20.xhtml#page_483">483</a></p>
+<p class="indexsub">getting, <a href="ch20.xhtml#page_482">482</a></p>
+<p class="indexmain"><span class="literal">scroll()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_480">480</a></p>
+<p class="indexmain"><span class="literal">search()</span> function (EZGmail), <a href="ch18.xhtml#page_419">419</a></p>
+<p class="indexmain"><span class="literal">search()</span> method</p>
+<p class="indexsub"><span class="literal">imaplib</span> module, <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_427">427</a>, <a href="ch18.xhtml#page_429">429</a></p>
+<p class="indexsub"><span class="literal">re</span> module, <a href="ch07.xhtml#page_165">165</a></p>
+<p class="indexmain"><span class="literal">select_folder()</span> method (<span class="literal">imaplib</span> module), <a href="ch18.xhtml#page_425">425</a>, <a href="ch18.xhtml#page_427">427</a>, <a href="ch18.xhtml#page_430">430</a></p>
+<p class="indexmain">Selenium, <a href="ch12.xhtml#page_291">291</a></p>
+<p class="indexmain"><span class="literal">selenium</span> module</p>
+<p class="indexsub"><span class="literal">back()</span> method, <a href="ch12.xhtml#page_297">297</a></p>
+<p class="indexsub"><span class="literal">clear()</span> method, <a href="ch12.xhtml#page_294">294</a></p>
+<p class="indexsub"><span class="literal">click()</span> method, <a href="ch12.xhtml#page_295">295</a></p>
+<p class="indexsub"><span class="literal">Firefox()</span> function, <a href="ch12.xhtml#page_292">292</a></p>
+<p class="indexsub"><span class="literal">refresh()</span> method, <a href="ch12.xhtml#page_297">297</a></p>
+<p class="indexsub"><span class="literal">send_keys()</span> method, <a href="ch12.xhtml#page_295">295</a></p>
+<p class="indexsub"><span class="literal">submit()</span> method, <a href="ch12.xhtml#page_295">295</a></p>
+<p class="indexmain"><span class="literal">send()</span> function (EZGmail), <a href="ch18.xhtml#page_417">417</a></p>
+<p class="indexmain">Sending Member Dues Reminder Emails project, <a href="ch18.xhtml#page_433">433</a>&#8211;<a href="ch18.xhtml#page_437">437</a></p>
+<p class="indexmain"><span class="literal">send_keys()</span> method (Selenium), <a href="ch12.xhtml#page_295">295</a></p>
+<p class="indexmain"><span class="literal">sendmail()</span> method (<span class="literal">smtplib</span> module) <a href="ch18.xhtml#page_421">421</a>, <a href="ch18.xhtml#page_424">424</a></p>
+<p class="indexmain"><span class="literal">Series</span> objects, <a href="ch13.xhtml#page_324">324</a></p>
+<p class="indexmain"><span class="literal">setdefault()</span> dictionary method, <a href="ch05.xhtml#page_116">116</a>, <a href="ch13.xhtml#page_311">311</a></p>
+<p class="indexmain">shebang line, <a href="ch06.xhtml#page_145">145</a></p>
+<p class="indexmain">sheet, <a href="ch13.xhtml#page_302">302</a></p>
+<p class="indexmain"><span class="literal">shelve</span> module, <a href="ch09.xhtml#page_219">219</a></p>
+<p class="indexmain">Short Message Service (SMS). <em>See</em> SMS (Short Message Service)</p>
+<p class="indexmain"><span class="literal">shuffle()</span> function (<span class="literal">random</span> module), <a href="ch09.xhtml#page_224">224</a></p>
+<p class="indexmain"><span class="literal">shutil</span> module</p>
+<p class="indexsub">deleting files/folders, <a href="ch10.xhtml#page_234">234</a></p>
+<p class="indexsub">moving files/folders, <a href="ch10.xhtml#page_233">233</a></p>
+<p class="indexsub">overview, <a href="ch10.xhtml#page_232">232</a></p>
+<p class="indexsub">renaming files/folders, <a href="ch10.xhtml#page_233">233</a>, <a href="ch10.xhtml#page_240">240</a>&#8211;<a href="ch10.xhtml#page_243">243</a></p>
+<p class="indexmain">SID, Twilio account, <a href="ch18.xhtml#page_439">439</a></p>
+<p class="indexmain">Simple Countdown Program project, <a href="ch17.xhtml#page_410">410</a>&#8211;<a href="ch17.xhtml#page_412">412</a></p>
+<p class="indexmain">Simple Mail Transfer Protocol (SMTP), <a href="ch18.xhtml#page_420">420</a></p>
+<p class="indexmain">single quote (<span class="literal">'</span>), <a href="ch01.xhtml#page_7">7</a>, <a href="ch06.xhtml#page_130">130</a></p>
+<p class="indexmain">single-threaded program, <a href="ch17.xhtml#page_401">401</a></p>
+<p class="indexmain"><span class="literal">size()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_476">476</a></p>
+<p class="indexmain"><span class="literal">sleep()</span> function, <a href="ch17.xhtml#page_391">391</a>, <a href="ch17.xhtml#page_392">392</a>, <a href="ch17.xhtml#page_397">397</a>, <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexmain">slices</p>
+<p class="indexsub">getting sublists with, <a href="ch04.xhtml#page_80">80</a></p>
+<p class="indexsub">getting substrings with, <a href="ch06.xhtml#page_133">133</a></p>
+<p class="indexmain">SMS (Short Message Service)</p>
+<p class="indexsub">gateway service, <a href="ch18.xhtml#page_438">438</a></p>
+<p class="indexsub">sending messages, <a href="ch18.xhtml#page_439">439</a>&#8211;<a href="ch18.xhtml#page_441">441</a></p>
+<p class="indexsub">Twilio service, <a href="ch18.xhtml#page_438">438</a>&#8211;<a href="ch18.xhtml#page_441">441</a></p>
+<p class="indexmain">SMTP (Simple Mail Transfer Protocol), <a href="ch18.xhtml#page_420">420</a></p>
+<p class="indexmain"><span class="literal">SMTPAuthenticationError</span>, <a href="ch18.xhtml#page_423">423</a></p>
+<p class="indexmain"><span class="literal">SMTP()</span> function (<span class="literal">smtplib</span> module) <a href="ch18.xhtml#page_421">421</a>, <a href="ch18.xhtml#page_422">422</a></p>
+<p class="indexmain"><span class="literal">SMTP_SSL()</span> function (<span class="literal">smtplib</span> module), <a href="ch18.xhtml#page_422">422</a></p>
+<p class="indexmain"><span class="literal">sort()</span> method, <a href="ch04.xhtml#page_90">90</a></p>
+<p class="indexmain">sound files, playing, <a href="ch17.xhtml#page_411">411</a></p>
+<p class="indexmain">source code, <a href="intro.xhtml#page_xxx">xxx</a></p>
+<p class="indexmain"><span class="literal">split()</span> function (<span class="literal">os.path</span> module), <a href="ch04.xhtml#page_90">90</a></p>
+<p class="indexmain"><span class="literal">split()</span> string method, <a href="ch04.xhtml#page_90">90</a>, <a href="ch06.xhtml#page_139">139</a></p>
+<p class="indexmain"><span class="literal">Spreadsheet()</span> function, <a href="ch14.xhtml#page_332">332</a></p>
+<p class="indexmain">spreadsheets. <em>See</em> Excel spreadsheets</p>
+<p class="indexmain">square brackets(<span class="literal">[]</span>), <a href="ch04.xhtml#page_78">78</a></p>
+<p class="indexmain">Stack Overflow, <a href="intro.xhtml#page_xxxviii">xxxviii</a>, <a href="ch12.xhtml#page_277">277</a>, <a href="ch12.xhtml#page_292">292</a></p>
+<p class="indexmain">standard library, <a href="ch02.xhtml#page_47">47</a>, <a href="ch08.xhtml#page_189">189</a></p>
+<p class="indexmain">star character (<span class="literal">*</span>), <a href="ch07.xhtml#page_169">169</a></p>
+<p class="indexmain"><span class="literal">start()</span> method (<span class="literal">threading</span> module), <a href="ch17.xhtml#page_402">402</a></p>
+<p class="indexmain"><span class="literal">start</span> program, <a href="ch17.xhtml#page_409">409</a></p>
+<p class="indexmain"><span class="literal">startswith()</span> string method, <a href="ch06.xhtml#page_138">138</a></p>
+<p class="indexmain"><span class="literal">starttls()</span> method (<span class="literal">smtplib</span> module), <a href="ch18.xhtml#page_421">421</a>, <a href="ch18.xhtml#page_423">423</a></p>
+<p class="indexmain"><span class="literal">step</span> argument, <a href="ch02.xhtml#page_46">46</a></p>
+<p class="indexmain"><span class="literal">strftime()</span> function (<span class="literal">time</span> module), <a href="ch17.xhtml#page_398">398</a>, <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexmain">strings</p>
+<p class="indexsub"><span class="literal">center()</span> method, <a href="ch06.xhtml#page_140">140</a>&#8211;<a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexsub">concatenation, <a href="ch01.xhtml#page_7">7</a></p>
+<p class="indexsub">copying and pasting, <a href="ch06.xhtml#page_143">143</a>&#8211;<a href="ch06.xhtml#page_144">144</a></p>
+<p class="indexsub">defined, <a href="ch01.xhtml#page_7">7</a></p>
+<p class="indexsub">double quotes for, <a href="ch06.xhtml#page_130">130</a></p>
+<p class="indexsub"><span class="literal">endswith()</span> method, <a href="ch06.xhtml#page_138">138</a></p>
+<p class="indexsub">escape characters, <a href="ch06.xhtml#page_130">130</a>&#8211;<a href="ch06.xhtml#page_131">131</a></p>
+<p class="indexsub">extracting PDF text as, <a href="ch15.xhtml#page_348">348</a></p>
+<p class="indexsub">indexes for, <a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexsub">interpolation, <a href="ch06.xhtml#page_134">134</a></p>
+<p class="indexsub"><span class="literal">isalnum()</span> method, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexsub"><span class="literal">isalpha()</span> method, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexsub"><span class="literal">isdecimal()</span> method, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexsub"><span class="literal">islower()</span> method, <a href="ch06.xhtml#page_135">135</a></p>
+<p class="indexsub"><span class="literal">isspace()</span> method, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexsub"><span class="literal">istitle()</span> method, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexsub"><span class="literal">isupper()</span> method, <a href="ch06.xhtml#page_135">135</a></p>
+<p class="indexsub"><span class="literal">join()</span> method, <a href="ch06.xhtml#page_138">138</a></p>
+<p class="indexsub">literals, <a href="ch06.xhtml#page_130">130</a></p>
+<p class="indexsub"><span class="literal">ljust()</span> method, <a href="ch06.xhtml#page_140">140</a>&#8211;<a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexsub"><span class="literal">lower()</span>method, <a href="ch06.xhtml#page_135">135</a>, <a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexsub"><span epub:type="pagebreak" id="page_546"/><span class="literal">lstrip()</span> method, <a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexsub">multiline, <a href="ch06.xhtml#page_131">131</a></p>
+<p class="indexsub"><span class="literal">partition()</span> method, <a href="ch06.xhtml#page_140">140</a></p>
+<p class="indexsub">raw, <a href="ch06.xhtml#page_131">131</a></p>
+<p class="indexsub">replication, <a href="ch01.xhtml#page_8">8</a></p>
+<p class="indexsub"><span class="literal">rjust()</span> method, <a href="ch06.xhtml#page_140">140</a>&#8211;<a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexsub"><span class="literal">rstrip()</span> method, <a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexsub">slicing, <a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexsub"><span class="literal">split()</span> method, <a href="ch06.xhtml#page_138">138</a></p>
+<p class="indexsub"><span class="literal">startswith()</span> method, <a href="ch06.xhtml#page_138">138</a></p>
+<p class="indexsub"><span class="literal">strip()</span> method, <a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexsub"><span class="literal">upper()</span> method, <a href="ch06.xhtml#page_135">135</a></p>
+<p class="indexmain"><span class="literal">str()</span> function, <a href="ch01.xhtml#page_15">15</a></p>
+<p class="indexmain"><span class="literal">strip()</span> string method, <a href="ch06.xhtml#page_142">142</a></p>
+<p class="indexmain"><span class="literal">strptime()</span> function, <a href="ch17.xhtml#page_399">399</a>, <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexmain"><span class="literal">sub()</span> method (<span class="literal">re</span> module), <a href="ch07.xhtml#page_178">178</a></p>
+<p class="indexmain"><span class="literal">submit()</span> method (Selenium), <a href="ch12.xhtml#page_295">295</a></p>
+<p class="indexmain">subtraction operator(<span class="literal">-</span>), <a href="ch01.xhtml#page_5">5</a></p>
+<p class="indexmain">Sudoku, <a href="intro.xhtml#page_xxx">xxx</a></p>
+<p class="indexmain"><span class="literal">summary()</span> function (EZGmail), <a href="ch18.xhtml#page_418">418</a></p>
+<p class="indexmain">Super Stopwatch project, <a href="ch17.xhtml#page_392">392</a>&#8211;<a href="ch17.xhtml#page_394">394</a></p>
+<p class="indexmain">syntax error</p>
+<p class="indexsub">can&#8217;t assign to keyword, <a href="ch02.xhtml#page_23">23</a></p>
+<p class="indexsub">EOL while scanning string literal, <a href="ch01.xhtml#page_7">7</a></p>
+<p class="indexsub">invalid syntax, <a href="ch01.xhtml#page_6">6</a></p>
+<p class="indexmain"><span class="literal">sys</span> module</p>
+<p class="indexsub"><span class="literal">argv</span> variable, <a href="ch06.xhtml#page_145">145</a></p>
+<p class="indexsub"><span class="literal">exit()</span> function, <a href="ch17.xhtml#page_402">402</a></p>
+<h3 class="h3"><strong>T</strong></h3>
+<p class="indexmain"><span class="literal">Tag</span> objects, <a href="ch12.xhtml#page_281">281</a></p>
+<p class="indexmain">tags, HTML, <a href="ch12.xhtml#page_274">274</a></p>
+<p class="indexmain">Task Scheduler, <a href="ch17.xhtml#page_408">408</a></p>
+<p class="indexmain"><span class="literal">text()</span> method (Pillow), <a href="ch19.xhtml#page_468">468</a>, <a href="ch19.xhtml#page_469">469</a></p>
+<p class="indexmain"><span class="literal">textsize()</span> method (Pillow), <a href="ch19.xhtml#page_468">468</a></p>
+<p class="indexmain"><span class="literal">threading</span> module</p>
+<p class="indexsub"><span class="literal">join()</span> method, <a href="ch17.xhtml#page_405">405</a></p>
+<p class="indexsub"><span class="literal">poll()</span> method, <a href="ch17.xhtml#page_407">407</a></p>
+<p class="indexsub"><span class="literal">start()</span> method, <a href="ch17.xhtml#page_402">402</a></p>
+<p class="indexsub"><span class="literal">Thread</span> object, <a href="ch17.xhtml#page_401">401</a>, <a href="ch17.xhtml#page_404">404</a>&#8211;<a href="ch17.xhtml#page_406">406</a></p>
+<p class="indexmain">throwaway code, <a href="intro.xhtml#page_xxviii">xxviii</a></p>
+<p class="indexmain">tic-tac-toe, <a href="ch05.xhtml#page_120">120</a></p>
+<p class="indexmain"><span class="literal">timedelta()</span> function (<span class="literal">datetime</span> module), <a href="ch17.xhtml#page_396">396</a>, <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexmain"><span class="literal">time</span> module</p>
+<p class="indexsub">overview, <a href="ch17.xhtml#page_390">390</a></p>
+<p class="indexsub"><span class="literal">sleep()</span> function, <a href="ch17.xhtml#page_391">391</a></p>
+<p class="indexsub">Super Stopwatch project, <a href="ch17.xhtml#page_392">392</a>&#8211;<a href="ch17.xhtml#page_394">394</a></p>
+<p class="indexsub"><span class="literal">time()</span> function, <a href="ch17.xhtml#page_390">390</a>, <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexmain">TLS encryption, <a href="ch18.xhtml#page_422">422</a>&#8211;<a href="ch18.xhtml#page_423">423</a></p>
+<p class="indexmain">top-level domain, <a href="ch07.xhtml#page_182">182</a></p>
+<p class="indexmain"><span class="literal">total_seconds()</span> method (<span class="literal">datetime</span> module), <a href="ch17.xhtml#page_400">400</a></p>
+<p class="indexmain"><span class="literal">transpose()</span> method (Pillow), <a href="ch19.xhtml#page_458">458</a></p>
+<p class="indexmain">triple quotes(<span class="literal">'''</span>), <a href="ch06.xhtml#page_131">131</a>, <a href="ch06.xhtml#page_132">132</a></p>
+<p class="indexmain"><span class="literal">True</span> Boolean value, <a href="ch02.xhtml#page_22">22</a></p>
+<p class="indexmain"><span class="literal">truetype()</span> function (Pillow), <a href="ch19.xhtml#page_468">468</a></p>
+<p class="indexmain">truth tables, <a href="ch02.xhtml#page_25">25</a>&#8211;<a href="ch02.xhtml#page_26">26</a></p>
+<p class="indexmain">&#8220;truthy&#8221; values, <a href="ch02.xhtml#page_43">43</a></p>
+<p class="indexmain"><span class="literal">try</span> statement, <a href="ch03.xhtml#page_71">71</a></p>
+<p class="indexmain">tuple data type, <a href="ch04.xhtml#page_96">96</a></p>
+<p class="indexmain"><span class="literal">tuple()</span> function, <a href="ch04.xhtml#page_97">97</a></p>
+<p class="indexmain">Twilio, <a href="ch18.xhtml#page_439">439</a></p>
+<p class="indexmain"><span class="literal">twilio</span> module</p>
+<p class="indexsub"><span class="literal">create()</span> method, <a href="ch18.xhtml#page_439">439</a>, <a href="ch18.xhtml#page_440">440</a></p>
+<p class="indexsub"><span class="literal">TwilioRestClient()</span> function, <a href="ch18.xhtml#page_439">439</a>, <a href="ch18.xhtml#page_440">440</a></p>
+<p class="indexmain"><span class="literal">type()</span> function, <a href="ch04.xhtml#page_96">96</a></p>
+<h3 class="h3"><strong>U</strong></h3>
+<p class="indexmain">Ubuntu</p>
+<p class="indexsub">installing Python, <a href="intro.xhtml#page_xxxiv">xxxiv</a></p>
+<p class="indexsub">installing third-party modules, <a href="app01.xhtml#page_507">507</a>&#8211;<a href="app01.xhtml#page_510">510</a></p>
+<p class="indexsub">pip tool on, <a href="app01.xhtml#page_507">507</a>&#8211;<a href="app01.xhtml#page_508">508</a></p>
+<p class="indexsub"><span class="literal">Popen()</span> function, <a href="ch17.xhtml#page_407">407</a>, <a href="ch17.xhtml#page_409">409</a></p>
+<p class="indexsub">running Python programs, <a href="app02.xhtml#page_514">514</a>&#8211;<a href="app02.xhtml#page_515">515</a></p>
+<p class="indexsub">starting IDLE, <a href="intro.xhtml#page_xxxv">xxxv</a></p>
+<p class="indexsub">starting Mu, <a href="intro.xhtml#page_xxxv">xxxv</a></p>
+<p class="indexsub">terminal window, <a href="app02.xhtml#page_511">511</a>&#8211;<a href="app02.xhtml#page_512">512</a></p>
+<p class="indexmain">unary operators, <a href="ch02.xhtml#page_26">26</a></p>
+<p class="indexmain">underscore (<span class="literal">_</span>), <a href="ch01.xhtml#page_11">11</a>, <a href="ch07.xhtml#page_173">173</a></p>
+<p class="indexmain">Unicode encodings, <a href="ch12.xhtml#page_273">273</a></p>
+<p class="indexmain">Unix epoch, <a href="ch17.xhtml#page_390">390</a></p>
+<p class="indexmain"><span class="literal">unlink()</span> function (<span class="literal">os</span> module), <a href="ch10.xhtml#page_234">234</a></p>
+<p class="indexmain"><span class="literal">unmerge_cells()</span> method (OpenPyXL), <a href="ch13.xhtml#page_322">322</a></p>
+<p class="indexmain"><span class="literal">unread()</span> function (EZGmail), <a href="ch18.xhtml#page_418">418</a></p>
+<p class="indexmain"><span class="literal">updateColumn()</span> function (EZSheets), <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexmain"><span class="literal">updateColumns()</span> function (EZSheets), <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexmain"><span class="literal">updateRow()</span> function (EZSheets), <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexmain"><span class="literal">updateRows()</span> function (EZSheets), <a href="ch14.xhtml#page_340">340</a></p>
+<p class="indexmain">Updatable Multi-Clipboard, <a href="ch09.xhtml#page_226">226</a>&#8211;<a href="ch09.xhtml#page_228">228</a></p>
+<p class="indexmain">Updating a Spreadsheet project, <a href="ch13.xhtml#page_315">315</a>&#8211;<a href="ch13.xhtml#page_317">317</a></p>
+<p class="indexmain"><span class="literal">upload()</span> function (EZSheets), <a href="ch14.xhtml#page_339">339</a></p>
+<p class="indexmain"><span class="literal">upper()</span> string method, <a href="ch06.xhtml#page_135">135</a>&#8211;<a href="ch06.xhtml#page_136">136</a></p>
+<p class="indexmain">UTC (Coordinated Universal Time), <a href="ch17.xhtml#page_390">390</a></p>
+<h3 class="h3"><span epub:type="pagebreak" id="page_547"/><strong>V</strong></h3>
+<p class="indexmain"><span class="literal">ValueError</span>, <a href="ch01.xhtml#page_17">17</a>, <a href="ch03.xhtml#page_76">76</a></p>
+<p class="indexmain">values, defined, <a href="ch01.xhtml#page_4">4</a></p>
+<p class="indexmain"><span class="literal">values()</span> dictionary method, <a href="ch05.xhtml#page_114">114</a></p>
+<p class="indexmain">variables</p>
+<p class="indexsub">assignment statements, <a href="ch01.xhtml#page_9">9</a>, <a href="ch04.xhtml#page_81">81</a></p>
+<p class="indexsub">defined, <a href="ch01.xhtml#page_9">9</a></p>
+<p class="indexsub">global, <a href="ch03.xhtml#page_65">65</a></p>
+<p class="indexsub">initialization, <a href="ch01.xhtml#page_10">10</a></p>
+<p class="indexsub">local, <a href="ch03.xhtml#page_65">65</a></p>
+<p class="indexsub">naming, <a href="ch01.xhtml#page_11">11</a></p>
+<p class="indexsub">overwriting, <a href="ch01.xhtml#page_10">10</a></p>
+<p class="indexsub">references, <a href="ch04.xhtml#page_100">100</a></p>
+<p class="indexmain">verbose mode, regular expressions, <a href="ch07.xhtml#page_178">178</a></p>
+<p class="indexmain">volumes, <a href="ch09.xhtml#page_202">202</a></p>
+<h3 class="h3"><strong>W</strong></h3>
+<p class="indexmain"><span class="literal">\W</span> character class, <a href="ch07.xhtml#page_173">173</a></p>
+<p class="indexmain"><span class="literal">\w</span> character class, <a href="ch07.xhtml#page_173">173</a></p>
+<p class="indexmain"><span class="literal">wait()</span> function (<span class="literal">subprocess</span> module), <a href="ch17.xhtml#page_407">407</a></p>
+<p class="indexmain"><span class="literal">walk()</span> function (<span class="literal">os</span> module), <a href="ch10.xhtml#page_236">236</a></p>
+<p class="indexmain"><span class="literal">warning()</span> function (<span class="literal">logging</span> module), <a href="ch11.xhtml#page_256">256</a></p>
+<p class="indexmain">WARNING logging level, <a href="ch11.xhtml#page_258">258</a></p>
+<p class="indexmain">weather data, fetching, <a href="ch16.xhtml#page_383">383</a></p>
+<p class="indexmain">web scraping</p>
+<p class="indexsub">browser developer tools, <a href="ch12.xhtml#page_278">278</a></p>
+<p class="indexsub"><span class="literal">bs4</span> module, <a href="ch12.xhtml#page_279">279</a>&#8211;<a href="ch12.xhtml#page_283">283</a></p>
+<p class="indexsub">downloading</p>
+<p class="indexsubsub">files, <a href="ch12.xhtml#page_273">273</a></p>
+<p class="indexsubsub">images, <a href="ch12.xhtml#page_288">288</a>&#8211;<a href="ch12.xhtml#page_289">289</a></p>
+<p class="indexsubsub">pages, <a href="ch12.xhtml#page_271">271</a>&#8211;<a href="ch12.xhtml#page_273">273</a></p>
+<p class="indexsub">and Google maps project, <a href="ch12.xhtml#page_268">268</a></p>
+<p class="indexsub">HTML</p>
+<p class="indexsubsub">finding elements, <a href="ch12.xhtml#page_280">280</a></p>
+<p class="indexsubsub">learning resources, <a href="ch12.xhtml#page_274">274</a></p>
+<p class="indexsubsub">overview, <a href="ch12.xhtml#page_274">274</a>&#8211;<a href="ch12.xhtml#page_275">275</a></p>
+<p class="indexsubsub">viewing page source, <a href="ch12.xhtml#page_275">275</a>&#8211;<a href="ch12.xhtml#page_276">276</a></p>
+<p class="indexsub">overview, <a href="ch12.xhtml#page_267">267</a></p>
+<p class="indexsub">Requests module, <a href="ch12.xhtml#page_271">271</a></p>
+<p class="indexsub">Selenium module</p>
+<p class="indexsubsub">clicking buttons, <a href="ch12.xhtml#page_295">295</a></p>
+<p class="indexsubsub">following links, <a href="ch12.xhtml#page_295">295</a></p>
+<p class="indexsubsub">installing, <a href="ch12.xhtml#page_291">291</a></p>
+<p class="indexsubsub">sending special keystrokes, <a href="ch12.xhtml#page_296">296</a></p>
+<p class="indexsubsub">submitting forms, <a href="ch12.xhtml#page_295">295</a></p>
+<p class="indexsubsub">using Firefox with, <a href="ch12.xhtml#page_291">291</a></p>
+<p class="indexmain"><span class="literal">webbrowser</span> module, <a href="ch12.xhtml#page_268">268</a></p>
+<p class="indexmain"><span class="literal">WebDriver</span> objects (Selenium), <a href="ch12.xhtml#page_292">292</a></p>
+<p class="indexmain"><span class="literal">WebElement</span> objects (Selenium), <a href="ch12.xhtml#page_293">293</a></p>
+<p class="indexmain">websites, opening from script, <a href="ch12.xhtml#page_268">268</a></p>
+<p class="indexmain"><span class="literal">while</span> loop</p>
+<p class="indexsub">overview, <a href="ch02.xhtml#page_35">35</a>, <a href="ch02.xhtml#page_46">46</a></p>
+<p class="indexsub">infinite, <a href="ch02.xhtml#page_39">39</a></p>
+<p class="indexmain">wildcard character (<span class="literal">*</span>), <a href="ch07.xhtml#page_175">175</a></p>
+<p class="indexmain">Windows (operating system)</p>
+<p class="indexsub">backslash vs. forward slash, <a href="ch09.xhtml#page_202">202</a>&#8211;<a href="ch09.xhtml#page_203">203</a></p>
+<p class="indexsub">installing Python, <a href="intro.xhtml#page_xxxiii">xxxiii</a>&#8211;<a href="intro.xhtml#page_xxxiv">xxxiv</a></p>
+<p class="indexsub">installing third-party modules, <a href="app01.xhtml#page_507">507</a>&#8211;<a href="app01.xhtml#page_510">510</a></p>
+<p class="indexsub">opening files with default applications, <a href="ch17.xhtml#page_409">409</a></p>
+<p class="indexsub">pip tool on, <a href="app01.xhtml#page_507">507</a>&#8211;<a href="app01.xhtml#page_508">508</a></p>
+<p class="indexsub">running Python programs, <a href="app02.xhtml#page_513">513</a>&#8211;<a href="app02.xhtml#page_514">514</a></p>
+<p class="indexsub">starting IDLE, <a href="intro.xhtml#page_xxxv">xxxv</a></p>
+<p class="indexsub">starting Mu, <a href="intro.xhtml#page_xxxv">xxxv</a></p>
+<p class="indexsub">Task Scheduler, <a href="ch17.xhtml#page_408">408</a></p>
+<p class="indexsub">terminal window, <a href="app02.xhtml#page_511">511</a>&#8211;<a href="app02.xhtml#page_513">513</a></p>
+<p class="indexmain">workbook, <a href="ch13.xhtml#page_302">302</a></p>
+<p class="indexmain">worksheet, <a href="ch13.xhtml#page_302">302</a></p>
+<p class="indexmain"><span class="literal">write()</span> function (PyAutoGUI), <a href="ch20.xhtml#page_489">489</a></p>
+<p class="indexmain"><span class="literal">write()</span> method, <a href="ch09.xhtml#page_216">216</a>, <a href="ch09.xhtml#page_224">224</a></p>
+<p class="indexmain"><span class="literal">writerow()</span> method (<span class="literal">csv</span> modules), <a href="ch16.xhtml#page_375">375</a></p>
+<h3 class="h3"><strong>X</strong></h3>
+<p class="indexmain">XKCD comics</p>
+<p class="indexsub">downloading project, <a href="ch12.xhtml#page_286">286</a>&#8211;<a href="ch12.xhtml#page_291">291</a></p>
+<p class="indexsub">multithreaded downloader project, <a href="ch17.xhtml#page_403">403</a>&#8211;<a href="ch17.xhtml#page_406">406</a></p>
+<h3 class="h3"><strong>Z</strong></h3>
+<p class="indexmain">Zigzag project, <a href="ch03.xhtml#page_72">72</a>&#8211;<a href="ch03.xhtml#page_74">74</a></p>
+<p class="indexmain"><span class="literal">zipfile</span> module</p>
+<p class="indexsub">adding to ZIP files, <a href="ch10.xhtml#page_239">239</a></p>
+<p class="indexsub">creating ZIP files, <a href="ch10.xhtml#page_239">239</a></p>
+<p class="indexsub">extracting ZIP files, <a href="ch10.xhtml#page_238">238</a></p>
+<p class="indexsub"><span class="literal">namelist()</span> method, <a href="ch10.xhtml#page_238">238</a></p>
+<p class="indexsub">overview, <a href="ch10.xhtml#page_237">237</a></p>
+<p class="indexsub">reading ZIP files, <a href="ch10.xhtml#page_238">238</a></p>
+<p class="indexmain"><span class="literal">ZipFile</span> objects, <a href="ch10.xhtml#page_238">238</a></p>
+<p class="indexmain"><span class="literal">ZipInfo</span> objects, <a href="ch10.xhtml#page_238">238</a><span epub:type="pagebreak" id="page_548"/></p>
+</body>
+</html>

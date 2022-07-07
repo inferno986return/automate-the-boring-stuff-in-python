@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xml:lang="en-us" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:ns="http://www.w3.org/2001/10/synthesis">
+<head>
+<title>Automate the Boring Stuff with Python: Practical Programming for Total Beginners, 2nd Edition</title>
+<link rel="stylesheet" type="text/css" href="../styles/9781593279936.css"/>
+</head>
+<body>
+<h2 class="h2" id="ch02"><span epub:type="pagebreak" id="page_21"/><strong><span class="big">2</span><br/>FLOW CONTROL</strong></h2>
+<div class="image1"><img src="../images/02fig00.jpg" alt="Image"/></div>
+<p class="noindent">So, you know the basics of individual instructions and that a program is just a series of instructions. But programming&#8217;s real strength isn&#8217;t just running one instruction after another like a weekend errand list. Based on how expressions evaluate, a program can decide to skip instructions, repeat them, or choose one of several instructions to run. In fact, you almost never want your programs to start from the first line of code and simply execute every line, straight to the end. <em>Flow control statements</em> can decide which Python instructions to execute under which conditions.</p>
+<p class="indent">These flow control statements directly correspond to the symbols in a flowchart, so I&#8217;ll provide flowchart versions of the code discussed in this chapter. <a href="ch02.xhtml#ch02fig01">Figure 2-1</a> shows a flowchart for what to do if it&#8217;s raining. Follow the path made by the arrows from Start to End.</p>
+<div class="image"><span epub:type="pagebreak" id="page_22"/><a id="ch02fig01"/><img src="../images/02fig01.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-1: A flowchart to tell you what to do if it is raining</em></p>
+<p class="indent">In a flowchart, there is usually more than one way to go from the start to the end. The same is true for lines of code in a computer program. Flowcharts represent these branching points with diamonds, while the other steps are represented with rectangles. The starting and ending steps are represented with rounded rectangles.</p>
+<p class="indent">But before you learn about flow control statements, you first need to learn how to represent those <em>yes</em> and <em>no</em> options, and you need to understand how to write those branching points as Python code. To that end, let&#8217;s explore Boolean values, comparison operators, and Boolean operators.</p>
+<h3 class="h3" id="ch02lev1sec1"><strong>Boolean Values</strong></h3>
+<p class="noindent">While the integer, floating-point, and string data types have an unlimited number of possible values, the <em>Boolean</em> data type has only two values: <span class="literal">True</span> and <span class="literal">False</span>. (Boolean is capitalized because the data type is named after mathematician George Boole.) When entered as Python code, the Boolean values <span class="literal">True</span> and <span class="literal">False</span> lack the quotes you place around strings, and they always start with a capital <em>T</em> or <em>F</em>, with the rest of the word in lowercase. Enter the following into the interactive shell. (Some of these instructions are intentionally incorrect, and they&#8217;ll cause error messages to appear.)</p>
+<p class="programs"><span epub:type="pagebreak" id="page_23"/><span class="ent">&#x278A;</span> &gt;&gt;&gt; <span class="codestrong1">spam = True</span><br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">spam</span><br/>
+&#160;&#160;&#160;True<br/>
+<span class="ent">&#x278B;</span> &gt;&gt;&gt; <span class="codestrong1">true</span><br/>
+&#160;&#160;&#160;Traceback (most recent call last):<br/>
+&#160;&#160;&#160;&#160;&#160;File "&lt;pyshell#2&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;true<br/>
+&#160;&#160;&#160;NameError: name 'true' is not defined<br/>
+<span class="ent">&#x278C;</span> &gt;&gt;&gt; <span class="codestrong1">True = 2 + 2</span><br/>
+&#160;&#160;&#160;SyntaxError: can't assign to keyword</p>
+<p class="indent">Like any other value, Boolean values are used in expressions and can be stored in variables <span class="ent">&#x278A;</span>. If you don&#8217;t use the proper case <span class="ent">&#x278B;</span> or you try to use <span class="literal">True</span> and <span class="literal">False</span> for variable names <span class="ent">&#x278C;</span>, Python will give you an error message.</p>
+<h3 class="h3" id="ch02lev1sec2"><strong>Comparison Operators</strong></h3>
+<p class="noindent"><em>Comparison operators</em>, also called <em>relational operators</em>, compare two values and evaluate down to a single Boolean value. <a href="ch02.xhtml#ch02tab01">Table 2-1</a> lists the comparison operators.</p>
+<p class="tabcap" id="ch02tab01"><strong>Table 2-1:</strong> Comparison Operators</p>
+<table class="topbot-d">
+<colgroup>
+<col style="width:50%"/>
+<col style="width:50%"/>
+</colgroup>
+<thead>
+<tr>
+<td style="vertical-align: top;" class="table-h"><p class="tab_th"><strong>Operator</strong></p></td>
+<td style="vertical-align: top;" class="table-h"><p class="tab_th"><strong>Meaning</strong></p></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">==</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba">Equal to</p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-v"><p class="taba"><span class="literal">!=</span></p></td>
+<td style="vertical-align: top;" class="table-v"><p class="taba">Not equal to</p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">&lt;</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba">Less than</p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-v"><p class="taba"><span class="literal">&gt;</span></p></td>
+<td style="vertical-align: top;" class="table-v"><p class="taba">Greater than</p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">&lt;=</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba">Less than or equal to</p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-va"><p class="taba"><span class="literal">&gt;=</span></p></td>
+<td style="vertical-align: top;" class="table-va"><p class="taba">Greater than or equal to</p></td>
+</tr>
+</tbody>
+</table>
+<p class="indent">These operators evaluate to <span class="literal">True</span> or <span class="literal">False</span> depending on the values you give them. Let&#8217;s try some operators now, starting with <span class="literal">==</span> and <span class="literal">!=</span>.</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">42 == 42</span><br/>
+True<br/>
+&gt;&gt;&gt; <span class="codestrong1">42 == 99</span><br/>
+False<br/>
+&gt;&gt;&gt; <span class="codestrong1">2 != 3</span><br/>
+True<br/>
+&gt;&gt;&gt; <span class="codestrong1">2 != 2</span><br/>
+False</p>
+<p class="indent">As you might expect, <span class="literal">==</span> (equal to) evaluates to <span class="literal">True</span> when the values on both sides are the same, and <span class="literal">!=</span> (not equal to) evaluates to <span class="literal">True</span> when the two values are different. The <span class="literal">==</span> and <span class="literal">!=</span> operators can actually work with values of any data type.</p>
+<p class="programs"><span epub:type="pagebreak" id="page_24"/>&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">'hello' == 'hello'</span><br/>
+&#160;&#160;&#160;True<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">'hello' == 'Hello'</span><br/>
+&#160;&#160;&#160;False<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">'dog' != 'cat'</span><br/>
+&#160;&#160;&#160;True<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">True == True</span><br/>
+&#160;&#160;&#160;True<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">True != False</span><br/>
+&#160;&#160;&#160;True<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">42 == 42.0</span><br/>
+&#160;&#160;&#160;True<br/>
+<span class="ent">&#x278A;</span> &gt;&gt;&gt; <span class="codestrong1">42 == '42'</span><br/>
+&#160;&#160;&#160;False</p>
+<p class="indent">Note that an integer or floating-point value will always be unequal to a string value. The expression <span class="literal">42 == '42'</span> <span class="ent">&#x278A;</span> evaluates to <span class="literal">False</span> because Python considers the integer <span class="literal">42</span> to be different from the string <span class="literal">'42'</span>.</p>
+<p class="indent">The <span class="literal">&lt;</span>, <span class="literal">&gt;</span>, <span class="literal">&lt;=</span>, and <span class="literal">&gt;=</span> operators, on the other hand, work properly only with integer and floating-point values.</p>
+<p class="programs">&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">42 &lt; 100</span><br/>
+&#160;&#160;&#160;True<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">42 &gt; 100</span><br/>
+&#160;&#160;&#160;False<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">42 &lt; 42</span><br/>
+&#160;&#160;&#160;False<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">eggCount = 42</span><br/>
+<span class="ent">&#x278A;</span> &gt;&gt;&gt; <span class="codestrong1">eggCount &lt;= 42</span><br/>
+&#160;&#160;&#160;True<br/>
+&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">myAge = 29</span><br/>
+<span class="ent">&#x278B;</span> &gt;&gt;&gt; <span class="codestrong1">myAge &gt;= 10</span><br/>
+&#160;&#160;&#160;True</p>
+<div class="sidebar">
+<p class="sidebart"><strong>THE DIFFERENCE BETWEEN THE == AND = OPERATORS</strong></p>
+<p class="spara">You might have noticed that the <span class="literal">==</span> operator (equal to) has two equal signs, while the <span class="literal">=</span> operator (assignment) has just one equal sign. It&#8217;s easy to confuse these two operators with each other. Just remember these points:</p>
+<ul>
+<li class="noindent">The <span class="literal">==</span> operator (equal to) asks whether two values are the same as each other.</li>
+<li class="noindent">The <span class="literal">=</span> operator (assignment) puts the value on the right into the variable on the left.</li>
+</ul>
+<p class="sparai">To help remember which is which, notice that the <span class="literal">==</span> operator (equal to) consists of two characters, just like the <span class="literal">!=</span> operator (not equal to) consists of two characters.</p>
+</div>
+<p class="indent"><span epub:type="pagebreak" id="page_25"/>You&#8217;ll often use comparison operators to compare a variable&#8217;s value to some other value, like in the <span class="literal">eggCount &lt;= 42</span> <span class="ent">&#x278A;</span> and <span class="literal">myAge &gt;= 10</span> <span class="ent">&#x278B;</span> examples. (After all, instead of entering <span class="literal">'dog' != 'cat'</span> in your code, you could have just entered <span class="literal">True</span>.) You&#8217;ll see more examples of this later when you learn about flow control statements.</p>
+<h3 class="h3" id="ch02lev1sec3"><strong>Boolean Operators</strong></h3>
+<p class="noindent">The three Boolean operators (<span class="literal">and</span>, <span class="literal">or</span>, and <span class="literal">not</span>) are used to compare Boolean values. Like comparison operators, they evaluate these expressions down to a Boolean value. Let&#8217;s explore these operators in detail, starting with the <span class="literal">and</span> operator.</p>
+<h4 class="h4" id="ch02lev2sec1"><strong><em>Binary Boolean Operators</em></strong></h4>
+<p class="noindent">The <span class="literal">and</span> and <span class="literal">or</span> operators always take two Boolean values (or expressions), so they&#8217;re considered <em>binary</em> operators. The <span class="literal">and</span> operator evaluates an expression to <span class="literal">True</span> if <em>both</em> Boolean values are <span class="literal">True</span>; otherwise, it evaluates to <span class="literal">False</span>. Enter some expressions using <span class="literal">and</span> into the interactive shell to see it in action.</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">True and True</span><br/>
+True<br/>
+&gt;&gt;&gt; <span class="codestrong1">True and False</span><br/>
+False</p>
+<p class="indent">A <em>truth table</em> shows every possible result of a Boolean operator. <a href="ch02.xhtml#ch02tab02">Table 2-2</a> is the truth table for the <span class="literal">and</span> operator.</p>
+<p class="tabcap" id="ch02tab02"><strong>Table 2-2:</strong> The <span class="literal">and</span> Operator&#8217;s Truth Table</p>
+<table class="topbot-d">
+<colgroup>
+<col style="width:50%"/>
+<col style="width:50%"/>
+</colgroup>
+<thead>
+<tr>
+<td style="vertical-align: top;" class="table-h"><p class="tab_th"><strong>Expression</strong></p></td>
+<td style="vertical-align: top;" class="table-h"><p class="tab_th"><strong>Evaluates to . . .</strong></p></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">True and True</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">True</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">True and False</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">False</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">False and True</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">False</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-ba"><p class="taba"><span class="literal">False and False</span></p></td>
+<td style="vertical-align: top;" class="table-ba"><p class="taba"><span class="literal">False</span></p></td>
+</tr>
+</tbody>
+</table>
+<p class="indent">On the other hand, the <span class="literal">or</span> operator evaluates an expression to <span class="literal">True</span> if <em>either</em> of the two Boolean values is <span class="literal">True</span>. If both are <span class="literal">False</span>, it evaluates to <span class="literal">False</span>.</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">False or True</span><br/>
+True<br/>
+&gt;&gt;&gt; <span class="codestrong1">False or False</span><br/>
+False</p>
+<p class="indent">You can see every possible outcome of the <span class="literal">or</span> operator in its truth table, shown in <a href="ch02.xhtml#ch02tab03">Table 2-3</a>.</p>
+<p class="tabcap" id="ch02tab03"><span epub:type="pagebreak" id="page_26"/><strong>Table 2-3:</strong> The <span class="literal">or</span> Operator&#8217;s Truth Table</p>
+<table class="topbot-d">
+<colgroup>
+<col style="width:50%"/>
+<col style="width:50%"/>
+</colgroup>
+<thead>
+<tr>
+<td style="vertical-align: top;" class="table-h"><p class="tab_th"><strong>Expression</strong></p></td>
+<td style="vertical-align: top;" class="table-h"><p class="tab_th"><strong>Evaluates to . . .</strong></p></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">True or True</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">True</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">True or False</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">True</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">False or True</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">True</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-ba"><p class="taba"><span class="literal">False or False</span></p></td>
+<td style="vertical-align: top;" class="table-ba"><p class="taba"><span class="literal">False</span></p></td>
+</tr>
+</tbody>
+</table>
+<h4 class="h4" id="ch02lev2sec2"><strong><em>The not Operator</em></strong></h4>
+<p class="noindent">Unlike <span class="literal">and</span> and <span class="literal">or</span>, the <span class="literal">not</span> operator operates on only one Boolean value (or expression). This makes it a <em>unary</em> operator. The <span class="literal">not</span> operator simply evaluates to the opposite Boolean value.</p>
+<p class="programs">&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">not True</span><br/>
+&#160;&#160;&#160;False<br/>
+<span class="ent">&#x278A;</span> &gt;&gt;&gt; <span class="codestrong1">not not not not True</span><br/>
+&#160;&#160;&#160;True</p>
+<p class="indent">Much like using double negatives in speech and writing, you can nest <span class="literal">not</span> operators <span class="ent">&#x278A;</span>, though there&#8217;s never not no reason to do this in real programs. <a href="ch02.xhtml#ch02tab04">Table 2-4</a> shows the truth table for <span class="literal">not</span>.</p>
+<p class="tabcap" id="ch02tab04"><strong>Table 2-4:</strong> The <span class="literal">not</span> Operator&#8217;s Truth Table</p>
+<table class="topbot-d">
+<colgroup>
+<col style="width:50%"/>
+<col style="width:50%"/>
+</colgroup>
+<thead>
+<tr>
+<td style="vertical-align: top;" class="table-h"><p class="tab_th"><strong>Expression</strong></p></td>
+<td style="vertical-align: top;" class="table-h"><p class="tab_th"><strong>Evaluates to . . .</strong></p></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">not True</span></p></td>
+<td style="vertical-align: top;" class="table-b"><p class="taba"><span class="literal">False</span></p></td>
+</tr>
+<tr>
+<td style="vertical-align: top;" class="table-ba"><p class="taba"><span class="literal">not False</span></p></td>
+<td style="vertical-align: top;" class="table-ba"><p class="taba"><span class="literal">True</span></p></td>
+</tr>
+</tbody>
+</table>
+<h3 class="h3" id="ch02lev1sec4"><strong>Mixing Boolean and Comparison Operators</strong></h3>
+<p class="noindent">Since the comparison operators evaluate to Boolean values, you can use them in expressions with the Boolean operators.</p>
+<p class="indent">Recall that the <span class="literal">and</span>, <span class="literal">or</span>, and <span class="literal">not</span> operators are called Boolean operators because they always operate on the Boolean values <span class="literal">True</span> and <span class="literal">False</span>. While expressions like <span class="literal">4 &lt; 5</span> aren&#8217;t Boolean values, they are expressions that evaluate down to Boolean values. Try entering some Boolean expressions that use comparison operators into the interactive shell.</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">(</span><span class="codestrong1">4 &lt; 5) and (5 &lt; 6)</span><br/>
+True<br/>
+&gt;&gt;&gt; <span class="codestrong1">(</span><span class="codestrong1">4 &lt; 5) and (9 &lt; 6)</span><br/>
+False<br/>
+&gt;&gt;&gt; <span class="codestrong1">(</span><span class="codestrong1">1 == 2) or (2 == 2)</span><br/>
+True</p>
+<p class="indent">The computer will evaluate the left expression first, and then it will evaluate the right expression. When it knows the Boolean value for each, <span epub:type="pagebreak" id="page_27"/>it will then evaluate the whole expression down to one Boolean value. You can think of the computer&#8217;s evaluation process for <span class="literal">(4 &lt; 5) and (5 &lt; 6)</span> as the following:</p>
+<div class="imagec"><img src="../images/02fig01a.jpg" alt="image"/></div>
+<p class="indent">You can also use multiple Boolean operators in an expression, along with the comparison operators:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">2 + 2 == 4 and not 2 + 2 == 5 and 2 * 2 == 2 + 2</span><br/>
+True</p>
+<p class="indent">The Boolean operators have an order of operations just like the math operators do. After any math and comparison operators evaluate, Python evaluates the <span class="literal">not</span> operators first, then the <span class="literal">and</span> operators, and then the <span class="literal">or</span> operators.</p>
+<h3 class="h3" id="ch02lev1sec5"><strong>Elements of Flow Control</strong></h3>
+<p class="noindent">Flow control statements often start with a part called the <em>condition</em> and are always followed by a block of code called the <em>clause</em>. Before you learn about Python&#8217;s specific flow control statements, I&#8217;ll cover what a condition and a block are.</p>
+<h4 class="h4" id="ch02lev2sec3"><strong><em>Conditions</em></strong></h4>
+<p class="noindent">The Boolean expressions you&#8217;ve seen so far could all be considered conditions, which are the same thing as expressions; <em>condition</em> is just a more specific name in the context of flow control statements. Conditions always evaluate down to a Boolean value, <span class="literal">True</span> or <span class="literal">False</span>. A flow control statement decides what to do based on whether its condition is <span class="literal">True</span> or <span class="literal">False</span>, and almost every flow control statement uses a condition.</p>
+<h4 class="h4" id="ch02lev2sec4"><strong><em>Blocks of Code</em></strong></h4>
+<p class="noindent">Lines of Python code can be grouped together in <em>blocks</em>. You can tell when a block begins and ends from the indentation of the lines of code. There are three rules for blocks.</p>
+<ul>
+<li class="noindent">Blocks begin when the indentation increases.</li>
+<li class="noindent">Blocks can contain other blocks.</li>
+<li class="noindent">Blocks end when the indentation decreases to zero or to a containing block&#8217;s indentation.</li>
+</ul>
+<p class="indent"><span epub:type="pagebreak" id="page_28"/>Blocks are easier to understand by looking at some indented code, so let&#8217;s find the blocks in part of a small game program, shown here:</p>
+<p class="programs">&#160;&#160;name = 'Mary'<br/>
+&#160;&#160;password = 'swordfish'<br/>
+&#160;&#160;if name == 'Mary':<br/>
+&#160;&#160;&#160;&#160;<span class="ent">&#x278A;</span> print('Hello, Mary')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;if password == 'swordfish':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ent">&#x278B;</span> print('Access granted.')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;else:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ent">&#x278C;</span> print('Wrong password.')</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/blocks/">https://autbor.com/blocks/</a></em>. The first block of code <span class="ent">&#x278A;</span> starts at the line <span class="literal">print('Hello, Mary')</span> and contains all the lines after it. Inside this block is another block <span class="ent">&#x278B;</span>, which has only a single line in it: <span class="literal">print('Access Granted.')</span>. The third block <span class="ent">&#x278C;</span> is also one line long: <span class="literal">print('Wrong password.')</span>.</p>
+<h3 class="h3" id="ch02lev1sec6"><strong>Program Execution</strong></h3>
+<p class="noindent">In the previous chapter&#8217;s <em>hello.py</em> program, Python started executing instructions at the top of the program going down, one after another. The <em>program execution</em> (or simply, <em>execution</em>) is a term for the current instruction being executed. If you print the source code on paper and put your finger on each line as it is executed, you can think of your finger as the program execution.</p>
+<p class="indent">Not all programs execute by simply going straight down, however. If you use your finger to trace through a program with flow control statements, you&#8217;ll likely find yourself jumping around the source code based on conditions, and you&#8217;ll probably skip entire clauses.</p>
+<h3 class="h3" id="ch02lev1sec7"><strong>Flow Control Statements</strong></h3>
+<p class="noindent">Now, let&#8217;s explore the most important piece of flow control: the statements themselves. The statements represent the diamonds you saw in the flowchart in <a href="ch02.xhtml#ch02fig01">Figure 2-1</a>, and they are the actual decisions your programs will make.</p>
+<h4 class="h4" id="ch02lev2sec5"><strong><em>if Statements</em></strong></h4>
+<p class="noindent">The most common type of flow control statement is the <span class="literal">if</span> statement. An <span class="literal">if</span> statement&#8217;s clause (that is, the block following the <span class="literal">if</span> statement) will execute if the statement&#8217;s condition is <span class="literal">True</span>. The clause is skipped if the condition is <span class="literal">False</span>.</p>
+<p class="indent">In plain English, an <span class="literal">if</span> statement could be read as, &#8220;If this condition is true, execute the code in the clause.&#8221; In Python, an <span class="literal">if</span> statement consists of the following:</p>
+<ul>
+<li class="noindent">The <span class="literal">if</span> keyword</li>
+<li class="noindent">A condition (that is, an expression that evaluates to <span class="literal">True</span> or <span class="literal">False</span>)</li>
+<li class="noindent"><span epub:type="pagebreak" id="page_29"/>A colon</li>
+<li class="noindent">Starting on the next line, an indented block of code (called the <span class="literal">if</span> clause)</li>
+</ul>
+<p class="indent">For example, let&#8217;s say you have some code that checks to see whether someone&#8217;s name is Alice. (Pretend <span class="literal">name</span> was assigned some value earlier.)</p>
+<p class="programs">if name == 'Alice':<br/>
+&#160;&#160;&#160;&#160;print('Hi, Alice.')</p>
+<p class="indent">All flow control statements end with a colon and are followed by a new block of code (the clause). This <span class="literal">if</span> statement&#8217;s clause is the block with <span class="literal">print('Hi, Alice.')</span>. <a href="ch02.xhtml#ch02fig02">Figure 2-2</a> shows what a flowchart of this code would look like.</p>
+<div class="image"><a id="ch02fig02"/><img src="../images/02fig02.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-2: The flowchart for an <span class="literal">if</span> statement</em></p>
+<h4 class="h4" id="ch02lev2sec6"><strong><em>else Statements</em></strong></h4>
+<p class="noindent">An <span class="literal">if</span> clause can optionally be followed by an <span class="literal">else</span> statement. The <span class="literal">else</span> clause is executed only when the <span class="literal">if</span> statement&#8217;s condition is <span class="literal">False</span>. In plain English, an <span class="literal">else</span> statement could be read as, &#8220;If this condition is true, execute this code. Or else, execute that code.&#8221; An <span class="literal">else</span> statement doesn&#8217;t have a condition, and in code, an <span class="literal">else</span> statement always consists of the following:</p>
+<ul>
+<li class="noindent">The <span class="literal">else</span> keyword</li>
+<li class="noindent">A colon</li>
+<li class="noindent">Starting on the next line, an indented block of code (called the <span class="literal">else</span> clause)</li>
+</ul>
+<p class="indent"><span epub:type="pagebreak" id="page_30"/>Returning to the Alice example, let&#8217;s look at some code that uses an <span class="literal">else</span> statement to offer a different greeting if the person&#8217;s name isn&#8217;t Alice.</p>
+<p class="programs">if name == 'Alice':<br/>
+&#160;&#160;&#160;&#160;print('Hi, Alice.')<br/>
+else:<br/>
+&#160;&#160;&#160;&#160;print('Hello, stranger.')</p>
+<p class="indent"><a href="ch02.xhtml#ch02fig03">Figure 2-3</a> shows what a flowchart of this code would look like.</p>
+<div class="image"><a id="ch02fig03"/><img src="../images/02fig03.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-3: The flowchart for an <span class="literal">else</span> statement</em></p>
+<h4 class="h4" id="ch02lev2sec7"><strong><em>elif Statements</em></strong></h4>
+<p class="noindent">While only one of the <span class="literal">if</span> or <span class="literal">else</span> clauses will execute, you may have a case where you want one of <em>many</em> possible clauses to execute. The <span class="literal">elif</span> statement is an &#8220;else if&#8221; statement that always follows an <span class="literal">if</span> or another <span class="literal">elif</span> statement. It provides another condition that is checked only if all of the previous conditions were <span class="literal">False</span>. In code, an <span class="literal">elif</span> statement always consists of the following:</p>
+<ul>
+<li class="noindent">The <span class="literal">elif</span> keyword</li>
+<li class="noindent">A condition (that is, an expression that evaluates to <span class="literal">True</span> or <span class="literal">False</span>)</li>
+<li class="noindent">A colon</li>
+<li class="noindent">Starting on the next line, an indented block of code (called the <span class="literal">elif</span> clause)</li>
+</ul>
+<p class="indent">Let&#8217;s add an <span class="literal">elif</span> to the name checker to see this statement in action.</p>
+<p class="programs">if name == 'Alice':<br/>
+&#160;&#160;&#160;&#160;print('Hi, Alice.')<br/>
+<span epub:type="pagebreak" id="page_31"/>elif age &lt; 12:<br/>
+&#160;&#160;&#160;&#160;print('You are not Alice, kiddo.')</p>
+<p class="indent">This time, you check the person&#8217;s age, and the program will tell them something different if they&#8217;re younger than 12. You can see the flowchart for this in <a href="ch02.xhtml#ch02fig04">Figure 2-4</a>.</p>
+<div class="image"><a id="ch02fig04"/><img src="../images/02fig04.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-4: The flowchart for an <span class="literal">elif</span> statement</em></p>
+<p class="indent">The <span class="literal">elif</span> clause executes if <span class="literal">age &lt; 12</span> is <span class="literal">True</span> and <span class="literal">name == 'Alice'</span> is <span class="literal">False</span>. However, if both of the conditions are <span class="literal">False</span>, then both of the clauses are skipped. It is <em>not</em> guaranteed that at least one of the clauses will be executed. When there is a chain of <span class="literal">elif</span> statements, only one or none of the clauses will be executed. Once one of the statements&#8217; conditions is found to be <span class="literal">True</span>, the rest of the <span class="literal">elif</span> clauses are automatically skipped. For example, open a new file editor window and enter the following code, saving it as <em>vampire.py</em>:</p>
+<p class="programs">name = 'Carol'<br/>
+age = 3000<br/>
+if name == 'Alice':<br/>
+&#160;&#160;&#160;&#160;print('Hi, Alice.')<br/>
+elif age &lt; 12:<br/>
+&#160;&#160;&#160;&#160;print('You are not Alice, kiddo.')<br/>
+elif age &gt; 2000:<br/>
+<span epub:type="pagebreak" id="page_32"/>&#160;&#160;&#160;&#160;print('Unlike you, Alice is not an undead, immortal vampire.')<br/>
+elif age &gt; 100:<br/>
+&#160;&#160;&#160;&#160;print('You are not Alice, grannie.')</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/vampire/">https://autbor.com/vampire/</a></em>. Here, I&#8217;ve added two more <span class="literal">elif</span> statements to make the name checker greet a person with different answers based on <span class="literal">age</span>. <a href="ch02.xhtml#ch02fig05">Figure 2-5</a> shows the flowchart for this.</p>
+<div class="image"><a id="ch02fig05"/><img src="../images/02fig05.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-5: The flowchart for multiple <span class="literal">elif</span> statements in the</em> vampire.py <em>program</em></p>
+<p class="indent"><span epub:type="pagebreak" id="page_33"/>The order of the <span class="literal">elif</span> statements does matter, however. Let&#8217;s rearrange them to introduce a bug. Remember that the rest of the <span class="literal">elif</span> clauses are automatically skipped once a <span class="literal">True</span> condition has been found, so if you swap around some of the clauses in <em>vampire.py</em>, you run into a problem. Change the code to look like the following, and save it as <em>vampire2.py</em>:</p>
+<p class="programs">&#160;&#160;&#160;name = 'Carol'<br/>
+&#160;&#160;&#160;age = 3000<br/>
+&#160;&#160;&#160;if name == 'Alice':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Hi, Alice.')<br/>
+&#160;&#160;&#160;elif age &lt; 12:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You are not Alice, kiddo.')<br/>
+<span class="ent">&#x278A;</span> elif age &gt; 100:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You are not Alice, grannie.')<br/>
+&#160;&#160;&#160;elif age &gt; 2000:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Unlike you, Alice is not an undead, immortal vampire.')</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/vampire2/">https://autbor.com/vampire2/</a></em>. Say the <span class="literal">age</span> variable contains the value <span class="literal">3000</span> before this code is executed. You might expect the code to print the string <span class="literal">'Unlike you, Alice is not an undead, immortal vampire.'</span>. However, because the <span class="literal">age &gt; 100</span> condition is <span class="literal">True</span> (after all, 3,000 <em>is</em> greater than 100) <span class="ent">&#x278A;</span>, the string <span class="literal">'You are not Alice, grannie.'</span> is printed, and the rest of the <span class="literal">elif</span> statements are automatically skipped. Remember that at most only one of the clauses will be executed, and for <span class="literal">elif</span> statements, the order matters!</p>
+<p class="indent"><a href="ch02.xhtml#ch02fig06">Figure 2-6</a> shows the flowchart for the previous code. Notice how the diamonds for <span class="literal">age &gt; 100</span> and <span class="literal">age &gt; 2000</span> are swapped.</p>
+<p class="indent">Optionally, you can have an <span class="literal">else</span> statement after the last <span class="literal">elif</span> statement. In that case, it <em>is</em> guaranteed that at least one (and only one) of the clauses will be executed. If the conditions in every <span class="literal">if</span> and <span class="literal">elif</span> statement are <span class="literal">False</span>, then the <span class="literal">else</span> clause is executed. For example, let&#8217;s re-create the Alice program to use <span class="literal">if</span>, <span class="literal">elif</span>, and <span class="literal">else</span> clauses.</p>
+<p class="programs">name = 'Carol'<br/>
+age = 3000<br/>
+if name == 'Alice':<br/>
+&#160;&#160;&#160;&#160;print('Hi, Alice.')<br/>
+elif age &lt; 12:<br/>
+&#160;&#160;&#160;&#160;print('You are not Alice, kiddo.')<br/>
+else:<br/>
+&#160;&#160;&#160;&#160;print('You are neither Alice nor a little kid.')</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/littlekid/">https://autbor.com/littlekid/</a></em>. <a href="ch02.xhtml#ch02fig07">Figure 2-7</a> shows the flowchart for this new code, which we&#8217;ll save as <em>littleKid.py</em>.</p>
+<p class="indent">In plain English, this type of flow control structure would be &#8220;If the first condition is true, do this. Else, if the second condition is true, do that. Otherwise, do something else.&#8221; When you use <span class="literal">if</span>, <span class="literal">elif</span>, and <span class="literal">else</span> statements together, remember these rules about how to order them to avoid bugs like the one in <a href="ch02.xhtml#ch02fig06">Figure 2-6</a>. First, there is always exactly one <span class="literal">if</span> statement. Any <span epub:type="pagebreak" id="page_34"/><span class="literal">elif</span> statements you need should follow the <span class="literal">if</span> statement. Second, if you want to be sure that at least one clause is executed, close the structure with an <span class="literal">else</span> statement.</p>
+<div class="image"><a id="ch02fig06"/><img src="../images/02fig06.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-6: The flowchart for the</em> vampire2.py <em>program. The X path will logically never happen, because if <span class="literal">age</span> were greater than <span class="literal">2000</span>, it would have already been greater than <span class="literal">100</span>.</em></p>
+<div class="image"><span epub:type="pagebreak" id="page_35"/><a id="ch02fig07"/><img src="../images/02fig07.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-7: Flowchart for the previous</em> littleKid.py <em>program</em></p>
+<h4 class="h4" id="ch02lev2sec8"><strong><em>while Loop Statements</em></strong></h4>
+<p class="noindent">You can make a block of code execute over and over again using a <span class="literal">while</span> statement. The code in a <span class="literal">while</span> clause will be executed as long as the <span class="literal">while</span> statement&#8217;s condition is <span class="literal">True</span>. In code, a <span class="literal">while</span> statement always consists of the following:</p>
+<ul>
+<li class="noindent">The <span class="literal">while</span> keyword</li>
+<li class="noindent">A condition (that is, an expression that evaluates to <span class="literal">True</span> or <span class="literal">False</span>)</li>
+<li class="noindent">A colon</li>
+<li class="noindent">Starting on the next line, an indented block of code (called the <span class="literal">while</span> clause)</li>
+</ul>
+<p class="indent"><span epub:type="pagebreak" id="page_36"/>You can see that a <span class="literal">while</span> statement looks similar to an <span class="literal">if</span> statement. The difference is in how they behave. At the end of an <span class="literal">if</span> clause, the program execution continues after the <span class="literal">if</span> statement. But at the end of a <span class="literal">while</span> clause, the program execution jumps back to the start of the <span class="literal">while</span> statement. The <span class="literal">while</span> clause is often called the <em>while loop</em> or just the <em>loop</em>.</p>
+<p class="indent">Let&#8217;s look at an <span class="literal">if</span> statement and a <span class="literal">while</span> loop that use the same condition and take the same actions based on that condition. Here is the code with an <span class="literal">if</span> statement:</p>
+<p class="programs">spam = 0<br/>
+if spam &lt; 5:<br/>
+&#160;&#160;&#160;&#160;print('Hello, world.')<br/>
+&#160;&#160;&#160;&#160;spam = spam + 1</p>
+<p class="indent">Here is the code with a <span class="literal">while</span> statement:</p>
+<p class="programs">spam = 0<br/>
+while spam &lt; 5:<br/>
+&#160;&#160;&#160;&#160;print('Hello, world.')<br/>
+&#160;&#160;&#160;&#160;spam = spam + 1</p>
+<p class="indent">These statements are similar&#8212;both <span class="literal">if</span> and <span class="literal">while</span> check the value of <span class="literal">spam</span>, and if it&#8217;s less than 5, they print a message. But when you run these two code snippets, something very different happens for each one. For the <span class="literal">if</span> statement, the output is simply <span class="literal">"Hello, world."</span>. But for the <span class="literal">while</span> statement, it&#8217;s <span class="literal">"Hello, world."</span> repeated five times! Take a look at the flowcharts for these two pieces of code, <a href="ch02.xhtml#ch02fig08">Figures 2-8</a> and <a href="ch02.xhtml#ch02fig09">2-9</a>, to see why this happens.</p>
+<div class="image"><a id="ch02fig08"/><img src="../images/02fig08.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-8: The flowchart for the <span class="literal">if</span> statement code</em></p>
+<div class="image"><span epub:type="pagebreak" id="page_37"/><a id="ch02fig09"/><img src="../images/02fig09.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-9: The flowchart for the <span class="literal">while</span> statement code</em></p>
+<p class="indent">The code with the <span class="literal">if</span> statement checks the condition, and it prints <span class="literal">Hello, world.</span> only once if that condition is true. The code with the <span class="literal">while</span> loop, on the other hand, will print it five times. The loop stops after five prints because the integer in <span class="literal">spam</span> increases by one at the end of each loop iteration, which means that the loop will execute five times before <span class="literal">spam &lt; 5</span> is <span class="literal">False</span>.</p>
+<p class="indent">In the <span class="literal">while</span> loop, the condition is always checked at the start of each <em>iteration</em> (that is, each time the loop is executed). If the condition is <span class="literal">True</span>, then the clause is executed, and afterward, the condition is checked again. The first time the condition is found to be <span class="literal">False</span>, the <span class="literal">while</span> clause is skipped.</p>
+<h5 class="h5" id="ch02lev3sec1"><strong>An Annoying while Loop</strong></h5>
+<p class="noindent">Here&#8217;s a small example program that will keep asking you to type, literally, <span class="literal">your name</span>. Select <strong>File</strong> &#9656; <strong>New</strong> to open a new file editor window, enter the following code, and save the file as <em>yourName.py</em>:</p>
+<p class="programs"><span class="ent">&#x278A;</span> name = ''<br/>
+<span class="ent">&#x278B;</span> while name != 'your name':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Please type your name.')<br/>
+&#160;&#160;&#160;&#160;<span class="ent">&#x278C;</span> name = input()<br/>
+<span class="ent">&#x278D;</span> print('Thank you!')</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/yourname/">https://autbor.com/yourname/</a></em>. First, the program sets the <span class="literal">name</span> variable <span class="ent">&#x278A;</span> to an empty string. This is so <span epub:type="pagebreak" id="page_38"/>that the <span class="literal">name != 'your name'</span> condition will evaluate to <span class="literal">True</span> and the program execution will enter the <span class="literal">while</span> loop&#8217;s clause <span class="ent">&#x278B;</span>.</p>
+<p class="indent">The code inside this clause asks the user to type their name, which is assigned to the <span class="literal">name</span> variable <span class="ent">&#x278C;</span>. Since this is the last line of the block, the execution moves back to the start of the <span class="literal">while</span> loop and reevaluates the condition. If the value in <span class="literal">name</span> is <em>not equal</em> to the string <span class="literal">'your name'</span>, then the condition is <span class="literal">True</span>, and the execution enters the <span class="literal">while</span> clause again.</p>
+<p class="indent">But once the user types <span class="literal">your name</span>, the condition of the <span class="literal">while</span> loop will be <span class="literal">'your name' != 'your name'</span>, which evaluates to <span class="literal">False</span>. The condition is now <span class="literal">False</span>, and instead of the program execution reentering the <span class="literal">while</span> loop&#8217;s clause, Python skips past it and continues running the rest of the program <span class="ent">&#x278D;</span>. <a href="ch02.xhtml#ch02fig10">Figure 2-10</a> shows a flowchart for the <em>yourName.py</em> program.</p>
+<div class="image"><a id="ch02fig10"/><img src="../images/02fig10.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-10: A flowchart of the</em> yourName.py <em>program</em></p>
+<p class="indent">Now, let&#8217;s see <em>yourName.py</em> in action. Press <strong>F5</strong> to run it, and enter something other than <span class="literal">your name</span> a few times before you give the program what it wants.</p>
+<p class="programs">Please type your name.<br/>
+<span class="codestrong1">Al</span><br/>
+Please type your name.<br/>
+<span class="codestrong1">Albert</span><br/>
+Please type your name.<br/>
+<span class="codestrong1">%#@#%*(^&amp;!!!</span><br/>
+<span epub:type="pagebreak" id="page_39"/>Please type your name.<br/>
+<span class="codestrong1">your name</span><br/>
+Thank you!</p>
+<p class="indent">If you never enter <span class="literal">your name</span>, then the <span class="literal">while</span> loop&#8217;s condition will never be <span class="literal">False</span>, and the program will just keep asking forever. Here, the <span class="literal">input()</span> call lets the user enter the right string to make the program move on. In other programs, the condition might never actually change, and that can be a problem. Let&#8217;s look at how you can break out of a <span class="literal">while</span> loop.</p>
+<h4 class="h4" id="ch02lev2sec9"><strong><em>break Statements</em></strong></h4>
+<p class="noindent">There is a shortcut to getting the program execution to break out of a <span class="literal">while</span> loop&#8217;s clause early. If the execution reaches a <span class="literal">break</span> statement, it immediately exits the <span class="literal">while</span> loop&#8217;s clause. In code, a <span class="literal">break</span> statement simply contains the <span class="literal">break</span> keyword.</p>
+<p class="indent">Pretty simple, right? Here&#8217;s a program that does the same thing as the previous program, but it uses a <span class="literal">break</span> statement to escape the loop. Enter the following code, and save the file as <em>yourName2.py</em>:</p>
+<p class="programs"><span class="ent">&#x278A;</span> while True:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Please type your name.')<br/>
+&#160;&#160;&#160;&#160;<span class="ent">&#x278B;</span> name = input()<br/>
+&#160;&#160;&#160;&#160;<span class="ent">&#x278C;</span> if name == 'your name':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ent">&#x278D;</span> break<br/>
+<span class="ent">&#x278E;</span> print('Thank you!')</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/yourname2/">https://autbor.com/yourname2/</a></em>. The first line <span class="ent">&#x278A;</span> creates an <em>infinite loop</em>; it is a <span class="literal">while</span> loop whose condition is always <span class="literal">True</span>. (The expression <span class="literal">True</span>, after all, always evaluates down to the value <span class="literal">True</span>.) After the program execution enters this loop, it will exit the loop only when a <span class="literal">break</span> statement is executed. (An infinite loop that <em>never</em> exits is a common programming bug.)</p>
+<p class="indent">Just like before, this program asks the user to enter <span class="literal">your name</span> <span class="ent">&#x278B;</span>. Now, however, while the execution is still inside the <span class="literal">while</span> loop, an <span class="literal">if</span> statement checks <span class="ent">&#x278C;</span> whether <span class="literal">name</span> is equal to <span class="literal">'your name'</span>. If this condition is <span class="literal">True</span>, the <span class="literal">break</span> statement is run <span class="ent">&#x278D;</span>, and the execution moves out of the loop to <span class="literal">print('Thank you!')</span> <span class="ent">&#x278E;</span>. Otherwise, the <span class="literal">if</span> statement&#8217;s clause that contains the <span class="literal">break</span> statement is skipped, which puts the execution at the end of the <span class="literal">while</span> loop. At this point, the program execution jumps back to the start of the <span class="literal">while</span> statement <span class="ent">&#x278A;</span> to recheck the condition. Since this condition is merely the <span class="literal">True</span> Boolean value, the execution enters the loop to ask the user to type <span class="literal">your name</span> again. See <a href="ch02.xhtml#ch02fig11">Figure 2-11</a> for this program&#8217;s flowchart.</p>
+<p class="indent">Run <em>yourName2.py</em>, and enter the same text you entered for <em>yourName.py</em>. The rewritten program should respond in the same way as the original.</p>
+<div class="image"><span epub:type="pagebreak" id="page_40"/><a id="ch02fig11"/><img src="../images/02fig11.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-11: The flowchart for the</em> yourName2.py <em>program with an infinite loop. Note that the X path will logically never happen, because the loop condition is always <span class="literal">True</span>.</em></p>
+<h4 class="h4" id="ch02lev2sec10"><strong><em>continue Statements</em></strong></h4>
+<p class="noindent">Like <span class="literal">break</span> statements, <span class="literal">continue</span> statements are used inside loops. When the program execution reaches a <span class="literal">continue</span> statement, the program execution immediately jumps back to the start of the loop and reevaluates the loop&#8217;s condition. (This is also what happens when the execution reaches the end of the loop.)</p>
+<p class="indent">Let&#8217;s use <span class="literal">continue</span> to write a program that asks for a name and password. Enter the following code into a new file editor window and save the program as <em>swordfish.py</em>.</p>
+<div class="sidebar">
+<p class="sidebart"><strong>TRAPPED IN AN INFINITE LOOP?</strong></p>
+<p class="spara">If you ever run a program that has a bug causing it to get stuck in an infinite loop, press <small>CTRL</small>-C or select <strong>Shell</strong> &#9656; <strong>Restart Shell</strong> from IDLE&#8217;s menu. This will send a <span class="literal">KeyboardInterrupt</span> error to your program and cause it to stop immediately. Try stopping a program by creating a simple infinite loop in the file editor, and save the program as <em>infiniteLoop.py</em>.</p>
+<p class="programs">while True:<br/>
+&#160;&#160;&#160;&#160;print('Hello, world!')</p>
+<p class="sparai">When you run this program, it will print <span class="literal">Hello, world!</span> to the screen forever because the <span class="literal">while</span> statement&#8217;s condition is always <span class="literal">True</span>. <small>CTRL</small>-C is also handy if you want to simply terminate your program immediately, even if it&#8217;s not stuck in an infinite loop.</p>
+</div>
+<p class="programs"><span epub:type="pagebreak" id="page_41"/>&#160;&#160;while True:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;print('Who are you?')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;name = input()<br/>
+&#160;&#160;&#160;&#160;<span class="ent">&#x278A;</span> if name != 'Joe':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ent">&#x278B;</span> continue<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Hello, Joe. What is the password? (It is a fish.)')<br/>
+&#160;&#160;&#160;&#160;<span class="ent">&#x278C;</span> password = input()<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;if password == 'swordfish':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ent">&#x278D;</span> break<br/>
+<span class="ent">&#x278E;</span> print('Access granted.')&#160;&#160;&#160;&#160;</p>
+<p class="indent">If the user enters any name besides <span class="literal">Joe</span> <span class="ent">&#x278A;</span>, the <span class="literal">continue</span> statement <span class="ent">&#x278B;</span> causes the program execution to jump back to the start of the loop. When the program reevaluates the condition, the execution will always enter the loop, since the condition is simply the value <span class="literal">True</span>. Once the user makes it past that <span class="literal">if</span> statement, they are asked for a password <span class="ent">&#x278C;</span>. If the password entered is <span class="literal">swordfish</span>, then the <span class="literal">break</span> statement <span class="ent">&#x278D;</span> is run, and the execution jumps out of the <span class="literal">while</span> loop to print <span class="literal">Access granted</span> <span class="ent">&#x278E;</span>. Otherwise, the execution continues to the end of the <span class="literal">while</span> loop, where it then jumps back to the start of the loop. See <a href="ch02.xhtml#ch02fig12">Figure 2-12</a> for this program&#8217;s flowchart.</p>
+<div class="image"><span epub:type="pagebreak" id="page_42"/><a id="ch02fig12"/><img src="../images/02fig12.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-12: A flowchart for</em> swordfish.py. <em>The X path will logically never happen, because the loop condition is always <span class="literal">True</span>.</em></p>
+<div class="sidebar">
+<p class="sidebart"><strong>&#8220;TRUTHY&#8221; AND &#8220;FALSEY&#8221; VALUES</strong></p>
+<p class="spara">Conditions will consider some values in other data types equivalent to <span class="literal">True</span> and <span class="literal">False</span>. When used in conditions, <span class="literal">0</span>, <span class="literal">0.0</span>, and <span class="literal">''</span> (the empty string) are considered <span class="literal">False</span>, while all other values are considered <span class="literal">True</span>. For example, look at the following program:</p>
+<p class="programs">name = ''<br/>
+<span class="ent">&#x278A;</span> while not name:<br/>
+&#160;&#160;&#160;&#160;print('Enter your name:')<br/>
+&#160;&#160;&#160;&#160;name = input()<br/>
+print('How many guests will you have?')<br/>
+numOfGuests = int(input())<br/>
+<span class="ent">&#x278B;</span> if numOfGuests:<br/>
+&#160;&#160;&#160;&#160;<span class="ent">&#x278C;</span> print('Be sure to have enough room for all your guests.')<br/>
+print('Done')</p>
+<p class="sparai">You can view the execution of this program at <em><a href="https://autbor.com/howmanyguests/">https://autbor.com/howmanyguests/</a></em>. If the user enters a blank string for <span class="literal">name</span>, then the <span class="literal">while</span> statement&#8217;s condition will be <span class="literal">True</span> <span class="ent">&#x278A;</span>, and the program continues to ask for a name. If the value for <span class="literal">numOfGuests</span> is not <span class="literal">0</span> <span class="ent">&#x278B;</span>, then the condition is considered to be <span class="literal">True</span>, and the program will print a reminder for the user <span class="ent">&#x278C;</span>.</p>
+<p class="sparai">You could have entered <span class="literal">not name != ''</span> instead of <span class="literal">not name</span>, and <span class="literal">numOfGuests != 0</span> instead of <span class="literal">numOfGuests</span>, but using the truthy and falsey values can make your code easier to read.</p>
+</div>
+<p class="indent"><span epub:type="pagebreak" id="page_43"/>Run this program and give it some input. Until you claim to be Joe, the program shouldn&#8217;t ask for a password, and once you enter the correct password, it should exit.</p>
+<p class="programs">Who are you?<br/>
+<span class="codestrong1">I'm fine, thanks. Who are you?</span><br/>
+Who are you?<br/>
+<span class="codestrong1">Joe</span><br/>
+Hello, Joe. What is the password? (It is a fish.)<br/>
+<span class="codestrong1">Mary</span><br/>
+Who are you?<br/>
+<span class="codestrong1">Joe</span><br/>
+Hello, Joe. What is the password? (It is a fish.)<br/>
+<span class="codestrong1">swordfish</span><br/>
+Access granted.</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/hellojoe/">https://autbor.com/hellojoe/</a></em>.</p>
+<h4 class="h4" id="ch02lev2sec11"><span epub:type="pagebreak" id="page_44"/><strong><em>for Loops and the range() Function</em></strong></h4>
+<p class="noindent">The <span class="literal">while</span> loop keeps looping while its condition is <span class="literal">True</span> (which is the reason for its name), but what if you want to execute a block of code only a certain number of times? You can do this with a <span class="literal">for</span> loop statement and the <span class="literal">range()</span> function.</p>
+<p class="indent">In code, a <span class="literal">for</span> statement looks something like <span class="literal">for i in range(5):</span> and includes the following:</p>
+<ul>
+<li class="noindent">The <span class="literal">for</span> keyword</li>
+<li class="noindent">A variable name</li>
+<li class="noindent">The <span class="literal">in</span> keyword</li>
+<li class="noindent">A call to the <span class="literal">range()</span> method with up to three integers passed to it</li>
+<li class="noindent">A colon</li>
+<li class="noindent">Starting on the next line, an indented block of code (called the <span class="literal">for</span> clause)</li>
+</ul>
+<p class="indent">Let&#8217;s create a new program called <em>fiveTimes.py</em> to help you see a <span class="literal">for</span> loop in action.</p>
+<p class="programs">print('My name is')<br/>
+for i in range(5):<br/>
+&#160;&#160;&#160;&#160;print('Jimmy Five Times (' + str(i) + ')')</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/fivetimesfor/">https://autbor.com/fivetimesfor/</a></em>. The code in the <span class="literal">for</span> loop&#8217;s clause is run five times. The first time it is run, the variable <span class="literal">i</span> is set to <span class="literal">0</span>. The <span class="literal">print()</span> call in the clause will print <span class="literal">Jimmy Five Times (0)</span>. After Python finishes an iteration through all the code inside the <span class="literal">for</span> loop&#8217;s clause, the execution goes back to the top of the loop, and the <span class="literal">for</span> statement increments <span class="literal">i</span> by one. This is why <span class="literal">range(5)</span> results in five iterations through the clause, with <span class="literal">i</span> being set to <span class="literal">0</span>, then <span class="literal">1</span>, then <span class="literal">2</span>, then <span class="literal">3</span>, and then <span class="literal">4</span>. The variable <span class="literal">i</span> will go up to, but will not include, the integer passed to <span class="literal">range()</span>. <a href="ch02.xhtml#ch02fig13">Figure 2-13</a> shows a flowchart for the <em>fiveTimes.py</em> program.</p>
+<p class="indent">When you run this program, it should print <span class="literal">Jimmy Five Times</span> followed by the value of <span class="literal">i</span> five times before leaving the <span class="literal">for</span> loop.</p>
+<p class="programs">My name is<br/>
+Jimmy Five Times (0)<br/>
+Jimmy Five Times (1)<br/>
+Jimmy Five Times (2)<br/>
+Jimmy Five Times (3)<br/>
+Jimmy Five Times (4)</p>
+<div class="note">
+<p class="notet"><strong><span class="notes">NOTE</span></strong></p>
+<p class="notep"><em>You can use <span class="codeitalic">break</span> and <span class="codeitalic">continue</span> statements inside <span class="codeitalic">for</span> loops as well. The <span class="codeitalic">continue</span> statement will continue to the next value of the <span class="codeitalic">for</span> loop&#8217;s counter, as if the program execution had reached the end of the loop and returned to the start. In fact, you can use <span class="codeitalic">continue</span> and <span class="codeitalic">break</span> statements only inside <span class="codeitalic">while</span> and <span class="codeitalic">for</span> loops. If you try to use these statements elsewhere, Python will give you an error.</em></p>
+</div>
+<div class="image"><span epub:type="pagebreak" id="page_45"/><a id="ch02fig13"/><img src="../images/02fig13.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 2-13: The flowchart for</em> fiveTimes.py</p>
+<p class="indent">As another <span class="literal">for</span> loop example, consider this story about the mathematician Carl Friedrich Gauss. When Gauss was a boy, a teacher wanted to give the class some busywork. The teacher told them to add up all the numbers from 0 to 100. Young Gauss came up with a clever trick to figure out the answer in a few seconds, but you can write a Python program with a <span class="literal">for</span> loop to do this calculation for you.</p>
+<p class="programs"><span class="ent">&#x278A;</span> total = 0<br/>
+<span class="ent">&#x278B;</span> for num in range(101):<br/>
+&#160;&#160;&#160;&#160;<span class="ent">&#x278C;</span> total = total + num<br/>
+<span class="ent">&#x278D;</span> print(total)&#160;&#160;</p>
+<p class="indent">The result should be 5,050. When the program first starts, the <span class="literal">total</span> variable is set to <span class="literal">0</span> <span class="ent">&#x278A;</span>. The <span class="literal">for</span> loop <span class="ent">&#x278B;</span> then executes <span class="literal">total = total + num</span> <span class="ent">&#x278C;</span> 100 times. By the time the loop has finished all of its 100 iterations, every integer from <span class="literal">0</span> to <span class="literal">100</span> will have been added to <span class="literal">total</span>. At this point, <span class="literal">total</span> is printed to the screen <span class="ent">&#x278D;</span>. Even on the slowest computers, this program takes less than a second to complete.</p>
+<p class="indent">(Young Gauss figured out a way to solve the problem in seconds. There are 50 pairs of numbers that add up to 101: 1 + 100, 2 + 99, 3 + 98, and so on, until 50 + 51. Since 50 &#215; 101 is 5,050, the sum of all the numbers from 0 to 100 is 5,050. Clever kid!)</p>
+<h5 class="h5" id="ch02lev3sec2"><strong><span epub:type="pagebreak" id="page_46"/>An Equivalent while Loop</strong></h5>
+<p class="noindent">You can actually use a <span class="literal">while</span> loop to do the same thing as a <span class="literal">for</span> loop; <span class="literal">for</span> loops are just more concise. Let&#8217;s rewrite <em>fiveTimes.py</em> to use a <span class="literal">while</span> loop equivalent of a <span class="literal">for</span> loop.</p>
+<p class="programs">print('My name is')<br/>
+i = 0<br/>
+while i &lt; 5:<br/>
+&#160;&#160;&#160;&#160;print('Jimmy Five Times (' + str(i) + ')')<br/>
+&#160;&#160;&#160;&#160;i = i + 1</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/fivetimeswhile/">https://autbor.com/fivetimeswhile/</a></em>. If you run this program, the output should look the same as the <em>fiveTimes.py</em> program, which uses a <span class="literal">for</span> loop.</p>
+<h5 class="h5" id="ch02lev3sec3"><strong>The Starting, Stopping, and Stepping Arguments to range()</strong></h5>
+<p class="noindent">Some functions can be called with multiple arguments separated by a comma, and <span class="literal">range()</span> is one of them. This lets you change the integer passed to <span class="literal">range()</span> to follow any sequence of integers, including starting at a number other than zero.</p>
+<p class="programs">for i in range(12, 16):<br/>
+&#160;&#160;&#160;&#160;print(i)</p>
+<p class="indent">The first argument will be where the <span class="literal">for</span> loop&#8217;s variable starts, and the second argument will be up to, but not including, the number to stop at.</p>
+<p class="programs">12<br/>
+13<br/>
+14<br/>
+15</p>
+<p class="indent">The <span class="literal">range()</span> function can also be called with three arguments. The first two arguments will be the start and stop values, and the third will be the <em>step argument</em>. The step is the amount that the variable is increased by after each iteration.</p>
+<p class="programs">for i in range(0, 10, 2):<br/>
+&#160;&#160;&#160;&#160;print(i)</p>
+<p class="indent">So calling <span class="literal">range(0, 10, 2)</span> will count from zero to eight by intervals of two.</p>
+<p class="programs">0<br/>
+2<br/>
+4<br/>
+6<br/>
+8</p>
+<p class="indent"><span epub:type="pagebreak" id="page_47"/>The <span class="literal">range()</span> function is flexible in the sequence of numbers it produces for <span class="literal">for</span> loops. <em>For</em> example (I never apologize for my puns), you can even use a negative number for the step argument to make the <span class="literal">for</span> loop count down instead of up.</p>
+<p class="programs">for i in range(5, -1, -1):<br/>
+&#160;&#160;&#160;&#160;print(i)</p>
+<p class="indent">This <span class="literal">for</span> loop would have the following output:</p>
+<p class="programs">5<br/>
+4<br/>
+3<br/>
+2<br/>
+1<br/>
+0</p>
+<p class="indent">Running a <span class="literal">for</span> loop to print <span class="literal">i</span> with <span class="literal">range(5, -1, -1)</span> should print from five down to zero.</p>
+<h3 class="h3" id="ch02lev1sec8"><strong>Importing Modules</strong></h3>
+<p class="noindent">All Python programs can call a basic set of functions called <em>built-in functions</em>, including the <span class="literal">print()</span>, <span class="literal">input()</span>, and <span class="literal">len()</span> functions you&#8217;ve seen before. Python also comes with a set of modules called the <em>standard library</em>. Each module is a Python program that contains a related group of functions that can be embedded in your programs. For example, the <span class="literal">math</span> module has mathematics-related functions, the <span class="literal">random</span> module has random number-related functions, and so on.</p>
+<p class="indent">Before you can use the functions in a module, you must import the module with an <span class="literal">import</span> statement. In code, an <span class="literal">import</span> statement consists of the following:</p>
+<ul>
+<li class="noindent">The <span class="literal">import</span> keyword</li>
+<li class="noindent">The name of the module</li>
+<li class="noindent">Optionally, more module names, as long as they are separated by commas</li>
+</ul>
+<p class="indent">Once you import a module, you can use all the cool functions of that module. Let&#8217;s give it a try with the <span class="literal">random</span> module, which will give us access to the <span class="literal">random.randint()</span> function.</p>
+<p class="indent">Enter this code into the file editor, and save it as <em>printRandom.py</em>:</p>
+<p class="programs">import random<br/>
+for i in range(5):<br/>
+&#160;&#160;&#160;&#160;print(random.randint(1, 10))</p>
+<div class="sidebar">
+<p class="sidebart"><strong>DON&#8217;T OVERWRITE MODULE NAMES</strong></p>
+<p class="spara">When you save your Python scripts, take care not to give them a name that is used by one of Python&#8217;s modules, such as <em>random.py</em>, <em>sys.py</em>, <em>os.py</em>, or <em>math.py</em>. If you accidentally name one of your programs, say, <em>random.py</em>, and use an <span class="literal">import random</span> statement in another program, your program would import your <em>random.py</em> file instead of Python&#8217;s <span class="literal">random</span> module. This can lead to errors such as <span class="literal">AttributeError: module 'random' has no attribute 'randint'</span>, since your <em>random.py</em> doesn&#8217;t have the functions that the real <span class="literal">random</span> module has. Don&#8217;t use the names of any built-in Python functions either, such as <span class="literal">print()</span> or <span class="literal">input()</span>.</p>
+<p class="sparai">Problems like these are uncommon, but can be tricky to solve. As you gain more programming experience, you&#8217;ll become more aware of the standard names used by Python&#8217;s modules and functions, and will run into these problems less frequently.</p>
+</div>
+<p class="indent"><span epub:type="pagebreak" id="page_48"/>When you run this program, the output will look something like this:</p>
+<p class="programs">4<br/>
+1<br/>
+8<br/>
+4<br/>
+1</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/printrandom/">https://autbor.com/printrandom/</a></em>. The <span class="literal">random.randint()</span> function call evaluates to a random integer value between the two integers that you pass it. Since <span class="literal">randint()</span> is in the <span class="literal">random</span> module, you must first type <strong>random.</strong> in front of the function name to tell Python to look for this function inside the <span class="literal">random</span> module.</p>
+<p class="indent">Here&#8217;s an example of an <span class="literal">import</span> statement that imports four different modules:</p>
+<p class="programs">import random, sys, os, math</p>
+<p class="indent">Now we can use any of the functions in these four modules. We&#8217;ll learn more about them later in the book.</p>
+<h4 class="h4" id="ch02lev2sec12"><strong><em>from import Statements</em></strong></h4>
+<p class="noindent">An alternative form of the <span class="literal">import</span> statement is composed of the <span class="literal">from</span> keyword, followed by the module name, the <span class="literal">import</span> keyword, and a star; for example, <span class="literal">from random import *</span>.</p>
+<p class="indent">With this form of <span class="literal">import</span> statement, calls to functions in <span class="literal">random</span> will not need the <span class="literal">random.</span> prefix. However, using the full name makes for more readable code, so it is better to use the <span class="literal">import random</span> form of the statement.</p>
+<h3 class="h3" id="ch02lev1sec9"><span epub:type="pagebreak" id="page_49"/><strong>Ending a Program Early with the sys.exit() Function</strong></h3>
+<p class="noindent">The last flow control concept to cover is how to terminate the program. Programs always terminate if the program execution reaches the bottom of the instructions. However, you can cause the program to terminate, or exit, before the last instruction by calling the <span class="literal">sys.exit()</span> function. Since this function is in the <span class="literal">sys</span> module, you have to import <span class="literal">sys</span> before your program can use it.</p>
+<p class="indent">Open a file editor window and enter the following code, saving it as <em>exitExample.py</em>:</p>
+<p class="programs">import sys<br/><br/>
+while True:<br/>
+&#160;&#160;&#160;&#160;print('Type exit to exit.')<br/>
+&#160;&#160;&#160;&#160;response = input()<br/>
+&#160;&#160;&#160;&#160;if response == 'exit':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sys.exit()<br/>
+&#160;&#160;&#160;&#160;print('You typed ' + response + '.')</p>
+<p class="indent">Run this program in IDLE. This program has an infinite loop with no <span class="literal">break</span> statement inside. The only way this program will end is if the execution reaches the <span class="literal">sys.exit()</span> call. When <span class="literal">response</span> is equal to <span class="literal">exit</span>, the line containing the <span class="literal">sys.exit()</span> call is executed. Since the <span class="literal">response</span> variable is set by the <span class="literal">input()</span> function, the user must enter <span class="literal">exit</span> in order to stop the program.</p>
+<h3 class="h3" id="ch02lev1sec10"><strong>A Short Program: Guess the Number</strong></h3>
+<p class="noindent">The examples I&#8217;ve shown you so far are useful for introducing basic concepts, but now let&#8217;s see how everything you&#8217;ve learned comes together in a more complete program. In this section, I&#8217;ll show you a simple &#8220;guess the number&#8221; game. When you run this program, the output will look something like this:</p>
+<p class="programs">I am thinking of a number between 1 and 20.<br/>
+Take a guess.<br/>
+<span class="codestrong1">10</span><br/>
+Your guess is too low.<br/>
+Take a guess.<br/>
+<span class="codestrong1">15</span><br/>
+Your guess is too low.<br/>
+Take a guess.<br/>
+<span class="codestrong1">17</span><br/>
+Your guess is too high.<br/>
+Take a guess.<br/>
+<span class="codestrong1">16</span><br/>
+Good job! You guessed my number in 4 guesses!</p>
+<p class="indent"><span epub:type="pagebreak" id="page_50"/>Enter the following source code into the file editor, and save the file as <em>guessTheNumber.py</em>:</p>
+<p class="programs"># This is a guess the number game.<br/>
+import random<br/>
+secretNumber = random.randint(1, 20)<br/>
+print('I am thinking of a number between 1 and 20.')<br/><br/>
+# Ask the player to guess 6 times.<br/>
+for guessesTaken in range(1, 7):<br/>
+&#160;&#160;&#160;&#160;print('Take a guess.')<br/>
+&#160;&#160;&#160;&#160;guess = int(input())<br/><br/>
+&#160;&#160;&#160;&#160;if guess &lt; secretNumber:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Your guess is too low.')<br/>
+&#160;&#160;&#160;&#160;elif guess &gt; secretNumber:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Your guess is too high.')<br/>
+&#160;&#160;&#160;&#160;else:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;break&#160;&#160;&#160;&#160;# This condition is the correct guess!<br/><br/>
+if guess == secretNumber:<br/>
+&#160;&#160;&#160;&#160;print('Good job! You guessed my number in ' + str(guessesTaken) + '<br/>
+guesses!')<br/>
+else:<br/>
+&#160;&#160;&#160;&#160;print('Nope. The number I was thinking of was ' + str(secretNumber))</p>
+<p class="indent">You can view the execution of this program at <em><a href="https://autbor.com/guessthenumber/">https://autbor.com/guessthenumber/</a></em>. Let&#8217;s look at this code line by line, starting at the top.</p>
+<p class="programs"># This is a guess the number game.<br/>
+import random<br/>
+secretNumber = random.randint(1, 20)</p>
+<p class="indent">First, a comment at the top of the code explains what the program does. Then, the program imports the <span class="literal">random</span> module so that it can use the <span class="literal">random.randint()</span> function to generate a number for the user to guess. The return value, a random integer between 1 and 20, is stored in the variable <span class="literal">secretNumber</span>.</p>
+<p class="programs">print('I am thinking of a number between 1 and 20.')<br/><br/>
+# Ask the player to guess 6 times.<br/>
+for guessesTaken in range(1, 7):<br/>
+&#160;&#160;&#160;&#160;print('Take a guess.')<br/>
+&#160;&#160;&#160;&#160;guess = int(input())</p>
+<p class="indent">The program tells the player that it has come up with a secret number and will give the player six chances to guess it. The code that lets the player enter a guess and checks that guess is in a <span class="literal">for</span> loop that will loop at most six times. The first thing that happens in the loop is that the player types in a guess. Since <span class="literal">input()</span> returns a string, its return value is passed straight into <span epub:type="pagebreak" id="page_51"/><span class="literal">int()</span>, which translates the string into an integer value. This gets stored in a variable named <span class="literal">guess</span>.</p>
+<p class="programs">&#160;&#160;&#160;&#160;if guess &lt; secretNumber:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Your guess is too low.')<br/>
+&#160;&#160;&#160;&#160;elif guess &gt; secretNumber:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Your guess is too high.')</p>
+<p class="indent">These few lines of code check to see whether the guess is less than or greater than the secret number. In either case, a hint is printed to the screen.</p>
+<p class="programs">&#160;&#160;&#160;&#160;else:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;break&#160;&#160;&#160;&#160;# This condition is the correct guess!</p>
+<p class="indent">If the guess is neither higher nor lower than the secret number, then it must be equal to the secret number&#8212;in which case, you want the program execution to break out of the <span class="literal">for</span> loop.</p>
+<p class="programs">if guess == secretNumber:<br/>
+&#160;&#160;&#160;&#160;print('Good job! You guessed my number in ' + str(guessesTaken) + ' guesses!')<br/>
+else:<br/>
+&#160;&#160;&#160;&#160;print('Nope. The number I was thinking of was ' + str(secretNumber))</p>
+<p class="indent">After the <span class="literal">for</span> loop, the previous <span class="literal">if...else</span> statement checks whether the player has correctly guessed the number and then prints an appropriate message to the screen. In both cases, the program displays a variable that contains an integer value (<span class="literal">guessesTaken</span> and <span class="literal">secretNumber</span>). Since it must concatenate these integer values to strings, it passes these variables to the <span class="literal">str()</span> function, which returns the string value form of these integers. Now these strings can be concatenated with the <span class="literal">+</span> operators before finally being passed to the <span class="literal">print()</span> function call.</p>
+<h3 class="h3" id="ch02lev1sec11"><strong>A Short Program: Rock, Paper, Scissors</strong></h3>
+<p class="noindent">Let&#8217;s use the programming concepts we&#8217;ve learned so far to create a simple rock, paper, scissors game. The output will look like this:</p>
+<p class="programs">ROCK, PAPER, SCISSORS<br/>
+0 Wins, 0 Losses, 0 Ties<br/>
+Enter your move: (r)ock (p)aper (s)cissors or (q)uit<br/>
+<span class="codestrong1">p</span><br/>
+PAPER versus...<br/>
+PAPER<br/>
+It is a tie!<br/>
+0 Wins, 1 Losses, 1 Ties<br/>
+Enter your move: (r)ock (p)aper (s)cissors or (q)uit<br/>
+<span class="codestrong1">s</span><br/>
+SCISSORS versus...<br/>
+PAPER<br/>
+You win!<br/>
+<span epub:type="pagebreak" id="page_52"/>1 Wins, 1 Losses, 1 Ties<br/>
+Enter your move: (r)ock (p)aper (s)cissors or (q)uit<br/>
+<span class="codestrong1">q</span></p>
+<p class="indent">Type the following source code into the file editor, and save the file as <em>rpsGame.py</em>:</p>
+<p class="programs">import random, sys<br/><br/>
+print('ROCK, PAPER, SCISSORS')<br/><br/>
+# These variables keep track of the number of wins, losses, and ties.<br/>
+wins = 0<br/>
+losses = 0<br/>
+ties = 0<br/><br/>
+while True: # The main game loop.<br/>
+&#160;&#160;&#160;&#160;print('%s Wins, %s Losses, %s Ties' % (wins, losses, ties))<br/>
+&#160;&#160;&#160;&#160;while True: # The player input loop.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Enter your move: (r)ock (p)aper (s)cissors or (q)uit')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;playerMove = input()<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if playerMove == 'q':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sys.exit() # Quit the program.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if playerMove == 'r' or playerMove == 'p' or playerMove == 's':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;break # Break out of the player input loop.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Type one of r, p, s, or q.')<br/><br/>
+&#160;&#160;&#160;&#160;# Display what the player chose:<br/>
+&#160;&#160;&#160;&#160;if playerMove == 'r':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('ROCK versus...')<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 'p':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('PAPER versus...')<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 's':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('SCISSORS versus...')<br/><br/>
+&#160;&#160;&#160;&#160;# Display what the computer chose:<br/>
+&#160;&#160;&#160;&#160;randomNumber = random.randint(1, 3)<br/>
+&#160;&#160;&#160;&#160;if randomNumber == 1:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;computerMove = 'r'<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('ROCK')<br/>
+&#160;&#160;&#160;&#160;elif randomNumber == 2:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;computerMove = 'p'<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('PAPER')<br/>
+&#160;&#160;&#160;&#160;elif randomNumber == 3:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;computerMove = 's'<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('SCISSORS')<br/><br/>
+&#160;&#160;&#160;&#160;# Display and record the win/loss/tie:<br/>
+&#160;&#160;&#160;&#160;if playerMove == computerMove:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('It is a tie!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ties = ties + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 'r' and computerMove == 's':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You win!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;wins = wins + 1<br/>
+<span epub:type="pagebreak" id="page_53"/>&#160;&#160;&#160;&#160;elif playerMove == 'p' and computerMove == 'r':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You win!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;wins = wins + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 's' and computerMove == 'p':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You win!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;wins = wins + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 'r' and computerMove == 'p':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You lose!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;losses = losses + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 'p' and computerMove == 's':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You lose!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;losses = losses + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 's' and computerMove == 'r':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You lose!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;losses = losses + 1</p>
+<p class="indent">Let&#8217;s look at this code line by line, starting at the top.</p>
+<p class="programs">import random, sys<br/>
+<br/>
+print('ROCK, PAPER, SCISSORS')<br/>
+<br/>
+# These variables keep track of the number of wins, losses, and ties.<br/>
+wins = 0<br/>
+losses = 0<br/>
+ties = 0</p>
+<p class="indent">First, we import the <span class="literal">random</span> and <span class="literal">sys</span> module so that our program can call the <span class="literal">random.randint()</span> and <span class="literal">sys.exit()</span> functions. We also set up three variables to keep track of how many wins, losses, and ties the player has had.</p>
+<p class="programs">while True: # The main game loop.<br/>
+&#160;&#160;&#160;&#160;print('%s Wins, %s Losses, %s Ties' % (wins, losses, ties))<br/>
+&#160;&#160;&#160;&#160;while True: # The player input loop.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Enter your move: (r)ock (p)aper (s)cissors or (q)uit')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;playerMove = input()<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if playerMove == 'q':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sys.exit() # Quit the program.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if playerMove == 'r' or playerMove == 'p' or playerMove == 's':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;break # Break out of the player input loop.<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('Type one of r, p, s, or q.')</p>
+<p class="indent">This program uses a <span class="literal">while</span> loop inside of another <span class="literal">while</span> loop. The first loop is the main game loop, and a single game of rock, paper, scissors is player on each iteration through this loop. The second loop asks for input from the player, and keeps looping until the player has entered an <span class="literal">r</span>, <span class="literal">p</span>, <span class="literal">s</span>, or <span class="literal">q</span> for their move. The <span class="literal">r</span>, <span class="literal">p</span>, and <span class="literal">s</span> correspond to rock, paper, and scissors, respectively, while the <span class="literal">q</span> means the player intends to quit. In that case, <span class="literal">sys.exit()</span> is called and the program exits. If the player has entered <span class="literal">r</span>, <span class="literal">p</span>, or <span class="literal">s</span>, the execution breaks out of the loop. Otherwise, the program reminds the player to enter <span class="literal">r</span>, <span class="literal">p</span>, <span class="literal">s</span>, or <span class="literal">q</span> and goes back to the start of the loop.</p>
+<p class="programs"><span epub:type="pagebreak" id="page_54"/>&#160;&#160;&#160;&#160;# Display what the player chose:<br/>
+&#160;&#160;&#160;&#160;if playerMove == 'r':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('ROCK versus...')<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 'p':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('PAPER versus...')<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 's':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('SCISSORS versus...')</p>
+<p class="indent">The player&#8217;s move is displayed on the screen.</p>
+<p class="programs">&#160;&#160;&#160;&#160;# Display what the computer chose:<br/>
+&#160;&#160;&#160;&#160;randomNumber = random.randint(1, 3)<br/>
+&#160;&#160;&#160;&#160;if randomNumber == 1:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;computerMove = 'r'<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('ROCK')<br/>
+&#160;&#160;&#160;&#160;elif randomNumber == 2:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;computerMove = 'p'<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('PAPER')<br/>
+&#160;&#160;&#160;&#160;elif randomNumber == 3:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;computerMove = 's'<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('SCISSORS')</p>
+<p class="indent">Next, the computer&#8217;s move is randomly selected. Since <span class="literal">random.randint()</span> can only return a random number, the <span class="literal">1</span>, <span class="literal">2</span>, or <span class="literal">3</span> integer value it returns is stored in a variable named <span class="literal">randomNumber</span>. The program stores a <span class="literal">'r'</span>, <span class="literal">'p'</span>, or <span class="literal">'s'</span> string in <span class="literal">computerMove</span> based on the integer in <span class="literal">randomNumber</span>, as well as displays the computer&#8217;s move.</p>
+<p class="programs">&#160;&#160;&#160;&#160;# Display and record the win/loss/tie:<br/>
+&#160;&#160;&#160;&#160;if playerMove == computerMove:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('It is a tie!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ties = ties + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 'r' and computerMove == 's':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You win!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;wins = wins + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 'p' and computerMove == 'r':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You win!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;wins = wins + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 's' and computerMove == 'p':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You win!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;wins = wins + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 'r' and computerMove == 'p':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You lose!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;losses = losses + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 'p' and computerMove == 's':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You lose!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;losses = losses + 1<br/>
+&#160;&#160;&#160;&#160;elif playerMove == 's' and computerMove == 'r':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('You lose!')<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;losses = losses + 1</p>
+<p class="indent"><span epub:type="pagebreak" id="page_55"/>Finally, the program compares the strings in <span class="literal">playerMove</span> and <span class="literal">computerMove</span>, and displays the results on the screen. It also increments the <span class="literal">wins</span>, <span class="literal">losses</span>, or <span class="literal">ties</span> variable appropriately. Once the execution reaches the end, it jumps back to the start of the main program loop to begin another game.</p>
+<h3 class="h3" id="ch02lev1sec12"><strong>Summary</strong></h3>
+<p class="noindent">By using expressions that evaluate to <span class="literal">True</span> or <span class="literal">False</span> (also called conditions), you can write programs that make decisions on what code to execute and what code to skip. You can also execute code over and over again in a loop while a certain condition evaluates to <span class="literal">True</span>. The <span class="literal">break</span> and <span class="literal">continue</span> statements are useful if you need to exit a loop or jump back to the loop&#8217;s start.</p>
+<p class="indent">These flow control statements will let you write more intelligent programs. You can also use another type of flow control by writing your own functions, which is the topic of the next chapter.</p>
+<h3 class="h3" id="ch02lev1sec13"><strong>Practice Questions</strong></h3>
+<p class="question"><a id="ch02que1" href="app03.xhtml#ch02ans1">1</a>. What are the two values of the Boolean data type? How do you write them?</p>
+<p class="question"><a id="ch02que2" href="app03.xhtml#ch02ans2">2</a>. What are the three Boolean operators?</p>
+<p class="question"><a id="ch02que3" href="app03.xhtml#ch02ans3">3</a>. Write out the truth tables of each Boolean operator (that is, every possible combination of Boolean values for the operator and what they evaluate to).</p>
+<p class="question"><a id="ch02que4" href="app03.xhtml#ch02ans4">4</a>. What do the following expressions evaluate to?</p>
+<p class="programs1">(5 &gt; 4) and (3 == 5)<br/>
+not (5 &gt; 4) <br/>
+(5 &gt; 4) or (3 == 5)<br/>
+not ((5 &gt; 4) or (3 == 5))<br/>
+(True and True) and (True == False)<br/>
+(not False) or (not True)</p>
+<p class="question"><a id="ch02que5" href="app03.xhtml#ch02ans5">5</a>. What are the six comparison operators?</p>
+<p class="question"><a id="ch02que6" href="app03.xhtml#ch02ans6">6</a>. What is the difference between the equal to operator and the assignment operator?</p>
+<p class="question"><a id="ch02que7" href="app03.xhtml#ch02ans7">7</a>. Explain what a condition is and where you would use one.</p>
+<p class="question"><a id="ch02que8" href="app03.xhtml#ch02ans8">8</a>. Identify the three blocks in this code:</p>
+<p class="programs1">spam = 0<br/>
+if spam == 10:<br/>
+&#160;&#160;&#160;&#160;print('eggs')<br/>
+&#160;&#160;&#160;&#160;if spam &gt; 5:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('bacon')<br/>
+<span epub:type="pagebreak" id="page_56"/>&#160;&#160;&#160;&#160;else:<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;print('ham')<br/>
+&#160;&#160;&#160;&#160;print('spam')<br/>
+print('spam')</p>
+<p class="question"><a id="ch02que9" href="app03.xhtml#ch02ans9">9</a>. Write code that prints <span class="literal">Hello</span> if <span class="literal">1</span> is stored in <span class="literal">spam</span>, prints <span class="literal">Howdy</span> if <span class="literal">2</span> is stored in <span class="literal">spam</span>, and prints <span class="literal">Greetings!</span> if anything else is stored in <span class="literal">spam</span>.</p>
+<p class="question1"><a id="ch02que10" href="app03.xhtml#ch02ans10">10</a>. What keys can you press if your program is stuck in an infinite loop?</p>
+<p class="question1"><a id="ch02que11" href="app03.xhtml#ch02ans11">11</a>. What is the difference between <span class="literal">break</span> and <span class="literal">continue</span>?</p>
+<p class="question1"><a id="ch02que12" href="app03.xhtml#ch02ans12">12</a>. What is the difference between <span class="literal">range(10)</span>, <span class="literal">range(0, 10)</span>, and <span class="literal">range(0, 10, 1)</span> in a <span class="literal">for</span> loop?</p>
+<p class="question1"><a id="ch02que13" href="app03.xhtml#ch02ans13">13</a>. Write a short program that prints the numbers <span class="literal">1</span> to <span class="literal">10</span> using a <span class="literal">for</span> loop. Then write an equivalent program that prints the numbers <span class="literal">1</span> to <span class="literal">10</span> using a <span class="literal">while</span> loop.</p>
+<p class="question1"><a id="ch02que14" href="app03.xhtml#ch02ans14">14</a>. If you had a function named <span class="literal">bacon()</span> inside a module named <span class="literal">spam</span>, how would you call it after importing <span class="literal">spam</span>?</p>
+<p class="question-para"><strong>Extra credit:</strong> Look up the <span class="literal">round()</span> and <span class="literal">abs()</span> functions on the internet, and find out what they do. Experiment with them in the interactive shell.</p>
+</body>
+</html>

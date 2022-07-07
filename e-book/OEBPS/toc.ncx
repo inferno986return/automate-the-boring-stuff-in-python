@@ -1,0 +1,1706 @@
+<?xml version="1.0"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en">
+<head>
+<meta name="dtb:uid" content="9781593279936"/>
+<meta name="dtb:depth" content="1"/>
+<meta name="dtb:totalPageCount" content="594"/>
+<meta name="dtb:maxPageNumber" content="594"/>
+</head>
+<docTitle>
+<text>Automate the Boring Stuff with Python: Practical Programming for Total Beginners</text>
+</docTitle>
+<navMap>
+<navPoint id="i1" playOrder="1">
+<navLabel>
+<text>Cover Page</text>
+</navLabel>
+<content src="xhtml/cover.xhtml"/>
+</navPoint>
+<navPoint id="i2" playOrder="2">
+<navLabel>
+<text>Title Page</text>
+</navLabel>
+<content src="xhtml/title.xhtml"/>
+</navPoint>
+<navPoint id="i3" playOrder="3">
+<navLabel>
+<text>Copyright Page</text>
+</navLabel>
+<content src="xhtml/copy.xhtml"/>
+</navPoint>
+<navPoint id="i4" playOrder="4">
+<navLabel>
+<text>Dedication</text>
+</navLabel>
+<content src="xhtml/ded.xhtml"/>
+</navPoint>
+<navPoint id="i5" playOrder="5">
+<navLabel>
+<text>About the Author</text>
+</navLabel>
+<content src="xhtml/author.xhtml"/>
+</navPoint>
+<navPoint id="i6" playOrder="6">
+<navLabel>
+<text>About the Technical Reviewer</text>
+</navLabel>
+<content src="xhtml/tech.xhtml"/>
+</navPoint>
+<navPoint id="i7" playOrder="7">
+<navLabel>
+<text>BRIEF CONTENTS</text>
+</navLabel>
+<content src="xhtml/toc01.xhtml"/>
+</navPoint>
+<navPoint id="i8" playOrder="8">
+<navLabel>
+<text>CONTENTS IN DETAIL</text>
+</navLabel>
+<content src="xhtml/toc.xhtml"/>
+</navPoint>
+<navPoint id="i9" playOrder="9">
+<navLabel>
+<text>ACKNOWLEDGMENTS</text>
+</navLabel>
+<content src="xhtml/ack.xhtml#ack"/>
+</navPoint>
+<navPoint id="i10" playOrder="10">
+<navLabel>
+<text>INTRODUCTION</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#intro"/>
+<navPoint id="i11" playOrder="11">
+<navLabel>
+<text>Whom Is This Book For?</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec1"/>
+</navPoint>
+<navPoint id="i12" playOrder="12">
+<navLabel>
+<text>Conventions</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec2"/>
+</navPoint>
+<navPoint id="i13" playOrder="13">
+<navLabel>
+<text>What Is Programming?</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec3"/>
+</navPoint>
+<navPoint id="i18" playOrder="14">
+<navLabel>
+<text>About This Book</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec4"/>
+</navPoint>
+<navPoint id="i19" playOrder="15">
+<navLabel>
+<text>Downloading and Installing Python</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec5"/>
+</navPoint>
+<navPoint id="i20" playOrder="16">
+<navLabel>
+<text>Downloading and Installing Mu</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec6"/>
+</navPoint>
+<navPoint id="i21" playOrder="17">
+<navLabel>
+<text>Starting Mu</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec7"/>
+</navPoint>
+<navPoint id="i22" playOrder="18">
+<navLabel>
+<text>Starting IDLE</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec8"/>
+</navPoint>
+<navPoint id="i23" playOrder="19">
+<navLabel>
+<text>The Interactive Shell</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec9"/>
+</navPoint>
+<navPoint id="i24" playOrder="20">
+<navLabel>
+<text>Installing Third-Party Modules</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec10"/>
+</navPoint>
+<navPoint id="i25" playOrder="21">
+<navLabel>
+<text>How to Find Help</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec11"/>
+</navPoint>
+<navPoint id="i26" playOrder="22">
+<navLabel>
+<text>Asking Smart Programming Questions</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec12"/>
+</navPoint>
+<navPoint id="i27" playOrder="23">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/intro.xhtml#ch00lev1sec13"/>
+</navPoint>
+</navPoint>
+<navPoint id="i28" playOrder="24">
+<navLabel>
+<text>PART I: PYTHON PROGRAMMING BASICS</text>
+</navLabel>
+<content src="xhtml/part01.xhtml#part01"/>
+<navPoint id="i29" playOrder="25">
+<navLabel>
+<text>1 PYTHON BASICS</text>
+</navLabel>
+<content src="xhtml/ch01.xhtml#ch01"/>
+<navPoint id="i30" playOrder="26">
+<navLabel>
+<text>Entering Expressions into the Interactive Shell</text>
+</navLabel>
+<content src="xhtml/ch01.xhtml#ch01lev1sec1"/>
+</navPoint>
+<navPoint id="i31" playOrder="27">
+<navLabel>
+<text>The Integer, Floating-Point, and String Data Types</text>
+</navLabel>
+<content src="xhtml/ch01.xhtml#ch01lev1sec2"/>
+</navPoint>
+<navPoint id="i32" playOrder="28">
+<navLabel>
+<text>String Concatenation and Replication</text>
+</navLabel>
+<content src="xhtml/ch01.xhtml#ch01lev1sec3"/>
+</navPoint>
+<navPoint id="i33" playOrder="29">
+<navLabel>
+<text>Storing Values in Variables</text>
+</navLabel>
+<content src="xhtml/ch01.xhtml#ch01lev1sec4"/>
+</navPoint>
+<navPoint id="i36" playOrder="30">
+<navLabel>
+<text>Your First Program</text>
+</navLabel>
+<content src="xhtml/ch01.xhtml#ch01lev1sec5"/>
+</navPoint>
+<navPoint id="i37" playOrder="31">
+<navLabel>
+<text>Dissecting Your Program</text>
+</navLabel>
+<content src="xhtml/ch01.xhtml#ch01lev1sec6"/>
+</navPoint>
+<navPoint id="i44" playOrder="32">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch01.xhtml#ch01lev1sec7"/>
+</navPoint>
+<navPoint id="i45" playOrder="33">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch01.xhtml#ch01lev1sec8"/>
+</navPoint>
+</navPoint>
+<navPoint id="i46" playOrder="34">
+<navLabel>
+<text>2 FLOW CONTROL</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02"/>
+<navPoint id="i47" playOrder="35">
+<navLabel>
+<text>Boolean Values</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec1"/>
+</navPoint>
+<navPoint id="i48" playOrder="36">
+<navLabel>
+<text>Comparison Operators</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec2"/>
+</navPoint>
+<navPoint id="i49" playOrder="37">
+<navLabel>
+<text>Boolean Operators</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec3"/>
+</navPoint>
+<navPoint id="i52" playOrder="38">
+<navLabel>
+<text>Mixing Boolean and Comparison Operators</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec4"/>
+</navPoint>
+<navPoint id="i53" playOrder="39">
+<navLabel>
+<text>Elements of Flow Control</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec5"/>
+</navPoint>
+<navPoint id="i56" playOrder="40">
+<navLabel>
+<text>Program Execution</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec6"/>
+</navPoint>
+<navPoint id="i57" playOrder="41">
+<navLabel>
+<text>Flow Control Statements</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec7"/>
+</navPoint>
+<navPoint id="i65" playOrder="42">
+<navLabel>
+<text>Importing Modules</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec8"/>
+</navPoint>
+<navPoint id="i67" playOrder="43">
+<navLabel>
+<text>Ending a Program Early with the sys.exit() Function</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec9"/>
+</navPoint>
+<navPoint id="i68" playOrder="44">
+<navLabel>
+<text>A Short Program: Guess the Number</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec10"/>
+</navPoint>
+<navPoint id="i69" playOrder="45">
+<navLabel>
+<text>A Short Program: Rock, Paper, Scissors</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec11"/>
+</navPoint>
+<navPoint id="i70" playOrder="46">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec12"/>
+</navPoint>
+<navPoint id="i71" playOrder="47">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch02.xhtml#ch02lev1sec13"/>
+</navPoint>
+</navPoint>
+<navPoint id="i72" playOrder="48">
+<navLabel>
+<text>3 FUNCTIONS</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03"/>
+<navPoint id="i73" playOrder="49">
+<navLabel>
+<text>def Statements with Parameters</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec1"/>
+</navPoint>
+<navPoint id="i75" playOrder="50">
+<navLabel>
+<text>Return Values and return Statements</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec2"/>
+</navPoint>
+<navPoint id="i76" playOrder="51">
+<navLabel>
+<text>The None Value</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec3"/>
+</navPoint>
+<navPoint id="i77" playOrder="52">
+<navLabel>
+<text>Keyword Arguments and the print() Function</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec4"/>
+</navPoint>
+<navPoint id="i78" playOrder="53">
+<navLabel>
+<text>The Call Stack</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec5"/>
+</navPoint>
+<navPoint id="i79" playOrder="54">
+<navLabel>
+<text>Local and Global Scope</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec6"/>
+</navPoint>
+<navPoint id="i84" playOrder="55">
+<navLabel>
+<text>The global Statement</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec7"/>
+</navPoint>
+<navPoint id="i85" playOrder="56">
+<navLabel>
+<text>Exception Handling</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec8"/>
+</navPoint>
+<navPoint id="i86" playOrder="57">
+<navLabel>
+<text>A Short Program: Zigzag</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec9"/>
+</navPoint>
+<navPoint id="i87" playOrder="58">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec10"/>
+</navPoint>
+<navPoint id="i88" playOrder="59">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec11"/>
+</navPoint>
+<navPoint id="i89" playOrder="60">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch03.xhtml#ch03lev1sec12"/>
+</navPoint>
+</navPoint>
+<navPoint id="i92" playOrder="61">
+<navLabel>
+<text>4 LISTS</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04"/>
+<navPoint id="i93" playOrder="62">
+<navLabel>
+<text>The List Data Type</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec1"/>
+</navPoint>
+<navPoint id="i101" playOrder="63">
+<navLabel>
+<text>Working with Lists</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec2"/>
+</navPoint>
+<navPoint id="i107" playOrder="64">
+<navLabel>
+<text>Augmented Assignment Operators</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec3"/>
+</navPoint>
+<navPoint id="i108" playOrder="65">
+<navLabel>
+<text>Methods</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec4"/>
+</navPoint>
+<navPoint id="i114" playOrder="66">
+<navLabel>
+<text>Example Program: Magic 8 Ball with a List</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec5"/>
+</navPoint>
+<navPoint id="i115" playOrder="67">
+<navLabel>
+<text>Sequence Data Types</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec6"/>
+</navPoint>
+<navPoint id="i119" playOrder="68">
+<navLabel>
+<text>References</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec7"/>
+</navPoint>
+<navPoint id="i123" playOrder="69">
+<navLabel>
+<text>A Short Program: Conway&#8217;s Game of Life</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec8"/>
+</navPoint>
+<navPoint id="i124" playOrder="70">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec9"/>
+</navPoint>
+<navPoint id="i125" playOrder="71">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec10"/>
+</navPoint>
+<navPoint id="i126" playOrder="72">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch04.xhtml#ch04lev1sec11"/>
+</navPoint>
+</navPoint>
+<navPoint id="i130" playOrder="73">
+<navLabel>
+<text>5 DICTIONARIES AND STRUCTURING DATA</text>
+</navLabel>
+<content src="xhtml/ch05.xhtml#ch05"/>
+<navPoint id="i131" playOrder="74">
+<navLabel>
+<text>The Dictionary Data Type</text>
+</navLabel>
+<content src="xhtml/ch05.xhtml#ch05lev1sec1"/>
+</navPoint>
+<navPoint id="i137" playOrder="75">
+<navLabel>
+<text>Pretty Printing</text>
+</navLabel>
+<content src="xhtml/ch05.xhtml#ch05lev1sec2"/>
+</navPoint>
+<navPoint id="i138" playOrder="76">
+<navLabel>
+<text>Using Data Structures to Model Real-World Things</text>
+</navLabel>
+<content src="xhtml/ch05.xhtml#ch05lev1sec3"/>
+</navPoint>
+<navPoint id="i141" playOrder="77">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch05.xhtml#ch05lev1sec4"/>
+</navPoint>
+<navPoint id="i142" playOrder="78">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch05.xhtml#ch05lev1sec5"/>
+</navPoint>
+<navPoint id="i143" playOrder="79">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch05.xhtml#ch05lev1sec6"/>
+</navPoint>
+</navPoint>
+<navPoint id="i147" playOrder="80">
+<navLabel>
+<text>6 MANIPULATING STRINGS</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06"/>
+<navPoint id="i148" playOrder="81">
+<navLabel>
+<text>Working with Strings</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec1"/>
+</navPoint>
+<navPoint id="i152" playOrder="82">
+<navLabel>
+<text>Putting Strings Inside Other Strings</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec2"/>
+</navPoint>
+<navPoint id="i153" playOrder="83">
+<navLabel>
+<text>Useful String Methods</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec3"/>
+</navPoint>
+<navPoint id="i161" playOrder="84">
+<navLabel>
+<text>Numeric Values of Characters with the ord() and chr() Functions</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec4"/>
+</navPoint>
+<navPoint id="i162" playOrder="85">
+<navLabel>
+<text>Copying and Pasting Strings with the pyperclip Module</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec5"/>
+</navPoint>
+<navPoint id="i163" playOrder="86">
+<navLabel>
+<text>Project: Multi-Clipboard Automatic Messages</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec6"/>
+</navPoint>
+<navPoint id="i167" playOrder="87">
+<navLabel>
+<text>Project: Adding Bullets to Wiki Markup</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec7"/>
+</navPoint>
+<navPoint id="i171" playOrder="88">
+<navLabel>
+<text>A Short Progam: Pig Latin</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec8"/>
+</navPoint>
+<navPoint id="i172" playOrder="89">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec9"/>
+</navPoint>
+<navPoint id="i173" playOrder="90">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec10"/>
+</navPoint>
+<navPoint id="i174" playOrder="91">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch06.xhtml#ch06lev1sec11"/>
+</navPoint>
+</navPoint>
+</navPoint>
+<navPoint id="i177" playOrder="92">
+<navLabel>
+<text>PART II: AUTOMATING TASKS</text>
+</navLabel>
+<content src="xhtml/part02.xhtml#part02"/>
+<navPoint id="i178" playOrder="93">
+<navLabel>
+<text>7 PATTERN MATCHING WITH REGULAR EXPRESSIONS</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07"/>
+<navPoint id="i179" playOrder="94">
+<navLabel>
+<text>Finding Patterns of Text Without Regular Expressions</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec1"/>
+</navPoint>
+<navPoint id="i180" playOrder="95">
+<navLabel>
+<text>Finding Patterns of Text with Regular Expressions</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec2"/>
+</navPoint>
+<navPoint id="i184" playOrder="96">
+<navLabel>
+<text>More Pattern Matching with Regular Expressions</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec3"/>
+</navPoint>
+<navPoint id="i191" playOrder="97">
+<navLabel>
+<text>Greedy and Non-greedy Matching</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec4"/>
+</navPoint>
+<navPoint id="i192" playOrder="98">
+<navLabel>
+<text>The findall() Method</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec5"/>
+</navPoint>
+<navPoint id="i193" playOrder="99">
+<navLabel>
+<text>Character Classes</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec6"/>
+</navPoint>
+<navPoint id="i194" playOrder="100">
+<navLabel>
+<text>Making Your Own Character Classes</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec7"/>
+</navPoint>
+<navPoint id="i195" playOrder="101">
+<navLabel>
+<text>The Caret and Dollar Sign Characters</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec8"/>
+</navPoint>
+<navPoint id="i196" playOrder="102">
+<navLabel>
+<text>The Wildcard Character</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec9"/>
+</navPoint>
+<navPoint id="i199" playOrder="103">
+<navLabel>
+<text>Review of Regex Symbols</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec10"/>
+</navPoint>
+<navPoint id="i200" playOrder="104">
+<navLabel>
+<text>Case-Insensitive Matching</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec11"/>
+</navPoint>
+<navPoint id="i201" playOrder="105">
+<navLabel>
+<text>Substituting Strings with the sub() Method</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec12"/>
+</navPoint>
+<navPoint id="i202" playOrder="106">
+<navLabel>
+<text>Managing Complex Regexes</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec13"/>
+</navPoint>
+<navPoint id="i203" playOrder="107">
+<navLabel>
+<text>Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec14"/>
+</navPoint>
+<navPoint id="i204" playOrder="108">
+<navLabel>
+<text>Project: Phone Number and Email Address Extractor</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec15"/>
+</navPoint>
+<navPoint id="i211" playOrder="109">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec16"/>
+</navPoint>
+<navPoint id="i212" playOrder="110">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec17"/>
+</navPoint>
+<navPoint id="i213" playOrder="111">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch07.xhtml#ch07lev1sec18"/>
+</navPoint>
+</navPoint>
+<navPoint id="i217" playOrder="112">
+<navLabel>
+<text>8 INPUT VALIDATION</text>
+</navLabel>
+<content src="xhtml/ch08.xhtml#ch08"/>
+<navPoint id="i218" playOrder="113">
+<navLabel>
+<text>The PyInputPlus Module</text>
+</navLabel>
+<content src="xhtml/ch08.xhtml#ch08lev1sec1"/>
+</navPoint>
+<navPoint id="i224" playOrder="114">
+<navLabel>
+<text>Project: How to Keep an Idiot Busy for Hours</text>
+</navLabel>
+<content src="xhtml/ch08.xhtml#ch08lev1sec2"/>
+</navPoint>
+<navPoint id="i225" playOrder="115">
+<navLabel>
+<text>Project: Multiplication Quiz</text>
+</navLabel>
+<content src="xhtml/ch08.xhtml#ch08lev1sec3"/>
+</navPoint>
+<navPoint id="i226" playOrder="116">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch08.xhtml#ch08lev1sec4"/>
+</navPoint>
+<navPoint id="i227" playOrder="117">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch08.xhtml#ch08lev1sec5"/>
+</navPoint>
+<navPoint id="i228" playOrder="118">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch08.xhtml#ch08lev1sec6"/>
+</navPoint>
+</navPoint>
+<navPoint id="i231" playOrder="119">
+<navLabel>
+<text>9 READING AND WRITING FILES</text>
+</navLabel>
+<content src="xhtml/ch09.xhtml#ch09"/>
+<navPoint id="i232" playOrder="120">
+<navLabel>
+<text>Files and File Paths</text>
+</navLabel>
+<content src="xhtml/ch09.xhtml#ch09lev1sec1"/>
+</navPoint>
+<navPoint id="i244" playOrder="121">
+<navLabel>
+<text>The File Reading/Writing Process</text>
+</navLabel>
+<content src="xhtml/ch09.xhtml#ch09lev1sec2"/>
+</navPoint>
+<navPoint id="i248" playOrder="122">
+<navLabel>
+<text>Saving Variables with the shelve Module</text>
+</navLabel>
+<content src="xhtml/ch09.xhtml#ch09lev1sec3"/>
+</navPoint>
+<navPoint id="i249" playOrder="123">
+<navLabel>
+<text>Saving Variables with the pprint.pformat() Function</text>
+</navLabel>
+<content src="xhtml/ch09.xhtml#ch09lev1sec4"/>
+</navPoint>
+<navPoint id="i250" playOrder="124">
+<navLabel>
+<text>Project: Generating Random Quiz Files</text>
+</navLabel>
+<content src="xhtml/ch09.xhtml#ch09lev1sec5"/>
+</navPoint>
+<navPoint id="i255" playOrder="125">
+<navLabel>
+<text>Project: Updatable Multi-Clipboard</text>
+</navLabel>
+<content src="xhtml/ch09.xhtml#ch09lev1sec6"/>
+</navPoint>
+<navPoint id="i259" playOrder="126">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch09.xhtml#ch09lev1sec7"/>
+</navPoint>
+<navPoint id="i260" playOrder="127">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch09.xhtml#ch09lev1sec8"/>
+</navPoint>
+<navPoint id="i261" playOrder="128">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch09.xhtml#ch09lev1sec9"/>
+</navPoint>
+</navPoint>
+<navPoint id="i265" playOrder="129">
+<navLabel>
+<text>10 ORGANIZING FILES</text>
+</navLabel>
+<content src="xhtml/ch10.xhtml#ch10"/>
+<navPoint id="i266" playOrder="130">
+<navLabel>
+<text>The shutil Module</text>
+</navLabel>
+<content src="xhtml/ch10.xhtml#ch10lev1sec1"/>
+</navPoint>
+<navPoint id="i271" playOrder="131">
+<navLabel>
+<text>Walking a Directory Tree</text>
+</navLabel>
+<content src="xhtml/ch10.xhtml#ch10lev1sec2"/>
+</navPoint>
+<navPoint id="i272" playOrder="132">
+<navLabel>
+<text>Compressing Files with the zipfile Module</text>
+</navLabel>
+<content src="xhtml/ch10.xhtml#ch10lev1sec3"/>
+</navPoint>
+<navPoint id="i276" playOrder="133">
+<navLabel>
+<text>Project: Renaming Files with American-Style Dates to European-Style Dates</text>
+</navLabel>
+<content src="xhtml/ch10.xhtml#ch10lev1sec4"/>
+</navPoint>
+<navPoint id="i281" playOrder="134">
+<navLabel>
+<text>Project: Backing Up a Folder into a ZIP File</text>
+</navLabel>
+<content src="xhtml/ch10.xhtml#ch10lev1sec5"/>
+</navPoint>
+<navPoint id="i286" playOrder="135">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch10.xhtml#ch10lev1sec6"/>
+</navPoint>
+<navPoint id="i287" playOrder="136">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch10.xhtml#ch10lev1sec7"/>
+</navPoint>
+<navPoint id="i288" playOrder="137">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch10.xhtml#ch10lev1sec8"/>
+</navPoint>
+</navPoint>
+<navPoint id="i292" playOrder="138">
+<navLabel>
+<text>11 DEBUGGING</text>
+</navLabel>
+<content src="xhtml/ch11.xhtml#ch11"/>
+<navPoint id="i293" playOrder="139">
+<navLabel>
+<text>Raising Exceptions</text>
+</navLabel>
+<content src="xhtml/ch11.xhtml#ch11lev1sec1"/>
+</navPoint>
+<navPoint id="i294" playOrder="140">
+<navLabel>
+<text>Getting the Traceback as a String</text>
+</navLabel>
+<content src="xhtml/ch11.xhtml#ch11lev1sec2"/>
+</navPoint>
+<navPoint id="i295" playOrder="141">
+<navLabel>
+<text>Assertions</text>
+</navLabel>
+<content src="xhtml/ch11.xhtml#ch11lev1sec3"/>
+</navPoint>
+<navPoint id="i297" playOrder="142">
+<navLabel>
+<text>Logging</text>
+</navLabel>
+<content src="xhtml/ch11.xhtml#ch11lev1sec4"/>
+</navPoint>
+<navPoint id="i303" playOrder="143">
+<navLabel>
+<text>Mu&#8217;s Debugger</text>
+</navLabel>
+<content src="xhtml/ch11.xhtml#ch11lev1sec5"/>
+</navPoint>
+<navPoint id="i311" playOrder="144">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch11.xhtml#ch11lev1sec6"/>
+</navPoint>
+<navPoint id="i312" playOrder="145">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch11.xhtml#ch11lev1sec7"/>
+</navPoint>
+<navPoint id="i313" playOrder="146">
+<navLabel>
+<text>Practice Project</text>
+</navLabel>
+<content src="xhtml/ch11.xhtml#ch11lev1sec8"/>
+</navPoint>
+</navPoint>
+<navPoint id="i315" playOrder="147">
+<navLabel>
+<text>12 WEB SCRAPING</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12"/>
+<navPoint id="i316" playOrder="148">
+<navLabel>
+<text>Project: mapIt.py with the webbrowser Module</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec1"/>
+</navPoint>
+<navPoint id="i321" playOrder="149">
+<navLabel>
+<text>Downloading Files from the Web with the requests Module</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec2"/>
+</navPoint>
+<navPoint id="i324" playOrder="150">
+<navLabel>
+<text>Saving Downloaded Files to the Hard Drive</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec3"/>
+</navPoint>
+<navPoint id="i325" playOrder="151">
+<navLabel>
+<text>HTML</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec4"/>
+</navPoint>
+<navPoint id="i331" playOrder="152">
+<navLabel>
+<text>Parsing HTML with the bs4 Module</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec5"/>
+</navPoint>
+<navPoint id="i335" playOrder="153">
+<navLabel>
+<text>Project: Opening All Search Results</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec6"/>
+</navPoint>
+<navPoint id="i340" playOrder="154">
+<navLabel>
+<text>Project: Downloading All XKCD Comics</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec7"/>
+</navPoint>
+<navPoint id="i346" playOrder="155">
+<navLabel>
+<text>Controlling the Browser with the selenium Module</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec8"/>
+</navPoint>
+<navPoint id="i354" playOrder="156">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec9"/>
+</navPoint>
+<navPoint id="i355" playOrder="157">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec10"/>
+</navPoint>
+<navPoint id="i356" playOrder="158">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch12.xhtml#ch12lev1sec11"/>
+</navPoint>
+</navPoint>
+<navPoint id="i361" playOrder="159">
+<navLabel>
+<text>13 WORKING WITH EXCEL SPREADSHEETS</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13"/>
+<navPoint id="i362" playOrder="160">
+<navLabel>
+<text>Excel Documents</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec1"/>
+</navPoint>
+<navPoint id="i363" playOrder="161">
+<navLabel>
+<text>Installing the openpyxl Module</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec2"/>
+</navPoint>
+<navPoint id="i364" playOrder="162">
+<navLabel>
+<text>Reading Excel Documents</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec3"/>
+</navPoint>
+<navPoint id="i371" playOrder="163">
+<navLabel>
+<text>Project: Reading Data from a Spreadsheet</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec4"/>
+</navPoint>
+<navPoint id="i376" playOrder="164">
+<navLabel>
+<text>Writing Excel Documents</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec5"/>
+</navPoint>
+<navPoint id="i380" playOrder="165">
+<navLabel>
+<text>Project: Updating a Spreadsheet</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec6"/>
+</navPoint>
+<navPoint id="i384" playOrder="166">
+<navLabel>
+<text>Setting the Font Style of Cells</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec7"/>
+</navPoint>
+<navPoint id="i385" playOrder="167">
+<navLabel>
+<text>Font Objects</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec8"/>
+</navPoint>
+<navPoint id="i386" playOrder="168">
+<navLabel>
+<text>Formulas</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec9"/>
+</navPoint>
+<navPoint id="i387" playOrder="169">
+<navLabel>
+<text>Adjusting Rows and Columns</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec10"/>
+</navPoint>
+<navPoint id="i391" playOrder="170">
+<navLabel>
+<text>Charts</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec11"/>
+</navPoint>
+<navPoint id="i392" playOrder="171">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec12"/>
+</navPoint>
+<navPoint id="i393" playOrder="172">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec13"/>
+</navPoint>
+<navPoint id="i394" playOrder="173">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch13.xhtml#ch13lev1sec14"/>
+</navPoint>
+</navPoint>
+<navPoint id="i400" playOrder="174">
+<navLabel>
+<text>14 WORKING WITH GOOGLE SHEETS</text>
+</navLabel>
+<content src="xhtml/ch14.xhtml#ch14"/>
+<navPoint id="i401" playOrder="175">
+<navLabel>
+<text>Installing and Setting Up EZSheets</text>
+</navLabel>
+<content src="xhtml/ch14.xhtml#ch14lev1sec1"/>
+</navPoint>
+<navPoint id="i404" playOrder="176">
+<navLabel>
+<text>Spreadsheet Objects</text>
+</navLabel>
+<content src="xhtml/ch14.xhtml#ch14lev1sec2"/>
+</navPoint>
+<navPoint id="i409" playOrder="177">
+<navLabel>
+<text>Sheet Objects</text>
+</navLabel>
+<content src="xhtml/ch14.xhtml#ch14lev1sec3"/>
+</navPoint>
+<navPoint id="i413" playOrder="178">
+<navLabel>
+<text>Working with Google Sheets Quotas</text>
+</navLabel>
+<content src="xhtml/ch14.xhtml#ch14lev1sec4"/>
+</navPoint>
+<navPoint id="i414" playOrder="179">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch14.xhtml#ch14lev1sec5"/>
+</navPoint>
+<navPoint id="i415" playOrder="180">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch14.xhtml#ch14lev1sec6"/>
+</navPoint>
+<navPoint id="i416" playOrder="181">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch14.xhtml#ch14lev1sec7"/>
+</navPoint>
+</navPoint>
+<navPoint id="i420" playOrder="182">
+<navLabel>
+<text>15 WORKING WITH PDF AND WORD DOCUMENTS</text>
+</navLabel>
+<content src="xhtml/ch15.xhtml#ch15"/>
+<navPoint id="i421" playOrder="183">
+<navLabel>
+<text>PDF Documents</text>
+</navLabel>
+<content src="xhtml/ch15.xhtml#ch15lev1sec1"/>
+</navPoint>
+<navPoint id="i425" playOrder="184">
+<navLabel>
+<text>Project: Combining Select Pages from Many PDFs</text>
+</navLabel>
+<content src="xhtml/ch15.xhtml#ch15lev1sec2"/>
+</navPoint>
+<navPoint id="i431" playOrder="185">
+<navLabel>
+<text>Word Documents</text>
+</navLabel>
+<content src="xhtml/ch15.xhtml#ch15lev1sec3"/>
+</navPoint>
+<navPoint id="i441" playOrder="186">
+<navLabel>
+<text>Creating PDFs from Word Documents</text>
+</navLabel>
+<content src="xhtml/ch15.xhtml#ch15lev1sec4"/>
+</navPoint>
+<navPoint id="i442" playOrder="187">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch15.xhtml#ch15lev1sec5"/>
+</navPoint>
+<navPoint id="i443" playOrder="188">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch15.xhtml#ch15lev1sec6"/>
+</navPoint>
+<navPoint id="i444" playOrder="189">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch15.xhtml#ch15lev1sec7"/>
+</navPoint>
+</navPoint>
+<navPoint id="i448" playOrder="190">
+<navLabel>
+<text>16 WORKING WITH CSV FILES AND JSON DATA</text>
+</navLabel>
+<content src="xhtml/ch16.xhtml#ch16"/>
+<navPoint id="i449" playOrder="191">
+<navLabel>
+<text>The csv Module</text>
+</navLabel>
+<content src="xhtml/ch16.xhtml#ch16lev1sec1"/>
+</navPoint>
+<navPoint id="i455" playOrder="192">
+<navLabel>
+<text>Project: Removing the Header from CSV Files</text>
+</navLabel>
+<content src="xhtml/ch16.xhtml#ch16lev1sec2"/>
+</navPoint>
+<navPoint id="i460" playOrder="193">
+<navLabel>
+<text>JSON and APIs</text>
+</navLabel>
+<content src="xhtml/ch16.xhtml#ch16lev1sec3"/>
+</navPoint>
+<navPoint id="i461" playOrder="194">
+<navLabel>
+<text>The json Module</text>
+</navLabel>
+<content src="xhtml/ch16.xhtml#ch16lev1sec4"/>
+</navPoint>
+<navPoint id="i464" playOrder="195">
+<navLabel>
+<text>Project: Fetching Current Weather Data</text>
+</navLabel>
+<content src="xhtml/ch16.xhtml#ch16lev1sec5"/>
+</navPoint>
+<navPoint id="i469" playOrder="196">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch16.xhtml#ch16lev1sec6"/>
+</navPoint>
+<navPoint id="i470" playOrder="197">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch16.xhtml#ch16lev1sec7"/>
+</navPoint>
+<navPoint id="i471" playOrder="198">
+<navLabel>
+<text>Practice Project</text>
+</navLabel>
+<content src="xhtml/ch16.xhtml#ch16lev1sec8"/>
+</navPoint>
+</navPoint>
+<navPoint id="i473" playOrder="199">
+<navLabel>
+<text>17 KEEPING TIME, SCHEDULING TASKS, AND LAUNCHING PROGRAMS</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17"/>
+<navPoint id="i474" playOrder="200">
+<navLabel>
+<text>The time Module</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec1"/>
+</navPoint>
+<navPoint id="i477" playOrder="201">
+<navLabel>
+<text>Rounding Numbers</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec2"/>
+</navPoint>
+<navPoint id="i478" playOrder="202">
+<navLabel>
+<text>Project: Super Stopwatch</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec3"/>
+</navPoint>
+<navPoint id="i482" playOrder="203">
+<navLabel>
+<text>The datetime Module</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec4"/>
+</navPoint>
+<navPoint id="i487" playOrder="204">
+<navLabel>
+<text>Review of Python&#8217;s Time Functions</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec5"/>
+</navPoint>
+<navPoint id="i488" playOrder="205">
+<navLabel>
+<text>Multithreading</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec6"/>
+</navPoint>
+<navPoint id="i491" playOrder="206">
+<navLabel>
+<text>Project: Multithreaded XKCD Downloader</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec7"/>
+</navPoint>
+<navPoint id="i495" playOrder="207">
+<navLabel>
+<text>Launching Other Programs from Python</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec8"/>
+</navPoint>
+<navPoint id="i501" playOrder="208">
+<navLabel>
+<text>Project: Simple Countdown Program</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec9"/>
+</navPoint>
+<navPoint id="i505" playOrder="209">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec10"/>
+</navPoint>
+<navPoint id="i506" playOrder="210">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec11"/>
+</navPoint>
+<navPoint id="i507" playOrder="211">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch17.xhtml#ch17lev1sec12"/>
+</navPoint>
+</navPoint>
+<navPoint id="i510" playOrder="212">
+<navLabel>
+<text>18 SENDING EMAIL AND TEXT MESSAGES</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18"/>
+<navPoint id="i511" playOrder="213">
+<navLabel>
+<text>Sending and Receiving Email with the Gmail API</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec1"/>
+</navPoint>
+<navPoint id="i517" playOrder="214">
+<navLabel>
+<text>SMTP</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec2"/>
+</navPoint>
+<navPoint id="i518" playOrder="215">
+<navLabel>
+<text>Sending Email</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec3"/>
+</navPoint>
+<navPoint id="i525" playOrder="216">
+<navLabel>
+<text>IMAP</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec4"/>
+</navPoint>
+<navPoint id="i526" playOrder="217">
+<navLabel>
+<text>Retrieving and Deleting Emails with IMAP</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec5"/>
+</navPoint>
+<navPoint id="i535" playOrder="218">
+<navLabel>
+<text>Project: Sending Member Dues Reminder Emails</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec6"/>
+</navPoint>
+<navPoint id="i539" playOrder="219">
+<navLabel>
+<text>Sending Text Messages with SMS Email Gateways</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec7"/>
+</navPoint>
+<navPoint id="i540" playOrder="220">
+<navLabel>
+<text>Sending Text Messages with Twilio</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec8"/>
+</navPoint>
+<navPoint id="i543" playOrder="221">
+<navLabel>
+<text>Project: &#8220;Just Text Me&#8221; Module</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec9"/>
+</navPoint>
+<navPoint id="i544" playOrder="222">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec10"/>
+</navPoint>
+<navPoint id="i545" playOrder="223">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec11"/>
+</navPoint>
+<navPoint id="i546" playOrder="224">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch18.xhtml#ch18lev1sec12"/>
+</navPoint>
+</navPoint>
+<navPoint id="i551" playOrder="225">
+<navLabel>
+<text>19 MANIPULATING IMAGES</text>
+</navLabel>
+<content src="xhtml/ch19.xhtml#ch19"/>
+<navPoint id="i552" playOrder="226">
+<navLabel>
+<text>Computer Image Fundamentals</text>
+</navLabel>
+<content src="xhtml/ch19.xhtml#ch19lev1sec1"/>
+</navPoint>
+<navPoint id="i555" playOrder="227">
+<navLabel>
+<text>Manipulating Images with Pillow</text>
+</navLabel>
+<content src="xhtml/ch19.xhtml#ch19lev1sec2"/>
+</navPoint>
+<navPoint id="i562" playOrder="228">
+<navLabel>
+<text>Project: Adding a Logo</text>
+</navLabel>
+<content src="xhtml/ch19.xhtml#ch19lev1sec3"/>
+</navPoint>
+<navPoint id="i568" playOrder="229">
+<navLabel>
+<text>Drawing on Images</text>
+</navLabel>
+<content src="xhtml/ch19.xhtml#ch19lev1sec4"/>
+</navPoint>
+<navPoint id="i571" playOrder="230">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch19.xhtml#ch19lev1sec5"/>
+</navPoint>
+<navPoint id="i572" playOrder="231">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch19.xhtml#ch19lev1sec6"/>
+</navPoint>
+<navPoint id="i573" playOrder="232">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch19.xhtml#ch19lev1sec7"/>
+</navPoint>
+</navPoint>
+<navPoint id="i577" playOrder="233">
+<navLabel>
+<text>20 CONTROLLING THE KEYBOARD AND MOUSE WITH GUI AUTOMATION</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20"/>
+<navPoint id="i578" playOrder="234">
+<navLabel>
+<text>Installing the pyautogui Module</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec1"/>
+</navPoint>
+<navPoint id="i579" playOrder="235">
+<navLabel>
+<text>Setting Up Accessibility Apps on macOS</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec2"/>
+</navPoint>
+<navPoint id="i580" playOrder="236">
+<navLabel>
+<text>Staying on Track</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec3"/>
+</navPoint>
+<navPoint id="i583" playOrder="237">
+<navLabel>
+<text>Controlling Mouse Movement</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec4"/>
+</navPoint>
+<navPoint id="i586" playOrder="238">
+<navLabel>
+<text>Controlling Mouse Interaction</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec5"/>
+</navPoint>
+<navPoint id="i590" playOrder="239">
+<navLabel>
+<text>Planning Your Mouse Movements</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec6"/>
+</navPoint>
+<navPoint id="i591" playOrder="240">
+<navLabel>
+<text>Working with the Screen</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec7"/>
+</navPoint>
+<navPoint id="i594" playOrder="241">
+<navLabel>
+<text>Image Recognition</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec8"/>
+</navPoint>
+<navPoint id="i595" playOrder="242">
+<navLabel>
+<text>Getting Window Information</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec9"/>
+</navPoint>
+<navPoint id="i599" playOrder="243">
+<navLabel>
+<text>Controlling the Keyboard</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec10"/>
+</navPoint>
+<navPoint id="i604" playOrder="244">
+<navLabel>
+<text>Setting Up Your GUI Automation Scripts</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec11"/>
+</navPoint>
+<navPoint id="i605" playOrder="245">
+<navLabel>
+<text>Review of the PyAutoGUI Functions</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec12"/>
+</navPoint>
+<navPoint id="i606" playOrder="246">
+<navLabel>
+<text>Project: Automatic Form Filler</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec13"/>
+</navPoint>
+<navPoint id="i612" playOrder="247">
+<navLabel>
+<text>Displaying Message Boxes</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec14"/>
+</navPoint>
+<navPoint id="i613" playOrder="248">
+<navLabel>
+<text>Summary</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec15"/>
+</navPoint>
+<navPoint id="i614" playOrder="249">
+<navLabel>
+<text>Practice Questions</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec16"/>
+</navPoint>
+<navPoint id="i615" playOrder="250">
+<navLabel>
+<text>Practice Projects</text>
+</navLabel>
+<content src="xhtml/ch20.xhtml#ch20lev1sec17"/>
+</navPoint>
+</navPoint>
+</navPoint>
+<navPoint id="i620" playOrder="251">
+<navLabel>
+<text>A INSTALLING THIRD-PARTY MODULES</text>
+</navLabel>
+<content src="xhtml/app01.xhtml#app01"/>
+<navPoint id="i621" playOrder="252">
+<navLabel>
+<text>The pip Tool</text>
+</navLabel>
+<content src="xhtml/app01.xhtml#app01lev1sec1"/>
+</navPoint>
+<navPoint id="i622" playOrder="253">
+<navLabel>
+<text>Installing Third-Party Modules</text>
+</navLabel>
+<content src="xhtml/app01.xhtml#app01lev1sec2"/>
+</navPoint>
+<navPoint id="i623" playOrder="254">
+<navLabel>
+<text>Installing Modules for the Mu Editor</text>
+</navLabel>
+<content src="xhtml/app01.xhtml#app01lev1sec3"/>
+</navPoint>
+</navPoint>
+<navPoint id="i624" playOrder="255">
+<navLabel>
+<text>B RUNNING PROGRAMS</text>
+</navLabel>
+<content src="xhtml/app02.xhtml#app02"/>
+<navPoint id="i625" playOrder="256">
+<navLabel>
+<text>Running Programs from the Terminal Window</text>
+</navLabel>
+<content src="xhtml/app02.xhtml#app02lev1sec1"/>
+</navPoint>
+<navPoint id="i626" playOrder="257">
+<navLabel>
+<text>Running Python Programs on Windows</text>
+</navLabel>
+<content src="xhtml/app02.xhtml#app02lev1sec2"/>
+</navPoint>
+<navPoint id="i627" playOrder="258">
+<navLabel>
+<text>Running Python Programs on macOS</text>
+</navLabel>
+<content src="xhtml/app02.xhtml#app02lev1sec3"/>
+</navPoint>
+<navPoint id="i628" playOrder="259">
+<navLabel>
+<text>Running Python Programs on Ubuntu Linux</text>
+</navLabel>
+<content src="xhtml/app02.xhtml#app02lev1sec4"/>
+</navPoint>
+<navPoint id="i629" playOrder="260">
+<navLabel>
+<text>Running Python Programs with Assertions Disabled</text>
+</navLabel>
+<content src="xhtml/app02.xhtml#app02lev1sec5"/>
+</navPoint>
+</navPoint>
+<navPoint id="i630" playOrder="261">
+<navLabel>
+<text>C ANSWERS TO THE PRACTICE QUESTIONS</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03"/>
+<navPoint id="i631" playOrder="262">
+<navLabel>
+<text>Chapter 1</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec1"/>
+</navPoint>
+<navPoint id="i632" playOrder="263">
+<navLabel>
+<text>Chapter 2</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec2"/>
+</navPoint>
+<navPoint id="i633" playOrder="264">
+<navLabel>
+<text>Chapter 3</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec3"/>
+</navPoint>
+<navPoint id="i634" playOrder="265">
+<navLabel>
+<text>Chapter 4</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec4"/>
+</navPoint>
+<navPoint id="i635" playOrder="266">
+<navLabel>
+<text>Chapter 5</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec5"/>
+</navPoint>
+<navPoint id="i636" playOrder="267">
+<navLabel>
+<text>Chapter 6</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec6"/>
+</navPoint>
+<navPoint id="i637" playOrder="268">
+<navLabel>
+<text>Chapter 7</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec7"/>
+</navPoint>
+<navPoint id="i638" playOrder="269">
+<navLabel>
+<text>Chapter 8</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec8"/>
+</navPoint>
+<navPoint id="i639" playOrder="270">
+<navLabel>
+<text>Chapter 9</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec9"/>
+</navPoint>
+<navPoint id="i640" playOrder="271">
+<navLabel>
+<text>Chapter 10</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec10"/>
+</navPoint>
+<navPoint id="i641" playOrder="272">
+<navLabel>
+<text>Chapter 11</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec11"/>
+</navPoint>
+<navPoint id="i642" playOrder="273">
+<navLabel>
+<text>Chapter 12</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec12"/>
+</navPoint>
+<navPoint id="i643" playOrder="274">
+<navLabel>
+<text>Chapter 13</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec13"/>
+</navPoint>
+<navPoint id="i644" playOrder="275">
+<navLabel>
+<text>Chapter 14</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec14"/>
+</navPoint>
+<navPoint id="i645" playOrder="276">
+<navLabel>
+<text>Chapter 15</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec15"/>
+</navPoint>
+<navPoint id="i646" playOrder="277">
+<navLabel>
+<text>Chapter 16</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec16"/>
+</navPoint>
+<navPoint id="i647" playOrder="278">
+<navLabel>
+<text>Chapter 17</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec17"/>
+</navPoint>
+<navPoint id="i648" playOrder="279">
+<navLabel>
+<text>Chapter 18</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec18"/>
+</navPoint>
+<navPoint id="i649" playOrder="280">
+<navLabel>
+<text>Chapter 19</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec19"/>
+</navPoint>
+<navPoint id="i650" playOrder="281">
+<navLabel>
+<text>Chapter 20</text>
+</navLabel>
+<content src="xhtml/app03.xhtml#app03lev1sec20"/>
+</navPoint>
+</navPoint>
+<navPoint id="i651" playOrder="282">
+<navLabel>
+<text>INDEX</text>
+</navLabel>
+<content src="xhtml/index.xhtml#index"/>
+</navPoint>
+</navMap>
+</ncx>

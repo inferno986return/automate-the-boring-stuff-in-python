@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xml:lang="en-us" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:ns="http://www.w3.org/2001/10/synthesis">
+<head>
+<title>Automate the Boring Stuff with Python: Practical Programming for Total Beginners, 2nd Edition</title>
+<link rel="stylesheet" type="text/css" href="../styles/9781593279936.css"/>
+</head>
+<body>
+<h2 class="h2" id="intro"><span epub:type="pagebreak" id="page_xxvii"/><strong>INTRODUCTION</strong></h2>
+<div class="image1"><img src="../images/00fig00.jpg" alt="Image"/></div>
+<p class="noindent">&#8220;You&#8217;ve just done in two hours what it takes the three of us two days to do.&#8221; My college roommate was working at a retail electronics store in the early 2000s. Occasionally, the store would receive a spreadsheet of thousands of product prices from other stores. A team of three employees would print the spreadsheet onto a thick stack of paper and split it among themselves. For each product price, they would look up their store&#8217;s price and note all the products that their competitors sold for less. It usually took a couple of days.</p>
+<p class="indent">&#8220;You know, I could write a program to do that if you have the original file for the printouts,&#8221; my roommate told them, when he saw them sitting on the floor with papers scattered and stacked all around.</p>
+<p class="indent">After a couple of hours, he had a short program that read a competitor&#8217;s price from a file, found the product in the store&#8217;s database, and noted whether the competitor was cheaper. He was still new to programming, so he spent most of his time looking up documentation in a programming <span epub:type="pagebreak" id="page_xxviii"/>book. The actual program took only a few seconds to run. My roommate and his co-workers took an extra-long lunch that day.</p>
+<p class="indent">This is the power of computer programming. A computer is like a Swiss Army knife that you can configure for countless tasks. Many people spend hours clicking and typing to perform repetitive tasks, unaware that the machine they&#8217;re using could do their job in seconds if they gave it the right instructions.</p>
+<h3 class="h3" id="ch00lev1sec1"><strong>Whom Is This Book For?</strong></h3>
+<p class="noindent">Software is at the core of so many of the tools we use today: nearly everyone uses social networks to communicate, many people have internet-connected computers in their phones, and most office jobs involve interacting with a computer to get work done. As a result, the demand for people who can code has skyrocketed. Countless books, interactive web tutorials, and developer boot camps promise to turn ambitious beginners into software engineers with six-figure salaries.</p>
+<p class="indent">This book is not for those people. It&#8217;s for everyone else.</p>
+<p class="indent">On its own, this book won&#8217;t turn you into a professional software developer any more than a few guitar lessons will turn you into a rock star. But if you&#8217;re an office worker, administrator, academic, or anyone else who uses a computer for work or fun, you will learn the basics of programming so that you can automate simple tasks such as these:</p>
+<ul>
+<li class="noindent">Moving and renaming thousands of files and sorting them into folders</li>
+<li class="noindent">Filling out online forms&#8212;no typing required</li>
+<li class="noindent">Downloading files or copying text from a website whenever it updates</li>
+<li class="noindent">Having your computer text you custom notifications</li>
+<li class="noindent">Updating or formatting Excel spreadsheets</li>
+<li class="noindent">Checking your email and sending out prewritten responses</li>
+</ul>
+<p class="indent">These tasks are simple but time-consuming for humans, and they&#8217;re often so trivial or specific that there&#8217;s no ready-made software to perform them. Armed with a little bit of programming knowledge, however, you can have your computer do these tasks for you.</p>
+<h3 class="h3" id="ch00lev1sec2"><strong>Conventions</strong></h3>
+<p class="noindent">This book is not designed as a reference manual; it&#8217;s a guide for beginners. The coding style sometimes goes against best practices (for example, some programs use global variables), but that&#8217;s a trade-off to make the code simpler to learn. This book is made for people to write throwaway code, so there&#8217;s not much time spent on style and elegance. Sophisticated programming concepts&#8212;like object-oriented programming, list comprehensions, and generators&#8212;aren&#8217;t covered because of the complexity they <span epub:type="pagebreak" id="page_xxix"/>add. Veteran programmers may point out ways the code in this book could be changed to improve efficiency, but this book is mostly concerned with getting programs to work with the least amount of effort on your part.</p>
+<h3 class="h3" id="ch00lev1sec3"><strong>What Is Programming?</strong></h3>
+<p class="noindent">Television shows and films often show programmers furiously typing cryptic streams of 1s and 0s on glowing screens, but modern programming isn&#8217;t that mysterious. <em>Programming</em> is simply the act of entering instructions for the computer to perform. These instructions might crunch some numbers, modify text, look up information in files, or communicate with other computers over the internet.</p>
+<p class="indent">All programs use basic instructions as building blocks. Here are a few of the most common ones, in English:</p>
+<ul>
+<li class="noindent">&#8220;Do this; then do that.&#8221;</li>
+<li class="noindent">&#8220;If this condition is true, perform this action; otherwise, do that action.&#8221;</li>
+<li class="noindent">&#8220;Do this action exactly 27 times.&#8221;</li>
+<li class="noindent">&#8220;Keep doing that until this condition is true.&#8221;</li>
+</ul>
+<p class="indent">You can combine these building blocks to implement more intricate decisions, too. For example, here are the programming instructions, called the <em>source code</em>, for a simple program written in the Python programming language. Starting at the top, the Python software runs each line of code (some lines are run only <em>if</em> a certain condition is true or <em>else</em> Python runs some other line) until it reaches the bottom.</p>
+<p class="programs"><span class="ent">&#x278A;</span> passwordFile = open('SecretPasswordFile.txt')<br/>
+<span class="ent">&#x278B;</span> secretPassword = passwordFile.read()<br/>
+<span class="ent">&#x278C;</span> print('Enter your password.')<br/>
+&#160;&#160;&#160;typedPassword = input()<br/>
+<span class="ent">&#x278D;</span> if typedPassword == secretPassword:<br/>
+&#160;&#160;&#160;<span class="ent">&#x278E;</span> print('Access granted')<br/>
+&#160;&#160;&#160;<span class="ent">&#x278F;</span> if typedPassword == '12345':<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="ent">&#x2790;</span> print('That password is one that an idiot puts on their luggage.')<br/>
+&#160;&#160;else:<br/>
+&#160;&#160;&#160;<span class="ent">&#x2791;</span> print('Access denied')</p>
+<p class="indent">You might not know anything about programming, but you could probably make a reasonable guess at what the previous code does just by reading it. First, the file <em>SecretPasswordFile.txt</em> is opened <span class="ent">&#x278A;</span>, and the secret password in it is read <span class="ent">&#x278B;</span>. Then, the user is prompted to input a password (from the keyboard) <span class="ent">&#x278C;</span>. These two passwords are compared <span class="ent">&#x278D;</span>, and if they&#8217;re the same, the program prints <em>Access granted</em> to the screen <span class="ent">&#x278E;</span>. Next, the program checks to see whether the password is <em>12345</em> <span class="ent">&#x278F;</span> and hints that this choice might not be the best for a password <span class="ent">&#x2790;</span>. If the passwords are not the same, the program prints <em>Access denied</em> to the screen <span class="ent">&#x2791;</span>.</p>
+<h4 class="h4" id="ch00lev2sec1"><span epub:type="pagebreak" id="page_xxx"/><strong><em>What Is Python?</em></strong></h4>
+<p class="noindent"><em>Python</em> is a programming language (with syntax rules for writing what is considered valid Python code) and the Python interpreter software that reads source code (written in the Python language) and performs its instructions. You can download the Python interpreter for free at <em><a href="https://python.org/">https://python.org/</a></em>, and there are versions for Linux, macOS, and Windows.</p>
+<p class="indent">The name Python comes from the surreal British comedy group Monty Python, not from the snake. Python programmers are affectionately called Pythonistas, and both Monty Python and serpentine references usually pepper Python tutorials and documentation.</p>
+<h4 class="h4" id="ch00lev2sec2"><strong><em>Programmers Don&#8217;t Need to Know Much Math</em></strong></h4>
+<p class="noindent">The most common anxiety I hear about learning to program is the notion that it requires a lot of math. Actually, most programming doesn&#8217;t require math beyond basic arithmetic. In fact, being good at programming isn&#8217;t that different from being good at solving Sudoku puzzles.</p>
+<p class="indent">To solve a Sudoku puzzle, the numbers 1 through 9 must be filled in for each row, each column, and each 3&#215;3 interior square of the full 9&#215;9 board. Some numbers are provided to give you a start, and you find a solution by making deductions based on these numbers. In the puzzle shown in <a href="intro.xhtml#ch00fig01">Figure 0-1</a>, since 5 appears in the first and second rows, it cannot show up in these rows again. Therefore, in the upper-right grid, it must be in the third row. Since the last column also already has a 5 in it, the 5 cannot go to the right of the 6, so it must go to the left of the 6. Solving one row, column, or square will provide more clues to the rest of the puzzle, and as you fill in one group of numbers 1 to 9 and then another, you&#8217;ll soon solve the entire grid.</p>
+<div class="image"><a id="ch00fig01"/><img src="../images/00fig01.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 0-1: A new Sudoku puzzle (left) and its solution (right). Despite using numbers, Sudoku doesn&#8217;t involve much math. (Images &#169; Wikimedia Commons)</em></p>
+<p class="indent">Just because Sudoku involves numbers doesn&#8217;t mean you have to be good at math to figure out the solution. The same is true of programming. Like solving a Sudoku puzzle, writing programs involves breaking <span epub:type="pagebreak" id="page_xxxi"/>down a problem into individual, detailed steps. Similarly, when <em>debugging</em> programs (that is, finding and fixing errors), you&#8217;ll patiently observe what the program is doing and find the cause of the bugs. And like all skills, the more you program, the better you&#8217;ll become.</p>
+<h4 class="h4" id="ch00lev2sec3"><strong><em>You Are Not Too Old to Learn Programming</em></strong></h4>
+<p class="noindent">The second most common anxiety I hear about learning to program is that people think they&#8217;re too old to learn it. I read many internet comments from folks who think it&#8217;s too late for them because they are already (gasp!) 23 years old. This is clearly not &#8220;too old&#8221; to learn to program: many people learn much later in life.</p>
+<p class="indent">You don&#8217;t need to have started as a child to become a capable programmer. But the image of programmers as whiz kids is a persistent one. Unfortunately, I contribute to this myth when I tell others that I was in grade school when I started programming.</p>
+<p class="indent">However, programming is much easier to learn today than it was in the 1990s. Today, there are more books, better search engines, and many more online question-and-answer websites. On top of that, the programming languages themselves are far more user-friendly. For these reasons, <strong>everything I learned about programming in the years between grade school and high school graduation could be learned today in about a dozen weekends</strong>. My head start wasn&#8217;t really much of a head start.</p>
+<p class="indent">It&#8217;s important to have a &#8220;growth mindset&#8221; about programming&#8212;in other words, understand that people develop programming skills through practice. They aren&#8217;t just born as programmers, and being unskilled at programming now is not an indication that you can never become an expert.</p>
+<h4 class="h4" id="ch00lev2sec4"><strong><em>Programming Is a Creative Activity</em></strong></h4>
+<p class="noindent">Programming is a creative task, like painting, writing, knitting, or constructing LEGO castles. Like painting a blank canvas, making software has many constraints but endless possibilities.</p>
+<p class="indent">The difference between programming and other creative activities is that when programming, you have all the raw materials you need in your computer; you don&#8217;t need to buy any additional canvas, paint, film, yarn, LEGO bricks, or electronic components. A decade-old computer is more than powerful enough to write programs. Once your program is written, it can be copied perfectly an infinite number of times. A knit sweater can only be worn by one person at a time, but a useful program can easily be shared online with the entire world.</p>
+<h3 class="h3" id="ch00lev1sec4"><strong>About This Book</strong></h3>
+<p class="noindent">The first part of this book covers basic Python programming concepts, and the second part covers various tasks you can have your computer automate. Each chapter in the second part has project programs for you to study. Here&#8217;s a brief rundown of what you&#8217;ll find in each chapter.</p>
+<p class="noindentt"><span epub:type="pagebreak" id="page_xxxii"/><strong><a href="part01.xhtml#part01">Part I: Python Programming Basics</a></strong></p>
+<p class="hang"><strong><a href="ch01.xhtml#ch01">Chapter 1: Python Basics</a></strong> Covers expressions, the most basic type of Python instruction, and how to use the Python interactive shell software to experiment with code.</p>
+<p class="hang"><strong><a href="ch02.xhtml#ch02">Chapter 2: Flow Control</a></strong> Explains how to make programs decide which instructions to execute so your code can intelligently respond to different conditions.</p>
+<p class="hang"><strong><a href="ch03.xhtml#ch03">Chapter 3: Functions</a></strong> Instructs you on how to define your own functions so that you can organize your code into more manageable chunks.</p>
+<p class="hang"><strong><a href="ch04.xhtml#ch04">Chapter 4: Lists</a></strong> Introduces the list data type and explains how to organize data.</p>
+<p class="hang"><strong><a href="ch05.xhtml#ch05">Chapter 5: Dictionaries and Structuring Data</a></strong> Introduces the dictionary data type and shows you more powerful ways to organize data.</p>
+<p class="hang"><strong><a href="ch06.xhtml#ch06">Chapter 6: Manipulating Strings</a></strong> Covers working with text data (called <em>strings</em> in Python).</p>
+<p class="noindentt"><strong><a href="part02.xhtml#part02">Part II: Automating Tasks</a></strong></p>
+<p class="hang"><strong><a href="ch07.xhtml#ch07">Chapter 7: Pattern Matching with Regular Expressions</a></strong> Covers how Python can manipulate strings and search for text patterns with regular expressions.</p>
+<p class="hang"><strong><a href="ch08.xhtml#ch08">Chapter 8: Input Validation</a></strong> Explains how your program can verify the information a user gives it, ensuring that the user&#8217;s data arrives in a format that won&#8217;t cause errors in the rest of the program.</p>
+<p class="hang"><strong><a href="ch09.xhtml#ch09">Chapter 9: Reading and Writing Files</a></strong> Explains how your program can read the contents of text files and save information to files on your hard drive.</p>
+<p class="hang"><strong><a href="ch10.xhtml#ch10">Chapter 10: Organizing Files</a></strong> Shows how Python can copy, move, rename, and delete large numbers of files much faster than a human user can. Also explains compressing and decompressing files.</p>
+<p class="hang"><strong><a href="ch11.xhtml#ch11">Chapter 11: Debugging</a></strong> Shows how to use Python&#8217;s various bug-finding and bug-fixing tools.</p>
+<p class="hang"><strong><a href="ch12.xhtml#ch12">Chapter 12: Web Scraping</a></strong> Shows how to write programs that can automatically download web pages and parse them for information. This is called <em>web scraping</em>.</p>
+<p class="hang"><strong><a href="ch13.xhtml#ch13">Chapter 13: Working with Excel Spreadsheets</a></strong> Covers programmatically manipulating Excel spreadsheets so that you don&#8217;t have to read them. This is helpful when the number of documents you have to analyze is in the hundreds or thousands.</p>
+<p class="hang"><strong><a href="ch14.xhtml#ch14">Chapter 14: Working with Google Sheets</a></strong> Covers how to read and update Google Sheets, a popular web-based spreadsheet application, using Python.</p>
+<p class="hang"><strong><a href="ch15.xhtml#ch15">Chapter 15: Working with PDF and Word Documents</a></strong> Covers programmatically reading Word and PDF documents.</p>
+<p class="hang"><span epub:type="pagebreak" id="page_xxxiii"/><strong><a href="ch16.xhtml#ch16">Chapter 16: Working with CSV Files and JSON Data</a></strong> Continues to explain how to programmatically manipulate documents, now discussing CSV and JSON files.</p>
+<p class="hang"><strong><a href="ch17.xhtml#ch17">Chapter 17: Keeping Time, Scheduling Tasks, and Launching Programs</a></strong> Explains how Python programs handle time and dates and how to schedule your computer to perform tasks at certain times. Also shows how your Python programs can launch non-Python programs.</p>
+<p class="hang"><strong><a href="ch18.xhtml#ch18">Chapter 18: Sending Email and Text Messages</a></strong> Explains how to write programs that can send emails and text messages on your behalf.</p>
+<p class="hang"><strong><a href="ch19.xhtml#ch19">Chapter 19: Manipulating Images</a></strong> Explains how to programmatically manipulate images such as JPEG or PNG files.</p>
+<p class="hang"><strong><a href="ch20.xhtml#ch20">Chapter 20: Controlling the Keyboard and Mouse with GUI Automation</a></strong> Explains how to programmatically control the mouse and keyboard to automate clicks and keypresses.</p>
+<p class="hangt"><strong><a href="app01.xhtml#app01">Appendix A: Installing Third-Party Modules</a></strong> Shows you how to extend Python with useful additional modules.</p>
+<p class="hang"><strong><a href="app02.xhtml#app02">Appendix B: Running Programs</a></strong> Shows you how to run your Python programs on Windows, macOS, and Linux from outside of the code editor.</p>
+<p class="hang"><strong><a href="app03.xhtml#app03">Appendix C: Answers to the Practice Questions</a></strong> Provides answers and some additional context to the practice questions at the end of each chapter.</p>
+<h3 class="h3" id="ch00lev1sec5"><strong>Downloading and Installing Python</strong></h3>
+<p class="noindent">You can download Python for Windows, macOS, and Ubuntu for free at <em><a href="https://python.org/downloads/">https://python.org/downloads/</a></em>. If you download the latest version from the website&#8217;s download page, all of the programs in this book should work.</p>
+<div class="note">
+<p class="notet"><strong><span class="notes">WARNING</span></strong></p>
+<p class="notep"><em>Be sure to download a version of Python 3 (such as 3.8.0). The programs in this book are written to run on Python 3 and may not run correctly, if at all, on Python 2.</em></p>
+</div>
+<p class="indent">On the download page, you&#8217;ll find Python installers for 64-bit and 32-bit computers for each operating system, so first figure out which installer you need. If you bought your computer in 2007 or later, it is most likely a 64-bit system. Otherwise, you have a 32-bit version, but here&#8217;s how to find out for sure:</p>
+<ul>
+<li class="noindent">On Windows, select <strong>Start</strong> &#9656; <strong>Control Panel</strong> &#9656; <strong>System</strong> and check whether System Type says 64-bit or 32-bit.</li>
+<li class="noindent">On macOS, go the Apple menu, select <strong>About This Mac</strong> &#9656; <strong>More Info</strong> &#9656; <strong>System Report</strong> &#9656; <strong>Hardware</strong>, and then look at the Processor Name field. If it says Intel Core Solo or Intel Core Duo, you have a 32-bit machine. If it says anything else (including Intel Core 2 Duo), you have a 64-bit machine.</li>
+<li class="noindent"><span epub:type="pagebreak" id="page_xxxiv"/>On Ubuntu Linux, open a Terminal and run the command <span class="codestrong">uname -m</span>. A response of <span class="literal">i686</span> means 32-bit, and <span class="literal">x86_64</span> means 64-bit.</li>
+</ul>
+<p class="indent">On Windows, download the Python installer (the filename will end with <em>.msi</em>) and double-click it. Follow the instructions the installer displays on the screen to install Python, as listed here:</p>
+<ol>
+<li class="noindent">Select <strong>Install for All Users</strong> and click <strong>Next</strong>.</li>
+<li class="noindent">Accept the default options for the next several windows by clicking <strong>Next</strong>.</li></ol>
+<p class="indent">On macOS, download the <em>.dmg</em> file that&#8217;s right for your version of macOS and double-click it. Follow the instructions the installer displays on the screen to install Python, as listed here:</p>
+<ol>
+<li class="noindent">When the DMG package opens in a new window, double-click the <em>Python.mpkg</em> file. You may have to enter the administrator password.</li>
+<li class="noindent">Accept the default options for the next several windows by clicking <strong>Continue</strong> and click <strong>Agree</strong> to accept the license.</li>
+<li class="noindent">On the final window, click <strong>Install</strong>.</li>
+</ol>
+<p class="indent">If you&#8217;re running Ubuntu, you can install Python from the Terminal by following these steps:</p>
+<ol>
+<li class="noindent">Open the Terminal window.</li>
+<li class="noindent">Enter <span class="codestrong">sudo apt-get install python3</span>.</li>
+<li class="noindent">Enter <span class="codestrong">sudo apt-get install idle3</span>.</li>
+<li class="noindent">Enter <span class="codestrong">sudo apt-get install python3-pip</span>.</li></ol>
+<h3 class="h3" id="ch00lev1sec6"><strong>Downloading and Installing Mu</strong></h3>
+<p class="noindent">While the <em>Python interpreter</em> is the software that runs your Python programs, the <em>Mu editor software</em> is where you&#8217;ll enter your programs, much the way you type in a word processor. You can download Mu from <em><a href="https://codewith.mu/">https://codewith.mu/</a></em>.</p>
+<p class="indent">On Windows and macOS, download the installer for your operating system and then run it by double-clicking the installer file. If you are on macOS, running the installer opens a window where you must drag the Mu icon to the Applications folder icon to continue the installation. If you are on Ubuntu, you&#8217;ll need to install Mu as a Python package. In that case, click the Instructions button in the Python Package section of the download page.</p>
+<h3 class="h3" id="ch00lev1sec7"><strong>Starting Mu</strong></h3>
+<p class="noindent">Once it&#8217;s installed, let&#8217;s start Mu.</p>
+<ul>
+<li class="noindent">On Windows 7 or later, click the Start icon in the lower-left corner of your screen, enter <span class="codestrong">Mu</span> in the search box, and select it.</li>
+<li class="noindent"><span epub:type="pagebreak" id="page_xxxv"/>On macOS, open the Finder window, click <strong>Applications</strong>, and then click <strong>mu-editor</strong>.</li>
+<li class="noindent">On Ubuntu, select <strong>Applications</strong> &#9656; <strong>Accessories</strong> &#9656; <strong>Terminal</strong> and then enter <span class="codestrong">python3 &#8211;m mu</span>.</li>
+</ul>
+<p class="indent">The first time Mu runs, a Select Mode window will appear with options Adafruit CircuitPython, BBC micro:bit, Pygame Zero, and Python 3. Select <strong>Python 3</strong>. You can always change the mode later by clicking the Mode button at the top of the editor window.</p>
+<div class="note">
+<p class="notet"><strong><span class="notes">NOTE</span></strong></p>
+<p class="notep"><em>You&#8217;ll need to download Mu version 1.10.0 or later in order to install the third-party modules featured in this book. As of this writing, 1.10.0 is an alpha release and is listed on the download page as a separate link from the main download links.</em></p>
+</div>
+<h3 class="h3" id="ch00lev1sec8"><strong>Starting IDLE</strong></h3>
+<p class="noindent">This book uses Mu as an editor and interactive shell. However, you can use any number of editors for writing Python code. The <em>Integrated Development and Learning Environment (IDLE)</em> software installs along with Python, and it can serve as a second editor if for some reason you can&#8217;t get Mu installed or working. Let&#8217;s start IDLE now.</p>
+<ul>
+<li class="noindent">On Windows 7 or later, click the Start icon in the lower-left corner of your screen, enter <span class="codestrong">IDLE</span> in the search box, and select <strong>IDLE (Python GUI)</strong>.</li>
+<li class="noindent">On macOS, open the Finder window, click <strong>Applications</strong>, click <strong>Python 3.8</strong>, and then click the IDLE icon.</li>
+<li class="noindent">On Ubuntu, select <strong>Applications</strong> &#9656; <strong>Accessories</strong> &#9656; <strong>Terminal</strong> and then enter <span class="codestrong">idle3</span>. (You may also be able to click <strong>Applications</strong> at the top of the screen, select <strong>Programming</strong>, and then click <strong>IDLE 3</strong>.)</li>
+</ul>
+<h3 class="h3" id="ch00lev1sec9"><strong>The Interactive Shell</strong></h3>
+<p class="noindent">When you run Mu, the window that appears is called the <em>file editor</em> window. You can open the <em>interactive shell</em> by clicking the REPL button. A shell is a program that lets you type instructions into the computer, much like the Terminal or Command Prompt on macOS and Windows, respectively. Python&#8217;s interactive shell lets you enter instructions for the Python interpreter software to run. The computer reads the instructions you enter and runs them immediately.</p>
+<p class="indent">In Mu, the interactive shell is a pane in the lower half of the window with the following text:</p>
+<p class="programs">Jupyter QtConsole 4.3.1<br/>
+Python 3.6.3 (v3.6.3:2c5fed8, Oct 3 2017, 18:11:49) [MSC v.1900 64 bit<br/>
+(AMD64)]<br/>
+Type 'copyright', 'credits' or 'license' for more information<br/>
+<span epub:type="pagebreak" id="page_xxxvi"/>IPython 6.2.1 -- An enhanced Interactive Python. Type '?' for help.<br/>
+<br/>
+In [1]:</p>
+<p class="indent">If you run IDLE, the interactive shell is the window that first appears. It should be mostly blank except for text that looks something like this:</p>
+<p class="programs">Python 3.8.0b1 (tags/v3.8.0b1:3b5deb0116, Jun 4 2019, 19:52:55) [MSC v.1916<br/>
+64 bit (AMD64)] on win32<br/>
+Type "help", "copyright", "credits" or "license" for more information.<br/>
+&gt;&gt;&gt;</p>
+<p class="indent"><span class="literal">In [1]:</span> and <span class="literal">&gt;&gt;&gt;</span> are called <em>prompts</em>. The examples in this book will use the <span class="literal">&gt;&gt;&gt;</span> prompt for the interactive shell since it&#8217;s more common. If you run Python from the Terminal or Command Prompt, they&#8217;ll use the <span class="literal">&gt;&gt;&gt;</span> prompt, as well. The <span class="literal">In [1]:</span> prompt was invented by Jupyter Notebook, another popular Python editor.</p>
+<p class="indent">For example, enter the following into the interactive shell next to the prompt:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">print('Hello, world!')</span></p>
+<p class="indent">After you type that line and press <small>ENTER</small>, the interactive shell should display this in response:</p>
+<p class="programs">&gt;&gt;&gt; <span class="codestrong1">print('Hello, world!')</span><br/>
+Hello, world!</p>
+<p class="indent">You&#8217;ve just given the computer an instruction, and it did what you told it to do!</p>
+<h3 class="h3" id="ch00lev1sec10"><strong>Installing Third-Party Modules</strong></h3>
+<p class="noindent">Some Python code requires your program to import modules. Some of these modules come with Python, but others are third-party modules created by developers outside of the Python core dev team. <a href="app01.xhtml#app01">Appendix A</a> has detailed instructions on how to use the <span class="literal">pip</span> program (on Windows) or <span class="literal">pip3</span> program (on macOS and Linux) to install third-party modules. Consult <a href="app01.xhtml#app01">Appendix A</a> when this book instructs you to install a particular third-party module.</p>
+<h3 class="h3" id="ch00lev1sec11"><strong>How to Find Help</strong></h3>
+<p class="noindent">Programmers tend to learn by searching the internet for answers to their questions. This is quite different from the way many people are accustomed to learning&#8212;through an in-person teacher who lectures and can answer questions. What&#8217;s great about using the internet as a schoolroom is that there are whole communities of folks who can answer your questions. <span epub:type="pagebreak" id="page_xxxvii"/>Indeed, your questions have probably already been answered, and the answers are waiting online for you to find them. If you encounter an error message or have trouble making your code work, you won&#8217;t be the first person to have your problem, and finding a solution is easier than you might think.</p>
+<p class="indent">For example, let&#8217;s cause an error on purpose: enter <span class="codestrong">'42' + 3</span> into the interactive shell. You don&#8217;t need to know what this instruction means right now, but the result should look like this:</p>
+<p class="programs">&#160;&#160;&#160;&gt;&gt;&gt; <span class="codestrong1">'42' + 3</span><br/>
+<span class="ent">&#x278A;</span> Traceback (most recent call last):<br/>
+&#160;&#160;&#160;&#160;&#160;File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;'42' + 3<br/>
+<span class="ent">&#x278B;</span> TypeError: Can't convert 'int' object to str implicitly<br/>
+&#160;&#160;&#160;&gt;&gt;&gt;</p>
+<p class="indent">The error message <span class="ent">&#x278B;</span> appears because Python couldn&#8217;t understand your instruction. The traceback part <span class="ent">&#x278A;</span> of the error message shows the specific instruction and line number that Python had trouble with. If you&#8217;re not sure what to make of a particular error message, search for it online. Enter <strong>&#8220;TypeError: Can&#8217;t convert &#8216;int&#8217; object to str implicitly&#8221;</strong> (including the quotes) into your favorite search engine, and you should see tons of links explaining what the error message means and what causes it, as shown in <a href="intro.xhtml#ch00fig02">Figure 0-2</a>.</p>
+<div class="image"><a id="ch00fig02"/><img src="../images/00fig02.jpg" alt="image"/></div>
+<p class="figcap"><em>Figure 0-2: The Google results for an error message can be very helpful.</em></p>
+<p class="indent"><span epub:type="pagebreak" id="page_xxxviii"/>You&#8217;ll often find that someone else had the same question as you and that some other helpful person has already answered it. No one person can know everything about programming, so an everyday part of any software developer&#8217;s job is looking up answers to technical questions.</p>
+<h3 class="h3" id="ch00lev1sec12"><strong>Asking Smart Programming Questions</strong></h3>
+<p class="noindent">If you can&#8217;t find the answer by searching online, try asking people in a web forum such as Stack Overflow (<em><a href="https://stackoverflow.com/">https://stackoverflow.com/</a></em>) or the &#8220;learn programming&#8221; subreddit at <em><a href="https://reddit.com/r/learnprogramming/">https://reddit.com/r/learnprogramming/</a></em>. But keep in mind there are smart ways to ask programming questions that help others help you. To begin with, be sure to read the FAQ sections at these websites about the proper way to post questions.</p>
+<p class="indent">When asking programming questions, remember to do the following:</p>
+<ul>
+<li class="noindent">Explain what you are trying to do, not just what you did. This lets your helper know if you are on the wrong track.</li>
+<li class="noindent">Specify the point at which the error happens. Does it occur at the very start of the program or only after you do a certain action?</li>
+<li class="noindent">Copy and paste the <em>entire</em> error message and your code to <em><a href="https://pastebin.com/">https://pastebin.com/</a></em> or <em><a href="https://gist.github.com/">https://gist.github.com/</a></em>.<br/><p class="indent">These websites make it easy to share large amounts of code with people online, without losing any text formatting. You can then put the URL of the posted code in your email or forum post. For example, here some pieces of code I&#8217;ve posted: <em><a href="https://pastebin.com/SzP2DbFx/">https://pastebin.com/SzP2DbFx/</a></em> and <em><a href="https://gist.github.com/asweigart/6912168/">https://gist.github.com/asweigart/6912168/</a></em>.</p></li>
+<li class="noindent">Explain what you&#8217;ve already tried to do to solve your problem. This tells people you&#8217;ve already put in some work to figure things out on your own.</li>
+<li class="noindent">List the version of Python you&#8217;re using. (There are some key differences between version 2 Python interpreters and version 3 Python interpreters.) Also, say which operating system and version you&#8217;re running.</li>
+<li class="noindent">If the error came up after you made a change to your code, explain exactly what you changed.</li>
+<li class="noindent">Say whether you&#8217;re able to reproduce the error every time you run the program or whether it happens only after you perform certain actions. If the latter, then explain what those actions are.</li>
+</ul>
+<p class="indent">Always follow good online etiquette as well. For example, don&#8217;t post your questions in all caps or make unreasonable demands of the people trying to help you.</p>
+<p class="indent">You can find more information on how to ask for programming help in the blog post at <em><a href="https://autbor.com/help/">https://autbor.com/help/</a></em>. You can find a list of frequently asked questions about programming at <em><a href="https://www.reddit.com/r/learnprogramming/wiki/faq/">https://www.reddit.com/r/learnprogramming/wiki/faq/</a></em> and a similar list about getting a job in software development at <em><a href="https://www.reddit.com/r/cscareerquestions/wiki/index/">https://www.reddit.com/r/cscareerquestions/wiki/index/</a></em>.</p>
+<p class="indent"><span epub:type="pagebreak" id="page_xxxix"/>I love helping people discover Python. I write programming tutorials on my blog at <em><a href="https://inventwithpython.com/blog/">https://inventwithpython.com/blog/</a></em>, and you can contact me with questions at <em><a href="mailto:al@inventwithpython.com">al@inventwithpython.com</a></em>. Although, you may get a faster response by posting your questions to <em><a href="https://reddit.com/r/inventwithpython/">https://reddit.com/r/inventwithpython/</a></em>.</p>
+<h3 class="h3" id="ch00lev1sec13"><strong>Summary</strong></h3>
+<p class="noindent">For most people, their computer is just an appliance instead of a tool. But by learning how to program, you&#8217;ll gain access to one of the most powerful tools of the modern world, and you&#8217;ll have fun along the way. Programming isn&#8217;t brain surgery&#8212;it&#8217;s fine for amateurs to experiment and make mistakes.</p>
+<p class="indent">This book assumes you have zero programming knowledge and will teach you quite a bit, but you may have questions beyond its scope. Remember that asking effective questions and knowing how to find answers are invaluable tools on your programming journey.</p>
+<p class="indent">Let&#8217;s begin!</p>
+</body>
+</html>
