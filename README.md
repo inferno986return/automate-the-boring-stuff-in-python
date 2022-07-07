@@ -2,7 +2,7 @@
 
 An alternative ePub for the 2<sup>nd</sup> edition of *Automate The Boring Stuff in Python* by Al Sweigart.
 
-![Book cover](https://github.com/inferno986return/automate-the-boring-stuff-in-python/blob/main/e-book/OEBPS/images/9781593279936.jpg)
+<img src="https://github.com/inferno986return/automate-the-boring-stuff-in-python/blob/main/e-book/OEBPS/images/9781593279936.jpg" width="400" height="529" alt="Book cover"/>
 
 
 ## Please support the official book!
