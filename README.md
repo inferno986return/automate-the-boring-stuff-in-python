@@ -16,8 +16,7 @@ If you like this book please purchase a copy from your preferred bookseller:
 
 Humble Bundle regularly feature Al Sweigart's books, as well as other tech books from The Starch Press often at a steep discount. I recommend keeping an eye out for their next bundle.
 
-There is also a dedicated Udemy course for this book: https://www.udemy.com/course/automate/
-(Despite the GBP£49.99 price point, Udemy regularly discount their courses.)
+There is also a dedicated Udemy course for this book: https://www.udemy.com/course/automate/<br/>(Despite the GBP£49.99 price point, Udemy regularly discount their courses.)
 
 ## What have I changed?
 
